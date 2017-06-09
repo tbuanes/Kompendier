@@ -24,7 +24,59 @@ Vi begynner med å se på en-atomiske gasser, som for eksempel helium. Siden det
 der vi summerer over alle molekylene i gassen.
 
 \subsection{Trykk}
-Fra jobbmaskin
+
+Trykket i et fluid kan forstås som et resultat av bevegelsesmengden til molekylene\footnote{Fluidet består enten av enkeltatomer eller av atomer satt sammen til molekyler. For enkelhets skyld omtaler vi de bare som molekyler her, men diskusjonen er identisk uansett om gassen består av enkeltatomer eller sammensatte molekyler} i fluidet. For å gjøre dette litt mer konkret studerer vi det  trykket fluidet forårsaker på veggene til en beholder. Vi har sett i avsnitt \ref{sec:kinetiskgassteori:temperatur} at molekylene i fluidet beveger seg tilfeldig rundt med en gitt hastighetsfordeling. Denne tilfeldige bevegelsen vil gi stadige kollisjoner med veggene av beholderen. Hver kollisjon kan sees på som et elastisk støt\footnote{Dette er en liten forenkling, men resultatene vi utleder blir likevel riktig så lenge gassen og beholderen er i termisk likevekt.} der hastighetskomponenten til atomet normalt på veggen beholder størrelsen, mens retningen snues. Komponenten parallelt med veggen endres ikke. Gitt hastighet før kollisjonen
+\begin{displaymath}
+	\vec{v}_\text{før} = v_\perp \hat{e}_\perp + v_{||} \hat{e}_{||},
+\end{displaymath}
+der $ \hat{e}_\perp$ og $\hat{e}_{||}$ er enhetsvektorer henholdsvis normalt på veggen og parallelt med veggen, vil altså farten etter kollisjonen være
+\begin{displaymath}
+	\vec{v}_\text{etter} = -v_\perp \hat{e}_\perp + v_{||} \hat{e}_{||}.
+\end{displaymath}
+Siden hastighetskomponenten normalt på veggen endrer fortegn får vi en endring i bevegelsesmengde 
+\begin{displaymath}
+	\Delta \vec{p} = -2mv_\perp\hat{e}_\perp.
+\end{displaymath}
+Dette betyr at veggen har virket på atomet med en kraft normalt på veggen. Motkraften til denne kraften er den kraften fra molekylet som forsøker å dytte veggen utover. Siden trykk er kraft normalt på en flate delt på arealet av en flate kan vi altså finne trykket ved å summere effekten av alle molekylene som kolliderer med veggen.
+
+Før vi ser mer på det kvantitative i denne prosessen gjør vi noen viktige observasjoner:
+\begin{itemize}
+\item
+Siden økt temperatur gir økt gjennomsnittshastighet til molekylene vil kollisjonene i gjennomsnitt gi en større kraft mot veggen når temperaturen øker. Dermed øker trykket når temperaturen øker hvis alt annet holdes likt.
+\item
+Siden økt tetthet gir flere kollisjoner per tidshenhet vil trykket øke når tettheten øker hvis alt annet holdes likt.
+\end{itemize}
+
+Når vi nå skal se kvantitativt på sammenhengen mellom molekylbevegelse og trykk skal vi først anta at alle atomene har samme hastighetskomponent $v_\perp$. Dette er ikke riktig, og etterpå skal vi generalisere resultatet til en realistisk hastighetsfordeling.
+Vi ser nå på et sylindrisk volum med endeflate $A$ plassert på beholderveggen og lengde $\d\ell = v_\perp \d t$. I løpet av tidsintervallet $\d t$ vil alle molekylene i fluidet som har normalkomponenten av hastigheten sin rettet mot veggen kollidere med veggen og sprette tilbake. Dette gir impulsen
+\begin{displaymath}
+	I = F_\perp\d t = \half N|\Delta \vec{p}|,
+\end{displaymath}
+der N er antall molekyler i volumet $V = A\d\ell  = Av_\perp\d t$. Faktoren \half kommer av at med tilfeldig bevegelse vil halvparten av molekylene til enhver tid ha en hastighetskomponent mot veggen, mens andre halvparten har en hastighetskomponent bort fra veggen. Om vi lar $n$ være tettheten av molekyler kan vi da regne ut trykket som
+\begin{displaymath}
+\begin{aligned}
+	p = \frac{F_\perp}{A} &= \half\frac{nV}{A}\frac{|\Delta \vec{p}|}{\d t} 
+	= \half\frac{nAv_\perp\d t}{A\d t}2mv_\perp 
+	= nmv_\perp^2.
+\end{aligned}
+\end{displaymath}
+
+Nå er det på tide å kvitte oss med forenklingen at $v_\perp$ er den samme for alle molekylene. Dette kan vi enkelt gjøre ved å erstatte $v_\perp^2$ med gjennomsnittsverdien av denne kvadrerte farten, $\langle v_\perp^2\rangle$. Hvis vi ser på hele hastighetsvektoren til et molekyl, $\vec{v} = v_x \hat{e}_x +  v_y \hat{e}_y +  v_z \hat{e}_z$, så er kvadratet av denne
+\begin{displaymath}
+	v^2 = \vec{v}\cdot\vec{v} = v_x^2 + v_y^2+v_z^2.
+\end{displaymath}
+Hvis vi i stedet regner ut gjennomsnittsverdien finner vi
+\begin{displaymath}
+	\langle v^2\rangle =\langle v_x^2\rangle +\langle v_y^2\rangle + \langle v_z^2\rangle.
+\end{displaymath}
+Siden bevegelsen er tilfeldig har molekylene lik sannsynlighet for å bevege seg i alle retninger og $\langle v_x^2\rangle = \langle v_y^2\rangle = \langle v_z^2\rangle = \frac{1}{3}\langle v^2\rangle$. Om vi nå velger koordinatsystemet vårt slik at $\hat{e}_\perp = \hat{e}_x$, altså slik at $\vec{v}_\perp = \vec{v}_x$ har vi altså
+\begin{displaymath}
+	\langle v_\perp^2 \rangle =\frac{1}{3}\langle v^2 \rangle.
+\end{displaymath}
+Innsatt i uttrykket for trykk har vi da
+\begin{displaymath}
+	p = nm\langle v_\perp^2 \rangle = \frac{1}{3}nm\langle v^2 \rangle = \frac{2}{3}n\left(\frac{1}{2}m\langle v^2 \rangle\right)
+\end{displaymath}
 
 \section{Faste legemer}
 Varmekapasitet
