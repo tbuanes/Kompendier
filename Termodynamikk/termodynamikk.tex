@@ -23,6 +23,17 @@ Vi begynner med å se på en-atomiske gasser, som for eksempel helium. Siden det
 \end{displaymath}
 der vi summerer over alle molekylene i gassen.
 
+For at det skal være meningsfullt å snakke om temperatur må systemet være i termodynamisk likevekt\footnote{Strengt tatt er det tilstrekkelig med en lokal likevekt, slik at vi kan tillate en temperaturgradient gjennom gassen. For enkelhets skyld skal vi anta at hele systemet vi ser på er i likevekt.}. Naivt sett skulle man da forvente at hvert atom i gjennomsnitt har den samme energien, men dette viser seg å være feil. I appendiks \ref{apx:boltzmann} viser vi at når en mono-atomisk gass er i likevekt har atomene en hastighet som beskrives av Maxwell-fordelingen,
+\begin{displaymath}
+	f(v) = 4\pi\left( \frac{m}{2\pi kT} \right)^{3/2} v^2e^{-mv^2/2kT},
+\end{displaymath}
+der $m$ er massen hvert atom, $T$ er temperaturen til gassen og $k = 1.38\times10^{-23}~\mathrm{J/K}$ er boltzmann-konstanten. $f(v)$ er sannsynlighetstettheten for farten $v$, det vil si at sannsynligheten for å finne et atom med fart i intervallet $v_1<v<v_2$ er
+\begin{displaymath}
+	P(v_1 < v < v_2) = \int_{v_1}^{v_2} f(v) dv.
+\end{displaymath}
+Figur (\ref{fig:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm{C} = 293~\mathrm{K}$. Her ser vi at det store flertallet av atomer har fart omkring ???, mens en liten andel atomer har langt høyere fart. 
+
+
 \subsection{Trykk}
 Fra jobbmaskin
 
