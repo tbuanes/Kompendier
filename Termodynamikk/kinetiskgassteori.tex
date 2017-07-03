@@ -33,9 +33,6 @@ der $m$ er massen hvert atom, $T$ er temperaturen til gassen og $k = 1.38\times1
 Figur (\ref{fig:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm{C} = 293~\mathrm{K}$. Her ser vi at det store flertallet av atomer har fart omkring ???, mens en liten andel atomer har langt høyere fart. 
 
 
-\subsection{Varmekapasitet}
-
-
 
 \subsection{Trykk}
 Trykket i et fluid kan forstås som et resultat av bevegelsesmengden til molekylene\footnote{Fluidet består enten av enkeltatomer eller av atomer satt sammen til molekyler. For enkelhets skyld omtaler vi de bare som molekyler her, men diskusjonen er identisk uansett om gassen består av enkeltatomer eller sammensatte molekyler} i fluidet. For å gjøre dette litt mer konkret studerer vi det  trykket fluidet forårsaker på veggene til en beholder. Vi har sett i avsnitt \ref{sec:kinetiskgassteori:temperatur} at molekylene i fluidet beveger seg tilfeldig rundt med en gitt hastighetsfordeling. Denne tilfeldige bevegelsen vil gi stadige kollisjoner med veggene av beholderen. Hver kollisjon kan sees på som et elastisk støt\footnote{Dette er en liten forenkling, men resultatene vi utleder blir likevel riktig så lenge gassen og beholderen er i termisk likevekt.} der hastighetskomponenten til atomet normalt på veggen beholder størrelsen, mens retningen snues. Komponenten parallelt med veggen endres ikke. Gitt hastighet før kollisjonen
@@ -100,6 +97,31 @@ Fra avsnitt \ref{sec:kinetiskgassteori:temperatur} vet vi at $E_\mathrm{k,tr}$ e
 	p = nkT,
 \end{displaymath}
 som viser at trykket i en ideell gass er direkte proposjonalt med temperaturen.
+
+
+\subsection{Varmekapasitet}
+Ikke alle materialer føles like varme selv om de har samme temperatur. For eksempel vil en metallstang ved $10^\circ\mathrm{C}$ føles kald, mens isopor ved samme temperatur føles varm. Tørr luft ved $100^\circ\mathrm{C}$ føles varm, men vi kan fint oppholde oss i den en liten stund. Vanndamp ved samme temperatur forårsaker straks brannskader. Det er to viktige fysiske størrelser som skaper denne forskjellen: varmekapasitet og varmeledningsevne. Her skal vi se på varmekapasiteten til gasser. Varmekapasiteten til faste stoffer ser vi på i avsnitt \ref{sec:fastestoffer:varmekapasitet}, mens varmeledningsevnen til faste stoffer ser vi på i avsnitt \ref{sec:fastestoffer:varmeledningsevne}. Varmeledningsevnen til gasser ser vi ikke på her da den sjelden er av stor interesse siden konveksjon er mye viktigere i det tilfellet, og det er et tema som krever en del fluidmekanikk for å beskrive skikkelig.
+
+Varmekapasiteten er et mål på hvor mye energi som skal til for å øke temperaturen til et stoff; jo større varmekapasiteten er, jo mer energi skal til for å øke temperaturen et gitt antall grader. Det er vanlig å oppgi varmekapasitet enten som energi per kg og grader celsius eller kelvin\footnote{Siden vi kun er interessert i temperaturforskjeller, og siden celsius- og kelvin-skalaene har like stor avstand mellom gradene er det vilkårlig hvilken vi bruker.}, eller som energi per mol og grader celsius eller kelvin. Varmekapasiteten kan dermed defineres som 
+\begin{displaymath}
+	C = \frac{1}{m}\frac{\d Q}{\d T}\quad\text{eller}\quad
+	C = \frac{1}{n}\frac{\d Q}{\d T}.
+\end{displaymath}
+Her er $Q$ energien som tilføres og $T$ temperturen, slik at $\d Q/\d T$ altså er energi per temperatureendring. $m$ er massen til gassen vi ser på og $n$ er stoffmengden, slik at den første versjonen altså har enhet J/(kg$\cdot$K) og den andre J/(mol$\cdot$K).
+
+Før vi sier oss helt fornøyd med definisjonen av varmekapasitet er det imidlertid en detalj til vi må få med oss. Når vi øker temperaturen til en gass øker trykket. Hvis gassen er i en beholder som tillater den å utvide volumet sitt, for eksempel en ballong eller i en sylinder med et bevegelig stempel, vil gassen dermed utvide seg når den varmes opp. Men denne utvidelsen innebærer at gassen gjør et arbeid på omgivelsene sine (f.eks. gummien i ballongen eller stempelet i sylinderen), og dermed brukes en del av energien som ble overført til gassen til å gjøre dette arbeidet. Hvis gassen er i en helt stiv beholder slik at volumet holdes konstant vil gassen ikke gjøre noe arbeid og all den tilførte energien går til å øke temperaturen i gassen. Vi forstår dermed at vi må tilføre mer energi til gassen som får lov til å ekspandere enn til den som holdes ved konstant volum for å få få den samme temperaturendringen. Derfor må vi definere to ulike varmekapasiteter - en for konstant trykk (gassen får utvide seg) og en for kontant volum (gassen får ikke utvide seg):
+\begin{displaymath}
+	\begin{aligned}
+	C_p &= \frac{1}{n}\left.\frac{\d Q}{\d T}\right|_p, \\
+	C_V &= \frac{1}{n}\left.\frac{\d Q}{\d T}\right|_V,
+	\end{aligned}
+\end{displaymath}
+og tilsvarende for varmekapasitet med enhet J/(kg$\cdot$K). Fra diskusjonen ovenfor ser vi at vi alltid har
+\begin{displaymath}
+	C_p > C_V.
+\end{displaymath}
+
+
 
 \subsection{Reelle gasser}
 \label{sec:kinetiskgassteori:reellgass}
