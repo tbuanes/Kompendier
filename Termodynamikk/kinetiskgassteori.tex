@@ -24,14 +24,39 @@ Vi begynner med å se på en-atomiske gasser, som for eksempel helium. Siden det
 der vi summerer over alle molekylene i gassen.
 
 For at det skal være meningsfullt å snakke om temperatur må systemet være i termodynamisk likevekt\footnote{Strengt tatt er det tilstrekkelig med en lokal likevekt, slik at vi kan tillate en temperaturgradient gjennom gassen. For enkelhets skyld skal vi anta at hele systemet vi ser på er i likevekt.}. Naivt sett skulle man da forvente at hvert atom i gjennomsnitt har den samme energien, men dette viser seg å være feil. I appendiks \ref{apx:maxwellfordeling} viser vi at når en mono-atomisk gass er i likevekt har atomene en hastighet som beskrives av Maxwell-fordelingen,
-\begin{displaymath}
+\begin{equation}
+\label{eq:kinetiskgassteori:fv}	
 	f(v) = 4\pi\left( \frac{m}{2\pi kT} \right)^{3/2} v^2e^{-mv^2/2kT},
-\end{displaymath}
+\end{equation}
 der $m$ er massen hvert atom, $T$ er temperaturen til gassen og $k = 1.38\times10^{-23}~\mathrm{J/K}$ er boltzmann-konstanten. $f(v)$ er sannsynlighetstettheten for farten $v$, det vil si at sannsynligheten for å finne et atom med fart i intervallet $v_1<v<v_2$ er
 \begin{displaymath}
-	P(v_1 < v < v_2) = \int_{v_1}^{v_2} f(v) dv.
+	P(v_1 < v < v_2) = \int_{v_1}^{v_2} f(v) \d v.
 \end{displaymath}
 Figur (\ref{fig:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm{C} = 293~\mathrm{K}$. Her ser vi at det store flertallet av atomer har fart omkring ???, mens en liten andel atomer har langt høyere fart. 
+
+For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden det er et enormt stort antall atomer kan vi tilnærme summen med et integral der vi bruker fordelingsfunksjonen (\ref{eq:kinetiskgassteori:fv}) som vektfunksjon for å ta hensyn til hvor stor andel av atomene som har enhver gitt fart,
+\begin{displaymath}
+\begin{aligned}
+	E &= \int_0^\infty f(v)mv\d v \\
+	&= \int_0^\infty 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} mv^3 e^{-mv^2/2kT} \d v.
+\end{aligned}
+\end{displaymath}
+Før vi forsøker å beregne dette integralet omorganiserer vi faktorene litt og gjør et variabelbytte,
+\begin{displaymath}
+\begin{aligned}
+	E &= \frac{4 m}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} \d v \\
+	&= \frac{8 kT}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} \frac{m \d v}{2kT} \\
+	& = \frac{8kT}{\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
+\end{aligned}
+\end{displaymath}
+der $y^2 = mv^2/2kT$, og følgelig $y\d y = m\d v/2kT$. Integralet er her av en klasse som kalles gaussiske integraler og som kan beregnes relativt enkelt. Vi skal ikke gå nærmere inn på hvordan det beregnes her, men bare konstantere at
+\begin{displaymath}
+	\int_{-\infty}^\infty y^4e^{-y^2} \d y = \frac{3}{4}\sqrt{\pi},
+\end{displaymath}
+og siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at den totale energien er 
+\begin{displaymath}
+	E = \frac{8kT}{\sqrt{\pi}}\cdot \frac{3\sqrt{\pi}}{8} = 3kT
+\end{displaymath}
 
 
 
