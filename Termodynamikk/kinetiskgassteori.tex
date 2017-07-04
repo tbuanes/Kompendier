@@ -1,4 +1,4 @@
-\section{Kinetisk gassteori}
+\chapter{Kinetisk gassteori}
 Her beskriver vi hvordan vi kan forstå makroskopiske størrelser som temperatur, varmekapasitet og trykk i gasser som et resultat av summen av bevegelsene til alle atomene i gassen. I mesteparten av kapittelet vil vi kun diskutere ideelle gass, det vil si en hypotetisk gass der
 \begin{itemize}
 	\item
@@ -12,7 +12,7 @@ Selv om ideell gass er et hypotetisk konsept er dette en god tilnærming for man
 
 I avsnitt \ref{sec:kinetiskgassteori:reellgass} kommer en kort beskrivelse av hvordan resultatene i dette kapittelet må modifiseres for reelle gasser der ideell gass-tilnærmingen ikke er tilfredsstillende.
 
-\subsection{Temperatur}
+\section{Temperatur}
 \label{sec:kinetiskgassteori:temperatur}
 Fundamentalt sett er temperaturen til et system et mål på hvor mye energi som er lagret i det. I et fast stoff er energien lagret i form av at atomene vibrerer omkring sin likevektsposisjon, samt i form av bevegelsen til ledningeselektronene hvis det faste stoffet er et metall. Vi skal se mer på faste stoffer i avsnittet om varmekapasitet. I fluider er energien lagret i form av kinetisk energi knyttet til translasjon, rotasjon og vibrasjon. 
 
@@ -60,7 +60,7 @@ og siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er
 
 
 
-\subsection{Trykk}
+\section{Trykk}
 Trykket i et fluid kan forstås som et resultat av bevegelsesmengden til molekylene\footnote{Fluidet består enten av enkeltatomer eller av atomer satt sammen til molekyler. For enkelhets skyld omtaler vi de bare som molekyler her, men diskusjonen er identisk uansett om gassen består av enkeltatomer eller sammensatte molekyler} i fluidet. For å gjøre dette litt mer konkret studerer vi det  trykket fluidet forårsaker på veggene til en beholder. Vi har sett i avsnitt \ref{sec:kinetiskgassteori:temperatur} at molekylene i fluidet beveger seg tilfeldig rundt med en gitt hastighetsfordeling. Denne tilfeldige bevegelsen vil gi stadige kollisjoner med veggene av beholderen. Hver kollisjon kan sees på som et elastisk støt\footnote{Dette er en liten forenkling, men resultatene vi utleder blir likevel riktig så lenge gassen og beholderen er i termisk likevekt.} der hastighetskomponenten til atomet normalt på veggen beholder størrelsen, mens retningen snues. Komponenten parallelt med veggen endres ikke. Gitt hastighet før kollisjonen
 \begin{displaymath}
 	\vec{v}_\text{før} = v_\perp \hat{e}_\perp + v_{||} \hat{e}_{||},
@@ -125,7 +125,7 @@ Fra avsnitt \ref{sec:kinetiskgassteori:temperatur} vet vi at $E_\mathrm{k,tr}$ e
 som viser at trykket i en ideell gass er direkte proposjonalt med temperaturen.
 
 
-\subsection{Varmekapasitet}
+\section{Varmekapasitet}
 Ikke alle materialer føles like varme selv om de har samme temperatur. For eksempel vil en metallstang ved $10^\circ\mathrm{C}$ føles kald, mens isopor ved samme temperatur føles varm. Tørr luft ved $100^\circ\mathrm{C}$ føles varm, men vi kan fint oppholde oss i den en liten stund. Vanndamp ved samme temperatur forårsaker straks brannskader. Det er to viktige fysiske størrelser som skaper denne forskjellen: varmekapasitet og varmeledningsevne. Her skal vi se på varmekapasiteten til gasser. Varmekapasiteten til faste stoffer ser vi på i avsnitt \ref{sec:fastestoffer:varmekapasitet}, mens varmeledningsevnen til faste stoffer ser vi på i avsnitt \ref{sec:fastestoffer:varmeledningsevne}. Varmeledningsevnen til gasser ser vi ikke på her da den sjelden er av stor interesse siden konveksjon er mye viktigere i det tilfellet, og det er et tema som krever en del fluidmekanikk for å beskrive skikkelig.
 
 Varmekapasiteten er et mål på hvor mye energi som skal til for å øke temperaturen til et stoff; jo større varmekapasiteten er, jo mer energi skal til for å øke temperaturen et gitt antall grader. Det er vanlig å oppgi varmekapasitet enten som energi per kg og grader celsius eller kelvin\footnote{Siden vi kun er interessert i temperaturforskjeller, og siden celsius- og kelvin-skalaene har like stor avstand mellom gradene er det vilkårlig hvilken vi bruker.}, eller som energi per mol og grader celsius eller kelvin. Varmekapasiteten kan dermed defineres som 
@@ -150,10 +150,10 @@ siden en del av energien går med til å gjøre arbeid på omgivelsene når oppv
 
 Vi kan også se for oss et tilfelle der gassen får lov til å utvide seg, men ikke like mye som når trykket er konstant. I det tilfellet vil vi få en varmekapasitet som ligger et sted mellom $C_V$ og $C_p$, og som kan skrives som en lineærkombinasjon av disse to varmekapasitetene. Vi skal ikke se videre på denne muligheten i denne teksten.
 
-\subsubsection{Varmekapasiteten til en monoatomisk, ideell gass}
+\subsection{Varmekapasiteten til en monoatomisk, ideell gass}
 Vi skal nå beregne varmekapasiteten til monoatomiske ideelle gasser, og vi skal se at vi finner samme varmekapasitet uavhengig av hvor tunge atomer gassen består av. Som nevnt tidligere kan enkeltatomer ikke lagre energi i form av rotasjon, og vi skal også se bort fra muligheten for at elektronene eksiteres siden dette krever mye større energi enn det som er typisk for den termiske energien i gasser. Dermed vil all energi som tilføres gassen bidra til å øke farten til atomene, og dermed den kinetiske energien knyttet til translasjon - $\half mv^2$. 
 
 
 
-\subsection{Reelle gasser}
+\section{Reelle gasser}
 \label{sec:kinetiskgassteori:reellgass}
