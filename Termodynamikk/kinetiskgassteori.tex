@@ -16,7 +16,7 @@ I avsnitt \ref{sec:kinetiskgassteori:reellgass} kommer en kort beskrivelse av hv
 \label{sec:kinetiskgassteori:temperatur}
 Fundamentalt sett er temperaturen til et system et mål på hvor mye energi som er lagret i det. I et fast stoff er energien lagret i form av at atomene vibrerer omkring sin likevektsposisjon, samt i form av bevegelsen til ledningeselektronene hvis det faste stoffet er et metall. Vi skal se mer på faste stoffer i avsnittet om varmekapasitet. I fluider er energien lagret i form av kinetisk energi knyttet til translasjon, rotasjon og vibrasjon. 
 
-Vi begynner med å se på en-atomiske gasser, som for eksempel helium. Siden det ikke er noen binding mellom atomer her er det ikke noen 
+Vi begynner med å se på mono	-atomiske gasser, som for eksempel helium. Siden det ikke er noen binding mellom atomer her er det ikke noen 
 ''fjær'' som kan lagre energi i form av vibrasjon. Vi skal ikke komme videre inn på dette her, men kvantemekanikken forteller oss at en-atomige gasser heller ikke kan lagre energi i form av rotasjon. Dermed er all energi lagret i form av translasjon, slik at den totale energien til gassen kan skrives som
 \begin{displaymath}
 	E = \sum_i \half mv_i^2
@@ -37,25 +37,27 @@ Figur (\ref{fig:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm
 For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden det er et enormt stort antall atomer kan vi tilnærme summen med et integral der vi bruker fordelingsfunksjonen (\ref{eq:kinetiskgassteori:fv}) som vektfunksjon for å ta hensyn til hvor stor andel av atomene som har enhver gitt fart,
 \begin{displaymath}
 \begin{aligned}
-	E &= \int_0^\infty f(v)mv\d v \\
-	&= \int_0^\infty 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} mv^3 e^{-mv^2/2kT} \d v.
+	E &= \int_0^\infty N vf(v)mv\d v \\
+	&= \int_0^\infty 4\pi N\left(\frac{m}{2\pi kT}\right)^{3/2} mv^4 e^{-mv^2/2kT} \d v.
 \end{aligned}
 \end{displaymath}
+Her er $N$ antall atomer i gassen vi ser på. Denne faktoren må være med fordi $f(v)$ er normalisert slik at den gjelder per atom.
+
 Før vi forsøker å beregne dette integralet omorganiserer vi faktorene litt og gjør et variabelbytte,
 \begin{displaymath}
 \begin{aligned}
-	E &= \frac{4 m}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} \d v \\
-	&= \frac{8 kT}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} \frac{m \d v}{2kT} \\
-	& = \frac{8kT}{\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
+	E &= \frac{4Nm}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} v\d v \\
+	&= \frac{8NkT}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} \frac{mv \d v}{2kT} \\
+	& = \frac{8NkT}{\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
 \end{aligned}
 \end{displaymath}
-der $y^2 = mv^2/2kT$, og følgelig $y\d y = m\d v/2kT$. Integralet er her av en klasse som kalles gaussiske integraler og som kan beregnes relativt enkelt. Vi skal ikke gå nærmere inn på hvordan det beregnes her, men bare konstantere at
+der $y^2 = mv^2/2kT$, og følgelig $y\d y = mv\d v/2kT$. Integralet er her av en klasse som kalles gaussiske integraler og som kan beregnes relativt enkelt. Vi skal ikke gå nærmere inn på hvordan det beregnes her, men bare konstantere at
 \begin{displaymath}
-	\int_{-\infty}^\infty y^4e^{-y^2} \d y = \frac{3}{4}\sqrt{\pi},
+	\int_{-\infty}^\infty y^4e^{-y^2} \d y = \frac{3}{4}\sqrt{\pi}.
 \end{displaymath}
-og siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at den totale energien er 
+Siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at den totale energien er 
 \begin{displaymath}
-	E = \frac{8kT}{\sqrt{\pi}}\cdot \frac{3\sqrt{\pi}}{8} = 3kT
+	E = \frac{8NkT}{\sqrt{\pi}}\cdot \frac{3\sqrt{\pi}}{8} = 3NkT
 \end{displaymath}
 
 

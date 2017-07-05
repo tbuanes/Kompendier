@@ -39,4 +39,14 @@ som gir hastighetsfordelingen
 \begin{displaymath}
 	f(\vec{v}) = \left(\frac{m}{2\pi kT}\right)^{3/2}\exp\left(-\frac{m|\vec{v}|^2}{2kT}\right) 
 \end{displaymath}
-Hastighetsfordelingen vi har funnet nå er bare et steg på veien til det vi egentlig er interessert i - nemlig fartsfordelingen $f(v)$. Grunnen til at disse to fordelingene er ulike er at det for enhver fart $v$ finnes en rekke kombinasjoner av $v_x, v_y$ og $v_z$ som realiserer denne farten. 
+Hastighetsfordelingen vi har funnet nå er bare et steg på veien til det vi egentlig er interessert i - nemlig fartsfordelingen $f(v)$. Grunnen til at disse to fordelingene er ulike er at det for enhver fart $v$ finnes en rekke kombinasjoner av $v_x, v_y$ og $v_z$ som realiserer denne farten. Om vi nå ser på hastigheten til partikkelen i et tre-dimensjonalt koordinatsystem med $v_x, v_y$ og $v_z$ på aksene vil alle punkter på et kuleskall sentrert i origo og med radius $v = \sqrt{v_x^2+v_y^2 + v_z^2}$ beskrive kombinasjoner som gir farten $v$. Siden arealet til slike kuleskall vokser med størrelsen på $v$ ser vi da straks at jo større farten er, jo flere kombinasjoner er det som gir denne farten. Vi finner nå fartsfordelingen $f(v)$ ved å starte med hastighetsfordelingen $f(\vec{v})$ og
+\begin{itemize}
+	\item
+	erstatte $|\vec{v}|^2$ med $v^2$,
+	\item
+	multiplisere med vektfaktoren som forteller hvor mange hastighetskombinasjoner som gir en bestemt fart, altså arealet av kuleskallet ($4\pi v^2$).
+\end{itemize}
+Vi er da fremme ved fartsfordelingen vi ønsket å utlede:
+\begin{displaymath}
+	f(v) = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} v^2 e^{-mv^2/2kT}.
+\end{displaymath}
