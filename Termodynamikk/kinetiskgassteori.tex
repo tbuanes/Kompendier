@@ -34,31 +34,70 @@ der $m$ er massen hvert atom, $T$ er temperaturen til gassen og $k = 1.38\times1
 \end{displaymath}
 Figur (\ref{fig:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm{C} = 293~\mathrm{K}$. Her ser vi at det store flertallet av atomer har fart omkring ???, mens en liten andel atomer har langt høyere fart. 
 
-For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden det er et enormt stort antall atomer kan vi tilnærme summen med et integral der vi bruker fordelingsfunksjonen (\ref{eq:kinetiskgassteori:fv}) som vektfunksjon for å ta hensyn til hvor stor andel av atomene som har enhver gitt fart,
+For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden vi så langt har antatt at alle atomene har den samme massen gir dette ganske enkelt
+\begin{displaymath}
+	E = N\frac{1}{2}m\langle v^2 \rangle
+\end{displaymath}
+Der $N$ er antall atomer i gassen og $\langle v^2 \rangle$ er middelverdien av $v^2$. Merk forøvrig at $\langle v^2 \rangle \neq \langle v \rangle^2$ siden fartsfordelingen ikke er symmertisk om den mest sannsynlige farten. Dette diskuteres mer i appendiks \ref{apx:maxwellfordeling}.
+
+Middelverdien til $v^2$ finner vi fra hastighetsfordelingen (\ref{eq:kinetiskgassteori:fv}) ved å beregne integralet
 \begin{displaymath}
 \begin{aligned}
-	E &= \int_0^\infty N vf(v)mv\d v \\
-	&= \int_0^\infty 4\pi N\left(\frac{m}{2\pi kT}\right)^{3/2} mv^4 e^{-mv^2/2kT} \d v.
+	\langle v^2 \rangle &= \int_0^\infty v^2 f(v) \d v \\
+	&= \int_0^\infty 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} v^4 e^{-mv^2/2kT}\d v.
 \end{aligned}
 \end{displaymath}
-Her er $N$ antall atomer i gassen vi ser på. Denne faktoren må være med fordi $f(v)$ er normalisert slik at den gjelder per atom.
-
 Før vi forsøker å beregne dette integralet omorganiserer vi faktorene litt og gjør et variabelbytte,
 \begin{displaymath}
 \begin{aligned}
-	E &= \frac{4Nm}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} v\d v \\
-	&= \frac{8NkT}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} \frac{mv \d v}{2kT} \\
-	& = \frac{8NkT}{\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
+	\langle v^2 \rangle &= \frac{8kT}{m\sqrt{\pi}} \int_0^\infty \left(\frac{m}{2\pi kT}\right)^{3/2}  e^{-mv^2/2kT}\frac{mv\d v}{2kT} \\
+	&=  \frac{8kT}{m\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
 \end{aligned}
 \end{displaymath}
 der $y^2 = mv^2/2kT$, og følgelig $y\d y = mv\d v/2kT$. Integralet er her av en klasse som kalles gaussiske integraler og som kan beregnes relativt enkelt. Vi skal ikke gå nærmere inn på hvordan det beregnes her, men bare konstantere at
 \begin{displaymath}
 	\int_{-\infty}^\infty y^4e^{-y^2} \d y = \frac{3}{4}\sqrt{\pi}.
 \end{displaymath}
-Siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at den totale energien er 
+Siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at middelverdien til $v^2$ er
 \begin{displaymath}
-	E = \frac{8NkT}{\sqrt{\pi}}\cdot \frac{3\sqrt{\pi}}{8} = 3NkT
+	\langle v^2 \rangle = \frac{8kT}{m\sqrt{\pi}}\cdot\half\cdot\frac{3}{4}\sqrt{\pi} = 3\frac{kT}{m}.
 \end{displaymath}
+og dermed blir energien til gassen 
+\begin{equation}
+\label{eq:kinetiskgassteori:Eideellgass}
+	E = N\half m\langle v^2 \rangle = \frac{3}{2}NkT
+\end{equation}
+Ofte måles stoffmengden i mol i stedet for i antall atomer. Et mol er $6.022~\times10^23$ atomer. Uttrykt i form av mol er energien til gassen 
+\begin{equation}
+\label{eq:kinetiskgassteori:EideellgassMol}
+	E = \frac{3}{2}nRT
+\end{equation}
+der $n$ er antall mol i gassen og $R = 8.31~\mathrm{J/(mol\cdot K)}$ er en konstant som er relatert til boltzmann-konstanten $k$, og kalles den universelle gasskonstanten.	
+%Siden det er et enormt stort antall atomer kan vi tilnærme summen med et integral der vi bruker fordelingsfunksjonen (\ref{eq:kinetiskgassteori:fv}) som vektfunksjon for å ta hensyn til hvor stor andel av atomene som har enhver gitt fart,
+%\begin{displaymath}
+%\begin{aligned}
+%	E &= \int_0^\infty N vf(v)mv\d v \\
+%	&= \int_0^\infty 4\pi N\left(\frac{m}{2\pi kT}\right)^{3/2} mv^4 e^{-mv^2/2kT} \d v.
+%\end{aligned}
+%\end{displaymath}
+%Her er $N$ antall atomer i gassen vi ser på. Denne faktoren må være med fordi $f(v)$ er normalisert slik at den gjelder per atom.
+%
+%Før vi forsøker å beregne dette integralet omorganiserer vi faktorene litt og gjør et variabelbytte,
+%\begin{displaymath}
+%\begin{aligned}
+%	E &= \frac{4Nm}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} v\d v \\
+%	&= \frac{8NkT}{\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2kT}\right)^{3/2} e^{-mv^2/2kT} \frac{mv \d v}{2kT} \\
+%	& = \frac{8NkT}{\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
+%\end{aligned}
+%\end{displaymath}
+%der $y^2 = mv^2/2kT$, og følgelig $y\d y = mv\d v/2kT$. Integralet er her av en klasse som kalles gaussiske integraler og som kan beregnes relativt enkelt. Vi skal ikke gå nærmere inn på hvordan det beregnes her, men bare konstantere at
+%\begin{displaymath}
+%	\int_{-\infty}^\infty y^4e^{-y^2} \d y = \frac{3}{4}\sqrt{\pi}.
+%\end{displaymath}
+%Siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at den totale energien er 
+%\begin{displaymath}
+%	E = \frac{8NkT}{\sqrt{\pi}}\cdot \frac{3\sqrt{\pi}}{8} = 3NkT
+%\end{displaymath}
 
 
 
