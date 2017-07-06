@@ -34,9 +34,9 @@ der $m$ er massen hvert atom, $T$ er temperaturen til gassen og $k = 1.38\times1
 \end{displaymath}
 Figur (\ref{fig:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm{C} = 293~\mathrm{K}$. Her ser vi at det store flertallet av atomer har fart omkring ???, mens en liten andel atomer har langt høyere fart. 
 
-For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden vi så langt har antatt at alle atomene har den samme massen gir dette ganske enkelt
+For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden vi så langt har antatt at alle atomene har den samme massen gir dette ganske enkelt\footnote{Når vi omtaler energien i gassen som helhet bruker vi symbolet $U$ i stedet for $E$ siden det er det vanligste symbolet brukt på indre energi i litteraturen.}
 \begin{displaymath}
-	E = N\frac{1}{2}m\langle v^2 \rangle
+	U = N\frac{1}{2}m\langle v^2 \rangle
 \end{displaymath}
 Der $N$ er antall atomer i gassen og $\langle v^2 \rangle$ er middelverdien av $v^2$. Merk forøvrig at $\langle v^2 \rangle \neq \langle v \rangle^2$ siden fartsfordelingen ikke er symmertisk om den mest sannsynlige farten. Dette diskuteres mer i appendiks \ref{apx:maxwellfordeling}.
 
@@ -65,18 +65,18 @@ Siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en
 og dermed blir energien til gassen 
 \begin{equation}
 \label{eq:kinetiskgassteori:Eideellgass}
-	E = N\half m\langle v^2 \rangle = \frac{3}{2}NkT
+	U = N\half m\langle v^2 \rangle = \frac{3}{2}NkT
 \end{equation}
 Ofte måles stoffmengden i mol i stedet for i antall atomer. Et mol er $6.022~\times10^23$ atomer. Uttrykt i form av mol er energien til gassen 
 \begin{equation}
 \label{eq:kinetiskgassteori:EideellgassMol}
-	E = \frac{3}{2}nRT
+	U = \frac{3}{2}nRT
 \end{equation}
 der $n$ er antall mol i gassen og $R = 8.31~\mathrm{J/(mol\cdot K)}$ er en konstant som er relatert til boltzmann-konstanten $k$, og kalles den universelle gasskonstanten.	
 
 Fra det vi har utledet nå ser vi altså at temperaturen til en mono-atomisk gass er direkte proposjonal til summen av kinetisk energi som alle atomene i gassen har. Vi skal ikke se i detalj på gasser med molekyler som består av flere atomer her, men bare konstantere at den samme relasjonen gjelder der også, altså
 \begin{displaymath}
-	E = N\half m_{CoM}\langle v^2\rangle = \frac{3}{2}NkT.
+	U = N\half m_{CoM}\langle v^2\rangle = \frac{3}{2}NkT.
 \end{displaymath}
 Merk at det bare er kinetisk energi knyttet til masse-senterets translasjon som går inn i energi-beregningen her, mens energi knyttet til rotasjon eller intern vibrasjon i molekylene ikke er med.
 
@@ -137,12 +137,12 @@ Vi ser nå på et sylindrisk volum med endeflate $A$ plassert på beholderveggen
 \begin{displaymath}
 	I = F_\perp\d t = \half N|\Delta \vec{p}|,
 \end{displaymath}
-der N er antall molekyler i volumet $V = A\d\ell  = Av_\perp\d t$. Faktoren \half kommer av at med tilfeldig bevegelse vil halvparten av molekylene til enhver tid ha en hastighetskomponent mot veggen, mens andre halvparten har en hastighetskomponent bort fra veggen. Om vi lar $n$ være tettheten av molekyler kan vi da regne ut trykket som
+der N er antall molekyler i volumet $V = A\d\ell  = Av_\perp\d t$. Faktoren \half kommer av at med tilfeldig bevegelse vil halvparten av molekylene til enhver tid ha en hastighetskomponent mot veggen, mens andre halvparten har en hastighetskomponent bort fra veggen. Om vi lar $\eta$ være tettheten av molekyler kan vi da regne ut trykket som
 \begin{displaymath}
 \begin{aligned}
-	p = \frac{F_\perp}{A} &= \half\frac{nV}{A}\frac{|\Delta \vec{p}|}{\d t} 
-	= \half\frac{nAv_\perp\d t}{A\d t}2mv_\perp 
-	= nmv_\perp^2.
+	p = \frac{F_\perp}{A} &= \half\frac{\eta V}{A}\frac{|\Delta \vec{p}|}{\d t} 
+	= \half\frac{\eta Av_\perp\d t}{A\d t}2mv_\perp 
+	= \eta mv_\perp^2.
 \end{aligned}
 \end{displaymath}
 
@@ -160,17 +160,18 @@ Siden bevegelsen er tilfeldig har molekylene lik sannsynlighet for å bevege seg
 \end{displaymath}
 Innsatt i uttrykket for trykk har vi da
 \begin{displaymath}
-	p = nm\langle v_\perp^2 \rangle = \frac{1}{3}nm\langle v^2 \rangle = \frac{2}{3}n\left(\frac{1}{2}m\langle v^2 \rangle\right).
+	p = \eta m\langle v_\perp^2 \rangle = \frac{1}{3}nm\langle v^2 \rangle = \frac{2}{3}\eta \left(\frac{1}{2}m\langle v^2 \rangle\right).
 \end{displaymath}
 Siden $\half m\langle v^2\rangle$ er den gjennomsnittlige kinetiske energien knyttet til molekylenes translasjon kan vi skrive trykket som
 \begin{equation}
-	\label{eq:kinetiskgassteori:pEk}
-	p = \frac{2}{3}nE_\mathrm{k,tr} = \frac{2}{3}\frac{N}{V}E_\mathrm{k,tr}.
+\label{eq:kinetiskgassteori:pEk}
+	p = \frac{2}{3}\eta E_\mathrm{k,tr} = \frac{2}{3}\frac{N}{V}E_\mathrm{k,tr}.
 \end{equation}
 Fra avsnitt \ref{sec:kinetiskgassteori:temperatur} vet vi at $E_\mathrm{k,tr}$ er direkte proporsjonal til termperaturen i gassen, nemlig $E_\mathrm{k,tr} = \frac{3}{2}kT$. Innsatt i (\ref{eq:kinetiskgassteori:pEk}) gir dette
-\begin{displaymath}
-	p = nkT,
-\end{displaymath}
+\begin{equation}
+\label{eq:kinetiskgassteori:eos}
+	p = \frac{NkT}{V} = \frac{nRT}{V},
+\end{equation}
 som viser at trykket i en ideell gass er direkte proposjonalt med temperaturen.
 
 
@@ -182,7 +183,7 @@ Varmekapasiteten er et mål på hvor mye energi som skal til for å øke tempera
 	C = \frac{1}{m}\frac{\d Q}{\d T}\quad\text{eller}\quad
 	C = \frac{1}{n}\frac{\d Q}{\d T}.
 \end{displaymath}
-Her er $Q$ energien som tilføres og $T$ temperturen, slik at $\d Q/\d T$ altså er energi per temperatureendring. $m$ er massen til gassen vi ser på og $n$ er stoffmengden, slik at den første versjonen altså har enhet J/(kg$\cdot$K) og den andre J/(mol$\cdot$K).
+Her er $Q$ den energien som tilføres som varme til gassen og $T$ temperturen, slik at $\d Q/\d T$ altså er varme per temperatureendring. $m$ er massen til gassen vi ser på og $n$ er stoffmengden, slik at den første versjonen altså har enhet J/(kg$\cdot$K) og den andre J/(mol$\cdot$K).
 
 Før vi sier oss helt fornøyd med definisjonen av varmekapasitet er det imidlertid en detalj til vi må få med oss. Når vi øker temperaturen til en gass øker trykket. Hvis gassen er i en beholder som tillater den å utvide volumet sitt, for eksempel en ballong eller i en sylinder med et bevegelig stempel, vil gassen dermed utvide seg når den varmes opp. Men denne utvidelsen innebærer at gassen gjør et arbeid på omgivelsene sine (f.eks. gummien i ballongen eller stempelet i sylinderen), og dermed brukes en del av energien som ble overført til gassen til å gjøre dette arbeidet. Hvis gassen er i en helt stiv beholder slik at volumet holdes konstant vil gassen ikke gjøre noe arbeid og all den tilførte energien går til å øke temperaturen i gassen. Vi forstår dermed at vi må tilføre mer energi til gassen som får lov til å ekspandere enn til den som holdes ved konstant volum for å få få den samme temperaturendringen. Derfor må vi definere to ulike varmekapasiteter - en for konstant trykk (gassen får utvide seg) og en for kontant volum (gassen får ikke utvide seg):
 \begin{displaymath}
@@ -200,9 +201,59 @@ siden en del av energien går med til å gjøre arbeid på omgivelsene når oppv
 Vi kan også se for oss et tilfelle der gassen får lov til å utvide seg, men ikke like mye som når trykket er konstant. I det tilfellet vil vi få en varmekapasitet som ligger et sted mellom $C_V$ og $C_p$, og som kan skrives som en lineærkombinasjon av disse to varmekapasitetene. Vi skal ikke se videre på denne muligheten i denne teksten.
 
 \subsection{Varmekapasiteten til en monoatomisk, ideell gass}
-Vi skal nå beregne varmekapasiteten til monoatomiske ideelle gasser, og vi skal se at vi finner samme varmekapasitet uavhengig av hvor tunge atomer gassen består av. Som nevnt tidligere kan enkeltatomer ikke lagre energi i form av rotasjon, og vi skal også se bort fra muligheten for at elektronene eksiteres siden dette krever mye større energi enn det som er typisk for den termiske energien i gasser. Dermed vil all energi som tilføres gassen bidra til å øke farten til atomene, og dermed den kinetiske energien knyttet til translasjon - $\half mv^2$. 
+Vi skal nå beregne varmekapasiteten til monoatomiske ideelle gasser, og vi skal se at vi finner samme varmekapasitet uavhengig av hvor tunge atomer gassen består av. Som nevnt tidligere kan enkeltatomer ikke lagre energi i form av rotasjon, og vi skal også se bort fra muligheten for at elektronene eksiteres siden dette krever mye større energi enn det som er typisk for den termiske energien i gasser. Dermed vil all energi som tilføres gassen bidra til å øke farten til atomene, og dermed den kinetiske energien knyttet til translasjon -- $\half mv^2$. Fra avsnitt \ref{sec:kinetiskgassteori:temperatur} vet vi at indre energi i gassen er 
+\begin{displaymath}
+	U = \frac{3}{2}NkT = \frac{3}{2}nRT.
+\end{displaymath}
+Det enkleste tilfellet å regne ut er varmekapsiteten ved konstant volum. Siden gassen verken gjør arbeid eller blir gjort arbeid på vil hele varmen gå til å endre den indre energien. Derfor er 
+\begin{displaymath}
+	C_V = \frac{1}{n}\left.\frac{\d Q}{\d T}\right|_V = \frac{1}{n}\frac{\d U}{\d T} = \frac{3}{2}R.
+\end{displaymath}
+Vi ser altså at alle monoatmoiske, ideelle gasser har samme varmekapasitet uansett hva atomvekten til gassen er; og at varmekapasiteten er uavhengig av termperaturen. 
 
+For å beregne varmekapasiteten ved konstant trykk må vi få med effekten av at gassen gjør et arbeid på omgivelsene når en utvider seg, eventuelt at omgivelsene gjør et arbeid på gassen når den komprimeres. Derfor er 
+\begin{equation}
+\label{eq:kinetiskgassteori:cpw}
+	C_P = \frac{1}{n}\left.\frac{\d Q}{\d T}\right|_p = \frac{1}{n}\left(\frac{\d U}{\d T} + \frac{\d W}{\d T}\right), 
+\end{equation}
+der $\frac{\d W}{\d T}$ er det arbeidet arbeid per temperaturendring i gassen. Fra ligning (\ref{eq:kinetiskgassteori:eos}) har vi
+\begin{displaymath}
+	pV = NkT = nRT
+\end{displaymath}
+Om vi differensierer denne ligningen under vilkåret at trykket er konstant, dvs $\d p = 0$, finner vi
+\begin{displaymath}
+	p\d V = nR\d T.
+\end{displaymath}
+Venstresiden her er nettopp arbeidet gassen gjør, altså
+\begin{displaymath}
+	\d W = p\d V = nR\d T.
+\end{displaymath}
+Om vi setter dette inn i ligning (\ref{eq:kinetiskgassteori:cpw}) finner vi
+\begin{displaymath}
+	C_P = \frac{1}{n}\frac{\d U}{\d T} + R = C_V + R = \frac{5}{2}R.
+\end{displaymath}
 
+\subsection{Varmekapastiteten til fleratomiske, ideelle gasser}
+Som nevnt vil vi noen ganger myke opp litt på det siste kravet til ideelle gasser, og tillate at indre energi kan lagres på andre måter enn i form av translasjon. Dette gjør at vi kan behandle gasser med molekyler som består av mer enn et molekyl. Vi vil behandle gassen akkurat som andre ideelle gasser med unntak av at vi tillater at indre energi også kan lagres i form av rotasjon og vibrasjon. Husk at vi bemerket i avsnitt \ref{sec:kinetiskgassteori:temperatur} at det likevel bare er den delen av energien som er i form av translasjonsenergi som påvirker temperaturen til gassen.
+
+Det viser seg at hvis vi forsøker å beskrive rotasjonen og vibrasjonen til gassmolekylene med klassisk mekanikk får vi resultater som er feil. Vi må derfor bruke kvantemeknikk til å beskrive dette. Vi skal ikke går nærmere inn på den kvantemekaniske beskrivelsen her, bare oppsummere resultatene. I klassisk mekanikk kan vi beskrive enhver rotasjon som en kombinasjon av rotasjon om tre ortogonale akser (f.eks. $x, y$ og $z$). Det samme kan vi gjøre i en kvantemekanisk beskrivelse, men det viser seg at ikke alle molekyler kan ha energi knyttet til alle rotasjonsakser. Som tidligere nevnt kan et enkeltatom ikke lagre energi i form av rotasjon i det hele tatt. Hvis vi har et lineær molekyl som, f.eks. O$_2$ eller CO$_2$, kan det lagres energi knyttet til rotasjonen om de to aksene som står normalt på forbindelseslinjen mellom atomene, men ikke om aksen langs forbindelseslinjen. Molekyler som er ikke-lineære kan lagre energi knyttet til rotasojn om tre akser.
+
+Energien som lagres knyttet til hver av de mulige rotasjonsaksene er $E_\text{rot} = \half kT$. Merk forøvrig at dette er nøyaktig den samme energien som er knyttet til translasjon i hver av de tre mulige retningene ($x,y,z$). Det er imidlertid en viktig forskjell her: Kvantemekanikken forteller at det er en minste energi som er nødvendig for å sette molekylet i rotasjon. Med andre ord må temperaturen være tilstrekkelig høy slik at $\half kT$ er større enn denne terskelenergien for at noe energi skal lagres som rotasjon. Hvor stor denne terskelenergien er er avhengig av hvilket molekyl det er snakk om.
+
+Molekyler som består av to eller flere atomer kan også lagre energi ved at de vibrerer. Dette kan man tenke på som om atomene er bundet sammen av en fjær som periodisk trykkes sammen og strekkes. Avhengig av antall atomer og geometrien til molekylet kan det være en eller flere slike vibrasjonsmoder som kan lagre energi. [...]
+
+Antallet tilgjengelige "moder" å lagre energi kaller vi for antall frihetsgrader, vanligvis benevnt med symbolet $\gamma$. Frihetsgradene knyttet til translasjon er alltid tilgjengelig for alle gasser\footnote{Det er mulig å lage systemer som oppfører seg som om de var \'en- eller to-dimensjonale, men det ser vi bort fra her.} vil vi ha $\gamma\leq3$. For mono-atomiske gasser er $\gamma = 3$, og det samme tallet finner vi for fleratomiske gasser når temperaturen er for lav til å aktivere rotasjon- og vibrasjonsmoder. For et to-atomig molekyl ved en temperatur der de kan rotere, men ikke vibrere er $\gamma = 3+ 2 = 5$. For et ikke-lineær molekyl (f.eks. H$_2$O) ved en temperatur der det kan rotere, men ikke vibrere er $\gamma = 3+3 = 6$. Den indre energien til gassen kan nå skrives som 
+\begin{displaymath}
+	U = \frac{\gamma}{2}nRT.
+\end{displaymath}
+Vi kan nå som tidligere derivere og finne varmekapasiteten:
+\begin{displaymath}
+\begin{aligned}
+	C_V &= \frac{1}{n}\left.\frac{\d Q}{\d T}\right|_V = \frac{1}{n} \frac{\d U}{\d T} = \frac{\gamma}{2}R \\
+	C_p &= \frac{1}{n}\left.\frac{\d Q}{\d T}\right|_p = \frac{1}{n} \frac{\d U}{\d T} + R = C_V + R = \frac{\gamma+2}{2}R
+\end{aligned}
+\end{displaymath}
+Merk at for fleratomige gasser er $\gamma$ temperaturavhengig, slik at for fleratomige gasser er ikke varmekapasiteten uavhengig av temperaturen, men plottet mot stigende temperatur finner vi den som en rekke flate platåer med økende høyde. Ved romtemperatur kan vi regne med at rotasjonsmodene er aktivert, men ikke vibrasjonsmodene. [sjekk!]
 
 \section{Reelle gasser}
 \label{sec:kinetiskgassteori:reellgass}
