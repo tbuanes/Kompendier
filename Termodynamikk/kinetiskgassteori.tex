@@ -32,7 +32,13 @@ der $m$ er massen hvert atom, $T$ er temperaturen til gassen og $k = 1.38\times1
 \begin{displaymath}
 	P(v_1 < v < v_2) = \int_{v_1}^{v_2} f(v) \d v.
 \end{displaymath}
-Figur (\ref{fig:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm{C} = 293~\mathrm{K}$. Her ser vi at det store flertallet av atomer har fart omkring ???, mens en liten andel atomer har langt høyere fart. 
+Figur (\ref{fig:kinetiskgassteori:Maxwelldist}) viser $f(v)$ for heliumgass ved $T=20^\circ\mathrm{C} = 293~\mathrm{K}$ og $T = 1000~\mathrm{K}$. Ved $293~\mathrm{K}$ ser vi at det store flertallet av atomer har en fart omkring $1000~\mathrm{m/s}$, mens en del atomer har vesentlig større fart. Når temperaturen øker til $1000~\mathrm{K}$ ser vi to endringer. For det første ser vi at temperaturen flest atomer har nå har økt til omkring $2000~\mathrm{m/s}$. For det andre ser vi at spredingen i farten til atomene er større, slik at en mindre andel av atomene har den hyppigst forekommende farten.
+
+\begin{figure}[htp]
+	\includegraphics{./MaxwellDistributionHelium}
+	\caption{Sannsynlighetsfordeling for farten til atomene i heliumgass ved temperatur 293 K (blå) og 1000 K (rød).}
+	\label{fig:kinetiskgassteori:Maxwelldist}
+\end{figure}
 
 For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden vi så langt har antatt at alle atomene har den samme massen gir dette ganske enkelt\footnote{Når vi omtaler energien i gassen som helhet bruker vi symbolet $U$ i stedet for $E$ siden det er det vanligste symbolet brukt på indre energi i litteraturen.}
 \begin{displaymath}
@@ -110,7 +116,7 @@ Merk at det bare er kinetisk energi knyttet til masse-senterets translasjon som 
 
 
 \section{Trykk}
-Trykket i et fluid kan forstås som et resultat av bevegelsesmengden til molekylene\footnote{Fluidet består enten av enkeltatomer eller av atomer satt sammen til molekyler. For enkelhets skyld omtaler vi de bare som molekyler her, men diskusjonen er identisk uansett om gassen består av enkeltatomer eller sammensatte molekyler} i fluidet. For å gjøre dette litt mer konkret studerer vi det  trykket fluidet forårsaker på veggene til en beholder. Vi har sett i avsnitt \ref{sec:kinetiskgassteori:temperatur} at molekylene i fluidet beveger seg tilfeldig rundt med en gitt hastighetsfordeling. Denne tilfeldige bevegelsen vil gi stadige kollisjoner med veggene av beholderen. Hver kollisjon kan sees på som et elastisk støt\footnote{Dette er en liten forenkling, men resultatene vi utleder blir likevel riktig så lenge gassen og beholderen er i termisk likevekt.} der hastighetskomponenten til atomet normalt på veggen beholder størrelsen, mens retningen snues. Komponenten parallelt med veggen endres ikke. Gitt hastighet før kollisjonen
+Trykket i et fluid kan forstås som et resultat av bevegelsesmengden til molekylene\footnote{Fluidet består enten av enkeltatomer eller av atomer satt sammen til molekyler. For enkelhets skyld omtaler vi de bare som molekyler her, men diskusjonen er identisk uansett om gassen består av enkeltatomer eller sammensatte molekyler} i fluidet. For å gjøre dette litt mer konkret studerer vi det  trykket fluidet forårsaker på veggene til en beholder. Vi har sett i avsnitt \ref{sec:kinetiskgassteori:temperatur} at molekylene i fluidet beveger seg tilfeldig rundt med en gitt hastighetsfordeling. Denne tilfeldige bevegelsen vil gi stadige kollisjoner med veggene av beholderen. Hver kollisjon kan sees på som et elastisk støt\footnote{Dette er en liten forenkling, men resultatene vi utleder blir likevel riktig så lenge gassen og beholderen er i termisk likevekt.} der hastighetskomponenten til atomet normalt på veggen beholder størrelsen, mens retningen snues. Komponenten parallelt med veggen endres ikke. Dette er illustrert i figur \ref{fig:kinetiskgassteori:deltaV}. Gitt hastighet før kollisjonen
 \begin{displaymath}
 	\vec{v}_\text{før} = v_\perp \hat{e}_\perp + v_{||} \hat{e}_{||},
 \end{displaymath}
@@ -123,6 +129,14 @@ Siden hastighetskomponenten normalt på veggen endrer fortegn får vi en endring
 	\Delta \vec{p} = -2mv_\perp\hat{e}_\perp.
 \end{displaymath}
 Dette betyr at veggen har virket på atomet med en kraft normalt på veggen. Motkraften til denne kraften er den kraften fra molekylet som forsøker å dytte veggen utover. Siden trykk er kraft normalt på en flate delt på arealet av en flate kan vi altså finne trykket ved å summere effekten av alle molekylene som kolliderer med veggen.
+
+\begin{figure}[tp]
+\begin{center}
+	\includegraphics[height=.4\textwidth]{./DeltaVkollisjon}
+	\caption{Vi modellerer kollisjonene mellom gassmolekylene og veggen av beholderen som fullstendig elastisk. Da vil hastighetskomponenten parallelt med veggen være uendret mens hastighetskomponenten normalt på veggen beholder størrelsen, men retningen snur.}
+	\label{fig:kinetiskgassteori:deltaV}
+\end{center}
+\end{figure}
 
 Før vi ser mer på det kvantitative i denne prosessen gjør vi noen viktige observasjoner:
 \begin{itemize}
@@ -160,7 +174,7 @@ Siden bevegelsen er tilfeldig har molekylene lik sannsynlighet for å bevege seg
 \end{displaymath}
 Innsatt i uttrykket for trykk har vi da
 \begin{displaymath}
-	p = \eta m\langle v_\perp^2 \rangle = \frac{1}{3}nm\langle v^2 \rangle = \frac{2}{3}\eta \left(\frac{1}{2}m\langle v^2 \rangle\right).
+	p = \eta m\langle v_\perp^2 \rangle = \frac{1}{3}\eta m\langle v^2 \rangle = \frac{2}{3}\eta \left(\frac{1}{2}m\langle v^2 \rangle\right).
 \end{displaymath}
 Siden $\half m\langle v^2\rangle$ er den gjennomsnittlige kinetiske energien knyttet til molekylenes translasjon kan vi skrive trykket som
 \begin{equation}
@@ -253,7 +267,7 @@ Vi kan nå som tidligere derivere og finne varmekapasiteten:
 	C_p &= \frac{1}{n}\left.\frac{\d Q}{\d T}\right|_p = \frac{1}{n} \frac{\d U}{\d T} + R = C_V + R = \frac{\gamma+2}{2}R
 \end{aligned}
 \end{displaymath}
-Merk at for fleratomige gasser er $\gamma$ temperaturavhengig, slik at for fleratomige gasser er ikke varmekapasiteten uavhengig av temperaturen, men plottet mot stigende temperatur finner vi den som en rekke flate platåer med økende høyde. Ved romtemperatur kan vi regne med at rotasjonsmodene er aktivert, men ikke vibrasjonsmodene. [sjekk!]
+Merk at for fleratomige gasser er $\gamma$ temperaturavhengig, slik at for fleratomige gasser er ikke varmekapasiteten uavhengig av temperaturen, men plottet mot stigende temperatur finner vi den som en rekke flate platåer med økende høyde. Ved romtemperatur kan vi regne med at rotasjonsmodene er aktivert, men ikke vibrasjonsmodene. 
 
 \section{Reelle gasser}
 \label{sec:kinetiskgassteori:reellgass}
