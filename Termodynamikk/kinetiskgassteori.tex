@@ -41,10 +41,11 @@ Figur (\ref{fig:kinetiskgassteori:Maxwelldist}) viser $f(v)$ for heliumgass ved 
 \end{figure}
 
 For å finne den total energien som er lagret i gassen må vi summere over den kinetiske energien til alle enkeltatomene. Siden vi så langt har antatt at alle atomene har den samme massen gir dette ganske enkelt\footnote{Når vi omtaler energien i gassen som helhet bruker vi symbolet $U$ i stedet for $E$ siden det er det vanligste symbolet brukt på indre energi i litteraturen.}
-\begin{displaymath}
+\begin{equation}
+\label{eq:kinetiskgassteori:U}
 	U = N\frac{1}{2}m\langle v^2 \rangle
-\end{displaymath}
-Der $N$ er antall atomer i gassen og $\langle v^2 \rangle$ er middelverdien av $v^2$. Merk forøvrig at $\langle v^2 \rangle \neq \langle v \rangle^2$ siden fartsfordelingen ikke er symmertisk om den mest sannsynlige farten. Dette diskuteres mer i appendiks \ref{apx:maxwellfordeling}.
+\end{equation}
+Der $N$ er antall atomer i gassen og $\langle v^2 \rangle$ er middelverdien av $v^2$. Merk forøvrig at $\langle v^2 \rangle \neq \langle v \rangle^2$ siden fartsfordelingen ikke er symmetrisk om den mest sannsynlige farten. Dette diskuteres mer i appendiks \ref{apx:maxwellfordeling}.
 
 Middelverdien til $v^2$ finner vi fra hastighetsfordelingen (\ref{eq:kinetiskgassteori:fv}) ved å beregne integralet
 \begin{displaymath}
@@ -53,27 +54,16 @@ Middelverdien til $v^2$ finner vi fra hastighetsfordelingen (\ref{eq:kinetiskgas
 	&= \int_0^\infty 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} v^4 e^{-mv^2/2kT}\d v.
 \end{aligned}
 \end{displaymath}
-Før vi forsøker å beregne dette integralet omorganiserer vi faktorene litt og gjør et variabelbytte,
+Beregningen av dette integralet er vist i avsnitt \ref{apx:maxwellfordeling:middel} og gir resultatet
 \begin{displaymath}
-\begin{aligned}
-	\langle v^2 \rangle &= \frac{8kT}{m\sqrt{\pi}} \int_0^\infty \left(\frac{m}{2\pi kT}\right)^{3/2}  e^{-mv^2/2kT}\frac{mv\d v}{2kT} \\
-	&=  \frac{8kT}{m\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
-\end{aligned}
+	\langle v^2 \rangle = \frac{3kT}{m}.
 \end{displaymath}
-der $y^2 = mv^2/2kT$, og følgelig $y\d y = mv\d v/2kT$. Integralet er her av en klasse som kalles gaussiske integraler og som kan beregnes relativt enkelt. Vi skal ikke gå nærmere inn på hvordan det beregnes her, men bare konstantere at
-\begin{displaymath}
-	\int_{-\infty}^\infty y^4e^{-y^2} \d y = \frac{3}{4}\sqrt{\pi}.
-\end{displaymath}
-Siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at middelverdien til $v^2$ er
-\begin{displaymath}
-	\langle v^2 \rangle = \frac{8kT}{m\sqrt{\pi}}\cdot\half\cdot\frac{3}{4}\sqrt{\pi} = 3\frac{kT}{m}.
-\end{displaymath}
-og dermed blir energien til gassen 
+Innsatt i ligning (\ref{eq:kinetiskgassteori:U}) finner vi da at energien til gassen kan skrives som
 \begin{equation}
 \label{eq:kinetiskgassteori:Eideellgass}
 	U = N\half m\langle v^2 \rangle = \frac{3}{2}NkT
 \end{equation}
-Ofte måles stoffmengden i mol i stedet for i antall atomer. Et mol er $6.022~\times10^23$ atomer. Uttrykt i form av mol er energien til gassen 
+Ofte måles stoffmengden i mol i stedet for i antall atomer. Et mol er $6.022~\times10^{23}$ atomer. Uttrykt i form av mol er energien til gassen 
 \begin{equation}
 \label{eq:kinetiskgassteori:EideellgassMol}
 	U = \frac{3}{2}nRT
@@ -82,7 +72,7 @@ der $n$ er antall mol i gassen og $R = 8.31~\mathrm{J/(mol\cdot K)}$ er en konst
 
 Fra det vi har utledet nå ser vi altså at temperaturen til en mono-atomisk gass er direkte proposjonal til summen av kinetisk energi som alle atomene i gassen har. Vi skal ikke se i detalj på gasser med molekyler som består av flere atomer her, men bare konstantere at den samme relasjonen gjelder der også, altså
 \begin{displaymath}
-	U = N\half m_{CoM}\langle v^2\rangle = \frac{3}{2}NkT.
+	U = N\half m_{CoM}\langle v^2\rangle = \frac{3}{2}nRT.
 \end{displaymath}
 Merk at det bare er kinetisk energi knyttet til masse-senterets translasjon som går inn i energi-beregningen her, mens energi knyttet til rotasjon eller intern vibrasjon i molekylene ikke er med.
 

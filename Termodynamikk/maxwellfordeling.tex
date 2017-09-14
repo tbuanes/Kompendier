@@ -50,3 +50,104 @@ Vi er da fremme ved fartsfordelingen vi ønsket å utlede:
 \begin{displaymath}
 	f(v) = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} v^2 e^{-mv^2/2kT}.
 \end{displaymath}
+
+
+
+\section{Middelverdier av farten i en Maxwellfordeling}
+\label{apx:maxwellfordeling:middel}
+Siden Maxwellfordelingen er asymmetrisk vil ulike mål på middelverdien gi ulikt resultat, og det er viktig å bruke det riktige målet i riktig sammenheng. Vi skal her se på tre ulike mål på middelverdien:
+\begin{itemize}
+	\item
+	aritmetisk middel, $\langle v \rangle$,
+	\item
+	mest sannsylige verdi, dvs.~den farten som flest molekyler har, $v_\text{mp}$,
+	\item
+	kvadratisk gjennomsnitt, ofte kalt rms (root-mean-square), $v_\text{rms} = \sqrt{\langle v^2 \rangle}$.
+\end{itemize}
+
+\subsection{Aritmetisk middel}
+Det aritmetiske middelet er det middelmålet som man vanligvis tenker på når man snakker om gjennomsnitt. Dette beregnes vanligvis ved å summere verdien av alle datapunktene (her farten til molekylene) og dele på antallet. I vårt tilfelle er det imidlertid mer praktisk å regne det ut fra fordelingsfunksjonen. Vi finner da det aritmetiske middelet ved å beregne integralet
+\begin{displaymath}
+	\langle v \rangle = \int_0^\infty v f(v) \d v = 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} \int_0^\infty v^3 e^{-mv^2/2kT} \d v.
+\end{displaymath}
+Før vi forsøker å beregne dette integralet omorganiserer vi faktorene litt og gjør et variabelbytte,
+\begin{displaymath}
+\begin{aligned}
+	\langle v \rangle &= \sqrt{\frac{32kT}{m\pi}} \int_0^\infty \sqrt{\frac{2kT}{mv^2}}\left(\frac{mv^2}{2 kT}\right)^{3/2}  e^{-mv^2/2kT}\frac{mv\d v}{2kT} \\
+	&= \sqrt{\frac{32kT}{m\pi}} \int_0^\infty \frac{mv^2}{2 kT} e^{-mv^2/2kT}\frac{mv\d v}{2kT} \\
+	&=   \sqrt{\frac{32kT}{m\pi}}  \int_0^\infty y^3 e^{-y^2} \d y,
+\end{aligned}
+\end{displaymath}
+der $y^2 = mv^2/2kT$, og følgelig $y\d y = mv\d v/2kT$. Integralet er her av en klasse som kalles gaussiske integraler og som kan beregnes relativt enkelt. Vi skal ikke gå nærmere inn på hvordan det beregnes her, men bare konstantere at
+\begin{displaymath}
+	\int_0^\infty y^3 e^{-y^2} \d y = \half.
+\end{displaymath}
+Dermed finner vi at det aritmetiske middelet av farten er
+\begin{equation}
+	\langle v \rangle = \sqrt{\frac{8kT}{m\pi}}.
+\end{equation}
+
+
+\subsection{Mest sannsynlige verdi}
+Den mest sannsynlige verdien til farten gitt ved Maxwellfordelingen finner vi der fordelingsfunksjonen har et topp-punkt. Dette punktet finner vi enkelt ved å sette den deriverte av funksjonen lik 0,
+\begin{displaymath}
+	0 = \frac{\d}{\d v}f(v) = \frac{\d}{\d v} \left[ 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} v^2 e^{-mv^2/2kT}\right].
+\end{displaymath}
+For å forenkle notasjonen litt dropper vi normaliseringskonstanten som uansett ikke har noen innvirkning på hvor topp-punktet ligger,
+\begin{displaymath}
+\begin{aligned}
+	0 &= \frac{\d}{\d v}v^2e^{-mv^2/2kT} \\
+	&= 2ve^{-mv^2/2kT} - v^2\left(\frac{mv}{kT}\right)e^{-mv^2/2kT} \\
+	&= 2v\left(1-\frac{mv^2}{2kT}\right)e^{-mv^2/2kT}.
+\end{aligned}
+\end{displaymath}
+Vi ser at den deriverte har to nullpunkter. $v=0$ svarer opplagt ikke til funksjonens makspunkt, dermed er det 
+\begin{displaymath}
+	1-\frac{mv^2}{2kT} = 0
+\end{displaymath}
+vi er interessert i. Dette forteller oss at den mest sannsynlige hastigheten er
+\begin{displaymath}
+	v_\text{mp} = \sqrt{\frac{2kT}{m}}.
+\end{displaymath}
+
+
+\subsection{Kvadratisk gjennomsnitt}
+For å beregne det kvadratiske gjennomsnittet må vi beregne integralet
+\begin{displaymath}
+\begin{aligned}
+	\langle v^2 \rangle &= \int_0^\infty v^2 f(v) \d v \\
+	&= 4\pi\left(\frac{m}{2\pi kT}\right)^{3/2} \int_0^\infty v^4 e^{-mv^2/2kT}\d v.
+\end{aligned}
+\end{displaymath}
+Før vi forsøker å beregne dette integralet omorganiserer vi faktorene litt og gjør et det samme variabelbyttet som vi gjorde da vi beregnet det aritmetiske middelet,
+\begin{displaymath}
+\begin{aligned}
+	\langle v^2 \rangle &= \frac{8kT}{m\sqrt{\pi}} \int_0^\infty \left(\frac{mv^2}{2 kT}\right)^{3/2}  e^{-mv^2/2kT}\frac{mv\d v}{2kT} \\
+	&=  \frac{8kT}{m\sqrt{\pi}} \int_0^\infty y^4 e^{-y^2} \d y,
+\end{aligned}
+\end{displaymath}
+der $y^2 = mv^2/2kT$, og følgelig $y\d y = mv\d v/2kT$. Også dette er et gaussisk integral, og heller ikke her skal vi gå nærmere inn på hvordan det beregnes her, men bare konstantere at
+\begin{displaymath}
+	\int_{-\infty}^\infty y^4e^{-y^2} \d y = \frac{3}{4}\sqrt{\pi}.
+\end{displaymath}
+Siden integralet vårt kun går fra $0$ til $\infty$, og siden integranden er en jamn funksjon har integralet vårt halve verdien av dette, altså $3\sqrt{\pi}/8$. Vi finner dermed at middelverdien til $v^2$ er
+\begin{displaymath}
+	\langle v^2 \rangle = \frac{8kT}{m\sqrt{\pi}}\cdot\half\cdot\frac{3}{4}\sqrt{\pi} = 3\frac{kT}{m}.
+\end{displaymath}
+Det kvadratiske gjennomsnittet finner vi nå enkelt ved å ta kvadratroten av $\langle v^2 \rangle$:
+\begin{equation}
+	v_\text{rms} = \sqrt{\frac{3kT}{m}}.
+\end{equation}
+$v_\text{rms}$ er av spesielt stor interesse for oss siden den kinetiske energien til atomene er proposjonal med $v^2$. Dette gjør at $v_\text{rms}$ i de fleste sammenhenger er det mest interessante middelmålet for en Maxwellfordeling.
+
+
+\subsection{Sammenligning av de ulike middelverdiene}
+Vi har nå regnet ut tre ulike mål for middelverdien til farten av molekylene. Alle målene har formen
+\begin{displaymath}
+	v_\text{middel} = A\sqrt{\frac{kT}{m}}
+\end{displaymath}
+der $A$ er en konstant som er ulik avhengig av om vi ser på å aritmetisk middel, mest sannsynlige verdi eller kvadratisk middel. Det relative forholdet mellom disse tre målene for middelverdi er altså uavhengig av hvilken gass det er snakk om  og hva temperaturen er. Om vi rangerer de ulike målene fra minst til størst finner vi
+\begin{displaymath}
+	v_\text{mp} < \langle v \rangle < v_\text{rms}.
+\end{displaymath}
+At både $\langle v \rangle$ og $v_\text{rms}$ er større enn den mest sannsynlige farten er lett å forstå siden fordelingen strekker seg lengre ut mot stor verdi av farten enn liten. Dermed har vi noen relativt få atomer som trekker opp middelverdien. 
