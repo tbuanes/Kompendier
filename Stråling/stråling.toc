@@ -1,0 +1,18 @@
+\select@language {norsk}
+\contentsline {chapter}{\numberline {1}Introduksjon}{3}
+\contentsline {section}{\numberline {1.1}Elektromagnetisk str\IeC {\r a}ling}{3}
+\contentsline {section}{\numberline {1.2}Partikkelstr\IeC {\r a}ling}{4}
+\contentsline {section}{\numberline {1.3}Biologisk effekt av str\IeC {\r a}ling}{4}
+\contentsline {chapter}{\numberline {2}Radiokativitet}{5}
+\contentsline {section}{\numberline {2.1}Levetiden til ustabile isotoper}{5}
+\contentsline {section}{\numberline {2.2}Kilder til radioaktiv str\IeC {\r a}ling}{6}
+\contentsline {section}{\numberline {2.3}$\alpha $-str\IeC {\r a}ling}{6}
+\contentsline {section}{\numberline {2.4}$\beta $-str\IeC {\r a}ling}{6}
+\contentsline {section}{\numberline {2.5}$\gamma $-str\IeC {\r a}ling}{7}
+\contentsline {section}{\numberline {2.6}N\IeC {\o }ytron-str\IeC {\r a}ling}{7}
+\contentsline {section}{\numberline {2.7}Biologisk effekt av radioaktiv str\IeC {\r a}ling}{7}
+\contentsline {subsection}{\numberline {2.7.1}Aktivitet}{7}
+\contentsline {subsection}{\numberline {2.7.2}Absorbert dose}{8}
+\contentsline {subsection}{\numberline {2.7.3}Ekvivalent dose}{8}
+\contentsline {subsection}{\numberline {2.7.4}Effektiv dose}{8}
+\contentsline {chapter}{\numberline {3}Ultrafiolett str\IeC {\r a}ling}{11}
