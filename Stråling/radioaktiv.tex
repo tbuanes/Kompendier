@@ -37,3 +37,60 @@ For ulike ustabile isotoper kan halvveringstiden til variere fra små brøkdeler
 $\alpha$-stråling består av heliumkjerner---det vil si atomkjerner med 2 protoner og 2 nøytroner---og de har da elektrisk ladning $+2e$. Den elektriske ladningen gjør at $\alpha$-partiklene kan ionisere atomer. I tillegg vil de---siden de består av protoner og nøytroner---også vekselvirke via den sterke kjernekraften. Kombinasjonen av stor masse (sammenlignet med massen f.eks.~elektroner) og sterk kjernekraft gjør at det kreves lite materiale for å stanse $\alpha$-stråling. {\color{red}[Litt kvantitativt om hva lite materiale betyr]} Den praktiske konsekvensen av dette er at det er enkelt å skjerme seg mot $\alpha$-stråling. Til gjengjeld vil $\alpha$-stråling avsette energien sin i et konsentrert område om den ikke er skjermet, og kan da gi betydelig vev-skade. Dette gjør at radioaktive stoffer som henfaller ved å sende ut $\alpha$-stråling først og fremst er farlig hvis de kommer direkte kontakt med huden eller kommer inn i kroppen. Sistnevnte er spesielt aktuelt med radon-gass som pustes inn.
 
 \section{$\beta$-stråling}
+$\beta$-stråling er elektroner eller positroner som sendes ut fra kjernen ved at et nøytron gjøres om til et proton eller omvendt. Ladningen til $\beta$-strålene er $\pm e$. Siden elektroner og positroner ikke kjenner den sterke kjernekraften er $\beta$-stråler vanskeligere å skjerme seg mot enn $\alpha$-stråling, men den lave partikkelmassen gjør at $\beta$-strålene likevel lar seg stoppe relativt enkelt. {\color{red}[Litt kvantitativt om hva lite materiale betyr]}
+
+\section{$\gamma$-stråling}
+$\gamma$-stråling er høyenergetiske elektromagnetisk stråling som sendes ut fra atomkjernen. Strålingen sendes ut når en eksitert kjerne går ned til grunntilstanden. Den eksiterte kjernen er som regel et resultat av enten et tidligere $\beta$-henfall eller en elektron-innfanging---det vil si at et av elektronene til atomet fanges inn i kjernen og bidrar til at et proton gjøres om til et elektron. Dette betyr at radioaktive stoffer som er kilde til $\beta$-stråling vanligvis også er kilde til $\gamma$-stråling. Siden fotoner ikke har elektrisk ladning, og ikke merker de sterke kjernekreftene, er $\gamma$-stråling vesentlig vanskeligere å skjerme seg mot enn $\alpha$- og $\beta$-stråling. 
+
+\section{Nøytron-stråling}
+Nøytron-stråling regnes vanligvis ikke med blant når man diskuterer radioaktiv stråling, men er likevel en viktig form for partikkelstråling som oppstår i fisjonsprosesser. 
+
+\section{Biologisk effekt av radioaktiv stråling}
+Alle typer radioaktiv stråling er i stand til å ionisere atomer og kan derfor skade biologisk vev. Hvor stor skadevirkningen er avhenger både av hvilken type stråling det er, energien til hver enkelt partikkel, og selvfølgelig intensiteten---altså hvor mange partikler man blir truffet av. Når man diskuterer eksponering for radioaktiv stråling er det en rekke ulike fysiske størrelser som er i bruk. En del av de viktigste er oppsummert her.
+
+\subsection{Aktivitet}
+Aktiviteten måler hvor ofte et radioaktivt henfall skjer, og gir derfor et mål på intensiteten av den radioaktive strålingen. Aktivitet er uavhengig av hva slags type radioaktiv stråling vi har. Måleenheten for aktivitet er bequerel ($1~\mathrm{Bq} = 1~\mathrm{s^{-1}}$). En eldre måleenhet man noen ganger treffer på er Curie ($1~\mathrm{Ci} = 3.7\times10^{10}~\mathrm{Bq}$). Siden aktiviteten måler hvor ofte et radioaktivt henfall skjer avhenger den både av hvilken radioaktiv isotop vi har med å gjøre på grunn av halvveringstiden, og hvor mye vi har av den aktuelle isotopen. 
+
+\subsection{Absorbert dose}
+Absorbert dose måler hvor mye energi ioniserende stråling avgir i et volum, normalisert med hvor mye masse som er i dette volumet. Måleenheten for absorbert dose er gray ($1~\mathrm{Gy}= 1~\mathrm{J/kg}$). En eldre enhet man kan treffe på er rad ($1~\mathrm{rad} = 10^{-2}~\mathrm{Gy}$). Siden absorbert dose forteller om størrelsen på energiavsetningen er den nyttig for å beskrive skadepotensialet til den radioaktive strålingen, men den tar ikke hensyn til at ulike typer radioaktiv stråling har ulik biologisk virkning.
+
+\subsection{Ekvivalent dose}
+Ekvivalent dose ligner på absorbert dose, men tar også med en vektfaktor som tar hensyn til ulik biologisk virkning av ulik stråling. Enheten for ekvivalen dose er sievert (Sv). Man kan også treffe på enheten rem ($1~\mathrm{rem} = 10^{-2}~\mathrm{Sv}$). Om man eksponeres for en eller flere typer radioaktiv stråling med absorbert dose $D_{T,R}$ av type $R$ i organ $T$ beregnes den ekvivalente dosen som
+\begin{equation}
+	H_T = \sum_R w_R\times D_{T,R},
+\end{equation}
+der $w_R$ er en vektfaktoren som tar hensyn til ulik virkning av ulike typer stråling. Tabell \ref{tab:radioaktiv:wR} lister opp vektfaktorene for de ulike strålingstypene.
+\begin{table}
+\begin{center}
+	\begin{tabular}{ll}
+	\hline
+	\hline
+	Strålingstype & $w_R$ \\
+	\hline
+	Fotoner, elektroner, myoner & 1 \\
+	$\begin{aligned}
+		\text{Nøytroner, } &E_n < 1~\mathrm{MeV} \\
+		&1~\mathrm{MeV}\leq E_n \leq 50~\mathrm{MeV} \\
+		&E_n > 50~\mathrm{MeV}
+	\end{aligned}$& 
+	$\begin{aligned}
+		&2.5 + 18.2e^{-(\ln E_n)^2/6} \\
+		&5.0 + 17.0e^{-(\ln 2E_n)^2/6} \\
+		&2.5 + 3.25e^{-(\ln 0.04E_n)^2/6} \\
+	\end{aligned}$\\
+	Protoner og ladde pioner & 2 \\
+	$\alpha$-partikler og tyngre ioner & 20 \\
+	\hline
+	\hline
+	\end{tabular}
+\end{center}
+\caption{Vektfaktorer for ulike strålingstyper.}
+\label{tab:radioaktiv:wR}
+\end{table}
+
+\subsection{Effektiv dose}
+Effektiv dose ligner på ekvivalent dose, men tar også med i beregningen at ulike organer har ulik sårbarhet for radioaktiv stråling. Den effektive dosen beregnes som
+\begin{equation}
+	E = \sum_T w_T\times H_T,
+\end{equation}
+der $w_T$ ($\sum_T w_T = 1$) er vektfaktoren for organ $T$. I likhet med absorbert dose måles også effektiv dose i sievert.
