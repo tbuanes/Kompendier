@@ -60,7 +60,7 @@ Ekvivalent dose ligner på absorbert dose, men tar også med en vektfaktor som t
 	H_T = \sum_R w_R\times D_{T,R},
 \end{equation}
 der $w_R$ er en vektfaktoren som tar hensyn til ulik virkning av ulike typer stråling. Tabell \ref{tab:radioaktiv:wR} lister opp vektfaktorene for de ulike strålingstypene.
-\begin{table}
+\begin{table}[htp]
 \begin{center}
 	\begin{tabular}{ll}
 	\hline
@@ -84,9 +84,10 @@ der $w_R$ er en vektfaktoren som tar hensyn til ulik virkning av ulike typer str
 	\hline
 	\end{tabular}
 \end{center}
-\caption{Vektfaktorer for ulike strålingstyper.}
+\caption{Vektfaktorer for ulike strålingstyper. \cite{Agashe:2014kda}}
 \label{tab:radioaktiv:wR}
 \end{table}
+
 
 \subsection{Effektiv dose}
 Effektiv dose ligner på ekvivalent dose, men tar også med i beregningen at ulike organer har ulik sårbarhet for radioaktiv stråling. Den effektive dosen beregnes som
@@ -94,3 +95,23 @@ Effektiv dose ligner på ekvivalent dose, men tar også med i beregningen at uli
 	E = \sum_T w_T\times H_T,
 \end{equation}
 der $w_T$ ($\sum_T w_T = 1$) er vektfaktoren for organ $T$. I likhet med absorbert dose måles også effektiv dose i sievert.
+\begin{table}[htp]
+\begin{center}
+	\begin{tabular}{lcc}
+	\hline
+	\hline
+	Kroppsvev & vektfaktor $w_T$ & Sum av $w_T$ \\
+	\hline
+	Beinmarg, tarm, lunge, magesekk, bryst, annet kroppsvev & 0.12 & 0.72 \\
+	Gonader & 0.08 & 0.08 \\
+	Blære, spiserør, lever, skjoldkjertel & 0.04 & 0.16 \\
+	Beinoverflate, hjerne, spyttkjertler, hud & 0.01 & 0.04 \\
+	\hline
+	Total && 1.00 \\
+	\hline
+	\hline
+	\end{tabular}
+\end{center}
+\caption{Vektfaktorer for ulike kroppsvev \cite{0952-4746-28-2-R02}}.
+\label{tab:radioaktiv:wR}
+\end{table}

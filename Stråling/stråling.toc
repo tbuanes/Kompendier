@@ -14,5 +14,5 @@
 \contentsline {subsection}{\numberline {2.7.1}Aktivitet}{7}
 \contentsline {subsection}{\numberline {2.7.2}Absorbert dose}{8}
 \contentsline {subsection}{\numberline {2.7.3}Ekvivalent dose}{8}
-\contentsline {subsection}{\numberline {2.7.4}Effektiv dose}{8}
+\contentsline {subsection}{\numberline {2.7.4}Effektiv dose}{9}
 \contentsline {chapter}{\numberline {3}Ultrafiolett str\IeC {\r a}ling}{11}
