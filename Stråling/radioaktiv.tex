@@ -60,8 +60,9 @@ Ekvivalent dose ligner på absorbert dose, men tar også med en vektfaktor som t
 	H_T = \sum_R w_R\times D_{T,R},
 \end{equation}
 der $w_R$ er en vektfaktoren som tar hensyn til ulik virkning av ulike typer stråling. Tabell \ref{tab:radioaktiv:wR} lister opp vektfaktorene for de ulike strålingstypene.
-\begin{table}[htp]
+\begin{table}[tp]
 \begin{center}
+{\footnotesize
 	\begin{tabular}{ll}
 	\hline
 	\hline
@@ -83,6 +84,7 @@ der $w_R$ er en vektfaktoren som tar hensyn til ulik virkning av ulike typer str
 	\hline
 	\hline
 	\end{tabular}
+}
 \end{center}
 \caption{Vektfaktorer for ulike strålingstyper. \cite{Agashe:2014kda}}
 \label{tab:radioaktiv:wR}
@@ -94,9 +96,10 @@ Effektiv dose ligner på ekvivalent dose, men tar også med i beregningen at uli
 \begin{equation}
 	E = \sum_T w_T\times H_T,
 \end{equation}
-der $w_T$ ($\sum_T w_T = 1$) er vektfaktoren for organ $T$. I likhet med absorbert dose måles også effektiv dose i sievert.
-\begin{table}[htp]
+der $w_T$ ($\sum_T w_T = 1$) er vektfaktoren for organ $T$. I likhet med absorbert dose måles også effektiv dose i sievert. Tabell \ref{tab:radioaktiv:wT} lister opp vektfaktorene for de ulike typene kroppsvev.
+\begin{table}[tp]
 \begin{center}
+{\footnotesize
 	\begin{tabular}{lcc}
 	\hline
 	\hline
@@ -111,7 +114,8 @@ der $w_T$ ($\sum_T w_T = 1$) er vektfaktoren for organ $T$. I likhet med absorbe
 	\hline
 	\hline
 	\end{tabular}
+}	
 \end{center}
-\caption{Vektfaktorer for ulike kroppsvev \cite{0952-4746-28-2-R02}}.
-\label{tab:radioaktiv:wR}
+\caption{Vektfaktorer for ulike kroppsvev \cite{0952-4746-28-2-R02}.}
+\label{tab:radioaktiv:wT}
 \end{table}
