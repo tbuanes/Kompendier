@@ -1,0 +1,168 @@
+\documentclass[a4paper,norsk,12pt]{article}
+\usepackage[norsk]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\def\d{\ensuremath{\mathrm{d}}}
+
+\begin{document}
+
+\section{Enheter}
+I fysikk har de fleste størrelsene enheter. Enheten er en essensiell del av størrelsen, så hvis om vi oppgir bare tallverdien er ikke størrelsen tilstrekkelig spesifisert. For eksempel er det ikke tilstrekkelig å si at en stav er 1 lang. Da blir det bare gjetting om det er 1 meter, 1 fot eller noe helt annet.\footnote{Mars-sonden Mars Climate Orbiter kræsjlandet fordi programvaren ga resulter i pundsekunder (lbf s), mens resultatene ble tolket som Newtonsekunder(Ns) som var det kontrakten mellom NASA og Lokheed hadde spesifisert at skulle brukes.} Når vi regner med størrelser som har enheter er enhetene en del av utregningen, og vi tar de med også i alle mellomregninger.
+
+Ved å ta med enheter hele veien gjennom beregningen får vi automatisk en kontroll på om beregningen vi har utført er fornuftig. Hvis vi skal regne ut en energi og ender opp med enhet $\mathrm{m^2/s^2}$ vet vi at det er noe feil i utreningen. Enhetene kan også hjelpe oss å huske hvordan vi formler ser ut. Hvis vi for eksempel husker at vi ut fra en hastighet (m/s) og en tid (s) kan finne avstanden, men ikke hvordan de skal kombineres kan vi straks se dette ut fra enhetene. Den eneste måten å kombinere m/s og s til å gi riktig enhet for lengde (m) er å multiplisere de sammen. Altså må vi ha $x = vt$.
+
+Det finnes mange forskjellige enhets-systemer. Det mest brukte, og det eneste som blir diskutert her, er SI-systemet (Système international d'unités). SI-systemet er bygget opp fra syv grunnenheter:
+\begin{itemize}
+\item Lengde - meter (m)
+\item Masse - kilogram\footnote{Merk at det er kilogram som er grunnenheten, ikke gram.} (kg)
+\item Tid - sekund (s)
+\item Elektrisk strøm - ampere (A)
+\item Temperatur - kelvin (K)
+\item Stoffmengde - mol (mol)
+\item Lysstyrke - candela (cd)
+\end{itemize}
+Enhetene til alle andre størrelser får man ved å kombinere grunn-enhetene. En del kombinasjoner som ofte opptrer har fått egne navn og symbol. En rekke størrelser og enheter man ofte treffer på i fysikk-oppgaver er listet i tabell \ref{tab:enheter:mekanikk}-\ref{tab:enheter:magnetisme}.
+
+%% Begin tables
+\begin{table}[tbp]
+{\small
+\begin{tabular}{|l|l|l|l|}
+\hline
+\hline
+{\bf Størrelse} & {\bf Symbol} & {\bf Enhet} & {\bf Navn på enhet} \\
+\hline
+Posisjon & $\vec{x}, \vec{r}$ & 1~m & Meter \\
+Hastighet & $\vec{v}$ &  1~m/s & \\
+Akselerasjon & $\vec{a}$ & $1~\mathrm{m/s^2}$ & \\
+\hline
+Masse  & $m$ & 1~kg & Kilogram \\
+Massetetthet, masse per volum & $\rho$ & $1~\mathrm{kg/m^3}$ & \\
+\hline
+Energi & $E, K, U$ & 1 J = 1 Nm = 1 $\mathrm{kg m^2/s^2}$ & Joule \\
+Arbeid & $W$ & 1 J & \\
+Effekt & $P$ & 1 W = 1 J/s & Watt \\
+\hline
+Kraft & $\vec{F}$ & 1 N = 1 $\mathrm{kg m/s^2}$ & Newton \\
+Bevegelsesmengde & $\vec{p}, \vec{P} $ & 1 $\mathrm{kg m/s^2}$ & \\
+Impuls, støt & $\vec{J}$ & $\mathrm{1~Ns = 1~kg m/s^2}$ & \\
+\hline
+\hline
+\end{tabular}
+}
+\caption{Størrelser og enheter først og fremst knyttet til mekanikk, men energi, arbeid og effekt er også viktig i andre deler av fysikken.}
+\label{tab:enheter:mekanikk}
+\end{table}
+
+\begin{table}[tbp]
+{\small
+\begin{tabular}{|l|l|l|l|}
+\hline
+\hline
+{\bf Størrelse} & {\bf Symbol} & {\bf Enhet} & {\bf Navn på enhet} \\
+\hline
+Ladning & $Q, q$ & 1 C & Coulomb \\
+Ladningstetthet, ladning per lengde & $\lambda$ & 1 C/m  & \\
+Ladningstetthet, ladning per areal & $\sigma$ & 1 C/m$^2$ & \\
+Ladningstetthet, ladning per volum & $\rho$ & 1 C/m$^3$ & \\
+\hline
+Elektrisk strøm & $I, i$ & 1 A = 1 C/s & Ampere \\
+Elektrisk strømtetthet & $\vec{J}$ & 1 A/m$^2$ & \\
+\hline
+Elektrisk felt & $\vec{E}$ & 1 N/C = 1 V/m & \\
+Elektrisk fluks & $\Phi_E$ & 1 Nm$^2$/C = 1 Vm & \\
+\hline
+Elektrisk potensial & $V$ & 1 V = 1 J/C & Volt \\
+Elektromotorisk spenning & ${\cal E}$ & 1 V & \\
+\hline
+Motstand, resistans & $R, r$ & 1 $\Omega$ = 1 V/A & Ohm \\
+Resisitivitet & $\rho$ & 1 $\Omega$m & \\
+Konduktivitet & $\sigma$ & 1 $(\Omega\mathrm{m})^{-1}$ & \\
+\hline
+Kapasitans & $C$ & 1 F = C/V & Farad \\
+\hline
+\hline
+\end{tabular}
+}
+\caption{Størrelser og enheter knyttet til elektriske fenomen.}
+\label{tab:enheter:elektrisk}
+\end{table}
+
+\begin{table}[tbp]
+{\small
+\begin{tabular}{|l|l|l|l|}
+\hline
+\hline
+{\bf Størrelse} & {\bf Symbol} & {\bf Enhet} & {\bf Navn på enhet} \\
+\hline
+Magnetisk felt & $\vec{B}$ & $1~\mathrm{T} = 1~\mathrm{N/Am}$ & Tesla \\
+Magnetisk fluks & $\Phi_{B}$ & $1~\mathrm{Wb} = 1~\mathrm{Tm^2}$ & Weber \\
+Magnetisering  & $\vec{M}$ & 1 A/m & \\
+Induktans & $L$ & 1 H = 1 Wb/A = 1 Vs/A & Henry\\
+Gjensidig induktans & $M$ & 1 H & \\
+\hline
+\hline
+\end{tabular}
+}
+\caption{Størrelser og enheter knyttet til magnetiske fenomen.}
+\label{tab:enheter:magnetisme}
+\end{table}
+%% End tables
+
+
+\section{Skalarer og vektorer}
+En del fysiske størrelser kan spesifiseres fullstendig ved hjelp av et tall + enhet. Dette er en skalar. Merk at den skalare størrelsen kan ha samme verdi på alle punkter i rommet (eksempel: lysets hastighet i vakuum) eller variere fra sted til sted (eksempel: temperatur). Skalare størrelser kan også endre seg med tiden. Når vi regner med skalarer kan vi bruke alle de vanlige regneartene.
+
+Andre fysiske størrelser er ikke fullstendig spesifisert ved hjelp av bare et tall + enhet. For eksempel holder det ikke å si at det blåser $10~\mathrm{m/s}$ -- vi vil som regel vite retningen også. En størrelse som må spesifiseres både ved hjelp av verdi og retning kalles en vektor. Akkurat som skalarer kan vektorer ha samme verdi og retning i alle punkter i rommet, eller verdi og/eller retning kan variere fra punkt til punkt. Verdi og retning kan også endre seg med tiden. For vektorer har vi i tillegg til addisjon og subtraksjon tre typer multiplikasjon:
+\begin{itemize}
+\item Multiplikasjon med en skalar $\to$ gir en vektor som svar
+\item Indreprodukt/prikkprodukt mellom to vektorer $\to$ gir en skalar som svar
+\item Vektorprodukt/kryssprodukt mellom to vektorer $\to$ gir en vektor som svar
+\end{itemize}
+
+\section{Usikkerhet og signifikante sifre}
+I motsetning til i matematikk der vi som regel kan anta at vi har eksakt kjennskap til størrelsene vi jobber med har vi i fysikk generelt bare kjennskap til størrelsen med en viss presisjon. Dette skyldes at fysiske størrelser har opphav i målinger og der kan vi aldri ha uendelig presisjon. Skal vi gjøre ting helt korrekt skal størrelsen oppgis sammen med dens estimerte usikkerhet.\footnote{Heller ikke usikkerheten er eksakt bestemt, men det er som regel mulig å estimere denne på en systematisk måte.
+} For eksempel kan en lengde oppgis som $x=(1.03\pm0.02)~\mathrm{m}$. Dette betyr det beste estimatet vi har på lengden er $x = 1.03~\mathrm{m}$. Usikkerheten $\pm0.02~\mathrm{m}$ betyr at vi mener å vite at hvis denne lengden blir målt mange ganger vil flesteparten\footnote{Det vanligste er å bruke en definisjon av usikkerheten som gjør at 67\% at målingene skal havne innenfor intervallet definert av usikkerheten.} av målingene skal vise mellom $x=1.01~\mathrm{m}$ og $x=1.05~\mathrm{m}$. 
+
+I regneoppgaver forholder vi oss vanligvis litt mer avslappet til usikkerheten i størrelsene, men vi glemmer den ikke helt. Hvis f.eks. en energi oppgis som $2.52~\mathrm{J}$ tolkes det som at usikkerheten er i det siste sifferet. Det kan altså tenkes at den riktige verdien er $2.51~\mathrm{J}$ eller $2.55~\mathrm{J}$, men sannsynligvis ikke at avviket er så stort at den riktige verdien er $2.60~\mathrm{J}$. En tommelfingerregel for å få en fornuftig presisjon i svaret av en beregning er å ikke ta med flere sifre i sluttsvaret enn det var i den inn-verdien med færrest sifre.
+
+Noen få ord om hvordan man teller sifre: Hvis vi teller fra venstre er det første sifferet som er ulik 0 det første vi teller. Deretter teller alle sifre med i regnskapet. Eksempler:
+\begin{itemize}
+	\item 1.54 -- tre sifre
+	\item 0.03 -- ett siffer
+	\item$1.3\times10^6$ -- to sifre
+\end{itemize}
+Merk at hvis du får svaret $238~\mathrm{m}$ og kun skal ha med to sifre må svaret skrives som $2.4\time10^2~\mathrm{m}$ for å følge denne regelen siden å skrive det avrundete tallet $240~\mathrm{m}$ fremdeles er å skrive tre sifre.
+
+\subsection{Mer om usikkerhet}
+Noen ganger er ikke tommelfingerregelen om antall signifikante sifre tilstrekkelig. For eksempel må usikkerhet behandles skikkelig hvis man skriver en vitenskaplig artikkel eller en teknisk rapport. Også i labøvinger er det vanlig å kreve at usikkerheten behandles på en ordentlig måte. 
+
+Vi skal her se kort på hvordan man propagerer usikkerhet fra inntallene til svaret. Å gjøre dette helt generelt er komplisert, så vi vil her gjøre to antakelser som forenkler problemet:
+\begin{itemize}
+\item
+Usikkerheten til alle variablene er ukorrelerte. Det vil si at selv om usikkerheten på en variabel, så vil ikke de andre 	usikkerhetene påvirkes.
+\item
+Alle usikkerhetene kommer fra en gaussisk fordeling. 
+\end{itemize}
+Anta at vi har måledata $a\pm\sigma_a,b\pm\sigma_b,c\pm\sigma_c,d\pm\sigma_d$ som kombineres til et resultat $f(a,b,c,d)$. Vi ønsker nå å finne usikkerheten, $\sigma_f$, til dette resultatet. Det finner vi via formelen:
+\begin{displaymath}
+	\sigma_f^2 =
+	\left(\frac{\partial f}{\partial a}\right)^2\sigma_a^2 + \left(\frac{\partial f}{\partial b}\right)^2\sigma_b^2 + 
+	\left(\frac{\partial f}{\partial c}\right)^2\sigma_c^2 + \left(\frac{\partial f}{\partial d}\right)^2\sigma_d^2 
+\end{displaymath}
+For å gjøre det mer konkret skal vi se på noen spesialtilfeller, og for enkelhets skyld nøyer vi oss med to inn-variabler, men resultatene kan enkelt utvides til flere variabler.
+\subsubsection*{Addisjon}
+$f(a,b) = a + b,\quad	\sigma_f^2 = \sigma_a^2 + \sigma_b^2$
+\subsubsection*{Subtraksjon}
+$f(a,b) = a - b, \quad	\sigma_f^2 = \sigma_a^2 + \sigma_b^2$ \\
+Merk at siden usikkerhetene adderes i kvadratur her, mens $f$ kommer som resultat av en subtraksjon kan den relative usikkerheten på resultatet, $\sigma_f/f$, bli veldig mye større enn de relative usikkerhetene på inndataene. Det er derfor en fordel, om mulig, å organisere målingene og beregningene sine slik at subtraksjon unngås.
+\subsubsection*{Multiplikasjon}
+$f(a,b) = a\cdot b, 
+\quad  \left(\frac{\sigma_f}{f}\right)^2 = \left(\frac{\sigma_a}{a}\right)^2 + \left(\frac{\sigma_b}{b}\right)^2$
+\subsubsection*{Multiplikasjon med en tall uten usikkerhet}
+$f(a) = 2a, \quad \sigma_f = 2\sigma_a$
+\subsubsection*{Divisjon}
+$f(a,b) = \frac{a}{b}, \quad 
+\quad  \left(\frac{\sigma_f}{f}\right)^2 = \left(\frac{\sigma_a}{a}\right)^2 + \left(\frac{\sigma_b}{b}\right)^2$\\
+På samme måte som subtraksjon vil også divisjon kunne blåse opp den relative usikkerheten.
+\end{document}
