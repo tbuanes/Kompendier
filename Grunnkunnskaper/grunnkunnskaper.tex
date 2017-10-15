@@ -1,13 +1,16 @@
-\documentclass[a4paper,norsk,12pt]{article}
+\documentclass[a4paper,norsk,12pt]{book}
 \usepackage[norsk]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 \usepackage{amsmath}
 \def\d{\ensuremath{\mathrm{d}}}
+\def\ex{\ensuremath{\hat{e}_x}}
+\def\ey{\ensuremath{\hat{e}_y}}
+\def\ez{\ensuremath{\hat{e}_z}}
 
 \begin{document}
 
-\section{Enheter}
+\chapter{Enheter}
 I fysikk har de fleste størrelsene enheter. Enheten er en essensiell del av størrelsen, så hvis om vi oppgir bare tallverdien er ikke størrelsen tilstrekkelig spesifisert. For eksempel er det ikke tilstrekkelig å si at en stav er 1 lang. Da blir det bare gjetting om det er 1 meter, 1 fot eller noe helt annet.\footnote{Mars-sonden Mars Climate Orbiter kræsjlandet fordi programvaren ga resulter i pundsekunder (lbf s), mens resultatene ble tolket som Newtonsekunder(Ns) som var det kontrakten mellom NASA og Lokheed hadde spesifisert at skulle brukes.} Når vi regner med størrelser som har enheter er enhetene en del av utregningen, og vi tar de med også i alle mellomregninger.
 
 Ved å ta med enheter hele veien gjennom beregningen får vi automatisk en kontroll på om beregningen vi har utført er fornuftig. Hvis vi skal regne ut en energi og ender opp med enhet $\mathrm{m^2/s^2}$ vet vi at det er noe feil i utreningen. Enhetene kan også hjelpe oss å huske hvordan vi formler ser ut. Hvis vi for eksempel husker at vi ut fra en hastighet (m/s) og en tid (s) kan finne avstanden, men ikke hvordan de skal kombineres kan vi straks se dette ut fra enhetene. Den eneste måten å kombinere m/s og s til å gi riktig enhet for lengde (m) er å multiplisere de sammen. Altså må vi ha $x = vt$.
@@ -110,7 +113,7 @@ Gjensidig induktans & $M$ & 1 H & \\
 %% End tables
 
 
-\section{Skalarer og vektorer}
+\chapter{Skalarer og vektorer}
 En del fysiske størrelser kan spesifiseres fullstendig ved hjelp av et tall + enhet. Dette er en skalar. Merk at den skalare størrelsen kan ha samme verdi på alle punkter i rommet (eksempel: lysets hastighet i vakuum) eller variere fra sted til sted (eksempel: temperatur). Skalare størrelser kan også endre seg med tiden. Når vi regner med skalarer kan vi bruke alle de vanlige regneartene.
 
 Andre fysiske størrelser er ikke fullstendig spesifisert ved hjelp av bare et tall + enhet. For eksempel holder det ikke å si at det blåser $10~\mathrm{m/s}$ -- vi vil som regel vite retningen også. En størrelse som må spesifiseres både ved hjelp av verdi og retning kalles en vektor. Akkurat som skalarer kan vektorer ha samme verdi og retning i alle punkter i rommet, eller verdi og/eller retning kan variere fra punkt til punkt. Verdi og retning kan også endre seg med tiden. For vektorer har vi i tillegg til addisjon og subtraksjon tre typer multiplikasjon:
@@ -120,7 +123,89 @@ Andre fysiske størrelser er ikke fullstendig spesifisert ved hjelp av bare et t
 \item Vektorprodukt/kryssprodukt mellom to vektorer $\to$ gir en vektor som svar
 \end{itemize}
 
-\section{Usikkerhet og signifikante sifre}
+\section{Enhetsvektorer}
+Når vi jobber med vektorstørrelser er det ofte nyttig å introdusere en eller flere \emph{enhetsvektorer}. En enhetsvektor er ganske enkelt en vektor med lengde 1, og nytten av den er at den peker i en bestemt retning. Mer at selv når vi jobber med vektorfelt som har dimensjon (f.eks. m/s eller N/C) er enhetsvektoren dimensjonsløs. Vanligvis bruker vi enhetsvektorer som peker i retningene til aksene i koordinatsystemet vårt, f.eks. i $x$-, $y$-, og $z$-retning. Dette blir diskutert i mer detalj nedenfor. Noen ganger ønsker vi imidlertid å bruke en enhetsvektor som peker i samme retning som en vilkårlig vektor. Hvis vi for eksempel har en posisjonsvektor $\vec{r}$ kan det noen ganger være nyttig å skrive den som 
+\begin{equation}
+	\vec{r} = r \hat{r}
+	\label{eq:vektorer:r}
+\end{equation}
+der $r$ er lengden av vektoren, altså $r = |\vec{r}|$ og $\hat{r}$ er en enhetsvektor som peker i samme retning som $\vec{r}$. Ved å se på ligning (\ref{eq:vektorer:r}) finner vi ut at enhetsvektoren kan finnes fra vectoren $\vec{r}$ som
+\begin{displaymath}
+	\hat{r} = \frac{\vec{r}}{|\vec{r}|}.
+\end{displaymath}
+
+\subsection{Enhetsvektorer i et kartesisk koordinatsystem}
+Vi ser nå på et vanlig kartesisk koordinatsystem, altså et koordinatsystem som består av en $x$-, $y-$ og $z$-akse som står normalt på hverandre. Vi vet da at enhver vektor kan dekomponeres i $x$-, $y$- og $z$-komponenter. For eksempel kan vektoren $\vec{r}$ skrives som $(r_x, r_y, r_z)$ der vi har listet opp hver enkelt komponent. Ofte er det nyttigere å bruke en notasjon der vi multipliserer hver komponent med enhetsvektoren som går i den aktuelle retningen:
+\begin{displaymath}
+\begin{aligned}
+	\vec{r} &= r_x\hat{\i} + r_y\hat{\j} + r_z\hat{k} \\
+	&= r_x\ex + r_y\ey + r_z\ez.
+\end{aligned}
+\end{displaymath}
+Den eneste forskjellen på de to linjene her er at det er brukt uliknotasjon for enhetsvektorene. Begge notasjonene er i vanlig bruk, så det er nødvendig å kjennet til begge. I denne teksten velger jeg å bruke $\ex, \ey, \ez$ fordi notasjonen viser eksplisitt hvilken retning hver enhetsvektor peker, og fordi den er helt tilsvarende den mest brukte notasjonen for sylinder- og sfæriske koordinater.
+
+Det er nyttig å kjenne resultatet av prikk- og kryssprodukt mellom de ulike enhetsvektorene, fordi det er da enkelt å regne ut prikk- eller kryssprodukt mellom to vilkårlige vektorer som er uttrykt ved hjelp av enhetsvektorene. Siden alle enhetsvektorene har lengde 1 og står normalt på hverandre er prikk-produktet svært enkelt:
+\begin{displaymath}
+	\hat{e}_i \cdot \hat{e}_j = 
+	\left\{
+		\begin{aligned}
+		1 \text{ hvis } i = j \\
+		0 \text{ hvis } i\neq j
+		\end{aligned}
+	\right.
+	\label{eq:vektor:prikkprodukt}
+\end{displaymath}
+der $i$ og $j$ kan være enten $x, y$ eller $z$. Kryssproduktet mellom enhetsvektorene er litt mer komplisert, men kan relativt enkelt finnes ved hjelp av høyrehåndsregelen. Siden alle enhetsvektorene har lengde 1 og står normalt på hverandre blir også kryssproduktet en vektor med lengde 1, bortsett fra hvis vi tar kryssprodukt av en enhetsvektor med seg selv---da får vi 0.
+\begin{displaymath}
+\begin{aligned}
+	\ex\times\ex &= \ey\times\ey = \ez\times\ez = 0 \\
+	\ex \times \ey & = \ez \\
+	\ex \times \ez & = -\ey \\
+	\ey \times \ez &= \ex 
+	\label{eq:vektor:kryssprodukt}
+\end{aligned}
+\end{displaymath}
+Hvis enhetsvektorene kommer i annen rekkefølge bruker vi den generelle regelen for kryssprodukt som gjelder for alle vektorer, inkludert enhetsvektorer, 
+\begin{displaymath}
+	\vec{a}\times\vec{b} = -\vec{b}\times\vec{a}
+\end{displaymath}
+
+\subsubsection{Regneeksempel}
+Vi har hastighetsvektoren
+\begin{displaymath}
+	\vec{v} = (1~\mathrm{m/s})\ex - (3~\mathrm{m/s})\ey + (2~\mathrm{m/s})\ez
+\end{displaymath}
+og magnetfeltvektoren 
+\begin{displaymath}
+	\vec{B} = (1.2~\mathrm{T})\ex + (0.5~\mathrm{T})\ey - (0.7~\mathrm{T})\ez.
+\end{displaymath}
+Vi kan nå bruke relasjonene (\ref{eq:vektor:prikkprodukt}) og (\ref{eq:vektor:kryssprodukt}) til å regne ut prikk- og kryss-produktet av $\vec{v}$ og $\vec{B}$\footnote{$\vec{v}\times\vec{B}$ er et produkt som det ofte er behov for å beregne når man jobber med magnetiske krefter. $\vec{v}\cdot\vec{B}$ er ikke et produkt som vanligvis opptrer i fysiske beregninger, men det er ingenting som hindrer oss i å beregne dette produktet.}. Merk at beregningene her gjøres litt ekstra omstendelig---vanligvis vil man ikke skrive opp de leddene som gir 0 i det hele tatt, men for å vise mest mulig detaljer er alle ledd med her.
+\begin{displaymath}
+\begin{aligned}
+	\vec{v}\cdot\vec{B} &= \left[ (1~\mathrm{m/s})\ex - (3~\mathrm{m/s})\ey + (2~\mathrm{m/s})\ez \right] \cdot
+	\left[(1.2~\mathrm{T})\ex + (0.5~\mathrm{T})\ey - (0.7~\mathrm{T})\ez\right] \\
+	&= (1.2~\mathrm{Tm/s})\ex\cdot\ex + (0.5~\mathrm{Tm/s})\ex\cdot\ey -  (0.7~\mathrm{Tm/s})\ex\cdot\ez \\
+	&\quad- (3.6~\mathrm{Tm/s})\ey\cdot\ex- (1.5~\mathrm{Tm/s})\ey\cdot\ey+ (2.1~\mathrm{Tm/s})\ey\cdot\ez \\
+	&\quad+ (2.4~\mathrm{Tm/s})\ez\cdot\ex+ (1.0~\mathrm{Tm/s})\ez\cdot\ey -  (1.4~\mathrm{Tm/s})\ez\cdot\ez \\
+	&= 1.2~\mathrm{Tm/s} - 1.5~\mathrm{Tm/s} - 1.4~\mathrm{Tm/s} \\
+	&= -1.7~\mathrm{Tm/s}.
+\end{aligned}
+\end{displaymath}
+\begin{displaymath}
+\begin{aligned}
+	\vec{v}\times\vec{B} &= \left[ (1~\mathrm{m/s})\ex - (3~\mathrm{m/s})\ey + (2~\mathrm{m/s})\ez \right] \times
+	\left[(1.2~\mathrm{T})\ex + (0.5~\mathrm{T})\ey - (0.7~\mathrm{T})\ez\right] \\
+	&= (1.2~\mathrm{Tm/s})\ex\times\ex + (0.5~\mathrm{Tm/s})\ex\times\ey -  (0.7~\mathrm{Tm/s})\ex\times\ez \\
+	&\quad- (3.6~\mathrm{Tm/s})\ey\times\ex- (1.5~\mathrm{Tm/s})\ey\times\ey+ (2.1~\mathrm{Tm/s})\ey\times\ez \\
+	&\quad+ (2.4~\mathrm{Tm/s})\ez\times\ex+ (1.0~\mathrm{Tm/s})\ez\times\ey -  (1.4~\mathrm{Tm/s})\ez\times\ez \\
+	&=(0.5~\mathrm{Tm/s}+3.6~\mathrm{Tm/s})\ex\times\ey + (-0.7~\mathrm{Tm/s}-2.4~\mathrm{Tm/s})\ex\times\ez \\
+	&\quad+(2.1~\mathrm{Tm/s}-1.0~\mathrm{Tm/s})\ey\times\ez \\
+	&=(4.1~\mathrm{Tm/s})\ez - (3.1~\mathrm{Tm/s})(-\ey) +(1.1~\mathrm{Tm/s})\ex \\
+	&=(1.1~\mathrm{Tm/s})\ex + (3.1~\mathrm{Tm/s})\ey + (4.1~\mathrm{Tm/s})\ez
+\end{aligned}
+\end{displaymath}
+
+\chapter{Usikkerhet og signifikante sifre}
 I motsetning til i matematikk der vi som regel kan anta at vi har eksakt kjennskap til størrelsene vi jobber med har vi i fysikk generelt bare kjennskap til størrelsen med en viss presisjon. Dette skyldes at fysiske størrelser har opphav i målinger og der kan vi aldri ha uendelig presisjon. Skal vi gjøre ting helt korrekt skal størrelsen oppgis sammen med dens estimerte usikkerhet.\footnote{Heller ikke usikkerheten er eksakt bestemt, men det er som regel mulig å estimere denne på en systematisk måte.
 } For eksempel kan en lengde oppgis som $x=(1.03\pm0.02)~\mathrm{m}$. Dette betyr det beste estimatet vi har på lengden er $x = 1.03~\mathrm{m}$. Usikkerheten $\pm0.02~\mathrm{m}$ betyr at vi mener å vite at hvis denne lengden blir målt mange ganger vil flesteparten\footnote{Det vanligste er å bruke en definisjon av usikkerheten som gjør at 67\% at målingene skal havne innenfor intervallet definert av usikkerheten.} av målingene skal vise mellom $x=1.01~\mathrm{m}$ og $x=1.05~\mathrm{m}$. 
 
