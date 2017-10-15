@@ -7,6 +7,8 @@
 \def\ex{\ensuremath{\hat{e}_x}}
 \def\ey{\ensuremath{\hat{e}_y}}
 \def\ez{\ensuremath{\hat{e}_z}}
+\def\er{\ensuremath{\hat{e}_r}}
+\def\eth{\ensuremath{\hat{e}_\theta}}
 
 \begin{document}
 
@@ -204,6 +206,23 @@ Vi kan nå bruke relasjonene (\ref{eq:vektor:prikkprodukt}) og (\ref{eq:vektor:k
 	&=(1.1~\mathrm{Tm/s})\ex + (3.1~\mathrm{Tm/s})\ey + (4.1~\mathrm{Tm/s})\ez
 \end{aligned}
 \end{displaymath}
+
+\subsection{Enhetsvektorer i sylinderkoordinater}
+Enhver bevegelse \emph{kan} beskrives ved hjelp av kartesiske koordinater, men noen bevegelse vil da se unødvendig komplisert ut. Dette gjelder blant annet sirkelbevegelser og skurebevegelser. Disse bevegelsene beskrivers bedre i sylinderkoordinater. Vi har da
+\begin{itemize}
+\item
+ en koordinat som beskriver avstanden fra sentrum av bevegelsen. Denne koordinaten kalles ofte $r$.
+\item
+ en koordinat som beskriver vinkelen relativt til en (tilfeldig valgt) retning i planet der sirkelbevegelsen skjer. Denne koordinaten kalles ofte $\theta$.
+\item
+en koordinat som beskriver høyden over det planet vi tok utgangspunkt i. Denne koordinaten kalles ofte $z$. 
+\end{itemize}
+Vi definerer nå tre enhetsvektorer $\er, \eth$ og $\ez$. Enhetsvektoren $\ez$ er akkurat slik som enhetsvektorene diskutert i forbindelse med de kartesiske koordinatene, men de to andre er litt annerledes: $\er$ og $\eth$ peker nemlig i ulik retning avhengig av hvilket punkt vi ser på. Enhetsvektoren $\er$ peker i samme retning som forbindelseslinjen mellom origo og punktet vi ser på, mens $\eth$ står $90^\circ$ på $\er$ og $\eth$ med retningen bestemt slik at $\er, \eth$ og $\ez$ utgjør et høyrehendt system når de er tatt i den rekkefølgen. Dette betyr at når $z$-aksen peker oppover øker vinkelen \emph{mot} klokken. Vi kan nå uttrykke en vilkårlig vektor ved hjelp av enhetsvektorene vi har definert,
+\begin{displaymath}
+	\vec{a} = a_r\ex + a_\theta\eth + a_z\ez.
+\end{displaymath}
+
+Siden retningen til $\er$ og $\eth$ varierer fra punkt til punkt vil de påvirkes av derivasjon. 
 
 \chapter{Usikkerhet og signifikante sifre}
 I motsetning til i matematikk der vi som regel kan anta at vi har eksakt kjennskap til størrelsene vi jobber med har vi i fysikk generelt bare kjennskap til størrelsen med en viss presisjon. Dette skyldes at fysiske størrelser har opphav i målinger og der kan vi aldri ha uendelig presisjon. Skal vi gjøre ting helt korrekt skal størrelsen oppgis sammen med dens estimerte usikkerhet.\footnote{Heller ikke usikkerheten er eksakt bestemt, men det er som regel mulig å estimere denne på en systematisk måte.
