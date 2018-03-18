@@ -1,0 +1,66 @@
+\documentclass[a4paper,norsk,12pt]{article}
+
+\usepackage[norsk]{babel}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\usepackage{multirow,tabularx}
+\usepackage{pdflscape}
+\def\d{\ensuremath{\text{d}}}
+\def\half{\ensuremath{\frac{1}{2}}}
+\def\ivec{\ensuremath{\,\hat{\i}}}
+\def\jvec{\ensuremath{\,\hat{\j}}}
+\def\kvec{\ensuremath{\,\hat{k}}}
+\newif\ifanswers
+%\answerstrue
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{landscape}
+\begin{table}
+\begin{tabular}{|l|l|c|c|l|}
+\hline
+Norsk navn & Engelsk navn & \parbox{1.5 cm}{Vanlig(e) symbol} & Enhet & Kommentar \\
+\hline
+\hline
+Hastighet & Velocity & $\vec{v}$ & $\mathrm{m/s}$ & \\
+Fart & Speed & $v$  & $\mathrm{m/s}$ & Størrelsen av $\vec{v}$ \\
+Akselerasjon & Acceleration & $\vec{a}$ & $\mathrm{m/s^2}$ &\\
+Sentripetalakselerasjon & Centripetal acceleration & $a_r$ & $\mathrm{m/s^2}$ & $a_r = \frac{v^2}{r}$ \\
+Vinkelhastighet & Angular velocity & $\vec{\omega}$ & $\mathrm{rad/s}$ & \\
+Vinkelfart & Angular speed & $\omega$ & $\mathrm{rad/s}$ & Størrelsen av $\vec{\omega}$ \\
+Vinkelakselerasjon & Angular acceleration & $\vec{\alpha}$ & $\mathrm{rad/s^2}$ & \\
+\hline
+Masse & Mass & $\mathrm{m, M}$ & $\mathrm{kg}$ & \\
+Massetetthet & (Mass) density & $\rho$ & $\mathrm{kg/m^3}$ & \\
+Treghetsmoment & Moment of inertia & $I$ & $\mathrm{kg\cdot m^2}$ & \\
+\hline
+Kraft & Force & $\vec{F}$ & $\mathrm{N = kg\cdot m/s^2}$ & \\
+Snordrag & Tension & $\vec{F}_S, \vec{S}, \vec{T}$ & $\mathrm{N = kg\cdot m/s^2}$ &\parbox{6 cm}{Ordet \emph{tension} betyr egentlig spenning og brukes også i en del andre sammenhenger.} \\
+Gravitasjon, tyngdekraft & Gravity, gravitational force & $\vec{w}, m\vec{g}$ & $\mathrm{N}$ & \\
+Kraftmoment & Torque & $\vec{\tau}$ & $\mathrm{N\cdot m}$ & \parbox{6 cm}{Selv om $\mathrm{N\cdot m=J}$ bruker vi aldri enheten $\mathrm{J}$ på kraftmoment.}  \\
+\hline
+Kinetisk energi & Kinetic energy & $E_k, K$ & $\mathrm{J = N\cdot m = kg\cdot m^2/s^2}$ & \\
+Potensiell energi & Potential energy & $E_p, U$ & $\mathrm{J = N\cdot m = kg\cdot m^2/s^2}$ & \\
+Arbeid & Work & $W$ & $\mathrm{J = N\cdot m = kg\cdot m^2/s^2}$ & Arbeid er energi som krefter overfører. \\
+Effekt & Power & $P$ & $\mathrm{W = J/s}$ & Arbeid per tid, $P = \frac{\d W}{d t}$\\
+Bevegelsesmengde & Momentum & $\vec{p}$ & $\mathrm{kg\cdot m/s = N\cdot s}$ &  $\vec{p} = m\vec{v}$ \\
+Spinn, drivmoment & Angular momentum & $\vec{L}$ & $\mathrm{kg\cdot m^2/s}$ & \\
+\hline
+Trykk & Pressure & p & $\mathrm{Pa = N/m^2}$ & \\
+Oppdrift & Buoyancy & & & \\
+Oppdriftskraft & Buoyant force & & N & \\
+\hline
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+
+\end{document}
