@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 \usepackage{amsmath}
+\usepackage{color}
 \def\d{\ensuremath{\mathrm{d}}}
 \def\ex{\ensuremath{\hat{e}_x}}
 \def\ey{\ensuremath{\hat{e}_y}}
@@ -11,13 +12,14 @@
 \def\eth{\ensuremath{\hat{e}_\theta}}
 
 \begin{document}
+\tableofcontents
 
 \chapter{Enheter}
 I fysikk har de fleste størrelsene enheter. Enheten er en essensiell del av størrelsen, så hvis om vi oppgir bare tallverdien er ikke størrelsen tilstrekkelig spesifisert. For eksempel er det ikke tilstrekkelig å si at en stav er 1 lang. Da blir det bare gjetting om det er 1 meter, 1 fot eller noe helt annet.\footnote{Mars-sonden Mars Climate Orbiter kræsjlandet fordi programvaren ga resulter i pundsekunder (lbf s), mens resultatene ble tolket som Newtonsekunder(Ns) som var det kontrakten mellom NASA og Lokheed hadde spesifisert at skulle brukes.} Når vi regner med størrelser som har enheter er enhetene en del av utregningen, og vi tar de med også i alle mellomregninger.
 
 Ved å ta med enheter hele veien gjennom beregningen får vi automatisk en kontroll på om beregningen vi har utført er fornuftig. Hvis vi skal regne ut en energi og ender opp med enhet $\mathrm{m^2/s^2}$ vet vi at det er noe feil i utreningen. Enhetene kan også hjelpe oss å huske hvordan vi formler ser ut. Hvis vi for eksempel husker at vi ut fra en hastighet (m/s) og en tid (s) kan finne avstanden, men ikke hvordan de skal kombineres kan vi straks se dette ut fra enhetene. Den eneste måten å kombinere m/s og s til å gi riktig enhet for lengde (m) er å multiplisere de sammen. Altså må vi ha $x = vt$.
 
-Det finnes mange forskjellige enhets-systemer. Det mest brukte, og det eneste som blir diskutert her, er SI-systemet (Système international d'unités). SI-systemet er bygget opp fra syv grunnenheter:
+Det finnes mange forskjellige enhets-systemer. Det mest brukte, og det eneste som blir diskutert her, er SI-systemet (Système international d'unités). SI-systemet er bygget opp fra syv grunnenheter {\color{red}[Denne beskrivelsen er i ferd med å bli utdatert]}:
 \begin{itemize}
 \item Lengde - meter (m)
 \item Masse - kilogram\footnote{Merk at det er kilogram som er grunnenheten, ikke gram.} (kg)
@@ -118,7 +120,11 @@ Gjensidig induktans & $M$ & 1 H & \\
 \chapter{Skalarer og vektorer}
 En del fysiske størrelser kan spesifiseres fullstendig ved hjelp av et tall + enhet. Dette er en skalar. Merk at den skalare størrelsen kan ha samme verdi på alle punkter i rommet (eksempel: lysets hastighet i vakuum) eller variere fra sted til sted (eksempel: temperatur). Skalare størrelser kan også endre seg med tiden. Når vi regner med skalarer kan vi bruke alle de vanlige regneartene.
 
-Andre fysiske størrelser er ikke fullstendig spesifisert ved hjelp av bare et tall + enhet. For eksempel holder det ikke å si at det blåser $10~\mathrm{m/s}$ -- vi vil som regel vite retningen også. En størrelse som må spesifiseres både ved hjelp av verdi og retning kalles en vektor. Akkurat som skalarer kan vektorer ha samme verdi og retning i alle punkter i rommet, eller verdi og/eller retning kan variere fra punkt til punkt. Verdi og retning kan også endre seg med tiden. For vektorer har vi i tillegg til addisjon og subtraksjon tre typer multiplikasjon:
+Andre fysiske størrelser er ikke fullstendig spesifisert ved hjelp av bare et tall + enhet. For eksempel holder det ikke å si at det blåser $10~\mathrm{m/s}$ -- vi vil som regel vite retningen også. En størrelse som må spesifiseres både ved hjelp av verdi og retning kalles en vektor. 
+
+
+\section{Vektoroperasjoner}
+Akkurat som skalarer kan vektorer ha samme verdi og retning i alle punkter i rommet, eller verdi og/eller retning kan variere fra punkt til punkt. Verdi og retning kan også endre seg med tiden. For vektorer har vi i tillegg til addisjon og subtraksjon tre typer multiplikasjon:
 \begin{itemize}
 \item Multiplikasjon med en skalar $\to$ gir en vektor som svar
 \item Indreprodukt/prikkprodukt mellom to vektorer $\to$ gir en skalar som svar
@@ -224,6 +230,11 @@ Vi definerer nå tre enhetsvektorer $\er, \eth$ og $\ez$. Enhetsvektoren $\ez$ e
 
 Siden retningen til $\er$ og $\eth$ varierer fra punkt til punkt vil de påvirkes av derivasjon. 
 
+\chapter{Derivasjon og integrasjon}
+\section{Derivasjon}
+\section{Integrasjon}
+\section{Differensialligninger}
+
 \chapter{Usikkerhet og signifikante sifre}
 I motsetning til i matematikk der vi som regel kan anta at vi har eksakt kjennskap til størrelsene vi jobber med har vi i fysikk generelt bare kjennskap til størrelsen med en viss presisjon. Dette skyldes at fysiske størrelser har opphav i målinger og der kan vi aldri ha uendelig presisjon. Skal vi gjøre ting helt korrekt skal størrelsen oppgis sammen med dens estimerte usikkerhet.\footnote{Heller ikke usikkerheten er eksakt bestemt, men det er som regel mulig å estimere denne på en systematisk måte.
 } For eksempel kan en lengde oppgis som $x=(1.03\pm0.02)~\mathrm{m}$. Dette betyr det beste estimatet vi har på lengden er $x = 1.03~\mathrm{m}$. Usikkerheten $\pm0.02~\mathrm{m}$ betyr at vi mener å vite at hvis denne lengden blir målt mange ganger vil flesteparten\footnote{Det vanligste er å bruke en definisjon av usikkerheten som gjør at 67\% at målingene skal havne innenfor intervallet definert av usikkerheten.} av målingene skal vise mellom $x=1.01~\mathrm{m}$ og $x=1.05~\mathrm{m}$. 
@@ -238,7 +249,7 @@ Noen få ord om hvordan man teller sifre: Hvis vi teller fra venstre er det før
 \end{itemize}
 Merk at hvis du får svaret $238~\mathrm{m}$ og kun skal ha med to sifre må svaret skrives som $2.4\time10^2~\mathrm{m}$ for å følge denne regelen siden å skrive det avrundete tallet $240~\mathrm{m}$ fremdeles er å skrive tre sifre.
 
-\subsection{Mer om usikkerhet}
+\section{Mer om usikkerhet}
 Noen ganger er ikke tommelfingerregelen om antall signifikante sifre tilstrekkelig. For eksempel må usikkerhet behandles skikkelig hvis man skriver en vitenskaplig artikkel eller en teknisk rapport. Også i labøvinger er det vanlig å kreve at usikkerheten behandles på en ordentlig måte. 
 
 Vi skal her se kort på hvordan man propagerer usikkerhet fra inntallene til svaret. Å gjøre dette helt generelt er komplisert, så vi vil her gjøre to antakelser som forenkler problemet:
