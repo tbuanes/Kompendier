@@ -1,0 +1,102 @@
+\chapter{Enheter}
+I fysikk har de fleste størrelsene enheter. Enheten er en essensiell del av størrelsen, så hvis om vi oppgir bare tallverdien er ikke størrelsen tilstrekkelig spesifisert. For eksempel er det ikke tilstrekkelig å si at en stav er 1 lang. Da blir det bare gjetting om det er 1 meter, 1 fot eller noe helt annet.\footnote{Mars-sonden Mars Climate Orbiter kræsjlandet fordi programvaren ga resulter i pundsekunder (lbf s), mens resultatene ble tolket som Newtonsekunder(Ns) som var det kontrakten mellom NASA og Lokheed hadde spesifisert at skulle brukes.} Når vi regner med størrelser som har enheter er enhetene en del av utregningen, og vi tar de med også i alle mellomregninger.
+
+Ved å ta med enheter hele veien gjennom beregningen får vi automatisk en kontroll på om beregningen vi har utført er fornuftig. Hvis vi skal regne ut en energi og ender opp med enhet $\mathrm{m^2/s^2}$ vet vi at det er noe feil i utreningen. Enhetene kan også hjelpe oss å huske hvordan vi formler ser ut. Hvis vi for eksempel husker at vi ut fra en hastighet (m/s) og en tid (s) kan finne avstanden, men ikke hvordan de skal kombineres kan vi straks se dette ut fra enhetene. Den eneste måten å kombinere m/s og s til å gi riktig enhet for lengde (m) er å multiplisere de sammen. Altså må vi ha $x = vt$.
+
+Det finnes mange forskjellige enhets-systemer. Det mest brukte, og det eneste som blir diskutert her, er SI-systemet (Système international d'unités). SI-systemet er bygget opp fra syv grunnenheter {\color{red}[Denne beskrivelsen er i ferd med å bli utdatert]}:
+\begin{itemize}
+\item Lengde - meter (m)
+\item Masse - kilogram\footnote{Merk at det er kilogram som er grunnenheten, ikke gram.} (kg)
+\item Tid - sekund (s)
+\item Elektrisk strøm - ampere (A)
+\item Temperatur - kelvin (K)
+\item Stoffmengde - mol (mol)
+\item Lysstyrke - candela (cd)
+\end{itemize}
+Enhetene til alle andre størrelser får man ved å kombinere grunn-enhetene. En del kombinasjoner som ofte opptrer har fått egne navn og symbol. En rekke størrelser og enheter man ofte treffer på i fysikk-oppgaver er listet i tabell \ref{tab:enheter:mekanikk}-\ref{tab:enheter:magnetisme}.
+
+%% Begin tables
+\begin{table}[tbp]
+{\small
+\begin{tabular}{|l|l|l|l|}
+\hline
+\hline
+{\bf Størrelse} & {\bf Symbol} & {\bf Enhet} & {\bf Navn på enhet} \\
+\hline
+Posisjon & $\vec{x}, \vec{r}$ & 1~m & Meter \\
+Hastighet & $\vec{v}$ &  1~m/s & \\
+Akselerasjon & $\vec{a}$ & $1~\mathrm{m/s^2}$ & \\
+\hline
+Masse  & $m$ & 1~kg & Kilogram \\
+Massetetthet, masse per volum & $\rho$ & $1~\mathrm{kg/m^3}$ & \\
+\hline
+Energi & $E, K, U$ & 1 J = 1 Nm = 1 $\mathrm{kg m^2/s^2}$ & Joule \\
+Arbeid & $W$ & 1 J & \\
+Effekt & $P$ & 1 W = 1 J/s & Watt \\
+\hline
+Kraft & $\vec{F}$ & 1 N = 1 $\mathrm{kg m/s^2}$ & Newton \\
+Bevegelsesmengde & $\vec{p}, \vec{P} $ & 1 $\mathrm{kg m/s^2}$ & \\
+Impuls, støt & $\vec{J}$ & $\mathrm{1~Ns = 1~kg m/s^2}$ & \\
+\hline
+\hline
+\end{tabular}
+}
+\caption{Størrelser og enheter først og fremst knyttet til mekanikk, men energi, arbeid og effekt er også viktig i andre deler av fysikken.}
+\label{tab:enheter:mekanikk}
+\end{table}
+
+\begin{table}[tbp]
+{\small
+\begin{tabular}{|l|l|l|l|}
+\hline
+\hline
+{\bf Størrelse} & {\bf Symbol} & {\bf Enhet} & {\bf Navn på enhet} \\
+\hline
+Ladning & $Q, q$ & 1 C & Coulomb \\
+Ladningstetthet, ladning per lengde & $\lambda$ & 1 C/m  & \\
+Ladningstetthet, ladning per areal & $\sigma$ & 1 C/m$^2$ & \\
+Ladningstetthet, ladning per volum & $\rho$ & 1 C/m$^3$ & \\
+\hline
+Elektrisk strøm & $I, i$ & 1 A = 1 C/s & Ampere \\
+Elektrisk strømtetthet & $\vec{J}$ & 1 A/m$^2$ & \\
+\hline
+Elektrisk felt & $\vec{E}$ & 1 N/C = 1 V/m & \\
+Elektrisk fluks & $\Phi_E$ & 1 Nm$^2$/C = 1 Vm & \\
+\hline
+Elektrisk potensial & $V$ & 1 V = 1 J/C & Volt \\
+Elektromotorisk spenning & ${\cal E}$ & 1 V & \\
+\hline
+Motstand, resistans & $R, r$ & 1 $\Omega$ = 1 V/A & Ohm \\
+Resisitivitet & $\rho$ & 1 $\Omega$m & \\
+Konduktivitet & $\sigma$ & 1 $(\Omega\mathrm{m})^{-1}$ & \\
+\hline
+Kapasitans & $C$ & 1 F = C/V & Farad \\
+\hline
+\hline
+\end{tabular}
+}
+\caption{Størrelser og enheter knyttet til elektriske fenomen.}
+\label{tab:enheter:elektrisk}
+\end{table}
+
+\begin{table}[tbp]
+{\small
+\begin{tabular}{|l|l|l|l|}
+\hline
+\hline
+{\bf Størrelse} & {\bf Symbol} & {\bf Enhet} & {\bf Navn på enhet} \\
+\hline
+Magnetisk felt & $\vec{B}$ & $1~\mathrm{T} = 1~\mathrm{N/Am}$ & Tesla \\
+Magnetisk fluks & $\Phi_{B}$ & $1~\mathrm{Wb} = 1~\mathrm{Tm^2}$ & Weber \\
+Magnetisering  & $\vec{M}$ & 1 A/m & \\
+Induktans & $L$ & 1 H = 1 Wb/A = 1 Vs/A & Henry\\
+Gjensidig induktans & $M$ & 1 H & \\
+\hline
+\hline
+\end{tabular}
+}
+\caption{Størrelser og enheter knyttet til magnetiske fenomen.}
+\label{tab:enheter:magnetisme}
+\end{table}
+%% End tables
+

@@ -1,0 +1,45 @@
+\chapter{Usikkerhet og signifikante sifre}
+I motsetning til i matematikk der vi som regel kan anta at vi har eksakt kjennskap til størrelsene vi jobber med har vi i fysikk generelt bare kjennskap til størrelsen med en viss presisjon. Dette skyldes at fysiske størrelser har opphav i målinger og der kan vi aldri ha uendelig presisjon. Skal vi gjøre ting helt korrekt skal størrelsen oppgis sammen med dens estimerte usikkerhet.\footnote{Heller ikke usikkerheten er eksakt bestemt, men det er som regel mulig å estimere denne på en systematisk måte.
+} For eksempel kan en lengde oppgis som $x=(1.03\pm0.02)~\mathrm{m}$. Dette betyr det beste estimatet vi har på lengden er $x = 1.03~\mathrm{m}$. Usikkerheten $\pm0.02~\mathrm{m}$ betyr at vi mener å vite at hvis denne lengden blir målt mange ganger vil flesteparten\footnote{Det vanligste er å bruke en definisjon av usikkerheten som gjør at 67\% at målingene skal havne innenfor intervallet definert av usikkerheten.} av målingene skal vise mellom $x=1.01~\mathrm{m}$ og $x=1.05~\mathrm{m}$. 
+
+I regneoppgaver forholder vi oss vanligvis litt mer avslappet til usikkerheten i størrelsene, men vi glemmer den ikke helt. Hvis f.eks. en energi oppgis som $2.52~\mathrm{J}$ tolkes det som at usikkerheten er i det siste sifferet. Det kan altså tenkes at den riktige verdien er $2.51~\mathrm{J}$ eller $2.55~\mathrm{J}$, men sannsynligvis ikke at avviket er så stort at den riktige verdien er $2.60~\mathrm{J}$. En tommelfingerregel for å få en fornuftig presisjon i svaret av en beregning er å ikke ta med flere sifre i sluttsvaret enn det var i den inn-verdien med færrest sifre.
+
+Noen få ord om hvordan man teller sifre: Hvis vi teller fra venstre er det første sifferet som er ulik 0 det første vi teller. Deretter teller alle sifre med i regnskapet. Eksempler:
+\begin{itemize}
+	\item 1.54 -- tre sifre
+	\item 0.03 -- ett siffer
+	\item$1.3\times10^6$ -- to sifre
+\end{itemize}
+Merk at hvis du får svaret $238~\mathrm{m}$ og kun skal ha med to sifre må svaret skrives som $2.4\time10^2~\mathrm{m}$ for å følge denne regelen siden å skrive det avrundete tallet $240~\mathrm{m}$ fremdeles er å skrive tre sifre.
+
+\section{Mer om usikkerhet}
+Noen ganger er ikke tommelfingerregelen om antall signifikante sifre tilstrekkelig. For eksempel må usikkerhet behandles skikkelig hvis man skriver en vitenskaplig artikkel eller en teknisk rapport. Også i labøvinger er det vanlig å kreve at usikkerheten behandles på en ordentlig måte. 
+
+Vi skal her se kort på hvordan man propagerer usikkerhet fra inntallene til svaret. Å gjøre dette helt generelt er komplisert, så vi vil her gjøre to antakelser som forenkler problemet:
+\begin{itemize}
+\item
+Usikkerheten til alle variablene er ukorrelerte. Det vil si at selv om usikkerheten på en variabel, så vil ikke de andre 	usikkerhetene påvirkes.
+\item
+Alle usikkerhetene kommer fra en gaussisk fordeling. 
+\end{itemize}
+Anta at vi har måledata $a\pm\sigma_a,b\pm\sigma_b,c\pm\sigma_c,d\pm\sigma_d$ som kombineres til et resultat $f(a,b,c,d)$. Vi ønsker nå å finne usikkerheten, $\sigma_f$, til dette resultatet. Det finner vi via formelen:
+\begin{displaymath}
+	\sigma_f^2 =
+	\left(\frac{\partial f}{\partial a}\right)^2\sigma_a^2 + \left(\frac{\partial f}{\partial b}\right)^2\sigma_b^2 + 
+	\left(\frac{\partial f}{\partial c}\right)^2\sigma_c^2 + \left(\frac{\partial f}{\partial d}\right)^2\sigma_d^2 
+\end{displaymath}
+For å gjøre det mer konkret skal vi se på noen spesialtilfeller, og for enkelhets skyld nøyer vi oss med to inn-variabler, men resultatene kan enkelt utvides til flere variabler.
+\subsubsection*{Addisjon}
+$f(a,b) = a + b,\quad	\sigma_f^2 = \sigma_a^2 + \sigma_b^2$
+\subsubsection*{Subtraksjon}
+$f(a,b) = a - b, \quad	\sigma_f^2 = \sigma_a^2 + \sigma_b^2$ \\
+Merk at siden usikkerhetene adderes i kvadratur her, mens $f$ kommer som resultat av en subtraksjon kan den relative usikkerheten på resultatet, $\sigma_f/f$, bli veldig mye større enn de relative usikkerhetene på inndataene. Det er derfor en fordel, om mulig, å organisere målingene og beregningene sine slik at subtraksjon unngås.
+\subsubsection*{Multiplikasjon}
+$f(a,b) = a\cdot b, 
+\quad  \left(\frac{\sigma_f}{f}\right)^2 = \left(\frac{\sigma_a}{a}\right)^2 + \left(\frac{\sigma_b}{b}\right)^2$
+\subsubsection*{Multiplikasjon med en tall uten usikkerhet}
+$f(a) = 2a, \quad \sigma_f = 2\sigma_a$
+\subsubsection*{Divisjon}
+$f(a,b) = \frac{a}{b}, \quad 
+\quad  \left(\frac{\sigma_f}{f}\right)^2 = \left(\frac{\sigma_a}{a}\right)^2 + \left(\frac{\sigma_b}{b}\right)^2$\\
+På samme måte som subtraksjon vil også divisjon kunne blåse opp den relative usikkerheten.
