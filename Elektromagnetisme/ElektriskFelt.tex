@@ -1,0 +1,90 @@
+\documentclass[a4paper,norsk,12pt]{article}
+
+\usepackage[norsk]{babel}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\def\d{\ensuremath{\text{d}}}
+\def\half{\ensuremath{\frac{1}{2}}}
+\def\ivec{\ensuremath{\,\hat{\i}}}
+\def\jvec{\ensuremath{\,\hat{\j}}}
+\def\kvec{\ensuremath{\,\hat{k}}}
+
+\begin{document}
+\section*{Oppsummering av elektrisk felt}
+Enhver elektrisk ladning omgir seg med et elektrisk felt. Det er dette feltet som formidler den elektriske kraften og sørger for at elektriske krefter virker over avstand. Hvis vi kjenner det elektriske feltet i et område kan vi straks regne ut kraften på en ladning $q$ som plasseres i det elektriske feltet:
+\begin{displaymath}
+	\vec{F} = q\vec{E}.
+\end{displaymath}
+Av ligningen ser vi at hvis ladningen er positiv ($q>0$) virker kraften i samme retning som det elektriske feltet, mens hvis ladningen er negativ $(q<0)$ virker kraften i motsatt retning av det elektriske feltet.
+
+I dette dokumentet skal vi kun se på statiske ladningsfordelinger---altså der all ladningen ligger i ro. Hvis ladningen får mulighet til å bevege seg (=elektrisk strøm) vil vi kunne få tidsvarierende elektriske felter, og det er en komplikasjon vi vil unngå på dette tidspunktet.
+
+\subsection*{Felt fra \'en punktladning}
+Hvis kilden til det elektriske feltet er en punktladning er feltet på formen
+\begin{displaymath}
+	\vec{E}_\text{punktladning} = \frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}\vec{e}_r
+\end{displaymath}
+der $Q$ er ladningen som setter opp feltet, $r$ er avstanden mellom kilden til feltet og det punktet der vi ønsker å vite hvor stort feltet er, og $\vec{e}_r$ er en enhetsvektor som peker fra kilden til dette målepunktet. Vi ser at hvis kilden er positiv ($Q>0$) peker feltet bort fra kilden, mens hvis kilden er negativ ($Q<0$) peker feltet mot kilden.
+
+Uttrykket for punktladning er en god tilnærming også selv om ikke all ladningen er samlet i ett punkt dersom avstanden mellom kilden og målepunktet er mye større enn utstrekningen av området der kilde-ladningen er fordelt.
+
+\subsection*{Felt fra flere punktladninger}
+Elektriske felt følger superposisjonsprinsippet. Det vil si at for å beregne et felt som er laget av flere kilder legger vi sammen feltet fra hver av kildene. Hvis vi har et antall punktladninger $\{Q_1, Q_2, \ldots\}$ er det elektriske feltet
+\begin{displaymath}
+	\vec{E}_\text{flere punktladninger} = \frac{1}{4\pi\epsilon_0}\frac{Q_1}{r_1^2}\vec{e}_{r(1)} + \frac{1}{4\pi\epsilon_0}\frac{Q_2}{r_2^2}\vec{e}_{r(2)} + \ldots
+\end{displaymath}
+Merk at det nå er en unik enhetsvektor for hver kildeladning, siden denne enhetsvektoren alltid skal peke fra kilde til målepunkt.
+
+\subsection*{Felt fra kontinuerlige ladningsfordelinger}
+Hvis ladningen er fordelt jevnt ut over et område, f.eks.~en stang, en kule eller en flate, må vi integrere over ladningsfordelingen for å finne det elektriske feltet. Dette blir generelt et  uhåndterlig integral som ofte må beregnes numerisk. Det er likevel noen enkle, men viktige spesialtilfeller som kan beregnes analytisk.
+
+\subsubsection*{Felt fra kuleskall}
+Feltet fra et kuleskall med total ladning $Q$ jevnt fordelt over hele skallet er
+\begin{displaymath}
+	\vec{E}_\text{kuleskall} = \left\{
+	\begin{aligned}
+		&0 &\text{for målepunkter innenfor kuleskallet}\\
+		&\frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}\vec{e_r} &\text{for målepunkter utenfor kuleskallet}
+	\end{aligned}
+	\right.
+\end{displaymath}
+Her er $r$ avstanden målt fra sentrum av kuleskallet, og $\vec{e_r}$ peker fra sentrum av kuleskallet mot målepunktet. Merk at uttrykket for det elektriske feltet utenfor kuleskallet er nøyaktig det samme som om all ladningen var samlet i et punkt i sentrum av kuleskallet.
+
+\subsubsection*{Felt fra massiv kule}
+Hvis ladningen ikke bare er fordelt på et kuleskall, men i hele volumet av en kule blir resultatet det samme så lenge vi er utenfor kulen. Det ser vi fordi vi da kan tenke på kulen som bestående av en rekke kuleskall med samme sentrum. For å se på hvordan felter er på punkter inne i kulen fortsetter vi å tenke på kulen som bestående av flere kuleskall. Siden $\vec{E}=0$ inne i et kuleskall får vi kun bidrag fra de kuleskallene som er innenfor målepunktet.
+\begin{displaymath}
+	\vec{E}_\text{kule} = \left\{
+	\begin{aligned}
+		& \frac{1}{4\pi\epsilon_0}\frac{Q}{R^3}r\vec{e_r}&\text r<R\\
+		&\frac{1}{4\pi\epsilon_0}\frac{Q}{r^2}\vec{e_r} &r>R
+	\end{aligned}
+	\right.
+\end{displaymath}
+her er $r$ avstanden fra sentrum av kulen til målepunktet, og $R$ er kulen sin radius. Uttrykket for det elektriske feltet inne i kulen forutsetter at ladninger er jevnt fordelt i hele kulen. Vi ser altså at så lenge vi er inne i kulen blir feltet sterker jo lengre fra sentrum vi kommer fordi vi har stadig flere av kuleskallene innenfor oss.
+
+NB! Denne kulen må være laget av et isolerende materiale for å kunne ha en slik jevn ladningsfordeling. I en kule laget av et ledende materiale vil all ladningen samle seg på overflaten.
+
+\subsubsection*{Felt fra uendelig lang, uendlig tynn stav}
+Dette er en idealisering, men den viser seg å være nyttig. Hvis vi har en uendelig lang, uendelig tynn stav med ladning per lengde $\lambda$ (f.eks. $1~\mathrm{\mu C}$ per meter stav) er det elektriske feltet i avstand $r$ fra staven
+\begin{displaymath}
+	\vec{E}_\text{stav} = \frac{\lambda}{2\pi\epsilon_0r}\vec{e}_r
+\end{displaymath}
+der enhetsvektoren $\vec{e}_r$ peker normalt utover fra staven. Merk at $\lambda$ kan være positiv eller negativ avhengig av om vi har plassert positiv eller negativ ladning på staven. Hvis det er positiv ladning på staven peker altså feltet bort fra staven, mens feltet peker mot staven hvis det er negativ ladning på den. Merk at feltet avtar med avstanden som $1/r$. Feltet omkring en ladd stav avtar altså langsommere med avstanden enn feltet rundt en punktladning.
+
+Grunnen til at dette resultet er nyttig selv om vi aldri kan ha en uendlig lang stav er at feltet er praktisk talt det samme for en endelig lang stav så lenge avstanden fra staven til målepunktet ($r$) er mye mindre enn avstanden fra målepunktet til enden av staven. Dette resultatet blir viktig for oss når vi skal studere kapasitansen til koaksialledninger.
+
+\subsubsection*{Felt fra et uendelig stort, uendelig tynt plan}
+Akkurat som staven er dette en idealisering som likevel er nyttig for oss. Vi lar planet ha ladning per areal $\sigma$ (f.eks. $1~\mathrm{mC}$ per kvadratmeter). Feltet som planet lager er da
+\begin{displaymath}
+	\vec{E}_\text{plan} = \frac{\sigma}{2\epsilon_0}\vec{e}_r
+\end{displaymath}
+der enhetsvektoren $\vec{e}_r$ peker normalt utover fra planet. Feltet peker altså bort fra planet dersom det har positiv ladning og mot planet dersom det har negativ ladning. Merk at styrken på feltet er uavhengig av avstanden fra planet.
+
+Akkurat som staven er også dette resultatet nyttig for plater av endelig størrelse. Så lenge vi sørger for at avstanden fra platen normalt ut til målepunktet er mye kortere enn avstanden fra målepunktet til kanten av platen er feltet som er beregnet ovenfor en god tilnærming. Om platen er rund, firkantet eller har en annen form er uten betydning (men den må være flat).
+
+\end{document}
