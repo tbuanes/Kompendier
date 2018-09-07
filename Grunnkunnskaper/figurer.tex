@@ -1,5 +1,48 @@
 \chapter{Figurer}
+En god figur er nyttig for å organisere opplysningene i en problemstilling før vi begynner å regne. Hva slags figur vi tegner vil avhenge av problemstillingen. Typiske figurer inkluderer:
+\begin{enumerate}
+\item
+	Bevegelsesdiagram (mekanikk)
+\item
+	Frilegemediagram (mekanikk)
+\item
+	pV-diagram (termodynamikk)
+\end{enumerate}
 
+\section{Bevegelsesdiagram}
 
 \section{Frilegemediagram}
-En god figur er nyttig for å organisere opplysningene i en problemstilling før vi begynner å regne. I mekanikk-oppgaver er frilegemediagrammer vanligvis den nyttigste figurtypen.
+I mekanikk-oppgaver er frilegemediagrammer vanligvis den nyttigste figurtypen. Fokus i et frilegemediagram er hvilke krefter som virker på hver del av systemet vi ser på. Ordet frilegemediagram antyder at vi skal tegne et diagram for hver del (=legeme), men hvis systemet ikke er for komplisert kan det gå greit å tegne på krefter på alle deler i en og samme figur.
+
+Noen tips for et godt frilegemediagram:
+\begin{itemize}
+\item
+Velg et gunstig kooridnatsystem, og tegn dette inn. Et gunstig koordinatsystem er vanligvis et koordinatsystem der ortogonale akser der bevegelsen er parallell med en av aksene.
+\item
+Alle \emph{relevante} krefter på alle deler av systemet skal tegnes inn. Krefter som kan utelates som irrelevante er de som trivielt summerer til null og ikke skal brukes til noe i beregningen. Hvis du er i tvil om en kraft er relevant---ta den med!
+\item
+Kreftene skal i hovedsak tegnes inn med riktig angrepspunkt, men noen ganger er det nyttig å forskyve angrepspunktet litt for å gjør diagrammet mer oversiktelig.
+\item
+Kreftene tegnes inn med riktig retning hvis denne er kjent. Hvis retningen er ukjent tegnes kraften inn med antatt retning---denne vil bekreftes eller korrigeres av beregningen.
+\item
+Dekomponer krefter som ikke er parallell med aksene i koordinatsystemet du har valgt. Merk av hvilke krefter som er dekomponert for å unngå dobbeltelling.
+\item
+Tegn gjerne inn fart og/eller akselerasjon i frilegemediagrammet, men tegn disse størrelsene inn på en slik måte at det ikke er fare for å forveksle dem med krefter. 
+\end{itemize}
+
+\section{pV-diagram}
+I termodynamikk uttykker vi tilstanden til et system ved å spesifisere en rekke ulike variable, f.eks.~trykk, volum, temperatur og stoffmengde. Hvis vi gjør noe med dette systemet---som å varme det opp eller komprimere det---vil \'en eller flere av disse variablene endres. Vi kan se for oss å fremstille denne endringen i et mange-dimensjonalt koordinatsystem, men slike er vanskelig eller umulig å tegne. Derfor er det oftest nyttig å velge ut to av variablene og tegne inn endringen i et to-dimensjonalt koordinatsystem. I veldig mange tilfeller---og praktisk talt alle tilfellene som er aktuelle i grunnleggende fysikk-kurs---er trykk ($p$) og volum ($V$) det nyttigste paret av variabler. Vi tegner da et pV-diagram der trykket varierer langs den horisontale aksen (``$x$-aksen'') og volumet variere langs den vertikale aksen (``$y$-aksen'').
+
+Det som gjør pV-diagram spesielt nyttig er at arbeidet som systemet gjør beregnes som 
+\begin{displaymath}
+	W = \int_{V_1}^{V_2}p\d V.
+\end{displaymath}
+Slik pV-diagrammet er definert kan vi altså tolke arealet under grafen som forbinder start- og sluttpunktet som arbeidet systemet gjør (eller blir gjort på systemet). 
+
+Både trykk og volum vil alltid være positive størrelser. Vi ser da at en prosess som beveger seg mot høyre i pV-diagrammet gir positivt arbeid---altså systemet gjør arbeid på omgivelsene. En prosess som beveger seg mot venstre i pV-diagrammet gir negativt arbeid---altså at omgivelsene gjør arbeid på systemet. En prosess som beveger seg rett opp eller rett ned i pV-diagrammet gjør ikke noe arbeid.
+
+Hvis systemet er en ideell gass med konstant stoffmengde er konstant-temperatur-linjer i pV-diagrammet gitt som
+\begin{displaymath}
+	p = \frac{nRT}{V} = \frac{\text{konstant}}{V}
+\end{displaymath}
+der konstanten er større, jo større temperaturen er. Dette betyr at punkter nede til venstre har lav temperatur, mens punkter oppe til høyre har høy temperatur.
