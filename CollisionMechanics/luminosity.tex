@@ -1,0 +1,30 @@
+\section{Luminosity}
+
+The intensity of collisions in a particle physics experiment is quantified through the \emph{luminosity}. In a colliding beams experiment this is given by
+\begin{equation}
+\label{eq:luminosity}
+{\cal L} = \frac{n_b}{2\pi}\frac{f_\text{rev}N_1 N_2}{\sigma_x \sigma_y}
+\end{equation}
+when a total of $n_b$ bunches are circulating in the collider with $N_1$ particles per bunch in bunches circulating in one direction and $N_2$ particles per bunch circulating in the opposite direction. $f_\text{rev}$ is the circulation frequency of the bunches. $\sigma_x$ and $\sigma_y$ is the width (usually assumed to be Gaussian) of each bunch in the two directions transverse to the velocity when the bunches are in the collision region\footnote{Bunches are generally squeezed to have a much smaller transverse size in the collision region than in the rest of the machine.}.
+
+We can se from equation (\ref{eq:luminosity}) that luminosity has the units of 1/(area$\times$time). The conventional units to use are $\mathrm{cm^{-2}s^{-1}}$. For instance, the peak luminsoity obtained by LHC in the ATLAS in 2018 was
+\begin{displaymath}
+	{\cal L}_\text{peak} = 21.0\times 10^{33}~\mathrm{cm^{-2}s^{-1}}.
+\end{displaymath}
+
+This way of expressing the collision intensity makes it easy to calculate event rates. If the collision cross section is $\sigma$, then the event rate is
+\begin{equation}
+\label{eq:eventrate}
+	\frac{\d N}{\d t} = \sigma {\cal L}.
+\end{equation}
+This expression holds independent on whether $\sigma$ is the total collision cross section or the cross section for a specific process. Since cross section is usually expressed in units of barns ($1~\mathrm{b}=10^{-28}~\mathrm{m^2})$ it may be useful to express the luminosity in units of $\mathrm{b^{-1}s^{-1}}$ using
+\begin{displaymath}
+	10^{34}~\mathrm{cm^{-2}s^{-1}} = 10^{10}~\mathrm{b^{-1}s^{-1}} = 10~\mathrm{nb^{-1}s^{-1}}.
+\end{displaymath}
+
+\subsection{Integrated luminosity}
+The amount of data collected over a certain time is quantified through the integrated luminosity,
+\begin{equation}
+	\int {\cal L}\d t.
+\end{equation}
+The integrated luminosity is given in units of inverse barn. With the amount of data collected by ATLAS, one usually have a number of $\mathrm{fb}^{-1}$. Using equation (\ref{eq:eventrate}) it is easy to calculate the expected number of events of a certain type given an integrated luminosity as long as one knows the relevant cross section. 
