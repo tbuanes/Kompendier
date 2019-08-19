@@ -1,0 +1,39 @@
+\section{Reconstruction of decay processes}
+Most of the particles which are produced in a high energy particle physics collision are too short lived to reach the detector before decaying. Indeed, only a small number of particle species actually ever transverse the detector and can thus be detected\footnote{For each item in the list, there is also an anti-particle which also can reach the detector}:
+\begin{itemize}
+	\item
+		electron
+	\item
+		muon
+	\item
+		photon
+	\item
+		pions (charged and neutral)
+	\item
+		kaons (charged and neutral)
+	\item
+		proton
+	\item
+		neutron
+	\item
+		neutrinoes (three species, undetectable)
+\end{itemize}
+All other particle species must be deduced from their decay products. For instance, we may have a $Z$-boson produced decaying to a muon--anti-muon pair:
+\begin{displaymath}
+	Z \to \mu^+\mu^-.
+\end{displaymath}
+In this case we will detect two muons coming from the interaction vertex (since the lifetime of the $Z$-boson is so short that it will decay before moving an appreciable distance). To infer that this muon--anti-muon pair actually comes from a $Z$-boson and not from some other process(es) we must use conservation of energy and momentum to calculate the mass of the object they came from. If this mass coincides with that of the $Z$-boson we can be almost certain that they come from such a decay. The mass of the decaying particle calculated this way is usually referred to as the invariant mass\footnote{The calculation utilises the fact that the mass is independent on which frame of reference is used to measure the energies and momenta, thus \emph{invariant} mass.}
+\begin{displaymath}
+	M_\text{inv}^2 = 2p_{T1}p_{T2}\left[\cosh(\eta_1-\eta_2)-\cos(\phi_1-\phi_2)\right]
+\end{displaymath}
+Here $p_{T1}$ and $p_{T2}$ are the transverse momenta of the two particles and $\eta$ and $\phi$ are the angles.\footnote{Remember that $\eta$ is strictly speaking not an angle, but derived from an angle as $\eta=-\ln(\tan(\theta/2))$.} The above formula is an approximation which assumes that the masss of the detected particles are much smaller than the mass of the decaying particle. This is usually the case, so we rarely need the exact formula. In practice, the invariant mass will not be exactly equal to the mass of the decaying particle due to detector effects, but when measuring a large number of such decay we will get a distribution which is peaked at the mass of the decaying particle.
+
+In the case of a $W$-boson decaying to leptons one of the decay products is a neutrino which is not detected, for instance
+\begin{displaymath}
+	W^- \to e^-\nu_e.
+\end{displaymath}
+Since we don't know the energy and momentum of the neutrino we cannot calculate the invariant mass. But since a neutrino carries energy and momentum we can infer its presence from an imbalance in the measured momentum in the event. Furthermore, in proton--proton collisions we don't know the momentum component along the beam axis before the collision. Thus we can only utilize conservation of momentum in the plane transverse to this direction. This means that in place of the invariant mass, we must use the best substitute we can get---namely the transverse mass:
+\begin{displaymath}
+	M_\text{T}^2 = 2E_{T1}E_T^\text{miss}(1-\cos\theta)
+\end{displaymath}
+where $E_T^\text{miss}$ is the magnitude of missing momentum in the transverse plane. When we measure the transverse momentum of a large number of particles from such a decay we get a distribution which is peaked below the $W$ mass, but has an end point at that mass. Notice that transverse mass is only applicable in events where the neutrino is the only source to momentum imbalance.

@@ -1,0 +1,30 @@
+\section{Cross section}
+The interaction probability in particle collisions is quantified\footnote{Note that the cross section \emph{is not probability} which is clear from the unit, but the quantity is proportional to the probability that an interaction will take place} in terms of the cross section, which is measured in units of barns ($1~\mathrm{b} = 10^{-28}~\mathrm{m^2}$). The cross section can be visualized as the physical cross section of the colliding particles---thus a larger cross section makes a collision/interaction more probable. However, due to the way quantum mechanics work this interpretation should only be thought of as an analogy.
+
+With knowledge of the forces (strong, weak, electromagnetic) which mediates the interaction one can (but this is usually hard) calculate the cross section. There are tools available to make the calculation for many processes both in the Standard Model and beyond. When samples are generated for use in ATLAS analyses the cross section is calculated and made available to the analysers.
+
+\subsection{Total and partial cross sections}
+The total cross section ($\sigma_\text{tot}$) quantifies the probability for a collision to take place at all. In the case of LHC, that means that the total cross section describes
+\begin{displaymath}
+	p + p \to anything
+\end{displaymath}
+and is of the order of $10^8~\mathrm{nb}$. Using the total cross section and the luminosity one can calculate the collision rate, i.e.~number of collisions per second. Se below for details.
+
+A partial cross section quantifies the probability for a collision to happen and for ending up in a specific final state, for instance a Higgs boson to be produced:
+\begin{displaymath}
+	p + p \to H + X
+\end{displaymath}
+Here $X$ means anything that can be produced together with the Higgs boson. In the case of partial cross sections, the final state may be completely specified (called exclusive) or only partially specified (called inclusive) as in the example of Higgs boson production. 
+
+Partial cross sections of processes studied or searched for at LHC may often be as small as $10^{-3}~\mathrm{nb}$ or even lower. The many orders of magnitudes difference between total cross section and partial cross section of the process we study/search for explains the the need for both effective triggers and data analysis techniques.
+
+\subsection{Event rates}
+The event rate in a collision experiment is calculated from the luminosity and cross section as
+\begin{displaymath}
+	\frac{\d N}{\d t} = \sigma {\cal L}
+\end{displaymath}
+where $\sigma$ may be either the total cross section of a partial cross section depending on which event rate we are interested in. Similarly, we can calculate the total number of events in a sample if we know the cross section and the integrated luminosity:
+\begin{displaymath}
+	N = \sigma\int{\cal L}\d t.
+\end{displaymath}
+Again this calculation may be done either with total cross section or partial cross section, depending on what we are interested in.
