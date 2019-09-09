@@ -1,0 +1,80 @@
+\documentclass[a4paper,norsk,12pt]{article}
+
+\usepackage[norsk]{babel}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\usepackage{csquotes}
+\def\d{\ensuremath{\text{d}}}
+\def\half{\ensuremath{\frac{1}{2}}}
+\def\ivec{\ensuremath{\,\hat{\i}}}
+\def\jvec{\ensuremath{\,\hat{\j}}}
+\def\kvec{\ensuremath{\,\hat{k}}}
+
+\begin{document}
+\section*{Bevarte størrelser}
+For å forstå hvilke partikler som kan bli laget i en kollisjon eller et henfall trenger vi å vite om bevarte størrelser
+\begin{itemize}
+\item Energi (NB! relativistisk --- mer om det senere)
+	\begin{itemize}
+	\item $n \to p^+e^-\bar{\nu}_e$ er mulig fordi nøytronet har større masse (og dermed energi) enn protonet og elektronet til sammen
+	\item $p^+ \to n e^+ \nu_e$ er ikke mulig fordi protonet har mindre masse (og dermed energi) enn nøytronet
+	\end{itemize}
+\item Bevegelsesmengde
+	\begin{itemize}
+	\item $e^+e^-\to \gamma$ er ikke mulig fordi bevegelsesmengde ikke bevares
+	\end{itemize}
+\item Spinn
+\item Ladning
+\item Leptontall
+\item Baryontall
+\end{itemize}
+
+\section*{Spesiell relativitetsteori}
+Grunnpostulater
+\begin{displayquote}
+\emph{Fysikkens lover er lik i alle inertialsystemer.}
+\end{displayquote}
+\begin{displayquote}
+\emph{Lyshastigheten er den samme i alle inertialsystemer uavhengig av relativ bevegelse i forhold til kilden.}
+\end{displayquote}
+Vi definerer to koordinatsystemer 
+\begin{align*}
+	X:&\quad (t,x,y,z) = (t,\vec{x})\\
+	X':&\quad (t',x',y',z') = (t',\vec{x}')
+\end{align*}
+som beveger seg relativt til hverandre slik at posisjonen til origo i $X'$ beskrives som
+\begin{displaymath}
+	\vec{P}_O = (vt, 0, 0)
+\end{displaymath}
+av en observatør som bruker koordinatsystemet $X$. Dette betyr at ved tiden $t=0$ overlapper de to koordinatsystemene, og når tiden går ser observatøren i $X$ at $X'$ beveger seg med konstant hastighet i positiv $x$-retning. Videre krever vi at også $t'=0$ i det de to koordinatsystemene overlapper. Naivt sett vil koordinatene i de to systemene da relateres som 
+\begin{align*}
+	t' &= t \\
+	x' &= x - vt\\
+	y' &= y\\
+	z' &= z
+\end{align*}
+Hvis vi nå sender et lys-signal fra origo ved tiden $t = t' = 0$ og observatøren i systemet $X$ måler at hastigheten til lyset er
+\begin{displaymath}
+	c = \frac{x}{t}
+\end{displaymath}
+så måler observatøren i systemet $X'$ hastigheten
+\begin{displaymath}
+	c' = \frac{x'}{t'} = \frac{x-vt}{t} = \frac{x}{t} - v = c - v
+\end{displaymath}
+Dette er i konflikt med postulat nummer to (og Michelson--Morley-eksperimentet) så koordinattransformasjonen må være feil.
+
+For å få $c=c'$ er det opplagt at tiden må måles ulikt i de de to koordinatsystemene, og at denne ulikheten må henge sammen med ulikheten i hvordan $x$-koordinaten måles. Vi kan derfor prøve en alternativ koordinat-transformasjon:
+\begin{align*}
+	t' &= a_1x + a_2t \\
+	x' &= b_1x + b_2t \\
+	y' &= y \\
+	z' &= z
+\end{align*}
+Siden origo i $X'$ beveger seg med fart $v$ målt fra $X$ må
+
+\end{document}

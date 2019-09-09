@@ -1,21 +1,19 @@
 \chapter{Maxwellfordelingen}
 \label{apx:maxwellfordeling}
-Vi skal her utlede Maxwell-fordelingen, altså den fordelingen som beskriver hvilken fart atomene har i en gass med en gitt temperatur. 
-
-Utledning av Maxwell-Boltzmann-statistikk. Fra Kårmund sitt kompendium.
-
-Når vi nå skal utlede hastighetsfordelingen til molekylene i en gass skal vi gjøre to antakelser som forenkler beregningen, og som normalt sett ikke begrenser gyldigheten vesentlig,
+Vi skal her utlede Maxwell-fordelingen, altså den fordelingen som beskriver hvilken fart atomene har i en gass med en gitt temperatur. For å utlede hastighetsfordelingen til molekylene i en gass skal vi gjøre to antakelser som forenkler beregningen, og som normalt sett ikke begrenser gyldigheten vesentlig,
 \begin{enumerate}
 	\item
 	Fartsfordelingen er isotropisk; det vil si at det er like stor sannsynlighet for å bevege seg i hvilken som helst retning.
 	\item
  	Tettheten er homogen; det vil si at i ethvert volum som er stort nok til at statiske fluktuasjoner i antall gass molekyler kan neglisjeres er tettheten den samme.
 \end{enumerate}
-Siden sannsynligheten for at et gitt atom har energi $E_i$ er 
+Sannsynligheten for at et gitt atom har energi $E_i$ er 
 \begin{displaymath}
-	P(E_i) = \frac{e^{-E_i/kT}}{\sum_j e^{-E_j/kT}}
+	P(E_i) = \frac{e^{-E_i/kT}}{\sum_j e^{-E_j/kT}}.
 \end{displaymath}
-og siden sammenheng mellom kinetisk energi og hastighet er $E_k = \half m|\vec{v}|^2$, må sannsynlighet for hastighet $\vec{v} = (v_x,v_y,v_z)$ kunne skrives på formen
+Her skal vi ikke gå inn på hvordan vi kommer frem til denne sannsynligheten, men bare konstantere at eksponensialfaktoren innebærer at det er svært lite sannsynlig at enkeltatomer bærer en stor andel av den totale energien selv om det er mulig. Vi ser videre at faktoren $kT$ setter skalaen for hva som er stor og liten energi. Med andre ord, jo høyrere temperatur ($T$), jo større energi kan vi forvente å finne hos enkeltatomer. 
+
+Siden sammenhengen mellom kinetisk energi og hastighet er $E_k = \half m|\vec{v}|^2$, må sannsynlighet for hastighet $\vec{v} = (v_x,v_y,v_z)$ kunne skrives på formen
 \begin{displaymath}
 	f(\vec{v}) = C\exp\left(-\frac{m|\vec{v}|^2}{2kT}\right) = C\exp\left(-\frac{m}{2kT}\left(v_x^2+v_y^2+v_z^2\right)\right),
 \end{displaymath}
