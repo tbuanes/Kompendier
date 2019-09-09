@@ -259,5 +259,39 @@ Vi kan nå som tidligere derivere og finne varmekapasiteten:
 \end{displaymath}
 Merk at for fleratomige gasser er $\gamma$ temperaturavhengig, slik at for fleratomige gasser er ikke varmekapasiteten uavhengig av temperaturen, men plottet mot stigende temperatur finner vi den som en rekke flate platåer med økende høyde. Ved romtemperatur kan vi regne med at rotasjonsmodene er aktivert, men ikke vibrasjonsmodene. 
 
-%\section{Reelle gasser}
-%\label{sec:kinetiskgassteori:reellgass}
+\section{Reelle gasser}
+\label{sec:kinetiskgassteori:reellgass}
+Hvis vi ser tilbake på antakelsene vi gjorde da vi definerte den ideelle gassen ser vi at ingen reelle gasser oppfyller alle vilkårene, og de fleste gasser bryter med flere av vilkårene. For det første antok vi at gassmolekylene ikke tar opp noe volum. Dette er selvfølgelig ikke riktig for noen gasser siden atomer har en fysisk utstrekning. Siden atomer er kvantemekaniske objekter er det riktignok ikke mulig å definere størrelsen helt presist, men typisk størrelse for enkeltatomer er omkring $10^{-10}~\mathrm{m}$. Gasser som består av molekyler med mange atomer er kanskje en faktor 10 større. For å sette denne størrelsen i perspektiv kan det være nyttig å regne ut hvor stor andel av volumet som opptas av gassmolekylene. Ved standard trykk og temperatur ($p=10^5\mathrm{Pa}$, $T=0^\circ\mathrm{C}$) opptar ett mol av en ideell gass $V = 22,4~\mathrm{L} = 2,24\times10^{-2}~\mathrm{m^3}$. Andelen av volumet som opptas av gassmolekylene blir da omtrent
+\begin{displaymath}
+	\frac{V_\text{molekyler}}{V} \simeq \frac{6\times10^{23}\cdot(10^{-10}~\mathrm{m})^3}{2,24\times10^{-2}~\mathrm{m^3}} = 2,7\times10^{-51}.
+\end{displaymath}
+Dette er en svært liten andel av arealet og det er med å forklare hvorfor tilnærmingen med ideell gass ofte fungerer bra. Det er likevel ikke alltid vi kan tillate oss å gjøre den tilnærmingen at plassen molekylene opptar er lik 0. Dette gjelder spesielt dersom trykket er høyt eller dersom temperaturen er slik at gassen er nær kokepunktet sitt. Et endelig volum av gassmolekylene innebærer at vi må endre tilstandsligningen for gassen til
+\begin{displaymath}
+	p(V-bn) = nRT
+\end{displaymath}
+der $b$ er en parameter som kvantiserer det endelige volumet til gassmolekylene. Hvis vi sammenligner med tilstandsligningen for en ideell gass ser vi at (siden $b$ må være positiv) ved samme temperatur vil den reelle gassen ha høyere trykk.
+
+I en del gasser---for eksempel med polare molekyler slik som H$_2$O---vil det være tiltrekningskrefter mellom gassmolekylene. Hvis dette er tilfellet bryter tilnærmingen med kun elastiske kollisjoner sammen (dersom tettheten i gassen er lav kan fremdeles tilnærmingen være akseptabel). En slik tiltrekningskraft mellom gassmolekylene kan vi få med ved å endre tilstandsligningen til
+\begin{displaymath}
+	\left[p + a\left(\frac{n}{V}\right)^2\right]V = nRT
+\end{displaymath}
+der $a$ parametriserer styrken på tiltrekningen\footnote{Dersom gasspartiklene frastøter hverandre som i f.eks. en elektrongass eller et plasma vil $a<0$, men dette er tilfeller vi skal se bort fra her.} mellom molekylene. Vi kan tenke på denne effekten som at gassen holder molekyler tilbake slik at det blir færre og svakere støt mot veggene og dermed lavere trykk enn i en ideell gass ved samme temperatur. Reduksjonen i trykk er avhengig av tettheten ($n/V$) av molekyler i et tynt lag langs veggen, og av tettheten av molekyler i et tynt lag bak dette igjen siden det er først og fremst de nærmeste molekylene sin tiltrekningskraft som har betydning. Dette forklarer hvorfor den nye tilstandsligningen har $n/V$ i andre potens.
+
+\subsection{van der Waals' ligning}
+Den vanligste tilstandsligningen å treffe på som forsøker å beskrive en reell gass er van der Waals' ligning. Denne ligningen tar med begge effektene som er diskutert ovenfor slik at ligningen blir
+\begin{displaymath}
+	\left[p + a\left(\frac{n}{V}\right)^2\right](V - nb) = nRT. 
+\end{displaymath}
+Hvis vi plotter kurver for denne ligningen i et $pV$-diagram finner vi både likheter og forskjeller fra den ideelle gassen. For tilstrekkelig høy temperatur er det lite som skiller isotermene for en ideell gass og en van der Waals-gass, men ved lavere temperatur avviker de stort. Isotermene til en ideell gass har formen $p\propto 1/V$ uansett temperatur; trykket avtar altså monotont når volumet øker. For van der Waals-gassen er det en kritisk temperatur $T_v$ slik at trykket til isotermer avtar monotont med økende volum dersom $T>T_c$, mens isotermene har et minimum dersom $T<T_c$ slik som vist i figure \ref{fig:vdW}.
+
+\begin{figure}[t]
+	\begin{center}
+	\includegraphics[width=.7\textwidth]{./vdW_isotherm}
+	\end{center}
+	\caption{Isotermer for en gass beskrevet av van der Waals' ligning.}
+	\label{fig:vdW}
+\end{figure}
+
+Siden van der Waals' ligning ikke alltid gir en \'en-til-\'en-relasjon mellom trykk og temperatur er den ikke brukbar som tilstandsligning for alle mulige kombinasjoner av $p,V,T$. Det vi har truffet på her er en faseovergang. $T_c$ er gassens kritiske punkt. Når $T > T_c$ er gassen i en såkalt kritisk fase som har likehetstrekk med både væskefase og gassfase. Vi skal ikke se videre på denne kritiske fasen her. 
+
+Når $T<T_c$ treffer vi på en faseovergang mellom flytende og gass hvis vi følger en isoterm. Hvis vi begynner ved stort volum/lavt trykk er vi i gass-fasen. Ved tilstrekkelig stort volum vil det være lite som skiller van der Waals-gassen fra den ideelle gassen. Hvis vi følger isotermen i retning av lavere volum kommer vi etter hvert til et punkt der det er flere verdier av volumet som har samme trykk. På dette punktet starter faseovergangen mellom gass og flytende fase. I området der van der Waals' ligning har flere volum som gir samme trykk kan ikke ligningen brukes, men når vi kommer til et volum der relasjonen igjen er \'en-til-\'en kan vi igjen bruke ligningen og nå beskriver den en ren væskefase. Vi ser av figur \ref{fig:vdW} at i væskefasen stiger trykket svært raskt når volumet endres. Dette betyr at ligningen beskriver en tilnærmet inkompressibel væske.
