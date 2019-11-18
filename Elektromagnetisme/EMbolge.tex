@@ -1,0 +1,128 @@
+\documentclass[a4paper,norsk,12pt]{article}
+
+\usepackage[norsk]{babel}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\usepackage{icomma}
+\def\d{\ensuremath{\text{d}}}
+\def\half{\ensuremath{\frac{1}{2}}}
+\def\ex{\ensuremath{\,{\hat{e}_x}}}
+\def\ey{\ensuremath{\,{\hat{e}_y}}}
+\def\ez{\ensuremath{\,{\hat{e}_z}}}
+
+\begin{document}
+
+\section*{Fra Maxwells ligninger til bølger}
+Maxwells ligninger på differensiell form er gitt som
+\begin{align*}
+	\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t}\\
+	\nabla \cdot \vec{D} &= \rho \\
+	\nabla \times \vec{H} &= \vec{J} + \frac{\partial\vec{D}}{\partial t} \\
+	\nabla \cdot \vec{B} &= 0
+\end{align*}
+der
+\begin{align*}
+	\vec{D} &= \varepsilon\vec{E} = \kappa\varepsilon_0\vec{E} \\
+	\vec{B} &= \mu\vec{B} = \mu_r\mu_0\vec{H}.
+\end{align*}
+Her er $\vec{E} = \vec{E}(t,\vec{x})$ og $\vec{B} = \vec{B}(t,\vec{x})$ henholdsvis det elektriske og magnetiske feltet. $\vec{D}$ er den såkalte \emph{forksyvningsvektoren} som i vakuum oppfører seg likt det elektriske feltet, men som i motsetning til det elektriske feltet ikke får et bidrag fra induserte ladninger når vi studerer felter i et medium. $\vec{H}$ er \emph{magnetisk intensitet} og er i analogi med $\vec{D}$ kun avhengig av det påtrykte magnetiske feltet, og ikke en eventuell magnetisering av mediet. $\vec{J}=\vec{J}(t,\vec{x})$ er strømtetthet, altså ladningstransport per tid og per areal, og $\rho=\rho(t,\vec{x})$ er ladningstetthet.
+
+I den følgende  utledningen begrenser vis oss til å se på vakuum. Da forenkler ligningene ovenfor seg til 
+\begin{align}
+	\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \label{eq:curlE}\\
+	\nabla \cdot \vec{E} &= 0 \label{eq:divE} \\
+	\nabla \times \vec{B} &= \epsilon_0\mu_0\frac{\partial\vec{E}}{\partial t} \label{eq:curlB} \\
+	\nabla \cdot \vec{B} &= 0 \label{eq:divB}
+\end{align}
+Der vi har utnyttet at $\varepsilon_0$ og $\mu_0$ er konstanter og derfor kan tas utenfor derivasjonen.\footnote{Dette er i motsetning til elektriske og magnetiske felter i et medium. Da vil $\varepsilon = \kappa\varepsilon_0$ og $\mu = \mu_r\mu_0$ kunne variere i både rom og tid og må altså tas med når vi deriverer.}
+
+\subsection*{Bølgeligning for det elektriske feltet}
+For å finne bølgeligningen for det elektriske feltet starter vi med å anvende curl-operatoren ($\nabla\times$) på ligning (\ref{eq:curlE}). Vi begrenser oss til å se på $\vec{E}$ og $\vec{B}$ felter som er tilstrekkelig differensierbare til at vi fritt kan bytte rekkefølge mellom romlig og tids-derivasjon:\footnote{Alle funksjoner som er av fysisk interesse tilfredsstiller dette, så dette er ikke en vesentlig begrensning.}
+\begin{displaymath}
+	\nabla\times(\nabla\times\vec{E}) = -\nabla\times\frac{\partial\vec{B}}{\partial t} = -\frac{\partial}{\partial t}(\nabla\times\vec{B}).
+\end{displaymath}
+For å komme videre nå må vi jobbe litt med venstresiden av denne ligningen. En vektoridentitet som man finner i matematiske tabeller, eller beviser selv ved direkte utrengning, er
+\begin{displaymath}
+	\vec{a}\times(\vec{b}\times\vec{c}) = -(\vec{a}\cdot\vec{b})\vec{c} + (\vec{a}\cdot\vec{c})\vec{b}.
+\end{displaymath}
+For å anvende denne identiteten på vårt tilfelle må vi sette $\vec{a} = \nabla$, $\vec{b}=\nabla$ og $\vec{c}=\vec{E}$:
+\begin{displaymath}
+	\nabla\times(\nabla\times\vec{E}) = -\nabla^2\vec{E}+(\nabla\cdot\vec{E})\nabla.
+\end{displaymath}
+Det andre leddet her ser litt rart ut siden vi har en $\nabla$-operator som ikke virker på noe. I det generelle tilfellet (altså ikke vakuum) måtte vi sett nærmere på dette leddet, noe vi kunne gjort ved hjelp av en delvis integrasjon. Men siden $\nabla\cdot\vec{E}=0$ i vakuum vil dette leddet uansett være lik null. Dermed er ligningen vår nå forenklet til
+\begin{displaymath}
+	\nabla^2\vec{E} = \frac{\partial}{\partial t}(\nabla\times\vec{B})
+\end{displaymath}
+For å komme videre herfra setter vi inn ligning (\ref{eq:curlB}):
+\begin{displaymath} 
+	\nabla^2\vec{E} = \frac{\partial}{\partial t}\left(\varepsilon_0\mu_0\frac{\partial \vec{E}}{\partial t}\right) = \varepsilon_0\mu_0\frac{\partial^2\vec{E}}{\partial t^2}
+\end{displaymath}
+som er en bølgeligning for vektorfeltet $\vec{E}$. Siden faktoren foran den andrederiverte med hensyn på tiden i bølgeligningen er $\frac{1}{v^2}$ må farten til denne bølgen være
+\begin{displaymath}
+	v = \frac{1}{\sqrt{\varepsilon_0\mu_0}} = \frac{1}{\sqrt{8,85\cdot10^{-12}~\mathrm{F/m}\cdot 4\pi\times10^{-7}~\mathrm{H/m}}} = 3,00\times10^8~\mathrm{m/s}
+\end{displaymath}
+som er identisk med den målte lyshastigheten i vakuum.
+
+\subsection*{Bølgeligning for det magnetiske feltet}
+Utledningen for det magnetiske feltet er nesten helt lik til den for det elektriske feltet. Vi begynner med å anvende $\nabla\times$ på ligning (\ref{eq:curlB}):
+\begin{displaymath}
+	\nabla\times\left(\nabla\times\vec{B}\right) = \nabla\times\left(\varepsilon_0\mu_0\frac{\partial \vec{E}}{\partial t}\right) 
+	= \varepsilon_0\mu_0\frac{\partial}{\partial t}\left(\nabla\times \vec{E}\right)
+\end{displaymath}
+Ved å bruke samme vectoridentitet som ovenfor, og å utnytte at $\nabla\vec{B}=0$ (alltid, ikke bare i vakuum) finner vi at
+\begin{displaymath}
+	\nabla\times\left(\nabla\times\vec{B}\right) = -\nabla^2\vec{B}
+\end{displaymath}
+Ved å sette inn ligning (\ref{eq:curlE}) får vi bølgeligningen
+\begin{displaymath} 
+	\nabla^2\vec{B} = \varepsilon_0\mu_0\frac{\partial^2\vec{B}}{\partial t^2}
+\end{displaymath}
+som vi ser at har identitsk form---inkludert bølgefarten---som ligningen for det elektriske feltet.
+
+
+\subsection*{Kobling mellom elektriske og magnetiske bølger}
+Vi har nå kommet frem til \'en bølgeligning for det elektriske feltet og \'en bølgeligning for det magnetiske feltet:
+\begin{align}
+	\nabla^2\vec{E} &= \varepsilon_0\mu_0\frac{\partial^2\vec{E}}{\partial t^2}, \\
+	\nabla^2\vec{B} &= \varepsilon_0\mu_0\frac{\partial^2\vec{B}}{\partial t^2}.
+\end{align}
+De to ligningene beskriver begge bølger med farten $c = 1/\sqrt{\varepsilon_0\mu_0}$ men ser forøvrig ikke ut til å ha noe mer med hverandre å gjøre. Men vi vet fra ligning (\ref{eq:curlE}) og (\ref{eq:curlB}) at det elektriske og magnetisk feltet ikke er uavhengig av hverandre. Tvert imot, hvis det ene feltet endres får vi straks en endring i det andre feltet. For å få frem denne koblingen må vi se på konkrete løsninger av bølgeligningene. Dersom vi ønsker å beskrive en sinusbølge som beveger seg i positiv $z$-retning må den skrives på formen
+\begin{displaymath}
+	\text{(amplitude)}\cdot\sin(kz-\omega t)
+\end{displaymath}
+der bølgetallet $k$ og vinkelfrekvensen $\omega$ kan kombineres efor å gi bølgefarten $c=\frac{\omega}{k}$. Siden vi nå beskriver en bølge i vektorfeltet $\vec{E}$ må amplituden selv være en vektor. A priori kan vi anta at den har både $x$, $y$ og $z$-komponent slik at bølgen kan skrives som 
+\begin{displaymath}
+	\vec{E}(t,x,y,z) = (E_{0x}\ex + E_{0y}\ey + E_{0z}\ez)\cdot\sin(kz-\omega t)
+\end{displaymath}
+der $E_{0x}$, $E_{0y}$ og $E_{0z}$ er tre konstanter, og \ex, \ey, og \ez er enhetsvektorer i henholdsvis $x$-, $y$- og $z$-retning. I vakuum er $\nabla\vec{E}=0$, derfor har vi
+\begin{displaymath}
+	0 = \nabla\vec{E} = \frac{\partial E_x(t,x,y,z)}{\partial x} + \frac{\partial E_y(t,x,y,z)}{\partial y} + \frac{\partial E_z(t,x,y,z)}{\partial z}
+\end{displaymath}
+Siden den eneste avhengigheten $\vec{E}$ har av koordinatene er gjennom sinus-funksjonen, og siden denne bare avhenger av $z$, gir derivasjon med hensyn på $x$ og $y$ null. Derfor er det bare det siste leddet som gir noe bidrag:
+\begin{displaymath}
+	0 = \nabla\vec{E} = \frac{\partial E_z(t,x,y,z)}{\partial z} = \frac{\partial}{\partial z}\left(E_{0z}\sin(kz-\omega t)\right) = kE_{0z}\cos(kz-\omega t)
+\end{displaymath}
+Siden $\cos(kz-\omega t)$ for de fleste verdier av $x$ og $t$ må $E_{0z}=0$ for at denne ligningen alltid skal være oppfylt. Det betyr at det elektriske feltet i en elektromagnetisk bølge kun kan ha utslag normalt på utbredelsesretningen---vi har altså en rent transversal bølge. Denne ligningen gir oss ikke noe informasjon om $x$- og $y$-komponentene av amplituden til $\vec{E}$. Det betyr at vi både $E_{0x}$ og $E_{0y}$ gjerne kan være ulik 0. Vi kan imidlertid---uten å tape generalitet---rotere koordinatsystemet vårt om $z$-aksen slik vi oppnår $E_{0y}=0$ og $x$-retningen er den eneste med et elektrisk felt. Den elektriske bølgen beskrives da av
+\begin{displaymath}
+	\vec{E} = \ex E_{0x}\sin(kz - \omega t).
+\end{displaymath}
+Ved å bruke ligning (\ref{eq:curlE}) finner vi den assosierte magnetiske bølgen:
+\begin{align*}
+	-\frac{\partial B}{\partial t} = \nabla\times\vec{E} = 
+	\left|\begin{array}{ccc} 
+		\ex & \ey & \ez \\ \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\  E_x(t,z) & 0 & 0
+	\end{array}\right| 
+	&= \ey\frac{\partial E_x(t,z)}{\partial z}  \\
+	&= \ey kE_{0x} \cos(kz-\omega t).
+\end{align*}
+Dette uttrykket kan vi integrere for å finne $B$-feltet\footnote{Formelt sett skal det også være med en integrasjonskonstant som svarer til et statisk magnetfelt. Her er vi kun interessert i den magnetiske bølgen. Derfor setter vi integrasjonskonstanten til 0.}
+\begin{align*}
+	\vec{B} = \int\frac{\partial \vec{B}}{\partial t}\d t = -\ey kE_{0x}\int\cos(kz-\omega t)\d t &= \ey\frac{kE_{0x}}{\omega}\sin(kz-\omega t)\\
+	&= \ey\frac{E_{0x}}{c}\sin(kz-\omega t)
+\end{align*}
+\end{document}
