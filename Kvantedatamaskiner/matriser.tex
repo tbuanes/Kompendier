@@ -1,0 +1,42 @@
+\chapter{Matriser}
+
+Parallelt med at Erwin Schr\"odinger kom frem til ligningen som jeg nevnte såvidt i forrige kapittel, kom Werner Heisenberg frem til en helt annen matematisk formalisme for å utføre kvantemekaniske beregninger - basert på matriser og vektorer, altså det vi kjenner som lineær algebra. Dette var en gren av matematikken som var ukjent for de fleste fysikere på begynnelsen av 1900-tallet og derfor fikk Heisenberg sin \emph{matrisemekanikk} i første omgang en litt kjøligere mottakelse enn Schr\"odinger sin \emph{bølgemekanikk}. Det viste seg imidlertid at begge formuleringene av kvantemekanikken var like riktig, og at hvilken formulering som var få foretrekke var avhengig av hvilket problem man studerte. Når vi i det videre stort sett skal studere spinnet til elektronet er det Heisenberg sin matrisemekanikk som passer best. Dette kapittelet vil gi en kort repetisjon av lineær algebra og vise hvordan dette brukes til å regne med elektron-spinn.
+
+\section{Basisvektorer}
+I et todimensjonalt koordinatsystem trenger vi nøyaktig to tall til å angi en posisjon, vanligvis omtalt som $x$-koordinaten og $y$-koordinaten. Punktet med $x$-koordinat $X$ og y-koordinat $Y$ angis da på vektorform som 
+\begin{displaymath}
+	\left[\begin{array}{c} X \\ Y \end{array}\right] \text{ eller } \left[X\;Y\right].
+\end{displaymath}
+Den første formen kaller vi en kolonne-vektor og den andre en rekkevektor. Det er først når vi skal se på multiplikasjon av vektorer med hverandre eller med matriser at forskjellen på disse to representasjonene blir relevant. Akkurat nå kan vi se på de som to likeverdige måte å spesifisere det samme punktet i koordinatsystemet. En litt annen måte å skrive ned den samme informasjonen på er 
+\begin{displaymath}
+	\left[\begin{array}{c} X \\ Y \end{array}\right] = X\cdot\left[\begin{array}{c} 1 \\ 0 \end{array}\right] + Y\cdot\left[\begin{array}{c} 0 \\ 1 \end{array}\right]
+\end{displaymath}
+Her er $\left[\begin{array}{c} 1 \\ 0 \end{array}\right]$ en vektor med lengde 1 som peker langs $x$-aksen, mens $\left[\begin{array}{c} 0 \\ 1 \end{array}\right]$ er en vektor med lengde 1 som peker langs $y$-aksen. Denne måten å skrive ned koordinatene på sier enda mer eksplisitt enn den forrige at vi skal gå $X$ skritt langs $x$-aksen og så $Y$ skritt parallelt med $y$-aksen. Vektorene $\left[\begin{array}{c} 1 \\ 0 \end{array}\right]$ og $\left[\begin{array}{c} 0 \\ 1 \end{array}\right]$ er \emph{enhetsvektorer}, og siden alle vektorer i det todimensjonale rommet kan skrives som en lineærkombinasjon av disse to vektorene utgjør de en \emph{basis} for det todimensjonale rommet. 
+
+Valget av basisvektorer er ikke unikt. For det første kan vi skalere vektorene som utgjør basisen med hver sin vilkårlige konstant (ulik 0), og de vil fremdeles være en basis. F.eks. er $\left[\begin{array}{c} -2 \\ 0 \end{array}\right]$ og $\left[\begin{array}{c} 0 \\ 3 \end{array}\right]$ også en basis. Det er heller ikke nødvendig at basisvektorene våre skal være parallelle med $x$- og $y$-aksen. For eksempel vil $\left[\begin{array}{c} 1 \\ 1 \end{array}\right]$ og $\left[\begin{array}{c} 1 \\ -1 \end{array}\right]$ også utgjøre en basis. Generelt vil to vilkårlige vektorer med lengde ulik 0 og som ikke er parallelle med hverandre utgjøre en basis for det todimensjonale rommet. 
+
+I denne teksten vil vi i hovedsak benytte oss av ulike ordnete, ortonormale basiser. Ordnete betyr at vi holder orden på hva som er den første og hva som er den andre basisvektoren. Hvorfor dette er viktig for oss kommer vi tilbake til senere. Ortonormale betyr for det første at basisvektorene står ortogonalt---altså vinkelrett---på hverandre, og for det andre at de er normalisert---altså har lengde 1. 
+
+\section{Multiplikasjon av vektorer}
+
+\section{Bra-ket notasjon}
+I de fleste tekster om lineæralgebra symboliseres en vektorstørrelse enten med en pil over symbolet, $\vec{r}$, eller med fet skrift $\mathbf{r}$. Om man har behov for å skille mellom kolonnevektorer og rekkevektorer er det kolonnevektoren som betegnes som nevnt, mens rekkevektoren betegnes som henholdsvis $\vec{r}\,^T$ eller $\mathbf{r}^T$ der $T$ står for \emph{transponert}. I denne teksten vil jeg i stedet bruke en annen notasjon som ble innført av den britiske fysikeren Paul Dirac. Dette er den notasjonen som er mest vanlig å bruke innen kvantemekanikk, men det brukes sjelden i andre sammenhenger (selv om den gjerne kunne vært brukt ellers også). En kolonnevektor betegnes med symbolet $|r\rangle$ og omtales som en \emph{ket}, mens en rekkevektor betegnes med symbolet $\langle r|$ og omtales som en \emph{bra}. 
+
+\subsection{Indreprodukt i bra-ket notasjon}
+For å regne ut indreproduktet mellom to vektorer må vi multiplisere en bra-vektor sammen med en ket-vektor slik at vi får en \emph{bracket}. F.eks. gitt $\langle a|$ og $|b\rangle$ betegnes indreproduktet mellom dem med $\langle a|b\rangle$, og dette er en skalar som alltid når vi tar indreprodukt av to vektorer. Merk at det bare er notasjonen som er ny her---indreproduktet regnes ut på den vanlige måten. Hvis f.eks.
+\begin{displaymath}
+	\langle a | =  [-2\; 4] \text{ og }  |b\rangle =  \left[\begin{array}{c} 3 \\ 1 \end{array}\right],
+\end{displaymath}
+da er
+\begin{displaymath}
+\langle a|b\rangle =  [-2\; 4]  \left[\begin{array}{c} 3 \\ 1 \end{array}\right] = (-2)\cdot3 +  4\cdot 1 = -2.
+\end{displaymath}
+
+\subsection{Matrise-vektor-produkt i bra-ket notasjon}
+Gitt matrisen $M = \left[\begin{array}{cc} 0 & 2 \\ 3 & 1\end{array}\right]$, bra-vektoren $\langle a|=  [-2\; 4]$ og ket-vektoren  $|b\rangle =  \left[\begin{array}{c} 3 \\ 1 \end{array}\right]$. Vi kan da regne ut 
+\begin{align*}
+	\langle a|M &= [-2 \; 4] \left[\begin{array}{cc} 0 & 2 \\ 3 & 1\end{array}\right] = [12\; 0], \\
+	M|b\rangle &=  \left[\begin{array}{cc} 0 & 2 \\ 3 & 1\end{array}\right]\left[\begin{array}{c} 3 \\ 1 \end{array}\right] = \left[\begin{array}{r}  2\\ 10  \end{array}\right], \\
+	\langle a|M|b\rangle &= (\langle a|M)|b\rangle = \langle a|(M|b\rangle) =  36.
+\end{align*}
+$|b\rangle M$ og $M\langle a|$ er derimot ikke definert.

@@ -123,6 +123,16 @@ Ved å bruke ligning (\ref{eq:curlE}) finner vi den assosierte magnetiske bølge
 Dette uttrykket kan vi integrere for å finne $B$-feltet\footnote{Formelt sett skal det også være med en integrasjonskonstant som svarer til et statisk magnetfelt. Her er vi kun interessert i den magnetiske bølgen. Derfor setter vi integrasjonskonstanten til 0.}
 \begin{align*}
 	\vec{B} = \int\frac{\partial \vec{B}}{\partial t}\d t = -\ey kE_{0x}\int\cos(kz-\omega t)\d t &= \ey\frac{kE_{0x}}{\omega}\sin(kz-\omega t)\\
-	&= \ey\frac{E_{0x}}{c}\sin(kz-\omega t)
+	&= \ey\frac{E_{0x}}{c}\sin(kz-\omega t) \\
+	&= \ey B_{0y}\sin(kz - \omega t),
 \end{align*}
+der $B_{0y} = E_{0x}/c$ er amplituden til den magnetiske bølgen. Vi ser altså at det er en tett kobling mellom den elektriske og den magnetiske delen av en elektromagnetisk bølge som kan oppsummeres slik:
+\begin{itemize}
+\item
+	En elektromagnetisk bølge består av et elektrisk og et magnetisk felt som svinger med samme frekvens og fase.
+\item
+	Den elektriske og magnetiske amplituden er bundet til hverandre gjennom ligningen $B_0 = E_0/c$ der $c$ er lysfarten i vakuum.
+\item
+	Det elektriske og magnetiske feltet har utslaget sitt normalt på hverandre, og begge feltene har utslaget sitt normalt på utbredelesretningen (bølgen er transversal).
+\end{itemize}
 \end{document}
