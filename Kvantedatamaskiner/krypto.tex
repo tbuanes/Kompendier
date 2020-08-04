@@ -2,10 +2,12 @@
 
 Klassisk kryptografi har en fundamental utfordring: hvordan distribuere krypteringsnøkkelen. Hvis man har en krypteringsnøkkel som er like lang som meldingen er det prinsipielt umulig å bryte koden, men sikkerheten avhenger fremdeles av at man vet at ingen har klart å få tak i nøkkelen. Vet hjelp av kvantemekanisk sammenfiltring kan vi distribuere en nøkkel over et åpent nettverk og forsikre oss om at kun den rette mottakeren har fått nøkkelen. For å se hvordan dette kan gjøres tar vi utgangspunkt i BB84-protokollen som ble funnet opp av Charles Bennett og Gilles Brassard~\cite{bb84}.
 
-Alice ønsker å sende en kodet melding til Bob, men frykter at Eva kan forsøke å fange opp meldingen og dekryptere den. For å hindre Eva i å kunne dekryptere meldingen bruker Alice og Bob sammenfiltrede elektroner til å utveksle kodenøkkelen. Alice preparerer det nødvendige antallet par av av sammenfiltrede elektroner og sender ett fra hvert par til Bob og beholder det andre selv. Både Alice og Bob måler spinnet til alle elektronene ved å på hvert elektron bruke \'en av de to ordnete, ortonormale basisene
+Alice ønsker å sende en kodet melding til Bob, men frykter at Eva kan forsøke å fange opp meldingen og dekryptere den. For å hindre Eva i å kunne dekryptere meldingen bruker Alice og Bob sammenfiltrede elektroner til å utveksle kodenøkkelen. Alice preparerer det nødvendige antallet par av av sammenfiltrede elektroner slik at begge elektroner vil ende opp med spinnet i samme retning dersom de måles langs samme akse. Fra hvert par skal hun gjøre målinger på et selv og sende det andre til Bob. Både Alice og Bob måler spinnet til alle elektronene ved å på hvert elektron bruke \'en av de to ordnete, ortonormale basisene
 \begin{displaymath}
-	V = \left\{ \left[\begin{array}{c}1\\0\end{array}\right], \left[\begin{array}{c}1\\0\end{array}\right] \right\} 
-	\quad \mathrm{ok} \quad 
-	H = \left\{ \left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right], \left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right] \right\}.
+	V = \left\{ \left[\begin{array}{c}1\\0\end{array}\right], \left[\begin{array}{c}0\\1\end{array}\right] \right\} 
+	\quad \text{og} \quad 
+	H = \left\{ \left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right], \left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] \right\}.
 \end{displaymath}
+I begge tilfellene lar vi den første basisvektoren i paret svare til den klassiske biten 0, mens den andre basisvektoren svarer til 1. Hvis vi for eksempel velger basisen $V$, som svarer til å måle i vertikal retning, og vi måler at spinnet peker nedover gir dette bit-verdien 1 siden spinn nedover svarer til $\left[\begin{array}{c}0\\1\end{array}\right]$. 
 
+Alice velger nå krypteringsnøkkelen sin som er en streng av klassiske bit, for eksempel $0110011110001\ldots$ Nøkkelen består av $4n$ bit, der $n$ er lengden på den egentlige nøkkelen. Hvorfor Alice trenger å sende en fire ganger så lang nøkkel blir klart etter hvert. For hvert elektron velger Alice tilfeldig, med lik sannsynlighet for begge, mellom basis $V$ og basis $H$ og måler spinnet til sitt elektron med denne basisen. 
