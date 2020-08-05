@@ -2,12 +2,65 @@
 
 Klassisk kryptografi har en fundamental utfordring: hvordan distribuere krypteringsnøkkelen. Hvis man har en krypteringsnøkkel som er like lang som meldingen er det prinsipielt umulig å bryte koden, men sikkerheten avhenger fremdeles av at man vet at ingen har klart å få tak i nøkkelen. Vet hjelp av kvantemekanisk sammenfiltring kan vi distribuere en nøkkel over et åpent nettverk og forsikre oss om at kun den rette mottakeren har fått nøkkelen. For å se hvordan dette kan gjøres tar vi utgangspunkt i BB84-protokollen som ble funnet opp av Charles Bennett og Gilles Brassard~\cite{bb84}.
 
-Alice ønsker å sende en kodet melding til Bob, men frykter at Eva kan forsøke å fange opp meldingen og dekryptere den. For å hindre Eva i å kunne dekryptere meldingen bruker Alice og Bob sammenfiltrede elektroner til å utveksle kodenøkkelen. Alice preparerer det nødvendige antallet par av av sammenfiltrede elektroner slik at begge elektroner vil ende opp med spinnet i samme retning dersom de måles langs samme akse. Fra hvert par skal hun gjøre målinger på et selv og sende det andre til Bob. Både Alice og Bob måler spinnet til alle elektronene ved å på hvert elektron bruke \'en av de to ordnete, ortonormale basisene
+Alice ønsker å sende en kodet melding til Bob, men frykter at Eva kan forsøke å fange opp meldingen og dekryptere den. For å hindre Eva i å kunne dekryptere meldingen bruker Alice og Bob qubits til å overføre kodenøkkelen, mens selve den kodete meldingen vil bli sendt over en vanlig datakanal. Alice velger nå krypteringsnøkkelen sin som er en streng av klassiske bit, for eksempel $0110011110001\ldots$ Nøkkelen består av $4n$ bit, der $n$ er lengden på den egentlige nøkkelen. Hvorfor Alice trenger å sende en fire ganger så lang nøkkel blir klart etter hvert. For hver bit i nøkkelen sender Alice ett elektron til Bob. Før hun sender elektronet måler hun spinnet i enten vertikal eller horisontal retning. Hvilken retning hun bruker for hvert elektron velges tilfeldig med lik sannsynlighet for de to retningene. Siden målingen påvirker elektronet vil altså Alice vite kvantetilstanden til hvert enkelt elektron relativt til en av de to ordnete, ortonormale basisene
 \begin{displaymath}
 	V = \left\{ \left[\begin{array}{c}1\\0\end{array}\right], \left[\begin{array}{c}0\\1\end{array}\right] \right\} 
 	\quad \text{og} \quad 
 	H = \left\{ \left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right], \left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] \right\}.
 \end{displaymath}
-I begge tilfellene lar vi den første basisvektoren i paret svare til den klassiske biten 0, mens den andre basisvektoren svarer til 1. Hvis vi for eksempel velger basisen $V$, som svarer til å måle i vertikal retning, og vi måler at spinnet peker nedover gir dette bit-verdien 1 siden spinn nedover svarer til $\left[\begin{array}{c}0\\1\end{array}\right]$. 
+I begge tilfellene lar vi den første basisvektoren i paret svare til den klassiske biten 0, mens den andre basisvektoren svarer til 1. Hvis Alice for eksempel velger basisen $V$, som svarer til å måle i vertikal retning, og hun måler at spinnet peker nedover gir dette bit-verdien 1 siden spinn nedover svarer til $\left[\begin{array}{c}0\\1\end{array}\right]$. Hvis Bob senere måler det samme elektronet i vertikal retning vil han også finne $\left[\begin{array}{c}0\\1\end{array}\right]$ og vite at den biten hadde verdien 1. Hvis han i stedet måler elektronet med basisen $H$ vil det være tilfeldig hvilken vei spinnet peker og dermed om han mottar overført bit-verdien 0 eller 1. Dette betyr at det er kun når Alice og Bob bruker samme basis at det er noen reell informasjonsoverføring.
 
-Alice velger nå krypteringsnøkkelen sin som er en streng av klassiske bit, for eksempel $0110011110001\ldots$ Nøkkelen består av $4n$ bit, der $n$ er lengden på den egentlige nøkkelen. Hvorfor Alice trenger å sende en fire ganger så lang nøkkel blir klart etter hvert. For hvert elektron velger Alice tilfeldig, med lik sannsynlighet for begge, mellom basis $V$ og basis $H$ og måler spinnet til sitt elektron med denne basisen. 
+Hvordan kan så dette brukes til å overføre en krypteringsnøkkel på en pålitelig måte? Alice starter med å sende Bob en serie qubits (elektroner) som beskrevet ovenfor. Hun holder rede på hvilken basis hun har brukt for hvert elektron, men denne informasjonen sendes \emph{ikke} sammen med elektronene. Nedenfor vises på første linje begynnelsen av krypteringsnøkkelen Alice vil sende, på andre linje hvilken basis hun velger for hvert elektron og på tredje linje hvilke kvantetilstand elektronet hun sender er i.
+\begin{displaymath}
+\begin{array}{ccccccccc}
+	0&1&1&0&0&1&1&1&1 \\
+	H&V&V&H&V&H&H&H&H \\
+	\left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right] &
+	\left[\begin{array}{c}0\\1\end{array}\right] &
+	\left[\begin{array}{c}0\\1\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right] &
+	\left[\begin{array}{c}1\\0\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] 
+\end{array}
+\end{displaymath}
+Når Bob mottar elektronene måler han også spinnet. På samme måte som Alice velger han tilfeldig, med lik sannsynlighet for begge, mellom basisene $V$ og $H$ og holder rede på hvilken han bruker for hvert elektron. Siden han ikke vet noe om hvilken basis Alice har brukt på hvert elektron må han forvente at det er kun halvparten av gangene de velger den samme basisen. Nedenfor vises på første linje kvantetilstanden til elektronet Bob mottar (men som han ikke kjenner), på andre linje hvilken basis han velger for å måle, på tredje linje hvilken kvantetilstand han måler og på fjerde linje hvilken bit-verdi han tolker ut av målingen.
+\begin{displaymath}
+\begin{array}{ccccccccc}
+	\left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right] &
+	\left[\begin{array}{c}0\\1\end{array}\right] &
+	\left[\begin{array}{c}0\\1\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \imsqrt\end{array}\right] &
+	\left[\begin{array}{c}1\\0\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right]  \\
+	V&H&V&V&V&H&V&V&H \\
+	\left[\begin{array}{c}0\\1\end{array}\right]&
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right]&
+	\left[\begin{array}{c}0\\1\end{array}\right] &
+	\left[\begin{array}{c}1\\0\end{array}\right]&
+	\left[\begin{array}{c}1\\0\end{array}\right] &
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] &
+	\left[\begin{array}{c}1\\0\end{array}\right]&
+	\left[\begin{array}{c}0\\1\end{array}\right]&
+	\left[\begin{array}{c}\ipsqrt\\ \ipsqrt\end{array}\right] \\
+	1&1&1&0&0&1&0&1&1 \\
+\end{array}
+\end{displaymath}
+Merk at i de tilfellene der Alice og Bob valgte samme basis er bit-verdien riktig overført, mens når de valgte motsatt basis er det tilfeldig om bit-verdien blir riktig overført eller ikke. Etter at alle elektronene er overført og Bob har gjort sine målinger sammenligner Alice og Bob sine sekvenser av basis-valg. Dette kan de gjøre på en ukryptert linje. Alle tilfeller der de har valgt motsatt basis forkaster de siden de ikke kan vite om de har målt samme bit-verdi der. Siden det for hvert enkelt elektron er 50\% sannsynlighet for at de velger samme basis, og siden vi har forutsatt at det er et stort antall bit i krypteringsnøkkelen kan vi gå ut fra at de i halvparten av tilfellene har valgt samme basis. Etter at Alice sendte $4n$ \emph{qubit} sitter nå Alice og Bob igjen med $2n$ \emph{bit} som skal være like.
+
+Hva så med Eva som ønsker å fange opp krypteringsnøkkelen som utveksles? Anta at hun klarer å fange opp elektronene på vei fra Alice til Bob. Hun kan da måle spinnet og sende elektronet videre til Bob. Anta også at hun vet hvilke retninger, altså hvilke basiser, Alice og Bob har blitt enig om å velge mellom. Men når hun skal gjøre målingen sin kan hun ikke vite hvilken av de to basisene hverken Alice eller Bob bruker for det samme elektronet, for den informasjonen utveksles ikke før både Alice og Bob har gjort sine målinger. Det beste hun kan gjøre da er å velge tilfeldig med lik sannsynlighet for begge de to basisene og holde rede på hvilken basis hun brukte for hvilket elektron. I likhet med Bob har Eva 50\% sannsynlighet for å velge samme basis som Alice. Men der halvparten av tilfellene der Alice og Bob velger ulik basis er unyttig siden disse blir forkastet. Så selv om Eva lytter til Alice og Bob sin sammenligning av basisene de brukte kan hun ikke utnytte dette fullt ut, for det vil bare være halvparten av tilfellene der Alice og Bob har brukt samme basis at også Eva har brukt denne basisen. Men situasjonen for Eva er faktisk ennå verre enn som så. Ikke bare mangler hun informasjon om halvparten av bitene Alice og Bob har utvekslet, ved å gjøre målinger på elektronene har hun lagt igjen informasjon som gjør at Alice og Bob kan forstå at overføringen har blitt avlyttet.
+
+La oss nå se på de bitene Alice og Bob der de har brukt samme basis og dermed velger å beholde. Vi må da studere to tilfeller: enten har også Eva brukt samme basis, eller har Eva brukt motsatt basis. Valget til Eva vet selvfølgelig ikke Alice og Bob noe om, men det trenger de heller ikke å vite. 
+\begin{enumerate}
+\item
+Eva velger samme basis som Alice og Bob: \\
+Siden gjentatte målinger av spinnet med samme basis ikke påvirker kvantetilstanden til elektronet vil alle tre sitte igjen men samme måleresultat på disse qubitene. 
+\item
+Eva velger motsatt basis som Alice og Bob: \\
+Anta for konkrethets skyld at Alice og Bob brukte basis $V$, mens Eva brukte $H$. Elektronet Eva fanger opp er altså i en kvantetilstand med et veldefinert spinn i basis $V$. Men som diskutert i avsnitt \ref{sec:kvante:spinn} vil det da målingen med basis $H$ ha 50\% sannsynlighet for å gi resultatet 0 og 50\% sannsynlighet for å gi resultatet 1 uansett hvilken bit-verdi den hadde målt i basis $V$. Når Eva sender elektronet videre etter å ha målt det med basis $H$ har elektronet et veldefinert spinn i basisen $H$, men ikke i basisen $V$. Når Bob til slutt måler elektronet med basis $V$ har han altså 50\% sannsynlighet for å ende opp med resultat 0 og 50\% sannsynlighet for å ende opp med resultat 1, uansett hvilken verdi de to andre sitter med.
+\end{enumerate}
