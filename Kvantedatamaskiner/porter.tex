@@ -1,1 +1,19 @@
 \chapter{Kvante-logiske porter}
+
+Beregninger i en klassisk datamaskin blir gjort av logiske porter som tar inn en eller flere bit og gir ut en eller flere bit som svar. For eksempel tar en AND-port inn to bit og gir ut svaret 1 dersom begge inn-bitene er 1, ellers gir den ut svaret 0. Tilsvarende blir beregninger i en kvantedatamaskin gjort av kvante-logiske porter som tar inn en eller flere qubit og gir ut en eller flere qubit som svar. Likhetene mellom de to typer datamaskiner er altså store, men vi skal etter hvert se at kombinasjonen av at en qubit kan være i en superposisjon mellom 0 og 1 og at to eller flere qubit kan være sammenfiltret gir kvantedatamaskinen muligheter som går langt utover det klassiske datamaskiner har.
+
+\section{Logiske porter og boolsk algebra}
+På grunn av den klare analogien med vanlige logiske porter er det nyttig å ha dette friskt i minne når vi skal studere kvante-logiske porter. Derfor gir jeg et kort overblikk av klassiske logiske porter og hvordan de kan kombineres før jeg introduserer den kvantemekaniske versjonen. 
+
+\subsection{Boolsk algebra}
+Matematikken som brukes for å analysere logiske porter og nettverk av slike er boolsk algebra. Boolsk algebra er en enkel algebra som opererer på variabler som kun kan ha to mulig verdier: SANT eller USANT. I en datamaskin assosieres SANT med bit-verdien 1 og USANT med bit-verdien 0, og i det videre vil jeg bruke 1 og 0 som de mulige verdiene til de boolske variablene. De grunnleggende regneoperasjonene i den boolske algebraen er (jeg oppgir her både engelsk og norsk navn siden det engelske ofte brukes også i norske tekster):
+\begin{itemize}
+\item
+NOT/IKKE (symbol )
+\item
+AND/OG (symbol)
+\item
+OR/ELLER (symbol) 
+\end{itemize}
+
+\subsection{NOT}
