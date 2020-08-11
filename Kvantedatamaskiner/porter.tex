@@ -125,6 +125,41 @@ NAND er en kombinasjon av NOT og AND. Den tar inn to bit og gir ut en bit. Siden
 \end{figure}
 \end{center}
 
+\subsubsection{CNOT - Controlled NOT}
+CNOT er en port som er veldig viktig for oss når vi kommer til kvantedatamaskiner, så derfor tar jeg med beskrivelsen av den klassiske versjonen her. Dette er det første eksempelet vi treffer på av en port med mer enn \'en ut-bit: CNOT tar inn to bit og gir ut to bit. Den første inn-biten ($x$) er kontroll-biten. Verdien av denne biten påvirker hva porten kommer til å gjøre med den andre biten ($y$). I tillegg blir kontroll-biten sendt uforandret ut av porten. Dersom kontroll-biten er 0 vil porten sende den andre biten uforandret ut, mens dersom kontroll-biten er 1 vil porten virke som en NOT-port og altså endre verdien av den andre biten før den sendes ut. Om vi sammenligner med portene som er diskutert ovenfor finner vi at den andre ut-biten bestemmes av en XOR mellom de to innbitene, altså beskrives CNOT av funksjonen $f(x,y) = (x, x\oplus y)$. Effekten av CNOT-porten er oppsummert i sannhetstabellen nedenfor.
+
+CNOT kan konstrueres av en oppsplitting og en XOR-port som vist i figuren nedenfor. Figuren viser også kretssymbolet som vanligvis brukes for CNOT-porter.
+
+\begin{center}
+\begin{figure}[h]
+\begin{subfigure}{.3\textwidth}
+	\begin{tabular}{|c|c||c|c|}
+		\hline
+	\multicolumn{2}{|c||}{Inn} & \multicolumn{2}{|c|}{Ut} \\
+	\hline
+	\hline
+	$x$ & $y$ & $x$ & $x\oplus y$ \\
+	\hline
+	\hline
+	0 & 0 & 0 & 0 \\
+	0 & 1 & 0 & 1 \\
+	1 & 0 & 1 & 1 \\
+	1 & 1 & 1 & 0 \\
+	\hline
+	\end{tabular}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+	\includegraphics{./gate_cnot_comp}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+	\includegraphics{./gate_cnot}
+\end{subfigure}
+\caption{Venstre: Sannhetstabell for CNOT-operatoren. Midten: CNOT konstruert med en oppsplitting og en XOR. Øverste inn-bit er $x$ og nederste er $y$. Tilsvarende er øverste ut-bti $x$ og nederste $x\oplus y$. Høyre: Kretssymbol for CNOT-port.}
+\end{figure}
+\end{center}
+
+CNOT har den interessante egenskapen at den er reversibel. Dette er den fordi det er et en-til-en-forhold mellom hva som blir sendt ut og hva som blir sendt inn. Med andre ord: Hvis vi ser hva som kommer ut er det bare \'en mulighet for hva som ble sendt inn for å produsere dette resultatet. CNOT er dessuten sin egen invers---altså hvis vi lar det som kommer ut av en CNOT-port være innverdiene for den neste kommer vi tilbake til de bit-verdiene vi startet med.
+
 \section{Generalisering til kvante-logiske porter}
 For å lage en kvantedatamaskin trenger vi å lage en qubit-versjon av portene som er diskutert ovenfor. Vi støter da straks på en interessant utfordring: mens en klassisk bit alltid er enten 0 eller 1 vil en qubit generelt være i en superposisjon av 0 og 1. Hvordan skal vi lage sannhetstabellene når qubitene har et kontinuerlig sett av mulige verdier? La oss først få på plass litt notasjon som er nyttig i den videre diskusjonen. Nå er det tilstrekkelig for oss å jobbe med \'en basis, og der velger vi $\left\{ \left[\begin{array}{cc}1\\0\end{array}\right], \left[\begin{array}{cc}1\\0\end{array}\right] \right\}$. For å forenkle notasjonen litt kommer jeg for det meste til å skrive vektorene i bra-ket notasjon, med der basisvektorene er identifisert som
 \begin{displaymath}
