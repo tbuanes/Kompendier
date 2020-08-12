@@ -1,4 +1,4 @@
-\chapter{Matriser}
+\chapter{Vektorer og matriser}
 
 Parallelt med at Erwin Schr\"odinger kom frem til ligningen som jeg nevnte såvidt i forrige kapittel, kom Werner Heisenberg frem til en helt annen matematisk formalisme for å utføre kvantemekaniske beregninger - basert på matriser og vektorer, altså det vi kjenner som lineær algebra. Dette var en gren av matematikken som var ukjent for de fleste fysikere på begynnelsen av 1900-tallet og derfor fikk Heisenberg sin \emph{matrisemekanikk} i første omgang en litt kjøligere mottakelse enn Schr\"odinger sin \emph{bølgemekanikk}. Det viste seg imidlertid at begge formuleringene av kvantemekanikken var like riktig, og at hvilken formulering som var få foretrekke var avhengig av hvilket problem man studerte. Når vi i det videre stort sett skal studere spinnet til elektronet er det Heisenberg sin matrisemekanikk som passer best. Dette kapittelet vil gi en kort repetisjon av lineær algebra og vise hvordan dette brukes til å regne med elektron-spinn.
 
@@ -40,3 +40,18 @@ Gitt matrisen $M = \left[\begin{array}{cc} 0 & 2 \\ 3 & 1\end{array}\right]$, br
 	\langle a|M|b\rangle &= (\langle a|M)|b\rangle = \langle a|(M|b\rangle) =  36.
 \end{align*}
 $|b\rangle M$ og $M\langle a|$ er derimot ikke definert.
+
+\subsection{Matrisemultiplikasjon i bra-ket notasjon}
+Bra-ket notasjonen kan også hjelpe oss å huske på hvordan matrisemultiplikasjon skal utføres korrekt. Gitt at vi skal regne ut produktet av de to matrisene 
+\begin{displaymath}
+	A = \left[\begin{array}{ccc} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \end{array}\right] \text{ og }
+	B = \left[\begin{array}{cc} b_{11} & b_{12} \\ b_{21} & b_{22} \\ b_{31} & b_{32}\end{array} \right]. 
+\end{displaymath}
+Vi begynner med å skrive matrisene om som
+\begin{displaymath}
+	A = \left[\begin{array}{c} \langle a_1| \\ \langle a_2|\end{array}\right] \text{ med } \langle a_1| = [a_{11} \; a_{12} \; a_{13}] \text{ etc.}
+\end{displaymath}
+og 
+\begin{displaymath}
+	B = \left[|b_1\rangle \; |b_2\rangle \right] \text{ med } |b_1\rangle = \left[\begin{array}{c} b_{11} \\ b_{12} \\ b_{13} \end{array}\right] \text{ etc.}
+\end{displaymath}
