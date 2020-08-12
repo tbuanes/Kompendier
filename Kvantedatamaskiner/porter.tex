@@ -285,8 +285,8 @@ Foreløpig ser dette veldig likt ut til den klassiske versjonen, men som vi så 
 \end{displaymath}
 Siden matrisemultiplikasjon er en lineær operasjon gir CNOT anvendt på denne tilstanden av to qubit
 \begin{align*}
-	CNOT&(r|00\rangle + s|01\rangle + t|10\rangle + u|11\rangle) \\
-	&= r\,CNOT(|00\rangle) + s\,CNOT(|01\rangle) + t\,CNOT(|10\rangle) + u\,CNOT(|11\rangle) \\
+	\text{CNOT}&(r|00\rangle + s|01\rangle + t|10\rangle + u|11\rangle) \\
+	&= r\,\text{CNOT}(|00\rangle) + s\,\text{CNOT}(|01\rangle) + t\,\text{CNOT}(|10\rangle) + u\,\text{CNOT}(|11\rangle) \\
 	&=r|00\rangle + s|01\rangle + u|10\rangle + t|11\rangle.
 \end{align*}
 Effekten er altså å bytte om amplitudene til $|10\rangle$ og $|11\rangle$, mens amplitudene til de andre komponentene forblir uforandret. Et konkret eksempel viser hvorfor denne porten er svært interessant. La 
@@ -300,6 +300,6 @@ Inn-tilstanden skrevet i den kompakte notasjonen er da
 \end{displaymath}
 Når vi så anvender CNOT får vi
 \begin{displaymath}
-	CNOT\left( \ipsqrt(|00\rangle + |11\rangle) \right) = \ipsqrt(|00\rangle + |11\rangle).
+	\text{CNOT}\left( \ipsqrt(|00\rangle + |11\rangle) \right) = \ipsqrt(|00\rangle + |11\rangle).
 \end{displaymath}
 De to qubitene vi startet med var uavhengig av hverandre, men resultatet etter CNOT-porten er to sammenfiltrete qubit!
