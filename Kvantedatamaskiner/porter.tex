@@ -179,3 +179,66 @@ En generell kombinasjon av to qubit kan da skrives som $|b\rangle = b_{00}|00\ra
 Vi treffer på en annen viktig forskjell mellom klassisk logikk og kvantelogikk dersom vi ønsker å klone en qubit---det vil si å lage en ekstra kopi av en qubit som er identisk med den vi har. Med klassiske bit er dette ikke noe problem. Hvis vi har en bit med en vilkårlig verdi kan vi uten problemer lage vilkårlig mange kopier av denne. Slik er det ikke i kvanteverden. Det kan vises at i det generelle tilfellet kan man ikke lage en kopi av en qubit slik at man sitter igjen med to qubit som er identiske og lik den vi startet med. Så lenge vi jobber med qubit som har en bestemt verdi er det riktignok ingen forskjell, men for å utnytte oss av fordelene som kan oppnås ved å bruke qubit i superposisjon mellom ulike verdier må algoritmene i en kvantedatamaskin lages på en slik måte at kloning av qubit er unødvendig.
 
 Jeg vil ikke forsøke å bevise ingen kloning-teoremet her, men kun gi kvalitative argumenter som sannsynliggjør at det er riktig. En vilkårlig qubit kan som tidligere beskrevet skrives som $|a\rangle = a_0|0\rangle + a_1|1\rangle$. Dersom vi ønsker å måle verdien av qubiten vil vi aldri få noe annet enn $|0\rangle$ eller $|1\rangle$. Hvis vi kjenner $a_0$ og $a_1$ kan vi riktignok beregne sannsynligheten for hvert av de to ulike måleresultatene, men hva hvis vi har en qubit i en ukjent tilstand? Dersom vi for eksempel får resultatet $|0\rangle$ er det eneste vi kan si om koeffisientene at $a_0>0$. Vi kan altså ikke måle oss frem til hva koeffisientene $a_0$ og$a_1$ er. Men hvis vi ikke kan hente ut denne informasjonen, hvordan kan vi da lage en identisk kopi? 
+
+\section{Matematisk beskrivelse av kvante-logiske porter}
+Siden vi beskriver tilstanden til en qubit i form av en vektor er det naturlig å beskrive portene i form av matriser. Gitt en vilkårlig qubit 
+\begin{displaymath}
+	|a\rangle = a_0 |0\rangle + a_1|1\rangle = \left[\begin{array}{c} a_0 \\ a_1 \end{array}\right]
+\end{displaymath}
+Oppgaven til en port er å gjøre en operasjon på denne vektoren slik at resultatet også blir en vektor som representerer en gyldig qubit-verdi. En enkel slik operasjon er å multiplisere vektoren med en $2\times 2$ matrise, siden resultatet av denne multiplikasjonen er en vektor med samme dimensjon som vi startet med. Enhver $2\times2$ matrise vil representere en mulig port som tar en qubit som inn-verdi og gir ut en qubit som ut-verdi, men vi skal bare se på fem matriser som representerer alle en-til-en porter vi har behov for. 
+
+\subsection{$\mathbb{I}$, $\mathbb{Z}$, $\mathbb{X}$ og $\mathbb{Y}$} 
+Den enkleste porten representeres av identitetsmatrisen
+\begin{displaymath}
+	\mathbb{I} = \left[\begin{array}{cc}1 & 0 \\ 0 & 1 \end{array}\right]
+\end{displaymath}
+som ganske enkelt gir tilbake den samme qubiten vi startet med som vi kan se ved å anvende den på en vilkårlig qubit
+\begin{displaymath}
+	\mathbb{I}|a\rangle = \mathbb{I}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}1 & 0 \\ 0 & 1 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{c} a_0 \\ a_1\end{array}\right] = a_0|0\rangle + a_1|1\rangle =  |a\rangle.
+\end{displaymath}
+En port som tilsynelatende gir ganske lik virkning representeres av matrisen
+\begin{displaymath}
+	\mathbb{Z} = \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right].
+\end{displaymath}
+Anvendt på basisvektorene gir denne
+\begin{align*}
+	\mathbb|0\rangle &=  \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right] \left[\begin{array}{c} 1 \\ 0 \end{array}\right]
+	 =  \left[\begin{array}{c} 1 \\ 0 \end{array}\right] = |0\rangle, \\
+	\mathbb|1\rangle &=  \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right] \left[\begin{array}{r} 0 \\ 1 \end{array}\right] 
+	= \left[\begin{array}{r} 0 \\ -1 \end{array}\right] = -|1\rangle.
+\end{align*}
+Siden en qubit $-|1\rangle$ er ekvivalent med en qubit $|1\rangle$ gir altså $\mathbb{Z}$ i likhet med $\mathbb{I}$ ingen endring så lenge vi anvender den på basisvektorer---altså på qubiter som er i en veldefinert tilstand (i motsetning til å være i en superposisjon). For $\mathbb{I}$ var den samme konklusjonen gyldig for en vilkårlig qubit, men det er ikke tilfellet for $\mathbb{Z}$. Hvis vi nå anvender denne operatoren på en vilkårlig qubit finner vi:
+\begin{displaymath}
+	\mathbb{Z}|a\rangle = \mathbb{Z}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{c} a_0 \\ -a_1\end{array}\right] = a_0|0\rangle - a_1|1\rangle.
+\end{displaymath}
+Dette er en qubit med lik sannsynlighet for at målingen av verdien vil gi hver av de to mulighetene som qubiten vi startet med, altså
+\begin{align*}
+	P(|0\rangle) &= a_0^2, \\
+	P(|1\rangle) &= (-a_1)^2 = a_1^2,
+\end{align*}
+men det er fremdeles ikke den samme qubiten. Endringen som $\mathbb{Z}$ gjør på qubiten omtaler vi som at den \emph{endrer det relative fortegnet}, og dette relative fortegnet er av stor betydning når vi ser på sammenfiltrede qubiter.
+
+$\mathbb{X}$ og $\mathbb{Y}$ er i likhet med $\mathbb{I}$ og $\mathbb{Z}$ et par av porter som har lignende, men ikke identisk virkning på qubiter. Vi ser effekten av portene ved å anvende de på en vilkårlig qubit
+\begin{align*}
+	\mathbb{X}|a\rangle &= \mathbb{X}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}0 & 1 \\ 1 & 0 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{c} a_1 \\ a_0\end{array}\right] = a_1|0\rangle + a_0|1\rangle, \\
+	\mathbb{Y}|a\rangle &= \mathbb{X}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}0 & 1 \\ -1 & 0 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{c} a_1 \\ -a_0\end{array}\right] = a_1|0\rangle - a_0|1\rangle.
+\end{align*}
+Hvis vi først setter $a_0=1, a_1=0$ eller $a_0=0, a_1=1$ for å studere virkningen på basisvektorer ser vi at både $\mathbb{X}$ og $\mathbb{Y}$ er en slags NOT-port---de endrer $|0\rangle$ til $|1\rangle$ og motsatt. Forskjellen på de to portene er at dersom vi har en qubit som er i en superposisjon vil $\mathbb{Y}$ endre det relative fortegnet, mens $\mathbb{X}$ ikke gjør det.
+
+\subsection{Hadamard-porten $\mathbb{H}$}
+Den viktigste porten som virker på \'en qubit er Hadamard-porten
+\begin{displaymath}
+	\mathbb{H} = \ipsqrt \left[\begin{array}{cc}1 & 1 \\ 1 & -1 \end{array}\right].
+\end{displaymath}
+Faktoren $\ipsqrt$ er tatt med for å beholde normaliseringen av qubitene---altså slik at kvadratsummen av koeffisientene ikke endres. For å se hvorfor Hadamard-porten er viktig studerer vi hvilken effekt den har på basisvektorene:
+\begin{align*}
+	\mathbb{H}|0\rangle &= \ipsqrt\left[\begin{array}{cc}1 & 1 \\ 1 & -1 \end{array}\right]\left[\begin{array}{c} 1 \\ 0\end{array}\right] 
+	= \ipsqrt\left[\begin{array}{c} 1 \\ 1\end{array}\right] = \ipsqrt(|0\rangle + |1\rangle), \\
+	\mathbb{H}|1\rangle &= \ipsqrt\left[\begin{array}{cc}1 & 1 \\ 1 & -1 \end{array}\right]\left[\begin{array}{c} 0 \\ 1\end{array}\right] 
+	= \ipsqrt\left[\begin{array}{c} 1 \\ -1\end{array}\right] = \ipsqrt(|0\rangle - |1\rangle).
+\end{align*}
+Vi ser altså at når Hadamard-porten virker på en qubit som er i en veldefinert tilstand blir resultatet en qubit som er i en superposisjon med lik sannsynlighet for å bli målt til hver av de to ulike verdiene.
