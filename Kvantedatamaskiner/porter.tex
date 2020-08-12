@@ -161,9 +161,9 @@ CNOT kan konstrueres av en oppsplitting og en XOR-port som vist i figuren nedenf
 CNOT har den interessante egenskapen at den er reversibel. Dette er den fordi det er et en-til-en-forhold mellom hva som blir sendt ut og hva som blir sendt inn. Med andre ord: Hvis vi ser hva som kommer ut er det bare \'en mulighet for hva som ble sendt inn for å produsere dette resultatet. CNOT er dessuten sin egen invers---altså hvis vi lar det som kommer ut av en CNOT-port være innverdiene for den neste kommer vi tilbake til de bit-verdiene vi startet med.
 
 \section{Generalisering til kvante-logiske porter}
-For å lage en kvantedatamaskin trenger vi å lage en qubit-versjon av portene som er diskutert ovenfor. Vi støter da straks på en interessant utfordring: mens en klassisk bit alltid er enten 0 eller 1 vil en qubit generelt være i en superposisjon av 0 og 1. Hvordan skal vi lage sannhetstabellene når qubitene har et kontinuerlig sett av mulige verdier? La oss først få på plass litt notasjon som er nyttig i den videre diskusjonen. Nå er det tilstrekkelig for oss å jobbe med \'en basis, og der velger vi $\left\{ \left[\begin{array}{cc}1\\0\end{array}\right], \left[\begin{array}{cc}1\\0\end{array}\right] \right\}$. For å forenkle notasjonen litt kommer jeg for det meste til å skrive vektorene i bra-ket notasjon, med der basisvektorene er identifisert som
+For å lage en kvantedatamaskin trenger vi å lage en qubit-versjon av portene som er diskutert ovenfor. Vi støter da straks på en interessant utfordring: mens en klassisk bit alltid er enten 0 eller 1 vil en qubit generelt være i en superposisjon av 0 og 1. Hvordan skal vi lage sannhetstabellene når qubitene har et kontinuerlig sett av mulige verdier? La oss først få på plass litt notasjon som er nyttig i den videre diskusjonen. Nå er det tilstrekkelig for oss å jobbe med \'en basis, og der velger vi $\left\{ \left[\begin{array}{rr}1\\0\end{array}\right], \left[\begin{array}{rr}1\\0\end{array}\right] \right\}$. For å forenkle notasjonen litt kommer jeg for det meste til å skrive vektorene i bra-ket notasjon, med der basisvektorene er identifisert som
 \begin{displaymath}
-	|0\rangle = \left[\begin{array}{cc}1\\0\end{array}\right] \text{ og } |1\rangle =  \left[\begin{array}{cc}1\\0\end{array}\right].
+	|0\rangle = \left[\begin{array}{rr}1\\0\end{array}\right] \text{ og } |1\rangle =  \left[\begin{array}{rr}1\\0\end{array}\right].
 \end{displaymath}
 En generell qubit kan da skrives som $|a\rangle = a_0|0\rangle + a_1|1\rangle$ der $a_0^2 + a_1^2 = 1$. Når vi måler verdien av denne qubiten vil vi finne enten $|0\rangle$ eller $|1\rangle$ med sannynligheter henholdsvis $a_0^2$ og $a_1^2$. Hvis vi har mer enn en qubit å ta hensyn til, må vi ta tensorproduktet av basisvektorene for å finne den nye basisen. For eksempel er basisen for to qubit
 \begin{displaymath}
@@ -183,35 +183,35 @@ Jeg vil ikke forsøke å bevise ingen kloning-teoremet her, men kun gi kvalitati
 \section{Matematisk beskrivelse av kvante-logiske porter}
 Siden vi beskriver tilstanden til en qubit i form av en vektor er det naturlig å beskrive portene i form av matriser. Gitt en vilkårlig qubit 
 \begin{displaymath}
-	|a\rangle = a_0 |0\rangle + a_1|1\rangle = \left[\begin{array}{c} a_0 \\ a_1 \end{array}\right]
+	|a\rangle = a_0 |0\rangle + a_1|1\rangle = \left[\begin{array}{r} a_0 \\ a_1 \end{array}\right]
 \end{displaymath}
 Oppgaven til en port er å gjøre en operasjon på denne vektoren slik at resultatet også blir en vektor som representerer en gyldig qubit-verdi. En enkel slik operasjon er å multiplisere vektoren med en $2\times 2$ matrise, siden resultatet av denne multiplikasjonen er en vektor med samme dimensjon som vi startet med. Enhver $2\times2$ matrise vil representere en mulig port som tar en qubit som inn-verdi og gir ut en qubit som ut-verdi, men vi skal bare se på fem matriser som representerer alle en-til-en porter vi har behov for. 
 
 \subsection{$\mathbb{I}$, $\mathbb{Z}$, $\mathbb{X}$ og $\mathbb{Y}$} 
 Den enkleste porten representeres av identitetsmatrisen
 \begin{displaymath}
-	\mathbb{I} = \left[\begin{array}{cc}1 & 0 \\ 0 & 1 \end{array}\right]
+	\mathbb{I} = \left[\begin{array}{rr}1 & 0 \\ 0 & 1 \end{array}\right]
 \end{displaymath}
 som ganske enkelt gir tilbake den samme qubiten vi startet med som vi kan se ved å anvende den på en vilkårlig qubit
 \begin{displaymath}
-	\mathbb{I}|a\rangle = \mathbb{I}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}1 & 0 \\ 0 & 1 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
-	= \left[\begin{array}{c} a_0 \\ a_1\end{array}\right] = a_0|0\rangle + a_1|1\rangle =  |a\rangle.
+	\mathbb{I}|a\rangle = \mathbb{I}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{rr}1 & 0 \\ 0 & 1 \end{array}\right]\left[\begin{array}{r} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{r} a_0 \\ a_1\end{array}\right] = a_0|0\rangle + a_1|1\rangle =  |a\rangle.
 \end{displaymath}
 En port som tilsynelatende gir ganske lik virkning representeres av matrisen
 \begin{displaymath}
-	\mathbb{Z} = \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right].
+	\mathbb{Z} = \left[\begin{array}{rr}1 & 0 \\ 0 & -1 \end{array}\right].
 \end{displaymath}
 Anvendt på basisvektorene gir denne
 \begin{align*}
-	\mathbb|0\rangle &=  \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right] \left[\begin{array}{c} 1 \\ 0 \end{array}\right]
-	 =  \left[\begin{array}{c} 1 \\ 0 \end{array}\right] = |0\rangle, \\
-	\mathbb|1\rangle &=  \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right] \left[\begin{array}{r} 0 \\ 1 \end{array}\right] 
+	\mathbb|0\rangle &=  \left[\begin{array}{rr}1 & 0 \\ 0 & -1 \end{array}\right] \left[\begin{array}{r} 1 \\ 0 \end{array}\right]
+	 =  \left[\begin{array}{r} 1 \\ 0 \end{array}\right] = |0\rangle, \\
+	\mathbb|1\rangle &=  \left[\begin{array}{rr}1 & 0 \\ 0 & -1 \end{array}\right] \left[\begin{array}{r} 0 \\ 1 \end{array}\right] 
 	= \left[\begin{array}{r} 0 \\ -1 \end{array}\right] = -|1\rangle.
 \end{align*}
 Siden en qubit $-|1\rangle$ er ekvivalent med en qubit $|1\rangle$ gir altså $\mathbb{Z}$ i likhet med $\mathbb{I}$ ingen endring så lenge vi anvender den på basisvektorer---altså på qubiter som er i en veldefinert tilstand (i motsetning til å være i en superposisjon). For $\mathbb{I}$ var den samme konklusjonen gyldig for en vilkårlig qubit, men det er ikke tilfellet for $\mathbb{Z}$. Hvis vi nå anvender denne operatoren på en vilkårlig qubit finner vi:
 \begin{displaymath}
-	\mathbb{Z}|a\rangle = \mathbb{Z}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}1 & 0 \\ 0 & -1 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
-	= \left[\begin{array}{c} a_0 \\ -a_1\end{array}\right] = a_0|0\rangle - a_1|1\rangle.
+	\mathbb{Z}|a\rangle = \mathbb{Z}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{rr}1 & 0 \\ 0 & -1 \end{array}\right]\left[\begin{array}{r} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{r} a_0 \\ -a_1\end{array}\right] = a_0|0\rangle - a_1|1\rangle.
 \end{displaymath}
 Dette er en qubit med lik sannsynlighet for at målingen av verdien vil gi hver av de to mulighetene som qubiten vi startet med, altså
 \begin{align*}
@@ -222,23 +222,84 @@ men det er fremdeles ikke den samme qubiten. Endringen som $\mathbb{Z}$ gjør p�
 
 $\mathbb{X}$ og $\mathbb{Y}$ er i likhet med $\mathbb{I}$ og $\mathbb{Z}$ et par av porter som har lignende, men ikke identisk virkning på qubiter. Vi ser effekten av portene ved å anvende de på en vilkårlig qubit
 \begin{align*}
-	\mathbb{X}|a\rangle &= \mathbb{X}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}0 & 1 \\ 1 & 0 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
-	= \left[\begin{array}{c} a_1 \\ a_0\end{array}\right] = a_1|0\rangle + a_0|1\rangle, \\
-	\mathbb{Y}|a\rangle &= \mathbb{X}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{cc}0 & 1 \\ -1 & 0 \end{array}\right]\left[\begin{array}{c} a_0 \\ a_1\end{array}\right] 
-	= \left[\begin{array}{c} a_1 \\ -a_0\end{array}\right] = a_1|0\rangle - a_0|1\rangle.
+	\mathbb{X}|a\rangle &= \mathbb{X}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{rr}0 & 1 \\ 1 & 0 \end{array}\right]\left[\begin{array}{r} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{r} a_1 \\ a_0\end{array}\right] = a_1|0\rangle + a_0|1\rangle, \\
+	\mathbb{Y}|a\rangle &= \mathbb{X}(a_0|0\rangle + a_1|1\rangle)= \left[\begin{array}{rr}0 & 1 \\ -1 & 0 \end{array}\right]\left[\begin{array}{r} a_0 \\ a_1\end{array}\right] 
+	= \left[\begin{array}{r} a_1 \\ -a_0\end{array}\right] = a_1|0\rangle - a_0|1\rangle.
 \end{align*}
 Hvis vi først setter $a_0=1, a_1=0$ eller $a_0=0, a_1=1$ for å studere virkningen på basisvektorer ser vi at både $\mathbb{X}$ og $\mathbb{Y}$ er en slags NOT-port---de endrer $|0\rangle$ til $|1\rangle$ og motsatt. Forskjellen på de to portene er at dersom vi har en qubit som er i en superposisjon vil $\mathbb{Y}$ endre det relative fortegnet, mens $\mathbb{X}$ ikke gjør det.
 
 \subsection{Hadamard-porten $\mathbb{H}$}
 Den viktigste porten som virker på \'en qubit er Hadamard-porten
 \begin{displaymath}
-	\mathbb{H} = \ipsqrt \left[\begin{array}{cc}1 & 1 \\ 1 & -1 \end{array}\right].
+	\mathbb{H} = \ipsqrt \left[\begin{array}{rr}1 & 1 \\ 1 & -1 \end{array}\right].
 \end{displaymath}
 Faktoren $\ipsqrt$ er tatt med for å beholde normaliseringen av qubitene---altså slik at kvadratsummen av koeffisientene ikke endres. For å se hvorfor Hadamard-porten er viktig studerer vi hvilken effekt den har på basisvektorene:
 \begin{align*}
-	\mathbb{H}|0\rangle &= \ipsqrt\left[\begin{array}{cc}1 & 1 \\ 1 & -1 \end{array}\right]\left[\begin{array}{c} 1 \\ 0\end{array}\right] 
-	= \ipsqrt\left[\begin{array}{c} 1 \\ 1\end{array}\right] = \ipsqrt(|0\rangle + |1\rangle), \\
-	\mathbb{H}|1\rangle &= \ipsqrt\left[\begin{array}{cc}1 & 1 \\ 1 & -1 \end{array}\right]\left[\begin{array}{c} 0 \\ 1\end{array}\right] 
-	= \ipsqrt\left[\begin{array}{c} 1 \\ -1\end{array}\right] = \ipsqrt(|0\rangle - |1\rangle).
+	\mathbb{H}|0\rangle &= \ipsqrt\left[\begin{array}{rr}1 & 1 \\ 1 & -1 \end{array}\right]\left[\begin{array}{r} 1 \\ 0\end{array}\right] 
+	= \ipsqrt\left[\begin{array}{r} 1 \\ 1\end{array}\right] = \ipsqrt(|0\rangle + |1\rangle), \\
+	\mathbb{H}|1\rangle &= \ipsqrt\left[\begin{array}{rr}1 & 1 \\ 1 & -1 \end{array}\right]\left[\begin{array}{r} 0 \\ 1\end{array}\right] 
+	= \ipsqrt\left[\begin{array}{r} 1 \\ -1\end{array}\right] = \ipsqrt(|0\rangle - |1\rangle).
 \end{align*}
 Vi ser altså at når Hadamard-porten virker på en qubit som er i en veldefinert tilstand blir resultatet en qubit som er i en superposisjon med lik sannsynlighet for å bli målt til hver av de to ulike verdiene.
+
+\subsection{CNOT}
+Vi har sett at den klassiske CNOT-porten tar inn to bit og gir ut to bit. Dersom kontroll-biten har verdien 1 virker CNOT som en NOT-port på den andre biten. I den kvantemekaniske versjonen av CNOT ønsker vi at porten skal ha den samme effekten så lenge den anvendes på basisvektorer. Det vil si at vi vil at sannhetstabellen skal se slik ut
+\begin{center}
+\begin{figure}[h]
+\begin{subfigure}{.5\textwidth}
+	\begin{tabular}{|c|c||c|c|}
+		\hline
+	\multicolumn{2}{|c||}{Inn} & \multicolumn{2}{|c|}{Ut} \\
+	\hline
+	\hline
+	$x$ & $y$ & $x$ & $x\oplus y$ \\
+	\hline
+	\hline
+	$|0\rangle$ & $|0\rangle$ & $|0\rangle$ & $|0\rangle$ \\
+	$|0\rangle$ & $|1\rangle$ & $|0\rangle$ & $|1\rangle$ \\
+	$|1\rangle$ & $|0\rangle$ & $|1\rangle$ & $|1\rangle$ \\
+	$|1\rangle$ & $|1\rangle$ & $|1\rangle$ & $|0\rangle$ \\
+	\hline
+	\end{tabular}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+	\begin{tabular}{|c||c|}
+	\hline
+	Inn & Ut \\
+	\hline
+	\hline
+	$|00\rangle$ & $|00\rangle$ \\ 
+	$|01\rangle$ & $|01\rangle$ \\ 
+	$|10\rangle$ & $|11\rangle$ \\ 
+	$|11\rangle$ & $|10\rangle$ \\ 
+	\hline
+	\end{tabular}
+\end{subfigure}
+\caption{Sannhetstabell for kvantemekanisk CNOT-port. Venstre: tabellen skrevet fullt ut. Høyre: kompakt notasjon.}
+\end{figure}
+\end{center}
+Foreløpig ser dette veldig likt ut til den klassiske versjonen, men som vi så med $\mathbb{Z}$ og $\mathbb{Y}$ kan det likevel skje ting når vi bruker porten på vektorer som ikke er basisvektorer. En generell kobinasjon av to qubit kan skrives som
+\begin{displaymath}
+	r|00\rangle + s|01\rangle + t|10\rangle + u|11\rangle
+\end{displaymath}
+Siden matrisemultiplikasjon er en lineær operasjon gir CNOT anvendt på denne tilstanden av to qubit
+\begin{align*}
+	CNOT&(r|00\rangle + s|01\rangle + t|10\rangle + u|11\rangle) \\
+	&= r\,CNOT(|00\rangle) + s\,CNOT(|01\rangle) + t\,CNOT(|10\rangle) + u\,CNOT(|11\rangle) \\
+	&=r|00\rangle + s|01\rangle + u|10\rangle + t|11\rangle.
+\end{align*}
+Effekten er altså å bytte om amplitudene til $|10\rangle$ og $|11\rangle$, mens amplitudene til de andre komponentene forblir uforandret. Et konkret eksempel viser hvorfor denne porten er svært interessant. La 
+\begin{align*}
+	x &= \ipsqrt(|0\rangle + |1\rangle), \\
+	y &= |0\rangle.
+\end{align*}
+Inn-tilstanden skrevet i den kompakte notasjonen er da
+\begin{displaymath}
+	\ipsqrt(|0\rangle + |1\rangle)\otimes|0\rangle = \ipsqrt( |0\rangle\otimes|0\rangle + |1\rangle\otimes|0\rangle) = \ipsqrt(|00\rangle + |10\rangle).
+\end{displaymath}
+Når vi så anvender CNOT får vi
+\begin{displaymath}
+	CNOT\left( \ipsqrt(|00\rangle + |11\rangle) \right) = \ipsqrt(|00\rangle + |11\rangle).
+\end{displaymath}
+De to qubitene vi startet med var uavhengig av hverandre, men resultatet etter CNOT-porten er to sammenfiltrete qubit!
