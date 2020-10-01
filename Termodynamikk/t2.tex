@@ -1,0 +1,51 @@
+\chapter{Termodynamikkens andre lov}
+
+Som oftest tar vi det bare for gitt at varme naturlig strømmer fra et objekt med høy temperatur til et objekt med lav temperatur, og ikke omvendt. Faktisk kan man velge å definere temperatur som den egenskapen som lar oss forutsi hvilken retning varmestrømmen vil ha. Men hvis vi ser på objektene våre på et mikroskopisk nivå kan vi få en dypere forståelse av hvorfor energien strømmer den veien den gjør, og dette gir oss muligheten til å definere temperatur på en mer fundamental måte---og å få en av de dypeste innsiktene som ligger i termodynamikken.
+
+\section{Mikrotilstander og makrotilstander}
+Som nevnt i innledningen til denne teksten er grunntanken bak termodynamikken å beskrive et system med et sett av makroskopiske størrelser fordi en komplett mikroskopisk beskrivelse er praktisk umulig på grunn av det store antallet atomer. En tilstand som er beskrevet med unike verdier av disse makroskopiske størrelsene, f.eks. temperatur, trykk, volum og stoffmengde, kaller vi en \emph{makrotilstand}. Den fullstendige beskrivelsen av hvor hvert enkelt atom er og hvor fort det beveger seg kaller vi en \emph{mikrotilstand}. I alle realistiske scenarier vil det være et enormt antall mulige mikrotilstander for enhver makrotilstand. Sammen med termodynamikkens fundamentalpostulat---for et system i en gitt makrotilstand er alle mikrostilstander som er konsistent med denne makrotilstanden like sannsynlig---kan vi forstå hvorfor varme strømmer fra høy temperatur til lav temperatur. Dette gir oss også anledning til å innføre en ny fysisk størrelse som viser seg å være svært nyttig (men vanskelig å få helt taket på i første omgang): Entropi.
+
+\subsection{Mikrotilstander i en enkel modell}
+For å få en liten følelse for sammenhengen mellom mikrotilstander og makrotilstander kan det være godt med et konkret eksempel. Det viser seg at antall mikrotilstander vokser svært raskt med antall atomer i systemet, så vi holder det antallet lavt: Vi ser på en "krystall" som består av kun tre atomer. I følge kvantemekanikken kan atomene kun tildeles energi i faste kvanta---hvert atom kan ha enten \'en energienhet\footnote{Hvor stor energienheten er avhenger av hvilke atomer som er bundet sammen i krystallen. Størrelsen på energieheten er uansett uviktig for denne diskusjonen, det eneste som betyr noe er at energien er kvantisert.}, to energienheter, tre energienheter, osv. Hvis vi ikke plasserer noen energienheter på krystallen---svarende til den laveste temperaturen den kan ha---må nødvendigvis alle atomene være i tilstanden uten noen energienheter. Det er altså bare en måte å realisere dette på. Hvis vi øker temperaturen ørlite ved å plassere \'en energienhet på krystallen er det tre måter å realisere dette på: energienheten kan være på det første, det andre eller det tredje atomet. Jo flere energienheter vi plasserer på krystallen, jo flere mulige kombinasjoner finnes det som svarer til samme totalenergi. Tabell \ref{tab:t2:multipl} viser mulighetene for 0, 1, 2 og 3 energienheter.
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{c|ccc}
+& atom 1 & atom 2 & atom 3 \\
+\hline
+\hline
+q = 0 & 0 & 0 & 0 \\
+\hline
+& 1 & 0 & 0 \\
+q = 1 & 0 & 1 & 0 \\
+& 0 & 0 & 1 \\
+\hline
+& 2 & 0 & 0 \\
+& 0 & 2 & 0 \\
+q = 2 & 0 & 0 & 2 \\
+& 1 & 1 & 0 \\
+& 1 & 0 & 1 \\
+& 0 & 1 & 1  \\
+\hline
+& 3 & 0 & 0 \\
+& 0 & 3 & 0 \\
+& 0 & 0 & 3 \\
+& 2 & 1 & 0 \\
+q = 3 & 2 & 0 & 1 \\
+& 1 & 2 & 0 \\
+& 0 & 2 & 1  \\
+& 1 & 0 & 2 \\
+& 0 & 1 & 2 \\
+& 1 & 1 & 1 \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+\caption{Mikrotilstander for en krystall med $N=3$ atomer og $q = 0, 1, 2$ eller 3 energienheter.}
+\label{tab:t2:multipl}
+\end{table}
+
+Generelt kan det vises at antall mikrotilstander på en krystall med $N$ atomer og $q$ energienheter er 
+\begin{displaymath}
+	\Omega = \frac{(q+N-1)!}{q!(N-1)!}.
+\end{displaymath}
