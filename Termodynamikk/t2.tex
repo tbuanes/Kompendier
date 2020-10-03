@@ -49,3 +49,20 @@ Generelt kan det vises at antall mikrotilstander på en krystall med $N$ atomer 
 \begin{displaymath}
 	\Omega = \frac{(q+N-1)!}{q!(N-1)!}.
 \end{displaymath}
+For et makroskopisk objekt vil $N$ være av størrelsesorden $10^{23}$, og for temperatur omkring romtemperatur vil $q$ være vesentlig større enn dette. Det er derfor opplagt at antall mikrotilstander i et makroskopisk objekt er svært stort. 
+
+\section{Entropi}
+Blant annet fordi antall mikrotilstander vokser så raskt med når antall atomer og antall energienheter vokser er det mer hensiktsmessig å regne med $\ln\Omega$ enn $\Omega$ selv. Dette gjør at vi får tall av langt mer håndterbar størrelse, og som vi skal se snart har det også det å regne med logaritmen av antall tilstander en annen svært nyttig egenskap. Av historiske årsaker er det også vanlig å multiplisere $\ln\Omega$ med Boltzmanns konstant\footnote{Ved å ta med denne konstanten blir denne definisjonen av entropi kompatibel med entropi-definisjonen som var i bruk før mikro-fysikken som lå bak var forstått.}, $k=1,38\times10^{-23}~\mathrm{J/K}$. Vi får da størrelsen som har navnet \emph{entropi}:
+\begin{displaymath}
+	S = k\ln\Omega.
+\end{displaymath}
+Entropi er et slags kvalitetsmål til energien i systemet. Hvis entropien er lav kan energien i stor grad utnyttes til det vi måtte ønske å gjøre med den, mens jo høyere entropien blir, jo mindre blir muligheten til å anvende energien til å få gjort noen form for arbeid. Det ekstreme tilfellet er når alt i universet en gang i fjern fremtid har samme temperatur: Da er entropien maksimert og ingenting interessant kan lenger hende.
+
+Entropi er i likhet med for eksempel indre energi, temperatur og trykk en tilstandsvariabel. Det vil si at hvis vi skal spesifisere tilstanden til et system fullstendig er entropien en av variablene som må oppgis.\footnote{Entropien er selvfølgelig ikke uavhengig av de andre tilstandsvariablene. For eksempel er entropien til en ideell gass unikt spesifisert dersom vi kjenner gassens volum, stoffmengde, masse per molekyl og indre energi.} Her kommer vi tilbake til hvorfor logaritmen er nyttig: Anta at vi har et system som består av to deler, kall de del A og del B. La del A ha $\Omega_A$ antall mikrotilstander og del B $\Omega_B$ antall mikrotilstander. Totalt antall mikrosystemer til systemet er da $\Omega = \Omega_A\cdot\Omega_B$. Ved å bruke regnereglene for logaritmer finner vi da ut at 
+\begin{displaymath}
+	S = k\ln\Omega = k\ln(\Omega_A\cdot\Omega_B) = k\ln\Omega_A + k\ln\Omega_B = S_A + S_B.
+\end{displaymath}
+Vi ser altså at på grunn av logaritmen i entropidefinisjonen er entropien til et system lik summen av entropien til alle delene av systemet, på akkurat samme måte som at indre energi til systemet er lik summen av indre energi til alle delene av systemet. 
+
+\section{Entropi og temperatur}
+Det er et aspekt ved entropien som er svært ulik andre tilstandsvariabler: Entropien til et isolert system avtar aldri, men den kan vokse.
