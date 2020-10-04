@@ -98,3 +98,26 @@ En variasjon av eksempelet ovenfor som også er interessant å se på er å la d
 Eksemplene i dette avsnittet viser at tendensen til utgjevning av energitetthet, og dermed temperatur, kan forstås ved å se på antall tilgjengelige mikrotilstander for de ulike makrotilstandene. Neste avsnitt vil ta denne konklusjonen videre og formulere den ved hjelp av størrelsen entropi som ble definert i avsnitt \ref{sec:t2:entropi}.
 
 \section{Entropi og temperatur}
+Diskusjonen i forrige avsnitt viste at energien i et isolert system vil fordele seg slik at systemet ender opp i den makrotilstanden med flest tilhørende mikrotilstander. Siden logaritmen er er en monotont økende funksjon er dette ekvivalent med å si at systemet ender opp i den makrotilstanden der entropien, $S = k\ln\Omega$ er størst. Hvis vi fortsetter å betrakte et system som består av delsystemene A og B (ikke nødvendigvis like store) kan vi da skrive likevektskriteriet
+\begin{equation}
+	\frac{\partial S_\text{total}}{\partial U_A} = 0.
+	\label{eq:t2:likevekt1}
+\end{equation}
+Her er $U_A$ den indre energien i delsystem A. Diskusjonen i forrige avsnitt var basert på antall energienheter i delsystemet, $q_A$, men siden $U_A = \epsilon q_A$ der $\epsilon$ er en konstant kan vi like gjerne uttrykke likevektsvilkåret i form av $U_A$. Videre er hver enkelt energienhet svært liten sammenlignet med den totale indre energien for et makroskopisk system. Derfor er det helt greit å behandle $U_A$ og $S$ som kontinuerlig varierende størrelser slik vi implisitt har gjort ved å skrive ned den deriverte.
+
+Når vi skal jobbe videre med dette uttrykket husker vi på at $S_\text{total} = S_A + S_B$. Videre må enhver endring i $U_A$ kompenseres med en like stor endring med motsatt fortegn i $U_B$ siden vi har antatt at systemet som helhet er isolert fra omgivelsene. Derfor kan ligning (\ref{eq:t2:likevekt1}) omskrives som
+\begin{displaymath}
+	0 = \frac{\partial S_\text{total}}{\partial U_A} = \frac{\partial S_A}{\partial U_A} + \frac{\partial S_B}{\partial U_A}
+	 = \frac{\partial S_A}{\partial U_A} - \frac{\partial S_B}{\partial U_B}
+\end{displaymath}
+eller
+\begin{displaymath}
+	\frac{\partial S_A}{\partial U_A} = \frac{\partial S_B}{\partial U_B} \quad \text{(ved likevekt)}.
+	\label{eq:t2:likevekt2}
+\end{displaymath}
+Venstresiden av denne ligningen sier noe om bare delsystem A, mens høyre\-siden sier noe om bare delsystem B. Dette tyder på at størrelsen $\partial S/\partial U$ kan brukes til å karakterisere en bestemt del av et system. Videre sier ligning (\ref{eq:t2:likevekt2}) at denne størrelsen er lik i ulike deler av systemet når det har kommet i likevekt. Dette ser lovende ut som et mål på temperatur. Som et neste steg ser vi på enhetene: Entropi har enhet $\mathrm{J/K}$, mens energi har enhet $\mathrm{J}$. Dermed har $\partial S/\partial U$ enhet $\mathrm{K^{-1}}$. Enhetene tyder derfor på at temperatur kan uttrykkes som 
+\begin{displaymath}
+	T = \left(\frac{\partial S}{\partial U}\right)^{-1}.
+	\label{eq:t2:T}
+\end{displaymath}
+Siden dette argumentet fremkom delvis gjennom kvalitative argumenter og delvis dimensjonsanalyse kan vi i utgangspunktet ikke utelukke at det skal være noen konstantfaktorer, f.eks. en faktor 2 eller $\pi$, med i dette uttrykket. Jeg skal ikke forsøke å vise her at det ikke er behov for noen slike faktorer, men bare konstantere at temperaturen definert gjennom ligning (\ref{eq:t2:T}) er konsistent med temperaturdefinisjonen som er brukt tidligere i teksten.
