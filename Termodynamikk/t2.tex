@@ -6,6 +6,7 @@ Som oftest tar vi det bare for gitt at varme naturlig strømmer fra et objekt me
 Som nevnt i innledningen til denne teksten er grunntanken bak termodynamikken å beskrive et system med et sett av makroskopiske størrelser fordi en komplett mikroskopisk beskrivelse er praktisk umulig på grunn av det store antallet atomer. En tilstand som er beskrevet med unike verdier av disse makroskopiske størrelsene, f.eks. temperatur, trykk, volum og stoffmengde, kaller vi en \emph{makrotilstand}. Den fullstendige beskrivelsen av hvor hvert enkelt atom er og hvor fort det beveger seg kaller vi en \emph{mikrotilstand}. I alle realistiske scenarier vil det være et enormt antall mulige mikrotilstander for enhver makrotilstand. Sammen med termodynamikkens fundamentalpostulat---for et system i en gitt makrotilstand er alle mikrostilstander som er konsistent med denne makrotilstanden like sannsynlig---kan vi forstå hvorfor varme strømmer fra høy temperatur til lav temperatur. Dette gir oss også anledning til å innføre en ny fysisk størrelse som viser seg å være svært nyttig (men vanskelig å få helt taket på i første omgang): Entropi.
 
 \subsection{Mikrotilstander i en enkel modell}
+\label{sec:t2:minikrystall}
 For å få en liten følelse for sammenhengen mellom mikrotilstander og makrotilstander kan det være godt med et konkret eksempel. Det viser seg at antall mikrotilstander vokser svært raskt med antall atomer i systemet, så vi holder det antallet lavt: Vi ser på en "krystall" som består av kun tre atomer. I følge kvantemekanikken kan atomene kun tildeles energi i faste kvanta---hvert atom kan ha enten \'en energienhet\footnote{Hvor stor energienheten er avhenger av hvilke atomer som er bundet sammen i krystallen. Størrelsen på energieheten er uansett uviktig for denne diskusjonen, det eneste som betyr noe er at energien er kvantisert.}, to energienheter, tre energienheter, osv. Hvis vi ikke plasserer noen energienheter på krystallen---svarende til den laveste temperaturen den kan ha---må nødvendigvis alle atomene være i tilstanden uten noen energienheter. Det er altså bare en måte å realisere dette på. Hvis vi øker temperaturen ørlite ved å plassere \'en energienhet på krystallen er det tre måter å realisere dette på: energienheten kan være på det første, det andre eller det tredje atomet. Jo flere energienheter vi plasserer på krystallen, jo flere mulige kombinasjoner finnes det som svarer til samme totalenergi. Tabell \ref{tab:t2:multipl} viser mulighetene for 0, 1, 2 og 3 energienheter.
 
 \begin{table}[htp]
@@ -52,6 +53,7 @@ Generelt kan det vises at antall mikrotilstander på en krystall med $N$ atomer 
 For et makroskopisk objekt vil $N$ være av størrelsesorden $10^{23}$, og for temperatur omkring romtemperatur vil $q$ være vesentlig større enn dette. Det er derfor opplagt at antall mikrotilstander i et makroskopisk objekt er svært stort. 
 
 \section{Entropi}
+\label{sec:t2:entropi}
 Blant annet fordi antall mikrotilstander vokser så raskt med når antall atomer og antall energienheter vokser er det mer hensiktsmessig å regne med $\ln\Omega$ enn $\Omega$ selv. Dette gjør at vi får tall av langt mer håndterbar størrelse, og som vi skal se snart har det også det å regne med logaritmen av antall tilstander en annen svært nyttig egenskap. Av historiske årsaker er det også vanlig å multiplisere $\ln\Omega$ med Boltzmanns konstant\footnote{Ved å ta med denne konstanten blir denne definisjonen av entropi kompatibel med entropi-definisjonen som var i bruk før mikro-fysikken som lå bak var forstått.}, $k=1,38\times10^{-23}~\mathrm{J/K}$. Vi får da størrelsen som har navnet \emph{entropi}:
 \begin{displaymath}
 	S = k\ln\Omega.
@@ -64,5 +66,35 @@ Entropi er i likhet med for eksempel indre energi, temperatur og trykk en tilsta
 \end{displaymath}
 Vi ser altså at på grunn av logaritmen i entropidefinisjonen er entropien til et system lik summen av entropien til alle delene av systemet, på akkurat samme måte som at indre energi til systemet er lik summen av indre energi til alle delene av systemet. 
 
+\section{Mikrotilstander og temperatur}
+Det er et aspekt ved entropien som er svært ulik andre tilstandsvariabler: Entropien til et isolert system avtar aldri, men den kan vokse. Dette viser seg å være tett koblet til observasjonen at varme flyter fra objekter til høy temperatur til objekter med lav temperatur. For å se denne sammenhengen skal vi se på et system som er satt sammen av to slike mini-krystaller som ble diskutert i avsnitt \ref{sec:t2:minikrystall}. Vi lar de to krystallene være i kontakt slik at de kan utveksle energi innbyrdes, mens de er isolert fra alt annet. Temperaturen til hver av krystallene er bestemt av energiinnholdet den har til enhver tid. Siden krystallene er like vil da lik temperatur hver ensbetydende med at energien er like fordelt mellom dem.
+
+Hver krystall består av tre atomer, altså er $N_A = N_B = 3$. Vi lar $q_A$ og $q_B$ være antall energienheter på de to krystallene, og vi ser på tilfellet der $q_A + q_B = 6$. Siden energien kun kan utveksles mellom de to krystallene og ikke med omgivelsene vil denne summen holde seg konstant selv om $q_A$ og $q_B$ kan endres. Tabell \ref{tab:t2:multipl2} lister opp antall tilgjengelige tilstander i krystall $A$ og krystall $B$ gitt hver av de mulige verdiene til $q_A$ og $q_B$. Siden måten energien er fordelt mellom de ulike atomene i krystall $A$ er uavhengig av måten energien er fordelt mellom atomene i krystall $B$ er totalt antall mulige tilstander for en viss kombinasjon av $q_A$ og $q_B$ lik produktet av antall mulige tilstander i hver av krystallene, $\Omega_\text{tot} = \Omega_A\cdot\Omega_B$. Siste kolonne viser hvor stor andel av antall totalt mulig antall kombinasjoner som utgjøres av hver spesfikke kombinasjon av  $q_A$ og $q_B$. På grunn av antakelsen om at alle mikrotilstander som svarer til samme makrotilstand er like sannsynlig svarer dette forholdstallet til sannsynligheten for at akkurat denne kominasjonen av $q_A$ og $q_B$ realiseres.\footnote{Vi snakker her hele tiden om hvilken tilstand systemet er i etter at det har gått lang nok tid til å ha nådd termisk likevekt. Hvis vi ser på kortere tidsskalaer vil en mikrotilstand som ligner den forrige være mer sannynlig enn en som er mer ulik den forrige.}
+
+\begin{table}[htp]
+\begin{center}
+\begin{tabular}{rr|rr|r|r}
+$q_A$ & $\Omega_A$ & $q_b$ & $\Omega_B$ & $\Omega_\text{tot}$ & $P(q_A,q_B)$ \\ 
+\hline
+0 & 1 & 6 & 28 & 28 & 6,1\% \\
+1 & 3 & 5 & 21 & 63 & 13,6\% \\
+2 & 6 & 4 & 15 & 90 & 19,5\%\\
+3 & 10 & 3 & 10 & 100 & 21,6\% \\
+4 & 15 & 2 & 6 & 90 & 19,5\% \\
+5 & 21 & 1 & 3 & 63 & 13,6\% \\
+6 & 28 & 0 & 1 & 28 & 6,2\% \\
+\end{tabular}
+\end{center}
+\caption{}
+\label{tab:t2:multipl2}
+\end{table}
+
+Som tabellen viser er det komibinasjonen der $q_A = q_B$ som har flest tilgjengelige mikrotilstander. Dette er derfor den makrotilstanden vi må forvente at krystallen er i etter at det har gått lang tid. Hvis vi for eksempel starter opp med all energien på krystall A, altså $q_A = 6$, må vi forvente at energien fordeler seg jevnt utover slik at halvparten av energien etter hvert havner på krystall $B$---vi ender altså opp med at krystallene som startet med ulik temperatur til slutt får lik temperatur.
+
+I dette eksempelet er det ikke stor forskjell i sannynlighet selv mellom tilstander som har ganske ulike energifordeling. Om vi sammenligner tilstanden med $q_A=2, q_B=4$ og $q_A = q_B = 3$ er førstnevnte tilstand kun 10\% mindre sannsynlig selv om krystall B i dette tilfellet har dobbelt så mye energi som krystall $A$. Dette er en artefakt av at eksempel-systemet vårt er så lite. Hvis vi ser på et reelt system med $N$ omkring $10^{23}$ og $q$ enda større enn dette ender vi opp med en sannsynlighetsfordeling som har en svært smal topp rundt den mest sannsynlige energifordelingen. Selv svært små avvik ender opp med forsvinnende liten sannsynlighet.
+
+En variasjon av eksempelet ovenfor som også er interessant å se på er å la de to krystallene ha ulik størrelse, f.eks. $N_A = 5, N_B = 3$. Hvis vi gjør tilsvarende beregning som i tabell \ref{tab:t2:multipl2} for det tilfellet vil vi naturlig nok finne at det ikke er lik energifordeling mellom de to krystallene som er mest sannsynlig. Vi finner derimot at det er mest sannsynlig at krystall A har $\frac{5}{5+3}\cdot100\% = 62,5\%$ av energien mens krystall B har de resterende 37,5\% av energien. Beregningen viser altså at tilstanden med like stor energi\emph{tetthet} er den mest sannsynlige, og temperatur beskriver nettopp energitetthet og ikke totalt energiinnhold. 
+
+Eksemplene i dette avsnittet viser at tendensen til utgjevning av energitetthet, og dermed temperatur, kan forstås ved å se på antall tilgjengelige mikrotilstander for de ulike makrotilstandene. Neste avsnitt vil ta denne konklusjonen videre og formulere den ved hjelp av størrelsen entropi som ble definert i avsnitt \ref{sec:t2:entropi}.
+
 \section{Entropi og temperatur}
-Det er et aspekt ved entropien som er svært ulik andre tilstandsvariabler: Entropien til et isolert system avtar aldri, men den kan vokse.
