@@ -125,8 +125,36 @@ eller
 	\label{eq:t2:likevekt2}
 \end{displaymath}
 Venstresiden av denne ligningen sier noe om bare delsystem A, mens høyre\-siden sier noe om bare delsystem B. Dette tyder på at størrelsen $\partial S/\partial U$ kan brukes til å karakterisere en bestemt del av et system. Videre sier ligning (\ref{eq:t2:likevekt2}) at denne størrelsen er lik i ulike deler av systemet når det har kommet i likevekt. Dette ser lovende ut som et mål på temperatur. Som et neste steg ser vi på enhetene: Entropi har enhet $\mathrm{J/K}$, mens energi har enhet $\mathrm{J}$. Dermed har $\partial S/\partial U$ enhet $\mathrm{K^{-1}}$. Enhetene tyder derfor på at temperatur kan uttrykkes som 
-\begin{displaymath}
+\begin{equation}
 	T = \left(\frac{\partial S}{\partial U}\right)^{-1}.
 	\label{eq:t2:T}
-\end{displaymath}
+\end{equation}
 Siden dette argumentet fremkom delvis gjennom kvalitative argumenter og delvis dimensjonsanalyse kan vi i utgangspunktet ikke utelukke at det skal være noen konstantfaktorer, f.eks. en faktor 2 eller $\pi$, med i dette uttrykket. Jeg skal ikke forsøke å vise her at det ikke er behov for noen slike faktorer, men bare konstantere at temperaturen definert gjennom ligning (\ref{eq:t2:T}) er konsistent med temperaturdefinisjonen som er brukt tidligere i teksten.
+
+\section{Entropi og varmeoverføring}
+Som en avslutning på diskusjonen om temperatur og entropi ser vi nå på varmeoverføring mellom to makroskopiske objekter med starttemperatur henholdsvis $T_1$ og $T_2$. Vi begrenser oss til å se på et tilfelle der det ikke utføres noe arbeid samtidig som varmefoverføringen, og det er ingen energiutveksling mellom omgivelsene. Da er $\Delta U = Q$ for hvert av objektene, og $Q_1 = -Q_2$. Hvis vi antar at objekt 2 har lavest temperatur vil dette motta energi og følgelig er $Q_2$ positiv.
+
+Vi kan bruke ligning (\ref{eq:t2:T}) individuelt for hvert av objektene. Hvis vi i første omgang begrenser oss til å se på infinitesimale endringer gir denne:
+\begin{align*}
+	\d S_1 &= \frac{\d U_1}{T} = \frac{\d Q_1}{T} = m_1c_V\frac{\d T}{T}\\
+	\d S_2 &= \frac{\d U_2}{T} = \frac{\d Q_2}{ T}= m_2c_V\frac{\d T}{T} \\
+\end{align*}
+Her er $T$ dent temperaturen objektet har til enhver tid (kun samme verdi for begge objekter når de har kommet i termisk likevekt). Den siste likheten følger av definisjonen for varmekapasitet, samt at prosessen må skje ved konstant volum siden vi har antatt at det ikke blir utført noe mekanisk arbeid. For å finne total endring av entropi integrerer vi disse uttrykkene fra starttemperaturen, henholdsvis $T_1$ og $T_2$ til den felles temperaturen de har når de er kommet til termisk likevekt, $T_f$. 
+\begin{align*}
+	\Delta S_1 &= m_1c_V\int_{T_1}^{T_f} \frac{\d T}{T} = m_1c_V\ln\left(\frac{T_f}{T_1}\right) = - m_1c_V\ln\left(\frac{T_1}{T_f}\right), \\
+	\Delta S_2 &= m_2c_V\int_{T_2}^{T_f} \frac{\d T}{T} = m_2c_V\ln\left(\frac{T_f}{T_2}\right).
+\end{align*}
+Siden $T_1 > T_f > T_2$ er $\Delta S_1$ negativ, mens $\Delta S_2$ er positiv. Hvis vi summerer disse finner vi at $\Delta S_\text{total} = \Delta S_1 + \Delta S_2>0$ uansett hva forholdet mellom $m_1$ og$m_2$ er, og uansett om de to objektene har samme verdi for $c_V$ eller ikke. Dette kan vi enklest se ved å sammenligne uttrykkene for $\d S_1$ og $\d S_2$. Siden de kun utveksler energi med hverandre og ikke med øvrige omgivelser må $|\d Q_1| = |\d Q_2|$ til enhver tid. Men fordi objekt 1 starter på en høyere temperatur enn objekt 2 er temperaturen i nevneren for $\d S_1$ alltid større eller lik den i nevneren for $\d S_2$. Dermed er til enhver tid $|\d S_2|\geq |\d S_1|$. Vi ser altså at entropiøkningen i objektet som mottar energi nødvendigvis er større enn entropireduksjonen i objektet som mottar energi. Nettoresultatet er at den totale entropien øker.
+
+ De eneste prosessene som kan unngå å øke den totale entropien er adiabatiske prosesser---der det ikke er noen varmeutveksling---og isotermeprosesser---der temperaturforskjellen mellom objektet som avgir energi og det som mottar energi til en hver tid er infinitesimal.
+ 
+ \section{Termodynamikkens andre lov}
+ Det faktum at den totale entropien aldri vil avta i fysiske prosesser har fått navnet termodynamikkens andre lov. Denne loven ligger til grunn for at alle prosesser i naturen har en foretrukken retning, og var langt på vei forstått allerede før entropi ble forstått. Derfor har vi endt opp med ulike formuleringer av termodynamikkens andre lov som virker svært ulike ved første øyekast, men som alle er ekvivalente. De tre viktigste formuleringene er
+ \begin{enumerate}
+ \item
+Entropien til et isolert system vil ikke avta, men kan øke.
+\item
+Varme går ikke spontant fra et objekt med lav temperatur til et objekt med høy temperatur.
+\item
+Varme kan ikke omgjøres til arbeid med 100\% virkningsgrad.
+\end{enumerate}
