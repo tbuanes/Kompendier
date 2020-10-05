@@ -85,13 +85,22 @@ $q_A$ & $\Omega_A$ & $q_b$ & $\Omega_B$ & $\Omega_\text{tot}$ & $P(q_A,q_B)$ \\
 6 & 28 & 0 & 1 & 28 & 6,2\% \\
 \end{tabular}
 \end{center}
-\caption{}
+\caption{Antall mikrotilstander for hver makrotilstand gitt $N_A = N_B = 3$ og $q_A + q_B=6$. }
 \label{tab:t2:multipl2}
 \end{table}
 
 Som tabellen viser er det komibinasjonen der $q_A = q_B$ som har flest tilgjengelige mikrotilstander. Dette er derfor den makrotilstanden vi må forvente at krystallen er i etter at det har gått lang tid. Hvis vi for eksempel starter opp med all energien på krystall A, altså $q_A = 6$, må vi forvente at energien fordeler seg jevnt utover slik at halvparten av energien etter hvert havner på krystall $B$---vi ender altså opp med at krystallene som startet med ulik temperatur til slutt får lik temperatur.
 
 I dette eksempelet er det ikke stor forskjell i sannynlighet selv mellom tilstander som har ganske ulike energifordeling. Om vi sammenligner tilstanden med $q_A=2, q_B=4$ og $q_A = q_B = 3$ er førstnevnte tilstand kun 10\% mindre sannsynlig selv om krystall B i dette tilfellet har dobbelt så mye energi som krystall $A$. Dette er en artefakt av at eksempel-systemet vårt er så lite. Hvis vi ser på et reelt system med $N$ omkring $10^{23}$ og $q$ enda større enn dette ender vi opp med en sannsynlighetsfordeling som har en svært smal topp rundt den mest sannsynlige energifordelingen. Selv svært små avvik ender opp med forsvinnende liten sannsynlighet.
+
+\begin{figure}[tp]
+\begin{center}
+\includegraphics[width=.45\textwidth]{./multiplisitet_3_3_6}
+\includegraphics[width=.45\textwidth]{./multiplisitet_200_100_1000}
+\end{center}
+\caption{Sannsynlighetsfordeling for ulike verdier av $q_A$. I plottet til venstre er $N_A = N_B = 3$ og $q_A + q_B = 6$. I plottet til høyre er $N_A = 200, N_B=100$ og $q_A + q_B = 1000$. Selv om størrelsen på antall atomer og antall energienheter i plottet til høyre fremdeles er mye mindre enn i realistiske eksempler ser vi at et kun er energifordelinger nær den mest sannsynlige verdien som har sannsynlighet vesentlig større enn 0. Når $N$ og $q$ blir store nok til å representre et realisitisk makroskopisk system blir toppen mye smalere. Merk også at i plottet til høyre er det $q_A = \frac{2}{3}(q_A+q_B)$ som er mest sannsynlige verdi siden $N_A = 2N_B$. }
+\label{fig:t2:multiplisitet}
+\end{figure}
 
 En variasjon av eksempelet ovenfor som også er interessant å se på er å la de to krystallene ha ulik størrelse, f.eks. $N_A = 5, N_B = 3$. Hvis vi gjør tilsvarende beregning som i tabell \ref{tab:t2:multipl2} for det tilfellet vil vi naturlig nok finne at det ikke er lik energifordeling mellom de to krystallene som er mest sannsynlig. Vi finner derimot at det er mest sannsynlig at krystall A har $\frac{5}{5+3}\cdot100\% = 62,5\%$ av energien mens krystall B har de resterende 37,5\% av energien. Beregningen viser altså at tilstanden med like stor energi\emph{tetthet} er den mest sannsynlige, og temperatur beskriver nettopp energitetthet og ikke totalt energiinnhold. 
 
