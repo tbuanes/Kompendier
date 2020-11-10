@@ -49,7 +49,17 @@ Nøytron-stråling regnes vanligvis ikke med blant når man diskuterer radioakti
 Alle typer radioaktiv stråling er i stand til å ionisere atomer og kan derfor skade biologisk vev. Hvor stor skadevirkningen er avhenger både av hvilken type stråling det er, energien til hver enkelt partikkel, og selvfølgelig intensiteten---altså hvor mange partikler man blir truffet av. Når man diskuterer eksponering for radioaktiv stråling er det en rekke ulike fysiske størrelser som er i bruk. En del av de viktigste er oppsummert her \cite{Agashe:2014kda}.
 
 \subsection{Aktivitet}
-Aktiviteten måler hvor ofte et radioaktivt henfall skjer, og gir derfor et mål på intensiteten av den radioaktive strålingen. Aktivitet er uavhengig av hva slags type radioaktiv stråling vi har. Måleenheten for aktivitet er bequerel ($1~\mathrm{Bq} = 1~\mathrm{s^{-1}}$). En eldre måleenhet man noen ganger treffer på er Curie ($1~\mathrm{Ci} = 3.7\times10^{10}~\mathrm{Bq}$). Siden aktiviteten måler hvor ofte et radioaktivt henfall skjer avhenger den både av hvilken radioaktiv isotop vi har med å gjøre på grunn av halvveringstiden, og hvor mye vi har av den aktuelle isotopen. 
+Aktiviteten måler hvor ofte et radioaktivt henfall skjer, og gir derfor et mål på intensiteten av den radioaktive strålingen. Aktivitet tar ikke hensyn til hva slags type radioaktiv stråling vi har, bare hvor ofte det skjer radioaktive henfall . Måleenheten for aktivitet er bequerel ($1~\mathrm{Bq} = 1~\mathrm{s^{-1}}$). En eldre måleenhet man noen ganger treffer på er Curie ($1~\mathrm{Ci} = 3.7\times10^{10}~\mathrm{Bq}$). Siden aktiviteten måler hvor ofte et radioaktivt henfall skjer avhenger den både av hvilken radioaktiv isotop vi har med å gjøre på grunn av halvveringstiden, og hvor mye vi har av den aktuelle isotopen. 
+
+Vi kan finne et uttrykk for aktiviteten fra ligning (\ref{eq:radioaktiv:henfall}). Denne ligningen forteller oss hvor mange atomer det er på et gitt tidspunkt. Aktiviteten uttrykker endringsraten, og beskrives altså av den deriverte. Siden antallet atomer avtar, og vi ønsker å uttrykke aktiviteten med et positivt tall må vi definere aktiviteten lik minus den deriverte:
+\begin{displaymath}
+	A(t) = -\frac{\d N}{\d t} = \frac{N_0}{\tau}e^{-t/\tau}. 
+\end{displaymath}
+Vi ser at aktiviteten avtar over tid, slik det må være siden radioaktive henfall gjør at vi sitter igjen med færre av de radioaktive atomene. Her må det imidlertid bemerkes at ofte er atomet vi sitter igjen med etter det radioaktive henfallet selv radioaktivt. Mange radioaktive stoffer må gjennom en lang henfallskjede før vi sitter igjen med stabile atomkjerner. Hvis vi for eksempel starter med radon har vi følgende kjede:
+\begin{displaymath}
+	^{222}\mathrm{Rn} \to ^{218}\mathrm{Po} \to ^{214}\mathrm{Pb}\to ^{214}\mathrm{Po} \to ^{210}\mathrm{Pb}\to ^{210}\mathrm{Bi} \to ^{210}\mathrm{Po}\to ^{206}\mathrm{Pb}
+\end{displaymath}
+der først $^{206}\mathrm{Pb}$ er en stabil kjerne. Hvis vi skal regne ut aktiviteten til et materiale som funksjon av tid må vi altså ikke bare ta hensyn til det første steget i henfalls-kjeden men også hva vi etter hvert har av de andre stoffene.
 
 \subsection{Absorbert dose}
 Absorbert dose måler hvor mye energi ioniserende stråling avgir i et volum, normalisert med hvor mye masse som er i dette volumet. Måleenheten for absorbert dose er gray ($1~\mathrm{Gy}= 1~\mathrm{J/kg}$). En eldre enhet man kan treffe på er rad ($1~\mathrm{rad} = 10^{-2}~\mathrm{Gy}$). Siden absorbert dose forteller om størrelsen på energiavsetningen er den nyttig for å beskrive skadepotensialet til den radioaktive strålingen, men den tar ikke hensyn til at ulike typer radioaktiv stråling har ulik biologisk virkning.
