@@ -10,8 +10,23 @@ Siden kulene blir skutt ut i tilfeldige retninger vil de fleste ikke treffe noen
 	p(x) = p_1(x) + p_2(x).
 \end{displaymath}
 Her viser koordinaten $x$ til hvilket punkt på detektorplaten vi vil undersøke. Vi kan for eksempel la $x=0$ være punktet som ligger rett bak midt mellom hullene, og la $x$ måle hvor høyt over eller lavt under dette punktet er. $p_1(x)$ svarer til sannsynligheten for at en kule går gjennom det øvre hullet og så treffer punktet $x$. Tilsvarende er $p_2(x)$ sannsynligheten for at en kule går gjennom det nedre hullet og treffer punktet $x$. 
+\begin{figure}[tp]
+	\includegraphics[width=\textwidth]{./dobbeltspalte1}
+	\caption{Skisse av dobbeltspalte-eksperimentet utført med klassiske kuler. De grå linjene indikerer eksempler på baner kulene tar fra kilden til detektorskjermen. Kurven som er skissert på skjermen viser fordelingen av treffpunkter. Skissen til venstre og i midten viser fordelingen av treff dersom et av hullene er blokkert. Skissen til høyre viser fordelingen av treff dersom begge huller er åpne. Merk at treffordelingen med begge huller åpne ganske enkelt er summen av treffordelingene der et av hullene er blokkert.}
+	\label{fig:kvante:klassisktreff}
+\end{figure}
 
-Vi bytter nå ut kanonen vår med en "elektronkanon"---en kilde som skyter ut elektroner i tilfeldige retninger. Oppsettet forørig er likt---selvfølgelig med den tilpasning at vi nå velger en skjerm med huller som er mye mindre siden elektronene er mye mindre enn kulene, og en annen type detektorskjerm siden det er elektroner som skal detekteres nå. Fremdeles skal hullene være store nok til at elektronene kan gå gjennom, men små nok til at det er en vesentlig sannsynligehet for at de vil treffe kanten av hullet og endre retning. Naivt sett skulle man forvente at vi får se akkurat det samme som i tilfellet med kuler, men det er absolutt ikke det som skjer.
+Vi bytter nå ut kanonen vår med en "elektronkanon"---en kilde som skyter ut elektroner i tilfeldige retninger. Oppsettet for øvrig er likt---selvfølgelig med den tilpasning at vi nå velger en skjerm med huller som er mye mindre siden elektronene er mye mindre enn kulene, og en annen type detektorskjerm siden det er elektroner som skal detekteres nå. Fremdeles skal hullene være store nok til at elektronene kan gå gjennom, men små nok til at det er en vesentlig sannsynligehet for at de vil treffe kanten av hullet og endre retning. Naivt sett skulle man forvente at vi får se akkurat det samme som i tilfellet med kuler, men det er absolutt ikke det som skjer.
+
+Med kun ett hull åpent skjer ikke den store endringen, men å ha begge hullene åpne endrer alt. Dette er illustrert i figur \ref{fig:kvante:kvantetreff}. Hvis vi insisterer på å tolke elektronene som kuler som beveger seg fra kilden, gjennom et av hullene og til detektorskjermen gir ikke denne treffordelingen noen mening. Hvis vi dermed tolker elektronene som bølger er fordelingen akkurat slik man skulle forventet, se figur \ref{fig:kvante:interferens}. Bølgen brer seg utover fra kilden, og de delene av bølgefronten som treffer et hull fortsetter på andre siden av skjermen. Hullene blir da essensielt sett nye kilder til bølger som brer seg utover. Når bølgene fra de to hullene treffer hverandre vil resultatet bli en sum av de to bølgene: Hvis to bølgetopper treffer hverandre blir resultatet dobbelt så stort som den enkelte bølgen i seg selv. Hvis en bølgetopp treffer en bølgebunn blir det ikke noe utslag i det hele tatt. Dette forklarer hvorfor treffordelingen på detektorskjermen viser en stor topp i midten, og også noen områder uten treff i det hele tatt.
+
+\begin{figure}[tp]
+	\includegraphics[width=\textwidth]{./dobbeltspalte2}
+	\caption{Skisse av dobbeltspalte-eksperimentet utført med elektroner. De grå linjene indikerer eksempler på baner elektronene tar fra kilden til detektorskjermen. Kurven som er skissert på skjermen viser fordelingen av treffpunkter. Merk at fordelingen når et av hullene er blokkert ser likt ut som i det klassiske tilfellet, men når begge hullene er åpne blir fordelingen helt annerledes.}
+	\label{fig:kvante:kvantetreff}
+\end{figure}
+
+Denne bølgetolkningen av elektronet er imidlertid ikke hele historien. Hvis vi nå gjør eksperimentet og sørger for at kun ett elektron passerer gjennom apparatet til enhver tid får vi fremdeles treffordelingen som er indikert i figur \ref{fig:kvante:kvantetreff}. Men hvert enkelt elektron treffer ikke litt her og litt der på detektorskjermen slik en bølge ville gjort. Hvert elektron treffer detektorskjermen på et veldefinert sted. Forklaringen på hvorfor treffordelingen blir som den blir må altså inneholde både denne bølgelike bevegelsen gjennom systemet, og den partikkel-like måten å treffe detektorskjermen. 
 
 \section{Bølgefunksjonen $\psi$}
 \label{sec:kvante:psi}
