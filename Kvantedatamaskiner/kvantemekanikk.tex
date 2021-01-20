@@ -28,9 +28,23 @@ Med kun ett hull åpent skjer ikke den store endringen, men å ha begge hullene 
 
 Denne bølgetolkningen av elektronet er imidlertid ikke hele historien. Hvis vi nå gjør eksperimentet og sørger for at kun ett elektron passerer gjennom apparatet til enhver tid får vi fremdeles treffordelingen som er indikert i figur \ref{fig:kvante:kvantetreff}. Men hvert enkelt elektron treffer ikke litt her og litt der på detektorskjermen slik en bølge ville gjort. Hvert elektron treffer detektorskjermen på et veldefinert sted. Forklaringen på hvorfor treffordelingen blir som den blir må altså inneholde både denne bølgelike bevegelsen gjennom systemet, og den partikkel-like måten å treffe detektorskjermen. 
 
+En løsning på denne utfordringen er å beskrive elektronet med en ``bølge\-funksjon'' som vi skal kalle $\psi$. Denne bølgefunksjonen beskriver hvordan elektronet beveger seg fra kilden til detektorskjermen, og i likhet med bølgen i figur \ref{fig:kvante:interferens}---og også i likhet med bølger på vann---er den ikke lokalisert til ett sted i rommet om gangen slik en partikkel er. Anvendt på elektronet som går gjennom de to hullene får vi da en situasjon som er temmelig lik det vi ser med en vanlig bølge: Hvert av hullene blir effektivt sett kilden til hver sin bølgefunksjon som vi kan kalle $\psi_1$ og $\psi_2$. I et punkt på skjermen der $\psi_1$ og $\psi_2$ er i fase forsterker de hverandre, mens i punkter der de er i motfase utslukker de hverandre. Sannsynligheten for å måle at elektronet treffer i akkurat denne posisjonen kan da beregnes som\footnote{At amplituden er kvadrert stemmer overens med klassiske bølger: Intensiteten, altså energi overført per tid, til en bølge avhenger ikke av amplituden, men kvadratet av amplituden.}\footnote{Når vi her har skrevet $|\psi_1 + \psi_2|^2$ og ikke $(\psi_1+\psi_2)^2$ er det fordi vi i noen tilfeller må regne med en kompleks bølgefunksjon. Sannsynligheten vi beregner må være reell, så dermed må vi ta kvadratet av absoluttverdien i stedet for kvadratet av amplituden selv.}.
+\begin{displaymath}
+	P = |\psi_1+\psi_2|^2.
+\end{displaymath}
+Hvis du leste den siste setningen nøye ser du et stort avvik fra klassiske bølger: En klassisk bølge ville truffet ulike deler av skjermen med ulik intensitet. Elektronet, som er beskrevet av bølgefunksjonen $\psi$ treffer imidlertid skjermen på et veldefinert sted. Matematisk sett er ikke dette et problem med kvantemekanikken, men det faktum at elektronet beveger seg som en bølge, men treffer som en partikkel skaper problemer når vi forsøker å \emph{forstå} kvantemekanikken. Dette er et interessant problem å diskutere, men jeg vi likevel ikke bruke plass på å ta den diskusjonen her. 
+
+Litt mer detaljer om bølgefunksjonen $\psi$ blir diskutert i avsnitt \ref{sec:kvante:psi} og \ref{sec:kvante:schrodinger}.
+
+\subsection{Modifikasjoner av dobbeltspalteeksperimentet}
+
+
 \section{Bølgefunksjonen $\psi$}
 \label{sec:kvante:psi}
-En kvantemekanisk beskrivelse av verden viser seg å være svært annerledes enn det vi er vant med. Det viser seg at hvis du vil forsøke å forutsi hvilket resultat en måling---for eksempel av posisjonen eller farten til et elektron---vil gi må du nøye deg med å forutsi hvordan sannsynligheten for ulike måleresultater du kan få er. Dette dreier seg ikke om den vanlige måleusikkerheten som skyldes at måleinstrumentet ikke er perfekt, men det er en underliggende fysisk realitet. La oss for konkrethet se på posisjonen til et elektron. I klassisk fysikk som vi kjenner den fra før ville vi benevnt posisjonen med en vektor
+\emph{(Dette avsnittet er i hovedsak skrevet før det forrige ble lagt til og krever dermed litt omarbeiding for å gi en naturlig flyt i teksten. Dette vil bli gjort på et senere tidspunkt.)} \\
+\vspace{12pt}
+
+En kvantemekanisk beskrivelse av er som vi har sett svært annerledes enn det vi er vant med. Det viser seg at hvis du vil forsøke å forutsi hvilket resultat en måling---for eksempel av posisjonen eller farten til et elektron---vil gi må du nøye deg med å forutsi hvordan sannsynligheten for ulike måleresultater du kan få er. Dette dreier seg ikke om den vanlige måleusikkerheten som skyldes at måleinstrumentet ikke er perfekt, men det er en underliggende fysisk realitet. La oss for konkrethet se på posisjonen til et elektron. I klassisk fysikk som vi kjenner den fra før ville vi benevnt posisjonen med en vektor
 \begin{displaymath}
 	\vec{r} = (x,y,z)
 \end{displaymath}
@@ -77,6 +91,7 @@ der $\phi_1(x,y,z,t)$ og $\phi_2(x,y,z,t)$ er vanlige funksjoner som gir ut (mul
 \end{enumerate}
 
 \section{Schr{\"o}dingerligningen}
+\label{sec:kvante:schrodinger}
 Gitt en bølgefunksjon $\Psi(x,y,z,t)$ og en funksjon $V(x,y,z)$ som beskriver den potensielle energien som funksjon av posisjonen kan vi finne tidsutviklingen til bølgefunksjonen ved å løse en partiell differensialligning som er kjent som Schr{\"o}dingerligningen (her skrevet opp med bare \'en romlig koordinat):
 \begin{displaymath}
 	i\hbar\frac{\partial}{\partial t}\Psi(x,t) = \left[ - \frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)\right]\Psi(x,t)
