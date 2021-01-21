@@ -60,11 +60,31 @@ Alle de små partiklene som bygger opp det makroskopiske objektet gjør samtidig
 \end{enumerate}
 Konklusjonen blir uansett at for makroskopiske objekter vil vi aldri kunne observere avvik fra den klassiske banen, selv om de i realiteten styres av kvantemekanikkens lover.
 
-Det andre som er viktig å merke er at integralet innholder den samme muligheten for interferens som summene over komponenter av $\psi$ som vi så på tidligere. 
+Det andre som er viktig å merke er at integralet innholder den samme muligheten for interferens som summene over komponenter av $\psi$ som vi så på tidligere. Siden muligheten for intereferens er det som utgjør den store forskjellen mellom klassisk mekanikk og kvantemekanikk er dette noe vi må se mer på.
+
+\section{Interfereres eller ikke?}
+La oss for enkelhets skyld vende tilbake til eksperimenter der det finnes kun to mulige veier fra start til mål. Dette kan være dobbeltspalteeksperimentet slik det først ble beskrevet, eller andre mulige eksperimenter som vi snart skal se eksempler på. Hvis vi ikke har interferens er sannsynligheten for å gå fra $a$ til $b$ 
+\begin{displaymath}
+	P(a,b) = P_1(a,b) + P_2(a,b)
+\end{displaymath}
+der $P_1(a,b)$ og $P_2(a,b)$ er de individuelle sannsynlighetene for de to ulike veiene. Selv om vi ikke har interferens kan vi fremdeles uttrykke dette med en bølgefunksjon $\psi$:
+\begin{displaymath}
+	P(a,b) = |\psi(a,b)|^2 = |\psi_1(a,b)+\psi_2(a,b)|^2 = |\psi_1(a,b)|^2 + |\psi_2(a,b)|^2
+\end{displaymath}
+der det essensielle er at kryssleddene fra å kvadrere absoluttverdien av summen av $\psi$ for de ulike veiene er lik 0. Det andre tilfellet er når vi har interferens og kryssleddene ikke forsvinner: 
+\begin{displaymath}
+	P(a,b) = |\psi(a,b)|^2 = |\psi_1(a,b)+\psi_2(a,b)|^2 \neq |\psi_1(a,b)|^2 + |\psi_2(a,b)|^2
+\end{displaymath}
+som betyr at 
+\begin{displaymath}
+	P(a,b) \neq P_1(a,b) + P_2(a,b).
+\end{displaymath}
+
+Hva er det som avgjør om vi ender opp med interferens eller ikke? I dobbelspalteeksperimentet med elektroner fikk vi interferens da vi ikke sjekket hvilket hull elektronet gikk gjennom, men interferensen forsvant straks vi målte hvor elektronet gikk. Ville resultatet blitt det samme om vi målte hvor elektronet gikk, men ikke så på resultatet av målingene?\footnote{Dette spørsmålet kan virke tåpelig, men kvantemekanikken er så annerledes enn det vi er vant med at denne type spørsmål har vært diskutert grundig blant både fysikere og filosofer.}
 
 \section{Bølgefunksjonen $\psi$}
 \label{sec:kvante:psi}
-\emph{(Dette avsnittet er i hovedsak skrevet før det forrige ble lagt til og krever dermed litt omarbeiding for å gi en naturlig flyt i teksten. Dette vil bli gjort på et senere tidspunkt.)} \\
+\emph{(Dette avsnittet er i hovedsak skrevet før de foregående ble lagt til og krever dermed litt omarbeiding for å gi en naturlig flyt i teksten. Dette vil bli gjort på et senere tidspunkt.)} \\
 \vspace{12pt}
 
 En kvantemekanisk beskrivelse av er som vi har sett svært annerledes enn det vi er vant med. Det viser seg at hvis du vil forsøke å forutsi hvilket resultat en måling---for eksempel av posisjonen eller farten til et elektron---vil gi må du nøye deg med å forutsi hvordan sannsynligheten for ulike måleresultater du kan få er. Dette dreier seg ikke om den vanlige måleusikkerheten som skyldes at måleinstrumentet ikke er perfekt, men det er en underliggende fysisk realitet. La oss for konkrethet se på posisjonen til et elektron. I klassisk fysikk som vi kjenner den fra før ville vi benevnt posisjonen med en vektor
