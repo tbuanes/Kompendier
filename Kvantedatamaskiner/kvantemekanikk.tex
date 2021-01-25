@@ -92,6 +92,30 @@ Hva er det som avgjør om vi ender opp med interferens eller ikke? I dobbelspalt
 
 Det er også et annet instruktivt eksempel på hva som skiller situasjoner med og uten interfererende alternativer, men da må vi først innføre et nytt eksperiment skissert i figur \ref{fig:kvante:spredning}. La $A$ og $B$ være to kilder til partikler (f.eks. elektroner eller protoner) og 1 og 2 være detektorer som måler om en partikkel ender opp der. Hvis vi sørger for at partiklene blir skutt ut med lik bevegelsesmengde vil de etter å ha kollidert med hverandre fly ut fra kollisjons stedet i stikk motsatt retning av hverandre. Retningen trenger derimot ikke å være tilbake til der de kom fra---den kan derimot være hvilken retning som helst, og den vil heller ikke være lik fra forsøk til forsøk. Detektorene 1 og 2 registrerer når partiklene kommer den veien. Ved å gjøre forsøket mange ganger kan vi altså måle sannsynligheten for at retningen etter kollisjonen er slik at detektorene blir truffet.
 
+I tråd med det vi har lært om kvantemekanikken starter vi ikke med å beregne sannsynligheten direkte, men med å beregne amplituden---altså verdien av $\psi$---som svarer til et utfall. Vi skal ikke se på hvordan vi beregner denne amplitudene, men kun på hvordan vi kombinerer amplitudene til å finne sannsynligheten. Anta derfor at vi kjenner
+\begin{align*}
+	\psi(A1, B2) &\text{ amplituden for at partikkel fra A ender opp i detektor 1,} \\
+	&\text{ og partikkel fra B ender opp i detektor 2}. \\
+	\psi(A2, B1) &\text{ amplituden for at partikkel fra A ender opp i detektor 2,} \\
+	&\text{ og partikkel fra B ender opp i detektor 1}. \\
+\end{align*}
+Anta først at $A$ og $B$ skyter ut ulike partikler, for eksempel elektroner fra $A$ og protoner fra $B$. Da er det en målbar forskjell om det er elektronet eller protonet som havner i detektor 1. Sannsynligheten for å få en partikkel i hver av detektorene regnes derfor ut uten noen interferens,
+\begin{displaymath}
+	P = |\psi(A1, B2)|^2 + |\psi(A2, B1)|^2
+\end{displaymath}
+uansett om vi faktisk velger å undersøke hva slags partikkel som ender opp i hvilken detektor eller ikke. Dette endrer seg om $A$ og $B$ skyter ut like partikler, f.eks., en heliumkjerne fra hver kilde. Dersom en heliumkjerne treffer detektor 1 kan vi ikke avgjøre om den kom fra kilde $A$ eller $B$, og vi må derfor ta hensyn til interferens når vi beregner sannsynligheten:
+\begin{displaymath}
+	P = |\psi(A1, B2) + \psi(A2, B1)|^2.
+\end{displaymath}
+Det kan være fristende å tro at vi har dekket alle muligheter nå, men det viser seg at kvantemekanikken har en overraskelse til på lur. I tilfellet med identiske partikler må vi også ta hensyn til hva slags identiske partikler det dreier seg om. Vi må skille mellom to klasser bosoner og fermioner. Heliumkjerner tilhører klassen bosoner og gir interferens slik som vist ovenfor. Elektroner og protoner hører derimot til klassen fermioner, og da får interferensen en viktig fortegns-forskjell:
+\begin{displaymath}
+	P = |\psi(A1, B2) - \psi(A2, B1)|^2.
+\end{displaymath}
+Siden situasjonen er symmetrisk må 
+\begin{displaymath}
+	\psi(A1, B2) = \psi(A2, B1)
+\end{displaymath}
+som betyr at det er null sannsynlighet for at elektronene får slik retning ut fra kollisjonen at de treffer detektorene 1 og 2.
 
 \section{Bølgefunksjonen $\psi$}
 \label{sec:kvante:psi}
