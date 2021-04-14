@@ -109,7 +109,7 @@ NAND er en kombinasjon av NOT og AND. Den tar inn to bit og gir ut en bit. Siden
 \begin{subfigure}{.3\textwidth}
 	\begin{tabular}{|c|c|c|}
 	\hline
-	$P$ & $Q$ & $P \oplus Q$ \\
+	$P$ & $Q$ & $P \uparrow Q$ \\
 	\hline
 	0 & 0 & 1\\
 	0 & 1 & 1 \\
@@ -161,9 +161,9 @@ CNOT kan konstrueres av en oppsplitting og en XOR-port som vist i figuren nedenf
 CNOT har den interessante egenskapen at den er reversibel. Dette er den fordi det er et en-til-en-forhold mellom hva som blir sendt ut og hva som blir sendt inn. Med andre ord: Hvis vi ser hva som kommer ut er det bare \'en mulighet for hva som ble sendt inn for å produsere dette resultatet. CNOT er dessuten sin egen invers---altså hvis vi lar det som kommer ut av en CNOT-port være innverdiene for den neste kommer vi tilbake til de bit-verdiene vi startet med.
 
 \section{Generalisering til kvante-logiske porter}
-For å lage en kvantedatamaskin trenger vi å lage en qubit-versjon av portene som er diskutert ovenfor. Vi støter da straks på en interessant utfordring: mens en klassisk bit alltid er enten 0 eller 1 vil en qubit generelt være i en superposisjon av 0 og 1. Hvordan skal vi lage sannhetstabellene når qubitene har et kontinuerlig sett av mulige verdier? La oss først få på plass litt notasjon som er nyttig i den videre diskusjonen. Nå er det tilstrekkelig for oss å jobbe med \'en basis, og der velger vi $\left\{ \left[\begin{array}{rr}1\\0\end{array}\right], \left[\begin{array}{rr}1\\0\end{array}\right] \right\}$. For å forenkle notasjonen litt kommer jeg for det meste til å skrive vektorene i bra-ket notasjon, med der basisvektorene er identifisert som
+For å lage en kvantedatamaskin trenger vi å lage en qubit-versjon av portene som er diskutert ovenfor. Vi støter da straks på en interessant utfordring: mens en klassisk bit alltid er enten 0 eller 1 vil en qubit generelt være i en superposisjon av 0 og 1. Hvordan skal vi lage sannhetstabellene når qubitene har et kontinuerlig sett av mulige verdier? La oss først få på plass litt notasjon som er nyttig i den videre diskusjonen. Nå er det tilstrekkelig for oss å jobbe med \'en basis, og der velger vi $\left\{ \left[\begin{array}{rr}1\\0\end{array}\right], \left[\begin{array}{rr}0\\1\end{array}\right] \right\}$. For å forenkle notasjonen litt kommer jeg for det meste til å skrive vektorene i bra-ket notasjon, med der basisvektorene er identifisert som
 \begin{displaymath}
-	|0\rangle = \left[\begin{array}{rr}1\\0\end{array}\right] \text{ og } |1\rangle =  \left[\begin{array}{rr}1\\0\end{array}\right].
+	|0\rangle = \left[\begin{array}{rr}1\\0\end{array}\right] \text{ og } |1\rangle =  \left[\begin{array}{rr}0\\1\end{array}\right].
 \end{displaymath}
 En generell qubit kan da skrives som $|a\rangle = a_0|0\rangle + a_1|1\rangle$ der $a_0^2 + a_1^2 = 1$. Når vi måler verdien av denne qubiten vil vi finne enten $|0\rangle$ eller $|1\rangle$ med sannynligheter henholdsvis $a_0^2$ og $a_1^2$. Hvis vi har mer enn en qubit å ta hensyn til, må vi ta tensorproduktet av basisvektorene for å finne den nye basisen. For eksempel er basisen for to qubit
 \begin{displaymath}
@@ -178,7 +178,7 @@ En generell kombinasjon av to qubit kan da skrives som $|b\rangle = b_{00}|00\ra
 \subsection{Ingen kloning-teoremet}
 Vi treffer på en annen viktig forskjell mellom klassisk logikk og kvantelogikk dersom vi ønsker å klone en qubit---det vil si å lage en ekstra kopi av en qubit som er identisk med den vi har. Med klassiske bit er dette ikke noe problem. Hvis vi har en bit med en vilkårlig verdi kan vi uten problemer lage vilkårlig mange kopier av denne. Slik er det ikke i kvanteverden. Det kan vises at i det generelle tilfellet kan man ikke lage en kopi av en qubit slik at man sitter igjen med to qubit som er identiske og lik den vi startet med. Så lenge vi jobber med qubit som har en bestemt verdi er det riktignok ingen forskjell, men for å utnytte oss av fordelene som kan oppnås ved å bruke qubit i superposisjon mellom ulike verdier må algoritmene i en kvantedatamaskin lages på en slik måte at kloning av qubit er unødvendig.
 
-Jeg vil ikke forsøke å bevise ingen kloning-teoremet her, men kun gi kvalitative argumenter som sannsynliggjør at det er riktig. En vilkårlig qubit kan som tidligere beskrevet skrives som $|a\rangle = a_0|0\rangle + a_1|1\rangle$. Dersom vi ønsker å måle verdien av qubiten vil vi aldri få noe annet enn $|0\rangle$ eller $|1\rangle$. Hvis vi kjenner $a_0$ og $a_1$ kan vi riktignok beregne sannsynligheten for hvert av de to ulike måleresultatene, men hva hvis vi har en qubit i en ukjent tilstand? Dersom vi for eksempel får resultatet $|0\rangle$ er det eneste vi kan si om koeffisientene at $a_0>0$. Vi kan altså ikke måle oss frem til hva koeffisientene $a_0$ og$a_1$ er. Men hvis vi ikke kan hente ut denne informasjonen, hvordan kan vi da lage en identisk kopi? 
+Jeg vil ikke forsøke å bevise ingen kloning-teoremet her, men kun gi kvalitative argumenter som sannsynliggjør at det er riktig. En vilkårlig qubit kan som tidligere beskrevet skrives som $|a\rangle = a_0|0\rangle + a_1|1\rangle$. Dersom vi ønsker å måle verdien av qubiten vil vi aldri få noe annet enn $|0\rangle$ eller $|1\rangle$. Hvis vi kjenner $a_0$ og $a_1$ kan vi riktignok beregne sannsynligheten for hvert av de to ulike måleresultatene, men hva hvis vi har en qubit i en ukjent tilstand? Dersom vi for eksempel får resultatet $|0\rangle$ er det eneste vi kan si om koeffisientene at $a_0>0$. Vi kan altså ikke måle oss frem til hva koeffisientene $a_0$ og $a_1$ er. Men hvis vi ikke kan hente ut denne informasjonen, hvordan kan vi da lage en identisk kopi? 
 
 \section{Matematisk beskrivelse av kvante-logiske porter}
 Siden vi beskriver tilstanden til en qubit i form av en vektor er det naturlig å beskrive portene i form av matriser. Gitt en vilkårlig qubit 
