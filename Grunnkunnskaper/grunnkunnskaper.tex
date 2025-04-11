@@ -4,12 +4,40 @@
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{color}
+\usepackage{icomma}
 \def\d{\ensuremath{\mathrm{d}}}
 \def\ex{\ensuremath{\hat{e}_x}}
 \def\ey{\ensuremath{\hat{e}_y}}
 \def\ez{\ensuremath{\hat{e}_z}}
 \def\er{\ensuremath{\hat{e}_r}}
 \def\eth{\ensuremath{\hat{e}_\theta}}
+
+\newcommand{\unit}[1]{~\mathrm{#1}}
+\newcommand{\ans}[1]{\underline{\underline{#1}}}
+
+\usepackage[svgnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{shadows}
+
+\newcounter{exa}
+
+\tcbset{
+myexample/.style={
+  enhanced,
+  colback=blue!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={\refstepcounter{exa}Eksempel~\theexa},
+  title style={fill=blue!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=LightBlue!50!white,colframe=Navy}
+  }
+}
+
+\newtcolorbox{texample}{myexample}
+
 
 \begin{document}
 \tableofcontents
