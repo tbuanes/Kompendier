@@ -1,0 +1,64 @@
+\documentclass[a4paper,norsk,12pt]{book}
+
+\usepackage[norsk]{babel}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{icomma}
+\def\d{\ensuremath{\text{d}}}
+\def\half{\ensuremath{\frac{1}{2}}}
+\newcommand{\unit}[1]{~\mathrm{#1}}
+\newcommand{\ans}[1]{\underline{\underline{#1}}}
+
+\usepackage[svgnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{shadows}
+
+\newcounter{exa}
+
+\tcbset{
+myexample/.style={
+  enhanced,
+  colback=blue!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={\refstepcounter{exa}Eksempel~\theexa},
+  title style={fill=blue!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=LightBlue!50!white,colframe=Navy}
+  }
+}
+
+\tcbset{
+mydef/.style={
+  enhanced,
+  colback=DarkGreen!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Definisjon},
+  title style={fill=DarkGreen!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=DarkGreen!50!white,colframe=DarkGreen}
+  }
+}
+
+\newtcolorbox{texample}{myexample}
+\newtcolorbox{tdef}{mydef}
+
+\begin{document}
+\tableofcontents
+
+
+\input{./kinematikk}
+\input{./krefter}
+
+
+
+\end{document}
