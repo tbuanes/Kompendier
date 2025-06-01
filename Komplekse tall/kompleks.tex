@@ -4,18 +4,316 @@
 \usepackage{enumitem}
 \usepackage{color}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{wasysym}
 \usepackage{icomma}
 
+\newcommand{\unit}[1]{~\mathrm{#1}}
+\newcommand{\ans}[1]{\underline{\underline{#1}}}
+
+\usepackage[svgnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{shadows}
+\newcounter{exa}
+\tcbset{
+myexample/.style={
+  enhanced,
+  colback=blue!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={\refstepcounter{exa}Eksempel~\theexa},
+  title style={fill=blue!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=LightBlue!50!white,colframe=Navy}
+  }
+}
+
+\tcbset{
+myproof/.style={
+  enhanced,
+  colback=DarkGreen!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Bevis},
+  title style={fill=DarkGreen!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=DarkGreen!50!white,colframe=DarkGreen}
+  }
+}
+
+\tcbset{
+mydef/.style={
+  enhanced,
+  colback=red!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Definisjon},
+  title style={fill=red!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=red!50!white,colframe=red}
+  }
+}
+
+\tcbset{
+mysummary/.style={
+  enhanced,
+  colback=yellow!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Oppsummering},
+  title style={fill=yellow!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=yellow!50!white,colframe=yellow}
+  }
+}
+
+
+
+\newtcolorbox{texample}{myexample}
+\newtcolorbox{tproof}{myproof}
+\newtcolorbox{tdef}{mydef}
+\newtcolorbox{tsummary}{mysummary}
 
 \begin{document}
 \section{Komplekse tall}
 
-Naturlige tall -> hele tall -> rationale tall -> reelle tall -> komplekse tall
+\subsection{Behovet for komplekse tall}
+Opp gjennom historien har tallbegrepet stadig blitt utvidet\footnote{Men dette er ikke et forsøk på å gjengi historien om hvordan utviklingen foregikk. Presentasjonen her forsøker å vise hvordan tallbegrepet naturlig kan og må utvikles, men historisk skjedde en del av stegene i andre rekkefølger.} for å møte behovet mennesker har hatt for å bruke matematikk til å organisere verden. Det enkleste tallkonseptet er de \emph{naturlige tallene}. Dette er tallene vi bruker til å telle objekter med, altså $\mathbb{N} = \{1, 2, 3, \ldots\}$. Med disse tallene kan vi regne ut ting som 
+\begin{align*}
+	&2 + 3 = 5 \\
+	&8 - 2 = 6 \\
+	&5\cdot 7 = 35
+\end{align*}
+men vi treffer raskt på begrensninger. Dersom vi ønsker å regne ut 
+\begin{displaymath}
+	2-3 = ?
+\end{displaymath}
+finnes det ikke noe svar innen de naturlige tallene. Dette viser at de naturlige tallene ikke utgjøre et komplett system, men krever en utvidelse. Vi innfører derfor \emph{heltallene}, $\mathbb{Z} = \{\ldots, -3, -2, -1, 0, 1, 2, 3, \ldots\}$. Med denne utvidelsen kan vi regne ut at
+\begin{displaymath}
+	2-3 = -1
+\end{displaymath}
+og vi kan også regne ut enhver annen addisjon, subtraksjon og multiplikasjon mellom to heltall. Men heltallene utgjør fremdeles ikke noe komplett system, noe vi ser idet vi forsøker å dividere. Hvis vi ønsker å regne ut forholdet mellom to heltall ser vi at noen ganger blir svaret et nytt heltall,
+\begin{displaymath}
+	\frac{8}{2} = 4,
+\end{displaymath}
+men vi kan lett finne eksempler der svaret ikke er et heltall
+\begin{displaymath}
+	\frac{1}{2} = ?
+\end{displaymath}
+For å bøte på dette utvider vi systemet til de \emph{rasjonale\footnote{Ordet \emph{rasjonal} er avledet av \emph{ratio}, altså forhold, og selv om ordet har felles opphav med ordet rasjonell er det ikke noen videre sammenheng mellom ordene.} tallene}, $\mathbb{Q}$. Dette er alle tall som kan skrives på formen $\frac{a}{b}$ der $a$ og $b$ er heltall ($b\neq0$) uansett om resultatet av divisjonen blir et heltall eller ikke. Når vi har definert rasjonale tall kan vi utføre enhver addisjon, subtraksjon, multiplikasjon og divisjon mellom to rasjonale tall og forbli innenfor de rasjonale tallene. Men likevel er heller ikke de rasjonale tallene er komplett i betydningen at hvis vi gjør matematiske operasjoner med to rasjonale tall er vi garantert at svaret blir rasjonalt. Dette ser vi for eksempel dersom vi bruker Pytagoras' setning til å regne ut lengden av hypotenusen i en rettvinklet trekant der begge katetene har lengde 1. En annen måte å si dette på er at vi ønsker å finne et tall $x$ som løser ligningen
+\begin{displaymath}
+	x^2 = 1^2 + 1^2 = 2
+\end{displaymath}
+Det kan (relativt enkelt) bevises at svaret av denne ligningen, som vi skriver som $\sqrt{2}$, ikke selv er et rasjonalt tall. 
 
+\begin{tproof}
+For å bevise at løsningen av ligningen $x^2 = 2$ ikke er et rasjonalt tall starter vi å anta at det er det---altså at svaret kan skrives som $x=\frac{a}{b}$. Dersom løsningen kan skrives på denne formen følger det at
+\begin{align*}
+	2 = \left(\frac{a}{b}\right)^2 = \frac{a^2}{b^2} \\
+	2b^2 = a^2
+\end{align*}
+Siden $a^2 = 2b^2$ må $a^2$ nødvendigvis være et partall, men da er også $a$ selv et partall. Siden $a$ er et partall er også 
+\begin{displaymath}
+	\frac{a^2}{2} = b^2
+\end{displaymath}
+et partall. Dette viser at også $b$ er et partall. Alle partall kan faktoriseres til formen $c=2^n\cdot d$ der $n$ er et heltall $\geq 1$ og $d$ er et oddetall (ikke nødvendigvis primtall). Hvis vi forkorter bort alle felles faktorer 2 i brøken $\frac{a^2}{b^2}$ kan vi altså skrive 
+\begin{displaymath}
+	2 = \frac{a^2}{b^2} = \frac{u^2}{v^2}
+\end{displaymath}
+der enten $u$, $v$ eller begge er oddetall. Siden ligningen viser at $u^2 = 2v^2$ kan $u$ ikke være et oddetall. Men da må $u$ inneholde minst en faktor 2, slik at $u^2/2$ er et partall. Men 
+\begin{displaymath}
+	\frac{u^2}{2} = v^2
+\end{displaymath} 
+så da er også $v$ et partall. Siden vi har kommet frem til en selvmotsigelse må utgangspunktet ha vært feil, og vi kan konkludere med at ligningen $x^2=2$ ikke har en løsning som kan skrives på formen $x=\frac{a}{b}$. 
+\end{tproof}
 
+Oppdagelsen at det finnes tall som ikke er rasjonale krever en ny utvidelse av tallbegrepet, og vi innfører de \emph{reelle tallene} $\mathbb{R}$. Med de reelle tallene er hele tallinjen fylt opp - uansett hvor mye eller lite vi ønsker å endre størrelsen på et tall finnes det et nytt tall som passer. Men likevel viser det seg at heller ikke de relle tallene utgjør et komplett system. Det ser vi dersom vi forsøker å løse ligningen
+\begin{displaymath}
+	x^2+1 = 0
+\end{displaymath}
+For å løse denne ligningen trenger vi et tall som har den egenskapen at det multiplisert med seg selv blir $-1$. Ethvert reellt tall (bortsett fra 0), også de negative, blir et positivt tall når man multipliserer det med seg selv. Vi trenger altså en ny utvidelse av tallsystemet. Den nye utvidelsen introduserer tallet $i$ som er definert til å ha egenskapen at 
+\begin{displaymath}
+	i^2 = -1
+\end{displaymath}
+Tallet $i$ kan både adderes, subtraheres, multipliseres og divideres med alle reelle tall. Vi kan altså skrive tall som $2+i$, $3i$ og $\pi-2i$. Dette utvidete settet av tall kaller vi for \emph{komplekse tall}, $\mathbb{C}$. Det kan vises at de komplekse tallene er et komplett sett i den betydningen at vi skriver ned en ligning med komplekse tall som koeffisienter, vil vi aldri møte på behovet for en ny utvidelse av systemet, men vi vil finne svaret som et komplekst tall.\footnote{Merk at de reelle tallene er en undermengde av de komplekse, så det er godt mulig at svaret er et reellt tal uten at det er noen konflikt med denne påstanden.}
 
+\subsection{Representasjoner av komplekse tall}
+Siden tallet $i$ ikke ligger på tallinjen trenger vi en ekstra dimensjon for å lage en grafisk representasjon av komplekse tall. Vi utvider altså tallinjen til det \emph{komplekse plan} der vi lar den horisontale aksen representere den vanlige tallinjen---nå kalt den \emph{reelle aksen}---mens tall som er multipler av $i$ ligger på den vertikale aksen---nå kalt den \emph{imaginære aksen}. Tall som verken er reelle eller rent imaginære, f.eks. $2+i$ og $\pi - 2i$ vil ikke ligge på noen av aksene. Se figur \ref{kompleks:fig:plan} for eksempler av hvordan tall tegnes inn i det kompleke tallet.
+\begin{figure}[htp]
+	\begin{center}
+	\textcolor{red}{[Sett inn figur med det komplekse plan]}
+	\end{center}
+	\caption{Noen tall plottet inn i det komplekse plan.}
+	\label{kompleks:fig:plan}
+\end{figure}
+Vi kan altså se for oss et komplekst tall som et punkt i et to-dimensjonalt plan, og vi trenger derfor to komponenter---tilsvarende $x$ og $y$ i et vanlig koordinatsystem---for å fortelle hvor tallet er. Dette gir oss det som kalles \emph{standardform}, eller noen ganger \emph{kartesisk form} av komplekse tall.
+
+\begin{tdef}
+Et komplekst tall, $z$, skrives på standardform som
+\begin{displaymath}
+	z = a + ib, \quad a,b\in\mathbf{R}
+\end{displaymath}
+\end{tdef}
+\noindent
+Merk at $ib = i\cdot b$, altså det ``nye'' tallet $i$ multiplisert med et reellt tall $b$. Siden faktorenes rekkefølge ikke spiller noen rolle når vi multipliserer kan vi altså like gjerne velge å skrive $z=a+bi$ (eller $z= bi + a$ for den saks skyld siden rekkefølgen heller ikke er viktig ved addisjon). Å kreve at $a$ og $b$ er reelle tall ikke er en begrensning. Anta at vi erstatter f.eks. $b$ med det komplekse tallet $c+id$, da finner vi
+\begin{displaymath}
+	z = a + i\cdot(c+id) = a+ ic + i^2d = a + ic +(-1)d = (a-d)+ic,
+\end{displaymath}
+der vi har brukt den definerende egenskapen $i^2=-1$. Vi ser altså at ``koordinatene'' alltid kan velges reelle uten å miste generalitet. 
+\begin{tdef}
+	Gitt det komplekse tallet $z = a+ib$. Vi kaller da $a = \mathbf{Re}(z)$ for \emph{realdelen} til $z$, og $b=\mathbf{Im}(z)$ for \emph{imaginærdelen} til $z$.
+\end{tdef}
+\noindent
+Merk at denne definisjonen gjør at også imaginærdelen er et reelt tall; nemlig det reelle tallet som $i$ skal multipliseres med.
+
+Siden de komplekse tallene representeres av punkter i et plan kan vi også velge å beskrive de med polarkoordinater---altså å fortelle hvor et punkt er ved å spesifisere hvor langt det er fra origo, og hvor stor vinkel forbindelseslinjen mellom origo og punktet danner med den positive realaksen ($x$-aksen). Se figur \ref{kompleks:fig:polar} for en illustrasjon av dette. 
+
+\begin{figure}[htp]
+	\begin{center}
+	\textcolor{red}{[Sett inn figur med polarform]}
+	\end{center}
+	\caption{Illustrasjon av polarkoordinater i det komplekse plan.}
+	\label{kompleks:fig:polar}
+\end{figure}
+
+\begin{tdef}
+Et komplekst tall, $z$, skrives på polarform/eksponentialform som 
+\begin{displaymath}
+	z = re^{i\theta}
+\end{displaymath}
+der $r$ er avstanden fra origo, og $\theta$ er vinkelen relativt til positiv realakse. 
+\end{tdef}
+Siden vinklene $\theta$ og $\theta+n\cdot 2\pi$ der $n$ er et heltall beskriver den samme retningen ønsker vi å begrense rekkevidden $\theta$ får variere i til et intervall av lengde $2\pi$. Vanlige valg er
+\begin{displaymath}
+	\theta \in (-\pi, \pi] \text{ og } \theta \in [0, 2\pi).
+\end{displaymath}
+
+$e$ som brukes når vi skriver det komplekse tallet på eksponentialform er Eulars tall som er kjent fra eksponentialfunksjoner med reelle tall. Det at $e$ nå opphøyes i en imaginær potens har noen interessante konsekvenser som vi kommert tilbake til ganske snart.
+
+Fra figuren ser vi at gitt polar-representasjonen av det komplekse tallet kan vi regne oss tilbake til standardformen:
+\begin{align*}
+	\mathbf{Re}(z) &= r\cos\theta \\
+	\mathbf{Im}(z) &= r\sin\theta \\
+	z &= r(\cos\theta + i\sin\theta) 
+\end{align*}
+Vi kan også bruke figuren til å finne oppskriften for å regne ut polarform dersom vi starter med standardform. Avstanden, $r$, fra origo er enklest. Gitt $z=a + ib$, da er
+\begin{displaymath}
+	r = \sqrt{a^2 + b^2}.
+\end{displaymath}
+Når vi kommer til vinkelen må vi være litt mer forsiktig. Hvis vi i første omgang begrenser oss til komplekse tall med $\mathbf{Re}(z)=a>0$. Da kan vi bruke trigonometri direkte og finne at
+\begin{displaymath}
+	\theta = \tan^{-1}\left(\frac{b}{a}\right).
+\end{displaymath}
+Dersom $\mathbf{Re}(z)<0$ vil $\tan^{-1}\frac{b}{a}$ fremdeles gi et resultat i området $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, noe som ikke er riktig. For å finne den riktige vinkelen må vil legge til $\pi$.
+
+\begin{tsummary}
+Standardform/kartesisk form: $z = a + ib$ \\
+Eksponentialform/polarform: $z = re^{i\theta}$ \\[12pt]
+
+Omregning fra standardform til eksponentialform:
+\begin{align*}
+	r &= \sqrt{a^2+b^2} \\
+	\theta &= \begin{cases} 
+		\tan^{-1}\left(\frac{b}{a}\right) \text{ dersom } a\geq0 \\
+		\tan^{-1}\left(\frac{b}{a}\right)+\pi \text{ dersom } a <0
+	\end{cases}
+\end{align*}
+Omregning fra eksponentialform til standardform:
+\begin{align*}
+	a &= r\cos\theta \\
+	b &= r\sin\theta
+\end{align*}
+\end{tsummary}
+
+\subsection{Sammenhengen mellom $e^{i\theta}$, $\cos\theta$ og $\sin\theta$}
+Ved å bruke omregningsregelen fra eksponentialform til standardform finner vi at
+\begin{displaymath}
+	re^{i\theta} = r(\cos\theta + i\sin\theta)
+\end{displaymath}
+Vi kan forenkle denne sammenhengen ved å dividere med $r$ og finne
+\begin{equation}
+	\label{kompleks:eq:eitheta}
+	e^{i\theta} = \cos\theta + i\sin\theta.
+\end{equation}
+Dette betyr at når vi tillater imaginær eksponent er ikke eksponentialfunksjonen lenger montont stigende/avtagende, men derimot en periodisk funksjon med periode $2\pi$. Dette burde egentlig være opplagt fra den grafiske representasjonen av det komplekse tallet: dersom vi endrer vinkelen med et multippel av $2\pi$ kommer vi tilbake til det samme punktet. Dersom vi erstatter $\theta$ med $-\theta$ og bruker $\cos(-\theta) = \cos\theta$ og $\sin(-\theta) = -\sin\theta$ får v
+\begin{equation}
+	\label{kompleks:eq:e-itheta}
+	e^{-i\theta} = \cos\theta - i\sin\theta.
+\end{equation}
+Ved å kombinere ligning (\ref{kompleks:eq:eitheta}) og (\ref{kompleks:eq:e-itheta}) får vi uttrykt $\cos\theta$ og $\sin\theta$ på en måte som noen ganger kan være nyttig:
+\begin{align*}
+	\cos\theta &= \frac{e^{i\theta}+e^{-i\theta}}{2} \\
+	\sin\theta &= \frac{e^{i\theta}-e^{-i\theta}}{2i} \\
+\end{align*}
+Merk at selv om uttrykkene inkluderer $i$ vil svaret bli reellt så lenge vinkelen $\theta$ er reell. Denne måten å uttrykke $\cos\theta$ og $\sin\theta$ på kan for eksempel brukes til å forenkle integrasjon av en del uttrykk som er vanskelig å gjøre på andre måter.
+
+\section{Regneregler for komplekse tall}
+Komplekse tall følger i de samme regnereglene som reelle tall, men det er noen få ting man må være oppmerksom på. Blant annet vil vi få behov for å veksle frem og tilbake mellom de de to representasjonenen (standardform og eksponentialform) da ikke alle operasjoner like enkel å utføre i begge former. I tillegg skal vi få bruk for å definere en ny operasjon: \emph{komplekskonjugering}.
+
+\subsection{Komplekskonjugering}
+Vi definerer komplekskonjugering som operasjonen der vi endrer fortegnet på den imaginære komponenten av det komplekse tallet. 
+\begin{tdef}
+	La $z = a + ib = re^{i\theta}$. Komplekskonjugering gir da
+	\begin{displaymath}
+		\bar{z} = a-ib = re^{-i\theta}
+	\end{displaymath}
+\end{tdef}
+
+\subsection{Addisjon og subtraksjon}
+Addisjon og subtraksjon av komplekse tall gjøres enklest på standardform: gitt to tall $z_1 = a_1 + ib_1$ og $z_2 = a_2 + ib_2$. Vi finner da
+\begin{align*}
+	z_1 + z_2 &= (a_1+a_2) + i(b_1+b_2) \\
+	z_1 - z_2 &= (a_1-a_2) + i(b_1-b_2) 
+\end{align*}
+Vi ser altså at vi adderer/subtraherer realdel for seg og imaginærdel for seg.
+
+\begin{texample}
+	La $z_1 = 3+ 2i$, $z_2 = 5-i$ og $z_3 = -2i$. Vi regner da ut
+	\begin{align*}
+		z_1 + z_2 &= (3+5) + (2+(-1))i = 8 - i \\ 
+		z_1 + z_3 &= (3+0) + (2+(-2))i = 3 \\
+		z_1 - z_2 &= (3-5) + (2-(-1))i = -2 + 3i \\ 
+		z_1 - z_3 &= (3-0) + (2-(-2))i = 3 + 4i 
+	\end{align*}
+\end{texample}
+Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å addere de to tallene og få svaret på en kompakt form, med mindre vinkelen er like eller forskjellen på vinklene er $\pi$.
+
+\begin{texample}
+	La $z_1 = 2 e^{i\frac{\pi}{3}}$, $z_2 = 3e^{i\frac{\pi}{3}}$, $z_3 = 5e^{i\frac{4\pi}{3}}$, $z_4 = 3e^{i\frac{\pi}{2}}$.
+
+	Når vinkelen er lik er addisjonen triviell,
+	\begin{displaymath}
+		z_1 + z_2 = (2 + 3) e^{i\frac{\pi}{3}} = \ans{5e^{i\frac{\pi}{3}}}.
+	\end{displaymath}
+	Når forskjellen i de to vinklene er nøyaktig $\pi$ ligger tallene langs den samme rette linje gjennom origo og vi kan addere nesten like rett frem, men vi må gjøre en liten omskriving av det ene tallet først,
+	\begin{align*}
+	e^{i\frac{4\pi}{3}} = e^{i\left(\frac{\pi}{3}+\pi\right)} &= \cos\left(\frac{\pi}{3}+\pi\right) + i\sin\left(\frac{\pi}{3}+\pi\right)\\
+	&= \cos\left(\frac{\pi}{3}\right)\cos\pi - \sin\left(\frac{\pi}{3}\right)\sin\pi \\
+	&\quad+ i\left(\sin\left(\frac{\pi}{3}\right)\cos\pi + \cos\left(\frac{\pi}{3}\right)\sin\pi\right) \\
+	&= -\cos\left(\frac{\pi}{3}\right)-i\sin\left(\frac{\pi}{3}\right) \\
+	&= -e^{i\frac{\pi}{3}},
+	\end{align*}
+	som viser at 
+	\begin{displaymath}
+		z_1 + z_3 = 2e^{i\frac{\pi}{3}} + 5e^{i\frac{4\pi}{3}} = 2e^{i\frac{\pi}{3}} - 5e^{i\frac{\pi}{3}} = \ans{-3e^{i\frac{\pi}{3}}}.
+	\end{displaymath}
+	Merk at det ikke er viktig hva vinkelen er, men kun at forskjellen i vinkel er $\pi$ (eller et multippel av $\pi$).
+
+	Dersom forskjellen i vinkelen ikke er et multippel av $\pi$ kommer vi ikke langt på eksponentialform, men vil få behov for å regne om til standardform om vi ønsker å forenkle videre,
+	\begin{displaymath}
+		z_1 + z_4 = \ans{2 e^{i\frac{\pi}{3}} + 3e^{i\frac{\pi}{2}}}.
+	\end{displaymath}
+\end{texample}
+	
 \end{document}
