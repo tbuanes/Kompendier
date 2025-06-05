@@ -194,12 +194,13 @@ Et komplekst tall, $z$, skrives på polarform/eksponentialform som
 \end{displaymath}
 der $r$ er avstanden fra origo, og $\theta$ er vinkelen relativt til positiv realakse. 
 \end{tdef}
+\noindent
 Siden vinklene $\theta$ og $\theta+n\cdot 2\pi$ der $n$ er et heltall beskriver den samme retningen ønsker vi å begrense rekkevidden $\theta$ får variere i til et intervall av lengde $2\pi$. Vanlige valg er
 \begin{displaymath}
 	\theta \in (-\pi, \pi] \text{ og } \theta \in [0, 2\pi).
 \end{displaymath}
 
-$e$ som brukes når vi skriver det komplekse tallet på eksponentialform er Eulars tall som er kjent fra eksponentialfunksjoner med reelle tall. Det at $e$ nå opphøyes i en imaginær potens har noen interessante konsekvenser som vi kommert tilbake til ganske snart.
+$e$ som brukes når vi skriver det komplekse tallet på eksponentialform er Eulers tall som er kjent fra eksponentialfunksjoner med reelle tall. Det at $e$ nå opphøyes i en imaginær potens har noen interessante konsekvenser som vi kommert tilbake til ganske snart.
 
 Fra figuren ser vi at gitt polar-representasjonen av det komplekse tallet kan vi regne oss tilbake til standardformen:
 \begin{align*}
@@ -311,9 +312,87 @@ Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å add
 	Merk at det ikke er viktig hva vinkelen er, men kun at forskjellen i vinkel er $\pi$ (eller et multippel av $\pi$).
 
 	Dersom forskjellen i vinkelen ikke er et multippel av $\pi$ kommer vi ikke langt på eksponentialform, men vil få behov for å regne om til standardform om vi ønsker å forenkle videre,
-	\begin{displaymath}
-		z_1 + z_4 = \ans{2 e^{i\frac{\pi}{3}} + 3e^{i\frac{\pi}{2}}}.
-	\end{displaymath}
+	\begin{align*}
+		z_1 + z_4 &= 2 e^{i\frac{\pi}{3}} + 3e^{i\frac{\pi}{2}} \\
+		&= 2\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right) + 3\left(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2}\right) \\
+		&= 2\left(0,5+i\frac{\sqrt{3}}{2}\right) + 3\left(0 + i\right) \\
+		&= \ans{1 +\left(\sqrt{3}+1\right)i}.
+	\end{align*}
 \end{texample}
-	
+
+\subsection{Multiplikasjon}
+Multiplikasjon av komplekse tall er greit å gjøre på både standardform og eksponentialform, men sistnevnte er som regel raskest. Gitt $z_1 = a_1 + ib_1 = r_1e^{i\theta_1}$ og $z_2 = a_2+ib_2 = r_2e^{i\theta_2}$. Ved å bruke vanlige regneregler for eksponentialfunksjoner regner vi ut,
+\begin{displaymath}
+	z_1\cdot z_2 = r_1r_2e^{i(\theta_1+\theta_2)}.
+\end{displaymath}
+Også beregning av produktet på standardform gjøres rett frem med vanlige regneregler, men det er litt mer arbeid,
+\begin{align*}
+	z_1\cdot z_2 &= (a_1+ib_1)(a_2+ib_2) \\
+		&= a_1a_2 + i(a_1b_2+a_2b_1)+b_1b_2i^2 \\
+		&= (a_1a_2-b_1b_2) + i (a_1b_2+a_2b_1),
+\end{align*}
+der vi har brukt $i^2=-1$ i siste overgang.
+
+\begin{texample}
+\end{texample}
+
+\subsubsection{Kvadrering og høyere heltallige potenser}
+Når vi kan multiplisere to tall vet vi også hvordan vi regner ut $z^n$ for et vilkårlig positivt heltall $n$, men det er likevel verdt å dvele litt ved dette før vi går videre. Gitt et komplekst tall $z=a+ib$ som vi kvadrerer,
+\begin{displaymath}
+	z^2 = (a+ib)(a+ib) = (a^2-b^2) +2abi.
+\end{displaymath}
+I motsetning til det vi kjenner fra de relle tallene er det altså ikke slik at kvadratet av et komplekst tall er positivt. Det kan---dersom $a=0$---være et negativt tall, eller mer generelt vil det være et komplekst tall selv. Dette betyr at vi ikke kan definere absoluttverdien til et komplekst tall på nøyaktig samme måte som vi gjør for reelle tall, noe vi kommer tilbake til i neste avsnitt. 
+
+Dersom vi skal opphøye det komplekst tallet i en høyere potens enn 2 er det en stor fordel å skrive tallet på eksponentialform fordi det forenkler beregningen betydelig. Vanlige regneregler for eksponentialfunksjoner gir da en enkel beregning.
+\begin{displaymath}
+	z^n = \left(re^{i\theta}\right)^n = r^n e^{in\theta}.
+\end{displaymath}
+
+\subsection{Modulus/absoluttverdi}
+Vi definerte tidligere den operasjonen komplekskonjugering på komplekse tall, og denne viser seg nyttig når vi skal definere \emph{absoluttverdien}---eller \emph{modulus} som den ofte også kalles---til et komplekst tall. Vi observerer hva som skjer når vi multipliserer et tall med sin egen komplekskonjugerte,
+\begin{align*}
+	z\cdot\bar{z} &= (a + ib)(a-ib) = a^2 + iab - iab -i^2b^2 = a^2 + b^2 \\
+	z\cdot\bar{z} &= re^{i\theta}\cdot re^{-i\theta} = r^2e^{i(\theta-\theta)} = r^2.
+\end{align*}
+Som beregningen, både på standardform og ekspoentialform, demonstrerer blir resultatet alltid positivt (eller 0 dersom vi startet med $z=0+0i$). Dette gjør at produktet $z\cdot\bar{z}$ er egnet til å definere absoluttverdien til et komplekst tall.
+\begin{tdef}
+\emph{Modulus/absoluttverdi} til et komplekst tall $z$ defineres som
+\begin{displaymath}
+	|z| = \sqrt{z\cdot\bar{z}}
+\end{displaymath}
+der $\bar{z}$ er komplekskonjugert av $z$.
+\end{tdef}
+\noindent
+Merk at for reelle tall er $\bar{z}=z$, slik at denne definisjonen stemmer med definisjonen vi har fra før for reelle tall. 
+Grafisk har absoluttverdien en enkel tolkning: absoluttverdien til et kompleksttall er lengden av forbindelseslinjen mellom origo og tallet når det er tegnet inn i det komplekse plan.
+
+\subsection{Divisjon}
+Som med multiplikasjon er også divisjon enklest å utføre på eksponentialform, men også mulig på standardform. Divisjon på eksponentialform er helt analogt til multiplikasjon, vi bruker vanlige regneregler, inkludert for eksponentialfunksjonen direkte:
+\begin{displaymath}
+	\frac{z_1}{z_2} = \frac{r_1e^{i\theta_1}}{r_2e^{i\theta_2}} = \frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}
+\end{displaymath}
+\begin{texample}
+\end{texample}
+For å få til divisjon på standarform trenger vi et lite ``triks'': vi må sørge for å få nevneren til å bli et reellt tall, og da kan vi utføre divisjonen med vanlige regneregler. For å få til dette utnytter vi at $z\bar{z}$ alltid er reellt.
+\begin{displaymath}
+	\frac{z_1}{z_2} = \frac{z_1\bar{z}_2}{z_2\bar{z}_2} = \frac{(a_1+ib_1)(a_2-ib_2)}{(a_2+ib_2)(a_2-ib_2)} = \frac{(a_1a_2+b_1b_2)+(-a_1b_2+a_2b_1)i}{a_2^2+b_2^2}
+\end{displaymath}
+\begin{texample}
+Gitt $z_1 = 3+2i$, $z_2 = 5-i$ og $z_3 = -2i$. Vi regner da ut
+\begin{align*}
+	\frac{z_1}{z_2} &= \frac{3+2i}{5-i} = \frac{(3+2i)(5+i)}{(5-i)(5+i)} = \frac{(3\cdot5-2\cdot1) + (3\cdot1+2\cdot5)i}{5^2+1^2} \\
+	&= \frac{13 + 13i}{26} = \ans{\frac12 + \frac12 i}, \\[12pt]
+	\frac{z_1}{z_3} &= \frac{3+2i}{-2i} = \frac{(3+2i)\cdot2i}{(-2i)\cdot 2i} = \frac{-4+6i}{4} = \ans{-1+\frac{3}{2}i}.
+\end{align*}
+\end{texample}
+
+\section{Kvadratrot og $n$te-rot}
+For å finne $n$te-roten av et komplekst tall må man i praksis ha tallet på eksponentialform. Prosedyren for å kvadratrot og høyere grads røtter er grunnleggende den samme, men likevel behandler vi kvadratrot for seg selv først siden dette er den roten de fleste er mest fortrolig med. 
+
+For å se hvordan man tar kvadratroten av et komplekst tall må vi huske på at å ta kvadratrot er det samme som å opphøye tallet i $\frac12$, altså $\sqrt{z} = z^\frac12$. Gitt $z = re^{i\theta}$, da kan vi altså regne ut
+\begin{displaymath}
+	\sqrt{z} = \sqrt{re^{i\theta}} = \left(re^{i\theta}\right)^\frac12 = \sqrt{r}e^{i\frac{\theta}{2}}
+\end{displaymath}
+Dette er imidlertid ikke hele historien: Akkurat som at ligningen $x^2=a$ der $a$ er et reelt, positivt tall slik at $x$ er et reelt tall har to løsninger\footnote{Merk at kvadratroten av $a$ er ikke lik $\pm\sqrt{a}$, men kun $\sqrt{a}$. Kvadratroten er definert til å være ikke-negativ, men likefullt har ligningen $x^2=a$ \'en positiv og \'en negativ løsning.}, nemlig $x=+\sqrt{a}$ og $x =-\sqrt{a}$, har også ligningen $x^2=z$ der $z$ er et vilkårlig komplekst tall to løsninger.
+
 \end{document}
