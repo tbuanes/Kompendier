@@ -334,6 +334,15 @@ Også beregning av produktet på standardform gjøres rett frem med vanlige regn
 der vi har brukt $i^2=-1$ i siste overgang.
 
 \begin{texample}
+Gitt $z_1 = 3 + 2i$, $z_2=1 + 4i$, $z_3 = -2 + i$ og $z_4 = \frac{1}{\sqrt{2}}(1-i)$. Vi regner da ut,
+\begin{align*}
+	z_1\cdot z_2 &= (3+2i)(1+4i) = 3\cdot1 + 3\cdot4i + 2i\cdot1 + 2i\cdot 4i \\
+	&= 3 +12i+2i -8 = \ans{-5+14i} \\[12pt]
+	z_1\cdot z_3 &= (3+2i)(-2+i) = 3\cdot(-2)+(3\cdot i)+2i\cdot(-2) + 2i\cdot i \\
+	&= -6 + 3i -4i -2 = \ans{-8 -i} \\[12pt]
+	z_1\cdot z_4 &= (3+2i)\cdot\frac{1}{\sqrt{2}}(1-i) = \frac{1}{\sqrt{2}} \left(3\cdot 1 + 3\cdot(-i) + 2i\cdot1 + 2i\cdot(-i) \right)\\
+	&= \frac{1}{\sqrt{2}}\left(3-3i+2i+2\right) = \ans{\frac{1}{\sqrt{2}}(5-i)}
+\end{align*} 	
 \end{texample}
 
 \subsubsection{Kvadrering og høyere heltallige potenser}
@@ -366,6 +375,15 @@ der $\bar{z}$ er komplekskonjugert av $z$.
 Merk at for reelle tall er $\bar{z}=z$, slik at denne definisjonen stemmer med definisjonen vi har fra før for reelle tall. 
 Grafisk har absoluttverdien en enkel tolkning: absoluttverdien til et kompleksttall er lengden av forbindelseslinjen mellom origo og tallet når det er tegnet inn i det komplekse plan.
 
+\begin{texample}
+Gitt $z_1 = 3 + 2i$, $z_2 = \frac{1}{\sqrt{2}}(1-i)$ og $z_3 = \sqrt{3}e^{i\frac{\pi}{7}}$. Vi regner da ut
+\begin{align*}
+	|z_1| &= \sqrt{(3+2i)(3-2i)} = \sqrt{3^2 + 2^2} = \ans{\sqrt{13}}\\[12pt]
+	|z_2| &= \sqrt{\frac{1}{\sqrt{2}}(1-i)\cdot\frac{1}{\sqrt{2}}(1+i)} = \sqrt{\frac12 \left(1^2 + (-1)^2\right)} = \sqrt{1} = \ans{1}\\[12pt]
+	|z_3| &= \sqrt{\sqrt{3}e^{i\frac{\pi}{7}}\cdot\sqrt{3}e^{-i\frac{\pi}{7}}} = \sqrt{(\sqrt{3})^2} = \ans{\sqrt{3}}
+\end{align*}
+\end{texample}
+
 \subsection{Divisjon}
 Som med multiplikasjon er også divisjon enklest å utføre på eksponentialform, men også mulig på standardform. Divisjon på eksponentialform er helt analogt til multiplikasjon, vi bruker vanlige regneregler, inkludert for eksponentialfunksjonen direkte:
 \begin{displaymath}
@@ -393,6 +411,31 @@ For å se hvordan man tar kvadratroten av et komplekst tall må vi huske på at 
 \begin{displaymath}
 	\sqrt{z} = \sqrt{re^{i\theta}} = \left(re^{i\theta}\right)^\frac12 = \sqrt{r}e^{i\frac{\theta}{2}}
 \end{displaymath}
-Dette er imidlertid ikke hele historien: Akkurat som at ligningen $x^2=a$ der $a$ er et reelt, positivt tall slik at $x$ er et reelt tall har to løsninger\footnote{Merk at kvadratroten av $a$ er ikke lik $\pm\sqrt{a}$, men kun $\sqrt{a}$. Kvadratroten er definert til å være ikke-negativ, men likefullt har ligningen $x^2=a$ \'en positiv og \'en negativ løsning.}, nemlig $x=+\sqrt{a}$ og $x =-\sqrt{a}$, har også ligningen $x^2=z$ der $z$ er et vilkårlig komplekst tall to løsninger.
+Dette er imidlertid ikke hele historien: Akkurat som at ligningen $x^2=a$ der $a$ er et reelt, positivt tall slik at $x$ er et reelt tall har to løsninger\footnote{Merk at kvadratroten av $a$ er ikke lik $\pm\sqrt{a}$, men kun $\sqrt{a}$. Kvadratroten er definert til å være ikke-negativ, men likefullt har ligningen $x^2=a$ \'en positiv og \'en negativ løsning.}, nemlig $x=+\sqrt{a}$ og $x =-\sqrt{a}$, har også ligningen $z^2=re^{i\theta}$ to løsninger. Siden 
+\begin{displaymath}
+	(e^{i\pi})^2 = e^{i2\pi} = 1
+\end{displaymath}
+ser vi at dersom vi øker vinkelen i løsningen ovenfor med $\pi$ får vi en ny løsning. De to løsningene av $x^2 = re^{i\theta}$ er altså
+\begin{displaymath}
+	\sqrt{r}e^{\i\frac{\theta}{2}} \text{ og } \sqrt{r}e^{i\left(\frac{\theta}{2} + \pi\right)}.
+\end{displaymath}
+Hvis vi i stedet for å legge til $\pi$ i vinkelen, hadde lagt til for eksempel $-\pi$, $2\pi$ eller $3\pi$ ville vi også fått gyldige løsninger av ligningen. Men hvis vi tegner disse løsningene inn i det komplekse planet ser vi at ingen av de er nye løsninger---vi har bare funnet nye måter å skrive de to løsningene vi allerede hadde på. Det kan bevises at en andregradsligning har nøyaktig\footnote{Det kan forekomme at de to løsningen er såkalt \emph{degenerert}---altså at de er like, som vi ser med ligningen $z^2=0$.} to løsninger, og en $n$te-gradsligning har nøyaktig $n$ løsninger.
 
+Nå som vi har sett grundig på kvadratroten, kan vi mye enklere se hvordan vi finner løsningen av $z^n = re^{i\theta}$. Siden dette er en $n$te-gradsligning skal vi finne $n$ løsninger. Den første finner vi som
+\begin{displaymath}
+	z = \sqrt[n]{r}e^{i\frac{\theta}{n}}.
+\end{displaymath}
+Resten av løsningene finner vi ved å legge til multipler av $\frac{2\pi}{n}$ til vinkelen. Dette er riktig fordi
+\begin{displaymath}
+	\left(e^{ik\frac{2\pi}{n}}\right)^n = e^{i2k\pi} = (e^{i2\pi})^k = 1^k = 1, \quad k =  \ldots, -2, -1, 0, 1, 2, \ldots.
+\end{displaymath}
+Ved å legge til dette tillegget for $k=1, 2, \ldots, n-1$ finner vi alle de $n$ unike løsningene. Hvis vi tar med ytterligere verdier av $k$ får vi bare replisert tidligere løsninger.
+\begin{tsummary}
+	Ligningen $z^n = re^{i\theta}$ har de $n$ løsningene
+	\begin{displaymath}
+		z = \sqrt[n]{r}e^{i\left(\frac{\theta}{n} + \frac{2\pi}{n}k\right)}, \quad k=0,1,2,\ldots, n-1.
+	\end{displaymath}
+\end{tsummary}
+\noindent
+Merk at hvis vi setter $n=2$ i uttrykket ovenfor er vi tilbake til resultatet vi fant for kvadratrot.
 \end{document}
