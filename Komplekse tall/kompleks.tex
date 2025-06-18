@@ -34,6 +34,22 @@ myexample/.style={
 }
 
 \tcbset{
+mytheorem/.style={
+  enhanced,
+  colback=DarkGreen!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Teorem},
+  title style={fill=DarkGreen!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=DarkGreen!50!white,colframe=DarkGreen}
+  }
+}
+
+
+\tcbset{
 myproof/.style={
   enhanced,
   colback=DarkGreen!10!white,
@@ -81,6 +97,7 @@ mysummary/.style={
 
 
 \newtcolorbox{texample}{myexample}
+\newtcolorbox{ttheorem}{mytheorem}
 \newtcolorbox{tproof}{myproof}
 \newtcolorbox{tdef}{mydef}
 \newtcolorbox{tsummary}{mysummary}
@@ -357,6 +374,42 @@ Dersom vi skal opphøye det komplekst tallet i en høyere potens enn 2 er det en
 	z^n = \left(re^{i\theta}\right)^n = r^n e^{in\theta}.
 \end{displaymath}
 
+\subsubsection{De Moivres teorem}
+Nå som vi har sett hvordan vi regner ut potenser kan vi enkelt bevise et lite teorem som er nyttig for å finne formler for cosinus og sinus til multipler av vinkelen.
+\begin{ttheorem}
+De Moivres teorem: 
+\begin{displaymath}
+	\left(\cos\theta + i\sin\theta\right)^n = \cos n\theta + i\sin n\theta
+\end{displaymath}
+\end{ttheorem}
+\begin{tproof}
+Vi starter med ligning (\ref{kompleks:eq:eitheta}) som sier at
+\begin{displaymath}
+	\cos\theta + i\sin\theta = e^{i\theta}
+\end{displaymath}
+Ved å opphøye både høyre og venstre side i $n$ finner vi
+\begin{displaymath}
+	\left(\cos\theta+ i\sin\theta\right)^n = \left(e^{i\theta}\right)^n = e^{in\theta} = \cos n\theta + i\sin n\theta,
+\end{displaymath}
+der siste likheten følger av å bruke ligning (\ref{kompleks:eq:eitheta}) en gang til, men denne gangen med vinkelen $n\theta$ i stedet for $\theta$.
+\end{tproof}
+
+\begin{texample}
+Som en enkel anvendelse kan vi finne uttrykkene for $\cos2\theta$ og $\sin2\theta$:
+\begin{align*}
+	\cos2\theta + i\sin2\theta &= (\cos\theta + i\sin\theta)^2 \\
+	&=\cos^2\theta + 2i\cos\theta\sin\theta + i^2\sin^2\theta \\
+	&=\cos^2\theta-\sin^2\theta + 2i\cos\theta\sin\theta.
+\end{align*}
+Siden to komplekse tall er lik hvis og bare hvis både realdel er lik realdel og imaginærdel er lik imaginærdel finner vi ved å sammenligne første og siste uttrykk at 
+\begin{align*}
+	\cos2\theta &= \cos^2\theta - \sin^2\theta, \\
+	\sin2\theta &= 2\cos\theta\sin\theta.
+\end{align*}
+\end{texample}
+\noindent
+På samme måte kan vi også finne uttrykk for $\cos3\theta$, $\sin4\theta$, osv.
+
 \subsection{Modulus/absoluttverdi}
 Vi definerte tidligere den operasjonen komplekskonjugering på komplekse tall, og denne viser seg nyttig når vi skal definere \emph{absoluttverdien}---eller \emph{modulus} som den ofte også kalles---til et komplekst tall. Vi observerer hva som skjer når vi multipliserer et tall med sin egen komplekskonjugerte,
 \begin{align*}
@@ -390,6 +443,11 @@ Som med multiplikasjon er også divisjon enklest å utføre på eksponentialform
 	\frac{z_1}{z_2} = \frac{r_1e^{i\theta_1}}{r_2e^{i\theta_2}} = \frac{r_1}{r_2}e^{i(\theta_1-\theta_2)}
 \end{displaymath}
 \begin{texample}
+Gitt $z_1 = 2e^{ i\frac{\pi}{2}}$, $z_2 = \sqrt{2}e^{i\frac{\pi}{3}}$ og $z_3 = 4e^{-i\frac{\pi}{2}}$. Vi regner da ut
+\begin{align*}
+	\frac{z_1}{z_2} &= \frac{2}{\sqrt{2}}e^{i\pi\left(\frac12-\frac13\right)} = \ans{\sqrt{2}e^{i\frac{\pi}{6}}}, \\
+	\frac{z_1}{z_3} &= \frac{2}{4}e^{i\pi\left(\frac12-\left(-\frac12\right)\right)} = \frac12e^{i\pi} = \ans{-\frac12}.
+\end{align*}
 \end{texample}
 For å få til divisjon på standarform trenger vi et lite ``triks'': vi må sørge for å få nevneren til å bli et reellt tall, og da kan vi utføre divisjonen med vanlige regneregler. For å få til dette utnytter vi at $z\bar{z}$ alltid er reellt.
 \begin{displaymath}
