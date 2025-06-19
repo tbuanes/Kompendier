@@ -10,6 +10,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{wasysym}
 \usepackage{icomma}
+\usepackage{multicol}
 
 \newcommand{\unit}[1]{~\mathrm{#1}}
 \newcommand{\ans}[1]{\underline{\underline{#1}}}
@@ -216,8 +217,7 @@ Siden vinklene $\theta$ og $\theta+n\cdot 2\pi$ der $n$ er et heltall beskriver 
 \begin{displaymath}
 	\theta \in (-\pi, \pi] \text{ og } \theta \in [0, 2\pi).
 \end{displaymath}
-
-$e$ som brukes når vi skriver det komplekse tallet på eksponentialform er Eulers tall som er kjent fra eksponentialfunksjoner med reelle tall. Det at $e$ nå opphøyes i en imaginær potens har noen interessante konsekvenser som vi kommert tilbake til ganske snart.
+Symbolet $e$ som brukes når vi skriver det komplekse tallet på eksponentialform er Eulers tall som er kjent fra eksponentialfunksjoner med reelle tall. Det at $e$ nå opphøyes i en imaginær potens har noen interessante konsekvenser som vi kommert tilbake til ganske snart.
 
 Fra figuren ser vi at gitt polar-representasjonen av det komplekse tallet kan vi regne oss tilbake til standardformen:
 \begin{align*}
@@ -496,4 +496,179 @@ Ved å legge til dette tillegget for $k=1, 2, \ldots, n-1$ finner vi alle de $n$
 \end{tsummary}
 \noindent
 Merk at hvis vi setter $n=2$ i uttrykket ovenfor er vi tilbake til resultatet vi fant for kvadratrot.
+
+\subsection{Anvendelse i ligninger}
+Typisk vil behovet for å finne f.eks.~en kvadratrot dukke opp i en mer komplisert ligning enn $z^2=-1$. Vi avslutter derfor avsnittet med noen eksempler på slike ligninger.
+\begin{texample}
+Gitt ligningen $z^2 + 2z + 2 = 0$. Vi starter med å bruke $abc$-formelen akkurat som for andregradsligninger med reelle tall:
+\begin{displaymath}
+	z = \frac{-2\pm\sqrt{2^2-4\cdot1\cdot2}}{2\cdot 1}= \frac{-2\pm\sqrt{-2}}{2}
+\end{displaymath}
+Siden svaret vi får fra $abc$-formelen inkluderer $\sqrt{-2}$ har vi ingen løsninger for reelle tall, men når vi tillater $z$ å være kompleks har vi to løsninger:
+\begin{displaymath}
+	z= \ans{-1 \pm i\frac{\sqrt{2}}{2}}.
+\end{displaymath}
+\end{texample}
+
+\begin{texample}
+Gitt ligningen $z^6 - 4z^3 - 2=0$. Dette er en sjettegradsligning, men merk at dersom vi definerer $w=z^3$ kan vi skrive ligningen om som $w^2 - 4w - 2=0$ og vi ser at vi kan komme videre med $abc$-formelen:
+\begin{displaymath}
+	z^3 = w = \frac{4\pm\sqrt{(-4)^2-4\cdot(-4)\cdot(-2)}}{2\cdot1} = \frac{4\pm\sqrt{-16}}{2} = 2\pm2i
+\end{displaymath}
+For å finne verdiene av $z$ må vi nå ta tredjeroten av $w$ og for å få til det må vi først skrive om til eksponentialform:
+\begin{displaymath}
+	z^3 = \sqrt{8}e^{\pm i\frac{\pi}{4}}.
+\end{displaymath}
+Vi kan nå bruke standarduttrykket for tredjerot, og det må vi gjøre separat for $+$-løsningen og for $-$-løsningen slik at vi ender opp med til sammen seks løsninger:
+\begin{displaymath}
+	z = \begin{cases}
+		\sqrt[3]{\sqrt{8}}e^{i\left(\frac{\pi}{12} + \frac{\pi}{6}k\right)} \\
+		\sqrt[3]{\sqrt{8}}e^{i\left(-\frac{\pi}{12} + \frac{\pi}{6}k\right)}
+	\end{cases}
+	= \begin{cases}
+		\sqrt[6]{8}e^{i\left(\frac{\pi}{12} + \frac{\pi}{6}k\right)}, \quad k=0, 1, 2 \\
+		\sqrt[6]{8}e^{i\left(-\frac{\pi}{12} + \frac{\pi}{6}k\right)}, \quad k = 0, 1, 2
+	\end{cases}
+\end{displaymath}
+Merk at siden $-\frac{\pi}{12} + \frac{\pi}{6} = \frac{\pi}{12}$ svarer de to settene av løsninger til kun tre distinkte løsninger. Vi har altså delvis degenerte løsning, slik at det fulle settet av løsninger til ligningen er 
+\begin{displaymath}
+	z = \ans{\sqrt[6]{8}e^{i\left(\frac{\pi}{12} + \frac{\pi}{6}k\right)}}, \quad k=0, 1, 2.
+\end{displaymath}
+\end{texample}
+
+\newpage
+\section{Oppgaver}
+\footnotesize{
+\begin{multicols}{2}
+\begin{enumerate}
+\item
+Tegn tallene inn i det komplekse planet og finn eksponentialformen.
+\begin{enumerate}[label=\alph*)]
+\item
+$z = 1 + i$
+\item
+$z = -1-i$
+\item
+$z= 1 + i\sqrt{3}$
+\item
+$z = -\sqrt{3} + i$
+\item
+$z = -3$
+\item
+$z = -2i$
+\end{enumerate}
+\item
+Tegn tallene inn i det komplekse planet og finn standardformen.
+\begin{enumerate}[label=\alph*)]
+\item
+$z = e^{i\frac{\pi}{2}}$
+\item
+$z=2e^{-i\frac{\pi}{6}}$
+\item
+$z = e^{i\frac{2\pi}{3}}$
+\item
+$z = e^{i\pi}$
+\item
+$z = 3$
+\item
+$z = -2e^{-i\frac{\pi}{2}}$
+\end{enumerate}
+\item
+Gitt følgende tall $z_1 = 2+3i$, $z_2=3-2i$, $z_3 = 3i$. Regn ut
+\begin{enumerate}[label=\alph*)]
+\item
+$z_1+z_2$
+\item
+$z_1+z_3$
+\item
+$z_3-z_1$
+\item
+$z_1-z_2+z_3$
+\item
+$2z_1$
+\end{enumerate}
+\item
+Gitt følgende tall $z_1 = e^{i\frac{\pi}{3}}$, $z_2 = -2e^{i\frac{\pi}{3}}$, $z_3 = 2e^{i\frac{4\pi}{3}}$, $z_4 = e^{-i\frac{\pi}{2}}$. Regn ut
+\begin{enumerate}[label=\alph*)]
+\item
+$z_1 + z_2$
+\item
+$z_1 - z_2$
+\item
+$z_1+z_3$
+\item
+$z_1-z_4$
+\end{enumerate}
+\columnbreak
+\item
+Gitt følgende tall $z_1 = e^{i\frac{\pi}{2}}$, $z_2 = 2e^{-i\frac{\pi}{6}}$, $z_3 = e^{i\frac{2\pi}{3}}$. Regn ut
+\begin{enumerate}[label=\alph*)]
+\item
+$z_1\cdot z_2$
+\item
+$z_1 \cdot z_3$
+\item
+$z_2\cdot\bar{z}_2$
+\item
+$z_2\cdot \bar{z}_3$
+\item
+$\frac{z_1}{z_2}$
+\item
+$\frac{z_2}{\bar{z}_3}$
+\item
+$z_1\cdot\frac{z_3}{z_2}$
+\end{enumerate}
+\item
+Gitt følgende tall $z_1 = 2+3i$, $z_2=3-2i$, $z_3 = 3e^{i\frac{\pi}{2}}$. Regn ut
+\begin{enumerate}[label=\alph*)]
+\item
+$z_1\cdot z_2$
+\item
+$z_1^2$
+\item
+$\frac{z_1}{z_2}$
+\item
+$\frac{z_2}{z_1}$
+\item
+$\frac{1}{z_2}$
+\item
+$z_1\cdot z_3$
+\item
+$\frac{z_2}{z_3}$
+\end{enumerate}
+\item
+Finn alle løsninger av ligningene. Tegn tallet på høyresiden av ligningen og alle løsningene inn det komplekse plan.
+\begin{enumerate}[label=\alph*)]
+\item
+$z^2 = 2i$
+\item
+$z^5 = 1$
+\item
+$z^4 = 3e^{i\frac{\pi}{3}}$
+\item
+$z^3 = 2e^{i\frac{\pi}{2}}$
+\item
+$z^2 = 1+i$
+\item
+$z^3 = 5-2i$
+\end{enumerate}
+\item
+Finn alle løsninger av ligningene
+\begin{enumerate}[label=\alph*)]
+\item
+$z^2 - 2z + 3 = 0 $
+\item
+$z^2 + 2z + 3 = 0$
+\item
+$z^4 +2z^2 - 3 = 0$
+\item
+$2z^8 - z^4 - 1 = 0$
+\item
+$z  + 2\sqrt{z}+2 = 0$
+\end{enumerate}
+\item
+Finn uttrykk for $\cos3\theta$ og $\sin3\theta$ uttrykt ved $\cos\theta$ og $\sin\theta$. 
+\end{enumerate}
+\end{multicols}
+}
 \end{document}
