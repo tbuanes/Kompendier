@@ -133,8 +133,8 @@ For å bøte på dette utvider vi systemet til de \emph{rasjonale\footnote{Ordet
 \begin{displaymath}
 	x^2 = 1^2 + 1^2 = 2
 \end{displaymath}
-Det kan (relativt enkelt) bevises at svaret av denne ligningen, som vi skriver som $\sqrt{2}$, ikke selv er et rasjonalt tall. 
-
+Det kan bevises at svaret av denne ligningen, som vi skriver som $\sqrt{2}$, ikke selv er et rasjonalt tall. 
+\begin{comment}
 \begin{tproof}
 For å bevise at løsningen av ligningen $x^2 = 2$ ikke er et rasjonalt tall starter vi å anta at det er det---altså at svaret kan skrives som $x=\frac{a}{b}$. Dersom løsningen kan skrives på denne formen følger det at
 \begin{align*}
@@ -155,8 +155,8 @@ der enten $u$, $v$ eller begge er oddetall. Siden ligningen viser at $u^2 = 2v^2
 \end{displaymath} 
 så da er også $v$ et partall. Siden vi har kommet frem til en selvmotsigelse må utgangspunktet ha vært feil, og vi kan konkludere med at ligningen $x^2=2$ ikke har en løsning som kan skrives på formen $x=\frac{a}{b}$. 
 \end{tproof}
-
-Oppdagelsen at det finnes tall som ikke er rasjonale krever en ny utvidelse av tallbegrepet, og vi innfører de \emph{reelle tallene} $\mathbb{R}$. Med de reelle tallene er hele tallinjen fylt opp - uansett hvor mye eller lite vi ønsker å endre størrelsen på et tall finnes det et nytt tall som passer. Men likevel viser det seg at heller ikke de relle tallene utgjør et komplett system. Det ser vi dersom vi forsøker å løse ligningen
+\end{comment}
+Oppdagelsen at det finnes tall som ikke er rasjonale krever en ny utvidelse av tallbegrepet, og vi innfører de \emph{reelle tallene} $\mathbb{R}$. Med de reelle tallene er hele tallinjen fylt opp --- uansett hvor mye eller lite vi ønsker å endre størrelsen på et tall finnes det et nytt tall som passer. Men likevel viser det seg at heller ikke de relle tallene utgjør et komplett system. Det ser vi dersom vi forsøker å løse ligningen
 \begin{displaymath}
 	x^2+1 = 0
 \end{displaymath}
@@ -164,17 +164,19 @@ For å løse denne ligningen trenger vi et tall som har den egenskapen at det mu
 \begin{displaymath}
 	i^2 = -1
 \end{displaymath}
-Tallet $i$ kan både adderes, subtraheres, multipliseres og divideres med alle reelle tall. Vi kan altså skrive tall som $2+i$, $3i$ og $\pi-2i$. Dette utvidete settet av tall kaller vi for \emph{komplekse tall}, $\mathbb{C}$. Det kan vises at de komplekse tallene er et komplett sett i den betydningen at vi skriver ned en ligning med komplekse tall som koeffisienter, vil vi aldri møte på behovet for en ny utvidelse av systemet, men vi vil finne svaret som et komplekst tall.\footnote{Merk at de reelle tallene er en undermengde av de komplekse, så det er godt mulig at svaret er et reellt tal uten at det er noen konflikt med denne påstanden.}
+Tallet $i$ kan både adderes, subtraheres, multipliseres og divideres med alle reelle tall. Vi kan altså skrive tall som $2+i$, $3i$ og $\pi-2i$. Dette utvidete settet av tall kaller vi for \emph{komplekse tall}, $\mathbb{C}$. Det kan vises at de komplekse tallene er et komplett sett i den betydningen at vi skriver ned en ligning med komplekse tall som koeffisienter, vil vi aldri møte på behovet for en ny utvidelse av systemet, men vi vil finne svaret som et komplekst tall.\footnote{Merk at de reelle tallene er en undermengde av de komplekse, så det er godt mulig at svaret er et reellt tall uten at det er noen konflikt med denne påstanden.}
 
 \subsection{Representasjoner av komplekse tall}
 Siden tallet $i$ ikke ligger på tallinjen trenger vi en ekstra dimensjon for å lage en grafisk representasjon av komplekse tall. Vi utvider altså tallinjen til det \emph{komplekse plan} der vi lar den horisontale aksen representere den vanlige tallinjen---nå kalt den \emph{reelle aksen}---mens tall som er multipler av $i$ ligger på den vertikale aksen---nå kalt den \emph{imaginære aksen}. Tall som verken er reelle eller rent imaginære, f.eks. $2+i$ og $\pi - 2i$ vil ikke ligge på noen av aksene. Se figur \ref{kompleks:fig:plan} for eksempler av hvordan tall tegnes inn i det kompleke tallet.
 \begin{figure}[htp]
 	\begin{center}
-	\textcolor{red}{[Sett inn figur med det komplekse plan]}
+	\includegraphics[width=.5\textwidth]{./standardform}
 	\end{center}
 	\caption{Noen tall plottet inn i det komplekse plan.}
 	\label{kompleks:fig:plan}
 \end{figure}
+
+\noindent
 Vi kan altså se for oss et komplekst tall som et punkt i et to-dimensjonalt plan, og vi trenger derfor to komponenter---tilsvarende $x$ og $y$ i et vanlig koordinatsystem---for å fortelle hvor tallet er. Dette gir oss det som kalles \emph{standardform}, eller noen ganger \emph{kartesisk form} av komplekse tall.
 
 \begin{tdef}
@@ -199,7 +201,7 @@ Siden de komplekse tallene representeres av punkter i et plan kan vi også velge
 
 \begin{figure}[htp]
 	\begin{center}
-	\textcolor{red}{[Sett inn figur med polarform]}
+	\includegraphics[width=.5\textwidth]{./polarform}
 	\end{center}
 	\caption{Illustrasjon av polarkoordinater i det komplekse plan.}
 	\label{kompleks:fig:polar}
@@ -229,11 +231,11 @@ Vi kan også bruke figuren til å finne oppskriften for å regne ut polarform de
 \begin{displaymath}
 	r = \sqrt{a^2 + b^2}.
 \end{displaymath}
-Når vi kommer til vinkelen må vi være litt mer forsiktig. Hvis vi i første omgang begrenser oss til komplekse tall med $\mathbf{Re}(z)=a>0$. Da kan vi bruke trigonometri direkte og finne at
+Når vi kommer til vinkelen må vi være litt mer forsiktig. Hvis vi i første omgang begrenser oss til komplekse tall med $\mathbf{Re}(z)=a>0$ kan vi bruke trigonometri direkte og finne at
 \begin{displaymath}
 	\theta = \tan^{-1}\left(\frac{b}{a}\right).
 \end{displaymath}
-Dersom $\mathbf{Re}(z)<0$ vil $\tan^{-1}\frac{b}{a}$ fremdeles gi et resultat i området $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, noe som ikke er riktig. For å finne den riktige vinkelen må vil legge til $\pi$.
+Dersom $\mathbf{Re}(z)<0$ vil $\tan^{-1}\left(\frac{b}{a}\right)$ fremdeles gi et resultat i området $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, noe som ikke er riktig. For å finne den riktige vinkelen må vil legge til $\pi$. Dersom $a=0$ og $b\neq0$ vil vinkelen være $\frac{\pi}{2}$ ($b>0$) eller $-\frac{\pi}{2}$ ($b<0$). Dersom $a=b=0$ er det meningsløst å snakke om en vinkel, og vi skriver tallet rett og slett som $z=0$.
 
 \begin{tsummary}
 Standardform/kartesisk form: $z = a + ib$ \\
@@ -243,7 +245,7 @@ Omregning fra standardform til eksponentialform:
 \begin{align*}
 	r &= \sqrt{a^2+b^2} \\
 	\theta &= \begin{cases} 
-		\tan^{-1}\left(\frac{b}{a}\right) \text{ dersom } a\geq0 \\
+		\tan^{-1}\left(\frac{b}{a}\right) \text{ dersom } a>0 \\
 		\tan^{-1}\left(\frac{b}{a}\right)+\pi \text{ dersom } a <0
 	\end{cases}
 \end{align*}
@@ -264,7 +266,7 @@ Vi kan forenkle denne sammenhengen ved å dividere med $r$ og finne
 	\label{kompleks:eq:eitheta}
 	e^{i\theta} = \cos\theta + i\sin\theta.
 \end{equation}
-Dette betyr at når vi tillater imaginær eksponent er ikke eksponentialfunksjonen lenger montont stigende/avtagende, men derimot en periodisk funksjon med periode $2\pi$. Dette burde egentlig være opplagt fra den grafiske representasjonen av det komplekse tallet: dersom vi endrer vinkelen med et multippel av $2\pi$ kommer vi tilbake til det samme punktet. Dersom vi erstatter $\theta$ med $-\theta$ og bruker $\cos(-\theta) = \cos\theta$ og $\sin(-\theta) = -\sin\theta$ får v
+Dette betyr at når vi tillater imaginær eksponent er ikke eksponentialfunksjonen lenger montont stigende/avtagende, men derimot en periodisk funksjon med periode $2\pi$. Dette burde egentlig være opplagt fra den grafiske representasjonen av det komplekse tallet: dersom vi endrer vinkelen med et multippel av $2\pi$ kommer vi tilbake til det samme punktet. Dersom vi erstatter $\theta$ med $-\theta$ og bruker $\cos(-\theta) = \cos\theta$ og $\sin(-\theta) = -\sin\theta$ får vi
 \begin{equation}
 	\label{kompleks:eq:e-itheta}
 	e^{-i\theta} = \cos\theta - i\sin\theta.
@@ -277,7 +279,7 @@ Ved å kombinere ligning (\ref{kompleks:eq:eitheta}) og (\ref{kompleks:eq:e-ithe
 Merk at selv om uttrykkene inkluderer $i$ vil svaret bli reellt så lenge vinkelen $\theta$ er reell. Denne måten å uttrykke $\cos\theta$ og $\sin\theta$ på kan for eksempel brukes til å forenkle integrasjon av en del uttrykk som er vanskelig å gjøre på andre måter.
 
 \section{Regneregler for komplekse tall}
-Komplekse tall følger i de samme regnereglene som reelle tall, men det er noen få ting man må være oppmerksom på. Blant annet vil vi få behov for å veksle frem og tilbake mellom de de to representasjonenen (standardform og eksponentialform) da ikke alle operasjoner like enkel å utføre i begge former. I tillegg skal vi få bruk for å definere en ny operasjon: \emph{komplekskonjugering}.
+Komplekse tall følger de samme regnereglene som reelle tall, men det er noen få ting man må være oppmerksom på. Blant annet vil vi få behov for å veksle frem og tilbake mellom de de to representasjonenen (standardform og eksponentialform) da ikke alle operasjoner like enkel å utføre i begge former. I tillegg skal vi få bruk for å definere en ny operasjon: \emph{komplekskonjugering}.
 
 \subsection{Komplekskonjugering}
 Vi definerer komplekskonjugering som operasjonen der vi endrer fortegnet på den imaginære komponenten av det komplekse tallet. 
@@ -305,7 +307,7 @@ Vi ser altså at vi adderer/subtraherer realdel for seg og imaginærdel for seg.
 		z_1 - z_3 &= (3-0) + (2-(-2))i = 3 + 4i 
 	\end{align*}
 \end{texample}
-Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å addere de to tallene og få svaret på en kompakt form, med mindre vinkelen er like eller forskjellen på vinklene er $\pi$.
+Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å addere de to tallene og få svaret på en kompakt form, med mindre vinkelen er lik eller forskjellen på vinklene er $\pi$.
 
 \begin{texample}
 	La $z_1 = 2 e^{i\frac{\pi}{3}}$, $z_2 = 3e^{i\frac{\pi}{3}}$, $z_3 = 5e^{i\frac{4\pi}{3}}$, $z_4 = 3e^{i\frac{\pi}{2}}$.
@@ -349,6 +351,14 @@ Også beregning av produktet på standardform gjøres rett frem med vanlige regn
 		&= (a_1a_2-b_1b_2) + i (a_1b_2+a_2b_1),
 \end{align*}
 der vi har brukt $i^2=-1$ i siste overgang.
+\begin{texample}
+Gitt $z_1 = 2e^{\frac{\pi}{3}i}$, $z_2 = e^{\frac{\pi}{2}i}$ og $z_3 = 3e^{-\frac{\pi}{3}i}$. Vi regner da ut
+\begin{align*}
+	z_1\cdot z_2 &= 2e^{\frac{\pi}{3}i}\cdot e^{\frac{\pi}{2}i} = 2\cdot1 e^{\left(\frac{\pi}{3}+\frac{\pi}{2}\right)i} = \ans{2e^{\frac{5\pi}{6}i}} \\
+	z_1\cdot z_3 &= 2e^{\frac{\pi}{3}i}\cdot 3e^{-\frac{\pi}{3}i} = 2\cdot3 e^{\left(\frac{\pi}{3}-\frac{\pi}{3}\right)i} = \ans{6} \\
+	z_2\cdot z_3 &= e^{\frac{\pi}{2}i}\cdot 3e^{-\frac{\pi}{3}i} = 1\cdot3e^{\left(\frac{\pi}{2}-\frac{\pi}{3}\right)i} = \ans{3e^{\frac{\pi}{6}i}}
+\end{align*}
+\end{texample}
 
 \begin{texample}
 Gitt $z_1 = 3 + 2i$, $z_2=1 + 4i$, $z_3 = -2 + i$ og $z_4 = \frac{1}{\sqrt{2}}(1-i)$. Vi regner da ut,
@@ -411,7 +421,7 @@ Siden to komplekse tall er lik hvis og bare hvis både realdel er lik realdel og
 På samme måte kan vi også finne uttrykk for $\cos3\theta$, $\sin4\theta$, osv.
 
 \subsection{Modulus/absoluttverdi}
-Vi definerte tidligere den operasjonen komplekskonjugering på komplekse tall, og denne viser seg nyttig når vi skal definere \emph{absoluttverdien}---eller \emph{modulus} som den ofte også kalles---til et komplekst tall. Vi observerer hva som skjer når vi multipliserer et tall med sin egen komplekskonjugerte,
+Vi definerte tidligere operasjonen komplekskonjugering på komplekse tall, og denne viser seg nyttig når vi skal definere \emph{absoluttverdien}---eller \emph{modulus} som den ofte også kalles---til et komplekst tall. Vi observerer hva som skjer når vi multipliserer et tall med sin egen komplekskonjugerte,
 \begin{align*}
 	z\cdot\bar{z} &= (a + ib)(a-ib) = a^2 + iab - iab -i^2b^2 = a^2 + b^2 \\
 	z\cdot\bar{z} &= re^{i\theta}\cdot re^{-i\theta} = r^2e^{i(\theta-\theta)} = r^2.
@@ -426,7 +436,7 @@ der $\bar{z}$ er komplekskonjugert av $z$.
 \end{tdef}
 \noindent
 Merk at for reelle tall er $\bar{z}=z$, slik at denne definisjonen stemmer med definisjonen vi har fra før for reelle tall. 
-Grafisk har absoluttverdien en enkel tolkning: absoluttverdien til et kompleksttall er lengden av forbindelseslinjen mellom origo og tallet når det er tegnet inn i det komplekse plan.
+Grafisk har absoluttverdien en enkel tolkning: absoluttverdien til et komplekst tall er lengden av forbindelseslinjen mellom origo og tallet når det er tegnet inn i det komplekse plan.
 
 \begin{texample}
 Gitt $z_1 = 3 + 2i$, $z_2 = \frac{1}{\sqrt{2}}(1-i)$ og $z_3 = \sqrt{3}e^{i\frac{\pi}{7}}$. Vi regner da ut
@@ -436,6 +446,8 @@ Gitt $z_1 = 3 + 2i$, $z_2 = \frac{1}{\sqrt{2}}(1-i)$ og $z_3 = \sqrt{3}e^{i\frac
 	|z_3| &= \sqrt{\sqrt{3}e^{i\frac{\pi}{7}}\cdot\sqrt{3}e^{-i\frac{\pi}{7}}} = \sqrt{(\sqrt{3})^2} = \ans{\sqrt{3}}
 \end{align*}
 \end{texample}
+\noindent
+Det siste eksempelet demonsterer det generelle resultatet at når tallet er skrevet på eksponentialform, $z=re^{i\theta}$, er absoluttverdien lik $r$.
 
 \subsection{Divisjon}
 Som med multiplikasjon er også divisjon enklest å utføre på eksponentialform, men også mulig på standardform. Divisjon på eksponentialform er helt analogt til multiplikasjon, vi bruker vanlige regneregler, inkludert for eksponentialfunksjonen direkte:
@@ -445,11 +457,11 @@ Som med multiplikasjon er også divisjon enklest å utføre på eksponentialform
 \begin{texample}
 Gitt $z_1 = 2e^{ i\frac{\pi}{2}}$, $z_2 = \sqrt{2}e^{i\frac{\pi}{3}}$ og $z_3 = 4e^{-i\frac{\pi}{2}}$. Vi regner da ut
 \begin{align*}
-	\frac{z_1}{z_2} &= \frac{2}{\sqrt{2}}e^{i\pi\left(\frac12-\frac13\right)} = \ans{\sqrt{2}e^{i\frac{\pi}{6}}}, \\
-	\frac{z_1}{z_3} &= \frac{2}{4}e^{i\pi\left(\frac12-\left(-\frac12\right)\right)} = \frac12e^{i\pi} = \ans{-\frac12}.
+	\frac{z_1}{z_2} &= \frac{2}{\sqrt{2}}e^{i\left(\frac{\pi}{2}-\frac{\pi}{3}\right)} = \ans{\sqrt{2}e^{i\frac{\pi}{6}}}, \\
+	\frac{z_1}{z_3} &= \frac{2}{4}e^{i\left(\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)\right)} = \frac12e^{i\pi} = \ans{-\frac12}.
 \end{align*}
 \end{texample}
-For å få til divisjon på standarform trenger vi et lite ``triks'': vi må sørge for å få nevneren til å bli et reellt tall, og da kan vi utføre divisjonen med vanlige regneregler. For å få til dette utnytter vi at $z\bar{z}$ alltid er reellt.
+For å få til divisjon på standardform trenger vi et lite ``triks'': vi må sørge for å få nevneren til å bli et reellt tall, og da kan vi utføre divisjonen med vanlige regneregler. For å få til dette utnytter vi at $z\bar{z}$ alltid er reellt.
 \begin{displaymath}
 	\frac{z_1}{z_2} = \frac{z_1\bar{z}_2}{z_2\bar{z}_2} = \frac{(a_1+ib_1)(a_2-ib_2)}{(a_2+ib_2)(a_2-ib_2)} = \frac{(a_1a_2+b_1b_2)+(-a_1b_2+a_2b_1)i}{a_2^2+b_2^2}
 \end{displaymath}
@@ -475,7 +487,7 @@ Dette er imidlertid ikke hele historien: Akkurat som at ligningen $x^2=a$ der $a
 \end{displaymath}
 ser vi at dersom vi øker vinkelen i løsningen ovenfor med $\pi$ får vi en ny løsning. De to løsningene av $x^2 = re^{i\theta}$ er altså
 \begin{displaymath}
-	\sqrt{r}e^{\i\frac{\theta}{2}} \text{ og } \sqrt{r}e^{i\left(\frac{\theta}{2} + \pi\right)}.
+	\sqrt{r}e^{i\frac{\theta}{2}} \text{ og } \sqrt{r}e^{i\left(\frac{\theta}{2} + \pi\right)}.
 \end{displaymath}
 Hvis vi i stedet for å legge til $\pi$ i vinkelen, hadde lagt til for eksempel $-\pi$, $2\pi$ eller $3\pi$ ville vi også fått gyldige løsninger av ligningen. Men hvis vi tegner disse løsningene inn i det komplekse planet ser vi at ingen av de er nye løsninger---vi har bare funnet nye måter å skrive de to løsningene vi allerede hadde på. Det kan bevises at en andregradsligning har nøyaktig\footnote{Det kan forekomme at de to løsningen er såkalt \emph{degenerert}---altså at de er like, som vi ser med ligningen $z^2=0$.} to løsninger, og en $n$te-gradsligning har nøyaktig $n$ løsninger.
 
@@ -519,7 +531,7 @@ For å finne verdiene av $z$ må vi nå ta tredjeroten av $w$ og for å få til 
 \begin{displaymath}
 	z^3 = \sqrt{8}e^{\pm i\frac{\pi}{4}}.
 \end{displaymath}
-Vi kan nå bruke standarduttrykket for tredjerot, og det må vi gjøre separat for $+$-løsningen og for $-$-løsningen slik at vi ender opp med til sammen seks løsninger:
+Vi kan nå bruke standarduttrykket for tredjerot, og det må vi gjøre separat for '$+$'-løsningen og for '$-$'-løsningen slik at vi ender opp med til sammen seks løsninger:
 \begin{displaymath}
 	z = \begin{cases}
 		\sqrt[3]{\sqrt{8}}e^{i\left(\frac{\pi}{12} + \frac{\pi}{6}k\right)} \\
@@ -637,7 +649,7 @@ $z_1\cdot z_3$
 $\frac{z_2}{z_3}$
 \end{enumerate}
 \item
-Finn alle løsninger av ligningene. Tegn tallet på høyresiden av ligningen og alle løsningene inn det komplekse plan.
+Finn alle løsninger av ligningene. Tegn tallet på høyresiden av ligningen og alle løsningene inn i det komplekse plan.
 \begin{enumerate}[label=\alph*)]
 \item
 $z^2 = 2i$
