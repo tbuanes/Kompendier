@@ -1,0 +1,156 @@
+\documentclass[a4paper,norsk,12pt]{article}
+
+\usepackage[norsk]{babel}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\usepackage{icomma}
+\usepackage{multicol}
+
+\newcommand{\unit}[1]{~\mathrm{#1}}
+\newcommand{\ans}[1]{\underline{\underline{#1}}}
+
+\usepackage[svgnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{shadows}
+\newcounter{exa}
+\tcbset{
+myexample/.style={
+  enhanced,
+  colback=blue!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={\refstepcounter{exa}Eksempel~\theexa},
+  title style={fill=blue!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=LightBlue!50!white,colframe=Navy}
+  }
+}
+
+\tcbset{
+mytheorem/.style={
+  enhanced,
+  colback=DarkGreen!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Teorem},
+  title style={fill=DarkGreen!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=DarkGreen!50!white,colframe=DarkGreen}
+  }
+}
+
+
+\tcbset{
+myproof/.style={
+  enhanced,
+  colback=DarkGreen!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Bevis},
+  title style={fill=DarkGreen!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=DarkGreen!50!white,colframe=DarkGreen}
+  }
+}
+
+\tcbset{
+mydef/.style={
+  enhanced,
+  colback=red!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Definisjon},
+  title style={fill=red!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=red!50!white,colframe=red}
+  }
+}
+
+\tcbset{
+mysummary/.style={
+  enhanced,
+  colback=yellow!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Oppsummering},
+  title style={fill=yellow!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=yellow!50!white,colframe=yellow}
+  }
+}
+
+
+
+\newtcolorbox{texample}{myexample}
+\newtcolorbox{ttheorem}{mytheorem}
+\newtcolorbox{tproof}{myproof}
+\newtcolorbox{tdef}{mydef}
+\newtcolorbox{tsummary}{mysummary}
+
+\begin{document}
+\section{Lineær algebra}
+
+\subsection{Lineære ligningssett}
+Lineære ligninger er ligninger der de ukjente kun forekommer i første potens, og aldri multiplisert med hverandre. For eksempel er ligningene
+\begin{displaymath}
+	2x + 3 = 5 \quad \text{og}\quad 3 x - y = 4y - 3
+\end{displaymath}
+lineære, mens
+\begin{displaymath}
+	x^2 + 3 = 5, \quad xy + 3y = 1 \quad \text{og}\quad x + \frac{3}{y} = 2
+\end{displaymath}
+ikke er lineære. Matematiske beskrivelser av fysiske systemer ender noen ganger opp med lineære ligninger og andre ganger med ikke-lineære. Det lineære tilfellet er hyppig nok til at det er vel verdt å bruke tid på å finne effektive måter å løse slike ligninger på. Dersom det bare er \'en eller to ukjente er løsningen rask å finne nesten uansett hvordan man griper an problemet, men hvis man har et sett av mange ligninger med mange ukjente er det nødvendig å gå mer systematisk til verks. Selv om det er for systemer med mange ukjente teknikkene vi ser på er her mest relevante kommer eksemplene som blir brukt til å kun ha to eller tre ukjente fordi det er nok til å forstå løsningsstrategien, og få ukjente gjør beregningen mer oversiktelig.
+
+\begin{texample}
+Kirchoffs lover $\to$ lineært ligningssett
+\end{texample}
+
+\subsection{Geometrisk tolkning av lineære ligninger}
+Før vi ser på hvordan vi faktisk skal løse ligningene skal vi se litt på en geometrisk tolkning av ligningene som kan være nyttig for å forstå hva slags løsninger som er mulig å få. Vi begynner med å se på ligningen
+\begin{displaymath}
+	3x-y = 4y -3
+\end{displaymath}
+som inneholder de to ukjente $x$ og $y$. En liten omorganisering av ligningen gir oss
+\begin{displaymath}
+	y = \frac35x + \frac35.
+\end{displaymath}
+Hvis vi tolker det som et funksjonsuttrykk så ser vi at dette beskriver en rett linje i $xy$-planet. Så lenge vi har en \emph{lineær} ligning må linjen nødvendigvis blir rett. 
+
+Alle punkter på denne linjen oppfyller ligningen---vi har med andre ord uendelig mange løsninger i stedet for \'en unik løsning. Dette er en konsekvens av at vi har to ukjente, men bare en ligning. Dersom vi har en ligning til, for eksempel
+\begin{displaymath}
+	2y - x = 3,
+\end{displaymath}
+så har vi nok en rett linje i $xy$-planet. En løsning $(x,y)$ som oppfyller begge ligningen må ligge på begge de to rette linjene. Når vi har to rette linjer i et plan finnes det tre muligheter:
+\begin{enumerate}
+	\item Linjene skjærer hverandre i ett punkt. Da har vi \emph{en unik løsning} som oppfyller begge ligningene samtidig.
+	\item Linjene er parallelle og skjærer hverandre aldri. Da har vi \emph{ingen løsning} som oppfyller begge ligningene samtidig.
+	\item Linjene er identisk slik at de ligger oppå hverandre. Da har vi \emph{uendelig mange løsninger} som oppfyller begge ligningene samtidig. 
+\end{enumerate}
+Flere muligheter enn dette finnes ikke---vi kan aldri få to eller syv løsninger, bare ingen, \'en eller uendelig mange.
+
+Hvis vi går til tre dimensjoner, altså med tre ukjente---$x$, $y$ og $z$---er historien nesten helt lik. En ligning som inneholder alle de tre ukjente, for eksempel
+\begin{displaymath}
+	2x - 3y + z = 2
+\end{displaymath}
+beskriver en rett linje gjennom rommet. Dersom ligningen kun inneholder en eller to av de ukjente, for eksempel
+\begin{displaymath}
+	y = 0\quad\text{eller}\quad 3x-z = 4
+\end{displaymath}
+beskriver den et plan. 
+\end{document}
