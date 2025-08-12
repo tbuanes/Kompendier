@@ -14,6 +14,7 @@
 
 \newcommand{\unit}[1]{~\mathrm{#1}}
 \newcommand{\ans}[1]{\underline{\underline{#1}}}
+\def\dx{\ensuremath{\mathrm{d}x}}
 
 \usepackage[svgnames]{xcolor}
 \usepackage[most]{tcolorbox}
@@ -107,7 +108,7 @@ mysummary/.style={
 \section{Komplekse tall}
 
 \subsection{Behovet for komplekse tall}
-Opp gjennom historien har tallbegrepet stadig blitt utvidet\footnote{Men dette er ikke et forsøk på å gjengi historien om hvordan utviklingen foregikk. Presentasjonen her forsøker å vise hvordan tallbegrepet naturlig kan og må utvikles, men historisk skjedde en del av stegene i andre rekkefølger.} for å møte behovet mennesker har hatt for å bruke matematikk til å organisere verden. Det enkleste tallkonseptet er de \emph{naturlige tallene}. Dette er tallene vi bruker til å telle objekter med, altså $\mathbb{N} = \{1, 2, 3, \ldots\}$. Med disse tallene kan vi regne ut ting som 
+Opp gjennom historien har tallbegrepet stadig blitt utvidet\footnote{Men dette er ikke et forsøk på å gjengi historien om hvordan utviklingen foregikk. Presentasjonen her forsøker å vise hvordan tallbegrepet naturlig kan og må utvikles, men historisk skjedde enkelte av stegene i andre rekkefølger.} for å møte behovet mennesker har hatt for å bruke matematikk til å organisere verden. Det enkleste tallkonseptet er de \emph{naturlige tallene}. Dette er tallene vi bruker til å telle objekter med, altså $\mathbb{N} = \{1, 2, 3, \ldots\}$. Med disse tallene kan vi regne ut ting som 
 \begin{align*}
 	&2 + 3 = 5 \\
 	&8 - 2 = 6 \\
@@ -186,7 +187,7 @@ Et komplekst tall, $z$, skrives på standardform som
 \end{displaymath}
 \end{tdef}
 \noindent
-Merk at $ib = i\cdot b$, altså det ``nye'' tallet $i$ multiplisert med et reellt tall $b$. Siden faktorenes rekkefølge ikke spiller noen rolle når vi multipliserer kan vi altså like gjerne velge å skrive $z=a+bi$ (eller $z= bi + a$ for den saks skyld siden rekkefølgen heller ikke er viktig ved addisjon). Å kreve at $a$ og $b$ er reelle tall ikke er en begrensning. Anta at vi erstatter f.eks. $b$ med det komplekse tallet $c+id$, da finner vi
+Merk at $ib = i\cdot b$, altså det ``nye'' tallet $i$ multiplisert med et reellt tall $b$. Siden faktorenes rekkefølge ikke spiller noen rolle når vi multipliserer kan vi altså like gjerne velge å skrive $z=a+bi$ (eller $z= bi + a$ for den saks skyld siden rekkefølgen heller ikke er viktig ved addisjon). Å kreve at $a$ og $b$ er reelle tall er ikke en begrensning. Anta at vi erstatter f.eks. $b$ med det komplekse tallet $c+id$, da finner vi
 \begin{displaymath}
 	z = a + i\cdot(c+id) = a+ ic + i^2d = a + ic +(-1)d = (a-d)+ic,
 \end{displaymath}
@@ -235,7 +236,7 @@ Når vi kommer til vinkelen må vi være litt mer forsiktig. Hvis vi i første o
 \begin{displaymath}
 	\theta = \tan^{-1}\left(\frac{b}{a}\right).
 \end{displaymath}
-Dersom $\mathbf{Re}(z)<0$ vil $\tan^{-1}\left(\frac{b}{a}\right)$ fremdeles gi et resultat i området $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, noe som ikke er riktig. For å finne den riktige vinkelen må vil legge til $\pi$. Dersom $a=0$ og $b\neq0$ vil vinkelen være $\frac{\pi}{2}$ ($b>0$) eller $-\frac{\pi}{2}$ ($b<0$). Dersom $a=b=0$ er det meningsløst å snakke om en vinkel, og vi skriver tallet rett og slett som $z=0$.
+Dersom $\mathbf{Re}(z) = a <0$ vil $\tan^{-1}\left(\frac{b}{a}\right)$ fremdeles gi et resultat i området $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, noe som ikke er riktig. For å finne den riktige vinkelen må vil legge til $\pi$. Dersom $a=0$ og $b\neq0$ vil vinkelen være $\frac{\pi}{2}$ ($b>0$) eller $-\frac{\pi}{2}$ ($b<0$). Dersom $a=b=0$ er det meningsløst å snakke om en vinkel, og vi skriver tallet rett og slett som $z=0$.
 
 \begin{tsummary}
 Standardform/kartesisk form: $z = a + ib$ \\
@@ -266,7 +267,9 @@ Vi kan forenkle denne sammenhengen ved å dividere med $r$ og finne
 	\label{kompleks:eq:eitheta}
 	e^{i\theta} = \cos\theta + i\sin\theta.
 \end{equation}
-Dette betyr at når vi tillater imaginær eksponent er ikke eksponentialfunksjonen lenger montont stigende/avtagende, men derimot en periodisk funksjon med periode $2\pi$. Dette burde egentlig være opplagt fra den grafiske representasjonen av det komplekse tallet: dersom vi endrer vinkelen med et multippel av $2\pi$ kommer vi tilbake til det samme punktet. Dersom vi erstatter $\theta$ med $-\theta$ og bruker $\cos(-\theta) = \cos\theta$ og $\sin(-\theta) = -\sin\theta$ får vi
+Dette betyr at når vi tillater imaginær eksponent er ikke eksponentialfunksjonen lenger montont stigende/avtagende, men derimot en periodisk funksjon.\footnote{Dersom vi lar eksponenten ha både realdel og imaginærdel vil vi få svingninger med økende ($\mathbf{Re}(z)>0$) eller avtagende ($\mathbf{Re}(z)<0$) amplitude.} Dette burde egentlig være opplagt fra den grafiske representasjonen av det komplekse tallet: dersom vi endrer vinkelen med et multippel av $2\pi$ kommer vi tilbake til det samme punktet. 
+
+Dersom vi erstatter $\theta$ med $-\theta$ og bruker $\cos(-\theta) = \cos\theta$ og $\sin(-\theta) = -\sin\theta$ får vi
 \begin{equation}
 	\label{kompleks:eq:e-itheta}
 	e^{-i\theta} = \cos\theta - i\sin\theta.
@@ -278,8 +281,24 @@ Ved å kombinere ligning (\ref{kompleks:eq:eitheta}) og (\ref{kompleks:eq:e-ithe
 \end{align*}
 Merk at selv om uttrykkene inkluderer $i$ vil svaret bli reellt så lenge vinkelen $\theta$ er reell. Denne måten å uttrykke $\cos\theta$ og $\sin\theta$ på kan for eksempel brukes til å forenkle integrasjon av en del uttrykk som er vanskelig å gjøre på andre måter.
 
+\begin{comment}
+\begin{texample}
+Integralet 
+\begin{displaymath}
+	\int_0^\infty e^{-x}\cos x \dx
+\end{displaymath}
+kan evalueres ved hjelp av delvis integrasjon, men det er en del jobb siden vi blant annet må gjennom to steg med delvis integrasjon. La oss derfor i stedet gå via kompleks representasjon av cosinus.\footnote{Dette eksempelet bruker en del av regnereglene  for komplekse som først blir presentert i kommende avsnitt. Det bør likevel gå greit å følge logikken i eksempelet, og du kan eventuelt vende tilbake til det senere også.}
+\begin{align*}
+	\int_0^\infty e^{-x}\cos x \dx&= \int_0^\infty e^{-x}\frac{e^{ix}+e^{-ix}}{2} \dx \\
+	&= \frac12\int_0^\infty \left(e^{(i-1)x}+e^{-(i+1)x}\right)\dx \\
+	&= \frac12\left.\left(\frac{e^{(i-1)x}}{i-1}-\frac{e^{-(i+1)x}}{i+1}\right)\right|_0^\infty
+\end{align*}
+\end{texample}
+\end{comment}
+
+
 \section{Regneregler for komplekse tall}
-Komplekse tall følger de samme regnereglene som reelle tall, men det er noen få ting man må være oppmerksom på. Blant annet vil vi få behov for å veksle frem og tilbake mellom de de to representasjonenen (standardform og eksponentialform) da ikke alle operasjoner like enkel å utføre i begge former. I tillegg skal vi få bruk for å definere en ny operasjon: \emph{komplekskonjugering}.
+Komplekse tall følger de samme regnereglene som reelle tall, men det er noen få ting man må være oppmerksom på. Blant annet vil vi få behov for å veksle frem og tilbake mellom de de to representasjonenen (standardform og eksponentialform) da ikke alle operasjoner er like enkel å utføre i begge former. I tillegg skal vi få bruk for å definere en ny operasjon: \emph{komplekskonjugering}.
 
 \subsection{Komplekskonjugering}
 Vi definerer komplekskonjugering som operasjonen der vi endrer fortegnet på den imaginære komponenten av det komplekse tallet. 
@@ -289,6 +308,10 @@ Vi definerer komplekskonjugering som operasjonen der vi endrer fortegnet på den
 		\bar{z} = a-ib = re^{-i\theta}
 	\end{displaymath}
 \end{tdef}
+Merk at vi har brukt en strek over symbolet ($\bar{z}$) for å indikere at vi nå har med den komplekskonjugerte størrelsen å gjøre. På tilsvarende måte kan vi også skrive
+\begin{displaymath}
+	\overline{a+ib} = a - ib.
+\end{displaymath}
 
 \subsection{Addisjon og subtraksjon}
 Addisjon og subtraksjon av komplekse tall gjøres enklest på standardform: gitt to tall $z_1 = a_1 + ib_1$ og $z_2 = a_2 + ib_2$. Vi finner da
@@ -301,10 +324,10 @@ Vi ser altså at vi adderer/subtraherer realdel for seg og imaginærdel for seg.
 \begin{texample}
 	La $z_1 = 3+ 2i$, $z_2 = 5-i$ og $z_3 = -2i$. Vi regner da ut
 	\begin{align*}
-		z_1 + z_2 &= (3+5) + (2+(-1))i = 8 - i \\ 
-		z_1 + z_3 &= (3+0) + (2+(-2))i = 3 \\
-		z_1 - z_2 &= (3-5) + (2-(-1))i = -2 + 3i \\ 
-		z_1 - z_3 &= (3-0) + (2-(-2))i = 3 + 4i 
+		z_1 + z_2 &= (3+5) + (2+(-1))i = \ans{8 - i} \\ 
+		z_1 + z_3 &= (3+0) + (2+(-2))i = \ans{3} \\
+		z_1 - z_2 &= (3-5) + (2-(-1))i = \ans{-2 + 3i} \\ 
+		z_1 - z_3 &= (3-0) + (2-(-2))i = \ans{3 + 4i} 
 	\end{align*}
 \end{texample}
 Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å addere de to tallene og få svaret på en kompakt form, med mindre vinkelen er lik eller forskjellen på vinklene er $\pi$.
@@ -316,7 +339,7 @@ Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å add
 	\begin{displaymath}
 		z_1 + z_2 = (2 + 3) e^{i\frac{\pi}{3}} = \ans{5e^{i\frac{\pi}{3}}}.
 	\end{displaymath}
-	Når forskjellen i de to vinklene er nøyaktig $\pi$ ligger tallene langs den samme rette linje gjennom origo og vi kan addere nesten like rett frem, men vi må gjøre en liten omskriving av det ene tallet først,
+	Når forskjellen mellom de to vinklene er nøyaktig $\pi$ ligger tallene langs den samme rette linje gjennom origo og vi kan addere nesten like rett frem, men vi må gjøre en liten omskriving av det ene tallet først,
 	\begin{align*}
 	e^{i\frac{4\pi}{3}} = e^{i\left(\frac{\pi}{3}+\pi\right)} &= \cos\left(\frac{\pi}{3}+\pi\right) + i\sin\left(\frac{\pi}{3}+\pi\right)\\
 	&= \cos\left(\frac{\pi}{3}\right)\cos\pi - \sin\left(\frac{\pi}{3}\right)\sin\pi \\
@@ -330,11 +353,11 @@ Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å add
 	\end{displaymath}
 	Merk at det ikke er viktig hva vinkelen er, men kun at forskjellen i vinkel er $\pi$ (eller et multippel av $\pi$).
 
-	Dersom forskjellen i vinkelen ikke er et multippel av $\pi$ kommer vi ikke langt på eksponentialform, men vil få behov for å regne om til standardform om vi ønsker å forenkle videre,
+	Dersom forskjellen i vinkel ikke er et multippel av $\pi$ kommer vi ikke langt på eksponentialform, men vil få behov for å regne om til standardform om vi ønsker å forenkle videre,
 	\begin{align*}
 		z_1 + z_4 &= 2 e^{i\frac{\pi}{3}} + 3e^{i\frac{\pi}{2}} \\
 		&= 2\left(\cos\frac{\pi}{3}+i\sin\frac{\pi}{3}\right) + 3\left(\cos\frac{\pi}{2}+i\sin\frac{\pi}{2}\right) \\
-		&= 2\left(0,5+i\frac{\sqrt{3}}{2}\right) + 3\left(0 + i\right) \\
+		&= 2\left(\frac12+i\frac{\sqrt{3}}{2}\right) + 3\left(0 + i\right) \\
 		&= \ans{1 +\left(\sqrt{3}+1\right)i}.
 	\end{align*}
 \end{texample}
@@ -365,9 +388,9 @@ Gitt $z_1 = 3 + 2i$, $z_2=1 + 4i$, $z_3 = -2 + i$ og $z_4 = \frac{1}{\sqrt{2}}(1
 \begin{align*}
 	z_1\cdot z_2 &= (3+2i)(1+4i) = 3\cdot1 + 3\cdot4i + 2i\cdot1 + 2i\cdot 4i \\
 	&= 3 +12i+2i -8 = \ans{-5+14i} \\[12pt]
-	z_1\cdot z_3 &= (3+2i)(-2+i) = 3\cdot(-2)+(3\cdot i)+2i\cdot(-2) + 2i\cdot i \\
+	z_1\cdot z_3 &= (3+2i)(-2+i) = 3\cdot(-2)+3\cdot i+2i\cdot(-2) + 2i\cdot i \\
 	&= -6 + 3i -4i -2 = \ans{-8 -i} \\[12pt]
-	z_1\cdot z_4 &= (3+2i)\cdot\frac{1}{\sqrt{2}}(1-i) = \frac{1}{\sqrt{2}} \left(3\cdot 1 + 3\cdot(-i) + 2i\cdot1 + 2i\cdot(-i) \right)\\
+	z_1\cdot z_4 &= (3+2i)\cdot\frac{1}{\sqrt{2}}(1-i) = \frac{1}{\sqrt{2}} \Big(3\cdot 1 + 3\cdot(-i) + 2i\cdot1 + 2i\cdot(-i) \Big)\\
 	&= \frac{1}{\sqrt{2}}\left(3-3i+2i+2\right) = \ans{\frac{1}{\sqrt{2}}(5-i)}
 \end{align*} 	
 \end{texample}
@@ -447,7 +470,7 @@ Gitt $z_1 = 3 + 2i$, $z_2 = \frac{1}{\sqrt{2}}(1-i)$ og $z_3 = \sqrt{3}e^{i\frac
 \end{align*}
 \end{texample}
 \noindent
-Det siste eksempelet demonsterer det generelle resultatet at når tallet er skrevet på eksponentialform, $z=re^{i\theta}$, er absoluttverdien lik $r$.
+Det siste eksempelet demonsterer det generelle resultatet at når tallet er skrevet på eksponentialform, $z=re^{i\theta}$, er absoluttverdien lik $|r|$.
 
 \subsection{Divisjon}
 Som med multiplikasjon er også divisjon enklest å utføre på eksponentialform, men også mulig på standardform. Divisjon på eksponentialform er helt analogt til multiplikasjon, vi bruker vanlige regneregler, inkludert for eksponentialfunksjonen direkte:
@@ -465,6 +488,7 @@ For å få til divisjon på standardform trenger vi et lite ``triks'': vi må s�
 \begin{displaymath}
 	\frac{z_1}{z_2} = \frac{z_1\bar{z}_2}{z_2\bar{z}_2} = \frac{(a_1+ib_1)(a_2-ib_2)}{(a_2+ib_2)(a_2-ib_2)} = \frac{(a_1a_2+b_1b_2)+(-a_1b_2+a_2b_1)i}{a_2^2+b_2^2}
 \end{displaymath}
+Vi mulitpliserer altså både teller og nevner med den komplekskonjugerte av nevneren.
 \begin{texample}
 Gitt $z_1 = 3+2i$, $z_2 = 5-i$ og $z_3 = -2i$. Vi regner da ut
 \begin{align*}
@@ -475,7 +499,7 @@ Gitt $z_1 = 3+2i$, $z_2 = 5-i$ og $z_3 = -2i$. Vi regner da ut
 \end{texample}
 
 \section{Kvadratrot og $n$te-rot}
-For å finne $n$te-roten av et komplekst tall må man i praksis ha tallet på eksponentialform. Prosedyren for å kvadratrot og høyere grads røtter er grunnleggende den samme, men likevel behandler vi kvadratrot for seg selv først siden dette er den roten de fleste er mest fortrolig med. 
+For å finne $n$te-roten av et komplekst tall må man i praksis ha tallet på eksponentialform. Prosedyren for å finne kvadratrot og høyere grads røtter er grunnleggende den samme, men likevel behandler vi kvadratrot for seg selv først siden dette er den roten de fleste er mest fortrolig med. 
 
 For å se hvordan man tar kvadratroten av et komplekst tall må vi huske på at å ta kvadratrot er det samme som å opphøye tallet i $\frac12$, altså $\sqrt{z} = z^\frac12$. Gitt $z = re^{i\theta}$, da kan vi altså regne ut
 \begin{displaymath}
@@ -518,8 +542,9 @@ Gitt ligningen $z^2 + 2z + 2 = 0$. Vi starter med å bruke $abc$-formelen akkura
 \end{displaymath}
 Siden svaret vi får fra $abc$-formelen inkluderer $\sqrt{-2}$ har vi ingen løsninger for reelle tall, men når vi tillater $z$ å være kompleks har vi to løsninger:
 \begin{displaymath}
-	z= \ans{-1 \pm i\frac{\sqrt{2}}{2}}.
+	z= \ans{-1 \pm i\frac{\sqrt{2}}{2}}
 \end{displaymath}
+siden $\pm\sqrt{-2} = \pm i\sqrt{2}$. 
 \end{texample}
 
 \begin{texample}
@@ -586,6 +611,20 @@ $z = 3$
 $z = -2e^{-i\frac{\pi}{2}}$
 \end{enumerate}
 \item
+Finn den komplekskonjugerte til følgende tall. Tegn både tallet selv og den komplekskonjugerte inn i det komplekse planet.
+\begin{enumerate}[label=\alph*)]
+\item
+$2+i$
+\item
+$3-2i$
+\item
+$2e^{-i\frac{\pi}{3}}$
+\item
+$2i$
+\item
+$\pi$
+\end{enumerate}
+\item
 Gitt følgende tall $z_1 = 2+3i$, $z_2=3-2i$, $z_3 = 3i$. Regn ut
 \begin{enumerate}[label=\alph*)]
 \item
@@ -599,6 +638,7 @@ $z_1-z_2+z_3$
 \item
 $2z_1$
 \end{enumerate}
+\columnbreak
 \item
 Gitt følgende tall $z_1 = e^{i\frac{\pi}{3}}$, $z_2 = -2e^{i\frac{\pi}{3}}$, $z_3 = 2e^{i\frac{4\pi}{3}}$, $z_4 = e^{-i\frac{\pi}{2}}$. Regn ut
 \begin{enumerate}[label=\alph*)]
@@ -611,7 +651,15 @@ $z_1+z_3$
 \item
 $z_1-z_4$
 \end{enumerate}
-\columnbreak
+\item
+Finn modulus/absoluttverdi til følgende tall.
+\begin{enumerate}[label=\alph*)]
+\item $2 + i$
+\item $-3 + 4i$
+\item $3e^{-i\frac{7\pi}{8}}$
+\item $5i$
+\end{enumerate}
+
 \item
 Gitt følgende tall $z_1 = e^{i\frac{\pi}{2}}$, $z_2 = 2e^{-i\frac{\pi}{6}}$, $z_3 = e^{i\frac{2\pi}{3}}$. Regn ut
 \begin{enumerate}[label=\alph*)]
@@ -649,6 +697,8 @@ $z_1\cdot z_3$
 $\frac{z_2}{z_3}$
 \end{enumerate}
 \item
+Finn uttrykk for $\cos3\theta$ og $\sin3\theta$ uttrykt ved $\cos\theta$ og $\sin\theta$. 
+\item
 Finn alle løsninger av ligningene. Tegn tallet på høyresiden av ligningen og alle løsningene inn i det komplekse plan.
 \begin{enumerate}[label=\alph*)]
 \item
@@ -664,8 +714,9 @@ $z^2 = 1+i$
 \item
 $z^3 = 5-2i$
 \end{enumerate}
+\columnbreak
 \item
-Finn alle løsninger av ligningene
+Finn alle løsninger av ligningene.
 \begin{enumerate}[label=\alph*)]
 \item
 $z^2 - 2z + 3 = 0 $
@@ -677,10 +728,108 @@ $z^4 +2z^2 - 3 = 0$
 $2z^8 - z^4 - 1 = 0$
 \item
 $z  + 2\sqrt{z}+2 = 0$
-\end{enumerate}
 \item
-Finn uttrykk for $\cos3\theta$ og $\sin3\theta$ uttrykt ved $\cos\theta$ og $\sin\theta$. 
+$z^2 + (2-i)z - i = 0$
+
+\end{enumerate}
 \end{enumerate}
 \end{multicols}
 }
+\newpage
+\begin{appendix}
+\section{Fasit}
+\begin{multicols}{3}
+\begin{enumerate}[label=1\alph*)]
+\item $\sqrt{2}e^{i\frac{\pi}{4}}$
+\item $\sqrt{2}e^{-i\frac{3\pi}{4}}$
+\item $2e^{i\frac{\pi}{3}}$
+\item $2e^{i\frac{5\pi}{6}}$
+\item $3e^{i\pi}$
+\item $2e^{-i\frac{\pi}{2}}$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=2\alph*)]
+\item $i$
+\item $\sqrt{3} - i$
+\item $-\frac12  + i\frac{\sqrt{3}}{2}$
+\item $-1$
+\item $3$
+\item $2i$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=3\alph*)]
+\item $2-i$
+\item $3+2i$
+\item $2e^{i\frac{\pi}{3}}$
+\item $-2i$
+\item $\pi$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=4\alph*)]
+\item $5 + i$
+\item $2 + 6i$
+\item $-2$
+\item $-1+8i$
+\item $4 + 6i$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=5\alph*)]
+\item $-e^{i\frac{\pi}{3}}$
+\item $3e^{i\frac{\pi}{3}}$
+\item $-e^{i\frac{\pi}{3}}$
+\item $\frac12 + \left(1-\frac{\sqrt{3}}{2}\right)i$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=6\alph*)]
+\item $\sqrt{5}$
+\item $5$
+\item $3$
+\item $5$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=7\alph*)]
+\item $2e^{i\frac{\pi}{3}}$
+\item $e^{i\frac{\pi}{6}}$
+\item $4$
+\item $2e^{-i\frac{5\pi}{6}}$
+\item $\frac12e^{i\frac{2\pi}{3}}$
+\item $2e^{i\frac{\pi}{2}}$
+\item $\frac12 e^{i\frac{4\pi}{3}}$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=8\alph*)]
+\item $12+5i$
+\item $-5+12i$
+\item $i$
+\item $-i$
+\item $\frac{3}{13}+\frac{2}{13}i$
+\item $-9+6i$
+\item $-\frac23-i$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=9)]
+\item
+$\cos3\theta = \cos^3\theta - 3\cos\theta\sin^2\theta$, \\
+$\sin3\theta = 3\cos^2\theta\sin\theta-\sin^3\theta$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=10\alph*)]
+\item $\sqrt{2}e^{i\frac{\pi}{4}}$, $\sqrt{2}e^{i\frac{5\pi}{4}}$
+\item $1$, $e^{i\frac{2\pi}{5}}$, $e^{i\frac{4\pi}{5}}$,\\ $e^{i\frac{6\pi}{5}}$, $e^{i\frac{8\pi}{5}}$
+\item $\sqrt[4]{3}e^{i\frac{\pi}{12}}$, $\sqrt[4]{3}e^{i\frac{7\pi}{12}}$, \\$\sqrt[4]{3}e^{i\frac{13\pi}{12}}$, $\sqrt[4]{3}e^{i\frac{19\pi}{12}}$
+\item $\sqrt[4]{2}e^{i\frac{\pi}{8}}$, $\sqrt[4]{2}e^{i\frac{9\pi}{8}}$
+\item $\sqrt[6]{41}e^{0,127i}$, $\sqrt[6]{41}e^{2,22i}$, $\sqrt[6]{41}e^{4,32i}$
+\end{enumerate}
+\vspace{6pt}
+\begin{enumerate}[label=11\alph*)]
+\item $1+i\sqrt{2}$, $1-i\sqrt{2}$
+\item $-1+i\sqrt{2}$, $-1-i\sqrt{2}$
+\item $\sqrt{\sqrt{2}-1}$,$-\sqrt{\sqrt{2}-1}$,\\ $i\sqrt{\sqrt{2}-1}$,$-i\sqrt{\sqrt{2}-1}$
+\item $1$, $e^{i\frac{\pi}{2}}$, $e^{i\pi}$, $e^{i\frac{3\pi}{2}}$, 
+	$\frac{1}{\sqrt[4]{2}}e^{i\frac{\pi}{4}}$,$\frac{1}{\sqrt[4]{2}}e^{i\frac{3\pi}{4}}$,$\frac{1}{\sqrt[4]{2}}e^{i\frac{5\pi}{4}}$,$\frac{1}{\sqrt[4]{2}}e^{i\frac{7\pi}{4}}$
+\item $2i$, $-2i$
+\item $\frac{\sqrt{3}-2}{2}-\frac{i}{2}$, $-\frac{\sqrt{3}+2}{2}-\frac{i}{2}$
+\end{enumerate}
+\end{multicols}
+\end{appendix}
 \end{document}
