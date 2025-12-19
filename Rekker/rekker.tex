@@ -1,0 +1,156 @@
+\documentclass[a4paper,norsk,12pt]{article}
+
+\usepackage[norsk]{babel}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{wasysym}
+\usepackage{icomma}
+\usepackage{multicol}
+
+\newcommand{\unit}[1]{~\mathrm{#1}}
+\newcommand{\ans}[1]{\underline{\underline{#1}}}
+\def\dx{\ensuremath{\mathrm{d}x}}
+\def\d{\ensuremath{\mathrm{d}}}
+
+\usepackage[svgnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usetikzlibrary{shadows}
+\newcounter{exa}
+\tcbset{
+myexample/.style={
+  enhanced,
+  colback=blue!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={\refstepcounter{exa}Eksempel~\theexa},
+  title style={fill=blue!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=LightBlue!50!white,colframe=Navy}
+  }
+}
+
+\tcbset{
+mytheorem/.style={
+  enhanced,
+  colback=DarkGreen!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Teorem},
+  title style={fill=DarkGreen!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=DarkGreen!50!white,colframe=DarkGreen}
+  }
+}
+
+
+\tcbset{
+myproof/.style={
+  enhanced,
+  colback=DarkGreen!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Bevis},
+  title style={fill=DarkGreen!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=DarkGreen!50!white,colframe=DarkGreen}
+  }
+}
+
+\tcbset{
+mydef/.style={
+  enhanced,
+  colback=red!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Definisjon},
+  title style={fill=red!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=red!50!white,colframe=red}
+  }
+}
+
+\tcbset{
+mysummary/.style={
+  enhanced,
+  colback=yellow!10!white,
+  colframe=black,
+  fonttitle=\scshape,
+  titlerule=0pt,
+  title={Oppsummering},
+  title style={fill=yellow!40!white},
+  coltitle=black,
+  drop shadow,
+  highlight math style={reset,colback=yellow!50!white,colframe=yellow}
+  }
+}
+
+
+
+\newtcolorbox{texample}{myexample}
+\newtcolorbox{ttheorem}{mytheorem}
+\newtcolorbox{tproof}{myproof}
+\newtcolorbox{tdef}{mydef}
+\newtcolorbox{tsummary}{mysummary}
+
+\begin{document}
+\section{Følger og rekker}
+I fysikk-kurs har du antakelig mange ganger sett eksempler på at vi setter opp bevegelsesligninger for et stystem---typisk ved hjelp av Newtons lover---og regner ut hvordan det vil bevege seg. Dette fungerer vanligvis fint på de eksemplene man ser på der, men det er takket være at man typisk ser på veldig enkle eksempler. Straks man ønsker å studere mer virkelighetsnære eksempler ender man opp med mer kompliserte ligninger---ofte uten en analytisk løsning. Det betyr ikke at man bare må gi opp, vi trenger bare å skaffe noen flere strategier i verktøykassen. \'En slik strategi er å ikke løse den eksakte ligningen, men å gjøre en tilnærming som gir en enklere ligning som fremdeles har en løsning som er nær den riktig løsningen. Et eksempel på dette, som du kanskje allerede har truffet på, er en idealisert pendel.\footnote{Idealisert betyr i denne sammenhengen at vi antar at all massen er samlet i et punkt i enden av en masseløs tråd uten elastikk. Dette er i seg selv forenklinger sammenlignet med virkeligheten, men det er ikke de forenklingene vi er interessert i å se på akkurat nå.} Bevegelsen til pendelen beskrives av en ligning for tidsvariasjonen til vinkelen ($\theta$) den danner med loddlinjen:
+\begin{displaymath}
+	\frac{\d^2\theta}{\d t^2} + \frac{g}{\ell}\sin\theta = 0.
+\end{displaymath}
+Selv om ligningen kan se enkel ut er den ikke enkel å løse. Derfor er det vanlig å si at siden $\sin\theta \simeq \theta$ for små vinkler $\theta$ kan vi i stedet løse ligningen 
+\begin{displaymath}
+	\frac{\d^2\theta}{\d t^2} + \frac{g}{\ell}\theta = 0.
+\end{displaymath}
+som faktisk har en enkel løsning $\Big(\theta(t) = A\sin(\frac{\sqrt{g}}{\ell}t) + B\cos(\frac{\sqrt{g}}{\ell}t)\Big)$. Men hvordan kan vi vite at $\sin\theta \simeq \theta$, hvor liten må $\theta$ være for at tilnærmingen skal fungere, og hvor godt fungerer i det hele tatt denne tilnærmingen?
+
+Her skal vi se på følger og rekker med et mål om å kunne svare på disse spørsmålene. På veien dit trengs litt grunnleggende teori som kanskje ikke ser ut til å gå direkte mot målet i første omgang, men hold ut så kommer vi dit vi skal.
+
+\subsection{Følger}
+Vi starter med å definere følger som en ordnet liste av tall sammen med en regel som gir sammenhengen mellom tallene i følgen. Listen av tall kan være enten endelig eller uendelig, og her er det de uendelige følgene vi kommer til å fokusere.
+
+\begin{tdef}
+	En uendelig følge er en liste av tall
+	\begin{displaymath}
+		\left\{a_1, a_2,\ldots a_n\ldots\right\}
+	\end{displaymath}
+	som er gitt av en regneregel som forteller hvordan tallene i listen genereres.
+\end{tdef}
+Denne definisjonen gir stor frihet til hvordan listen av tall genereres---i noen følger finnes det en eksplisitt form for å regne ut tall nummer $n$, mens i andre er definert rekursivt slik at man trenger et eller flere av de foregående tallene for å regne ut det neste.
+
+\begin{texample}
+\begin{itemize}
+\item
+Tall nummer $n$ i følgen 
+\begin{displaymath}
+	\left\{1, 2, 4, 8, \ldots\right\}
+\end{displaymath}
+regnes ut som $a_n = 2^{n-1}$.
+\item
+Tall nummer $n$ i følgen
+\begin{displaymath}
+	\left\{1,-\frac13, \frac15, -\frac17,\ldots\right\}
+\end{displaymath}
+regnes ut som $a_n = \frac{(-1)^{n+1}}{2n-1}$.
+\item
+Tall nummer $n$ i følgen 
+\begin{displaymath}
+	\left\{1, 1, 2, 3, 5, 8, 13, \ldots \right\}
+\end{displaymath}
+regnes ut som $a_n = a_{n-2} + a_{n-1}$ (unntak: for å starte rekursjonsregelen defineres $a_1 = a_2 = 1$).
+\end{itemize}
+\end{texample}
+\end{document}
