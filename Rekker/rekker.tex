@@ -153,4 +153,28 @@ Tall nummer $n$ i følgen
 regnes ut som $a_n = a_{n-2} + a_{n-1}$ (unntak: for å starte rekursjonsregelen defineres $a_1 = a_2 = 1$).
 \end{itemize}
 \end{texample}
+
+Noen ganger kan det være nyttig å tenke på følger som funksjoner, men vi må da huske på at definisjonsmengden vil være diskret. Vi kan alltid velge\footnote{Dette valget er ikke unikt, vi kan for eksempel velge å telle fra 0 eller et annet tall for den saks skyld.} denne definisjonsmengden til å være de naturlige tallene $\mathbb{N}=\left\{1,2,3,\ldots\right\}$. 
+
+\subsubsection{Konvergens}
+Newtons metode for å finne nullpunkter til en funksjon $f(x)$ danner en rekursiv følge: Gitt et startpunkt $x_0$ er de videre leddene i rekken gitt som
+\begin{displaymath}
+	x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}.
+\end{displaymath}
+Dersom startpunktet $x_0$ er tilstrekkelig nær et nullpunkt til funksjonen og funksjonen oppfører seg ``tilstrekkelig pent'' vil $x_n$ nærme seg nullpunktet etter som $n$ blir større. Dersom grenseverdien når $n\to\infty$ er det eksakte nullpunktet sier vi at følgen konvergerer mot dette punktet. Men det er også kjent at Newtons metode ikke alltid konvergerer mot nullpunktet vi ønsker å finne. Noen ganger får vi konvergens mot et annet nullpunkt, og andre ganger vil ikke metoden konvergere i det hele tatt. Dette gir en motivasjon til å undersøke konvergensegenskapene til følger mer generelt.
+\begin{tdef}
+	En uendelig følge $\left\{a_n\right\}$ konvergerer mot verdien $A$, dersom
+	\begin{displaymath}
+		\lim_{n\to\infty} a_n = A.
+	\end{displaymath}
+	Dersom følgen ikke konvergerer mot noe tall divergerer den.
+\end{tdef}
+Merk at divergens kan opptre på ulike måter, f.eks. kan leddene blir større og større slik at $\lim_{n_\to\infty}a_n = \infty$, men det er også mulig at følgen hopper frem og tilbake mellom to (eller flere) endelige verdier slik som følgen $\left\{(-1)^n\right\}_{n=1}^\infty$, eller at leddene får større og større absoluttverdi uten å divergere mot verken $\infty$ eller $-\infty$ slik som vi kan se med f.eks.~$\left\{(-n)^n\right\}_{n=1}^\infty$.
+
+Et noe svakere krav en konvergens er hvorvidt en følge er begrenset. 
+\begin{tdef}
+	Dersom det eksisterer et tall $M$ slik at $a_n\leq M$ for alle $n$ er følgen $\left\{a_n\right\}$ {\bf begrenset ovenfra}. Dersom det eksisterer et tall $m$ slik at $a_n\geq m$ for alle $n$ er følgen $\left\{a_n\right\}$ {\bf begrenset nedenfra}. Dersom følgen er begrenset både ovenfra og nedenfra er den {\bf begrenset}.
+\end{tdef}
+
+\subsection{Uendelige rekker}
 \end{document}
