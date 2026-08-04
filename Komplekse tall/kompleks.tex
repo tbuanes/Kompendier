@@ -11,6 +11,7 @@
 \usepackage{wasysym}
 \usepackage{icomma}
 \usepackage{multicol}
+\usepackage{cancel}
 
 \newcommand{\unit}[1]{~\mathrm{#1}}
 \newcommand{\ans}[1]{\underline{\underline{#1}}}
@@ -548,13 +549,13 @@ Typisk vil behovet for å finne f.eks.~en kvadratrot dukke opp i en mer komplise
 \begin{texample}
 Gitt ligningen $z^2 + 2z + 2 = 0$. Vi starter med å bruke $abc$-formelen akkurat som for andregradsligninger med reelle tall:
 \begin{displaymath}
-	z = \frac{-2\pm\sqrt{2^2-4\cdot1\cdot2}}{2\cdot 1}= \frac{-2\pm\sqrt{-2}}{2}
+	z = \frac{-2\pm\sqrt{2^2-4\cdot1\cdot2}}{2\cdot 1}= \frac{-2\pm\sqrt{-4}}{2} = \frac{-2\pm2\sqrt{-1}}{2}
 \end{displaymath}
-Siden svaret vi får fra $abc$-formelen inkluderer $\sqrt{-2}$ har vi ingen løsninger for reelle tall, men når vi tillater $z$ å være kompleks har vi to løsninger:
+Siden svaret vi får fra $abc$-formelen inkluderer $\sqrt{-1}$ har vi ingen løsninger for reelle tall, men når vi tillater $z$ å være kompleks har vi to løsninger:
 \begin{displaymath}
-	z= \ans{-1 \pm i\frac{\sqrt{2}}{2}}
+	z= \ans{-1 \pm i}
 \end{displaymath}
-siden $\pm\sqrt{-2} = \pm i\sqrt{2}$. 
+siden $\pm\sqrt{-1} = \pm i$. 
 \end{texample}
 
 \begin{texample}
