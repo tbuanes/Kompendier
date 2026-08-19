@@ -109,13 +109,13 @@ mysummary/.style={
 \section{Komplekse tall}
 
 \subsection{Behovet for komplekse tall}
-Opp gjennom historien har tallbegrepet stadig blitt utvidet\footnote{Men dette er ikke et forsøk på å gjengi historien om hvordan utviklingen foregikk. Presentasjonen her forsøker å vise hvordan tallbegrepet naturlig kan og må utvikles, men historisk skjedde enkelte av stegene i andre rekkefølger.} for å møte behovet mennesker har hatt for å bruke matematikk til å organisere verden. Det enkleste tallkonseptet er de \emph{naturlige tallene}. Dette er tallene vi bruker til å telle objekter med, altså $\mathbb{N} = \{1, 2, 3, \ldots\}$. Med disse tallene kan vi regne ut ting som 
+Opp gjennom historien har tallbegrepet stadig blitt utvidet\footnote{Men dette er ikke et forsøk på å gjengi historien om hvordan utviklingen foregikk. Presentasjonen her forsøker å vise hvordan tallbegrepet naturlig kan og må utvikles, men historisk skjedde enkelte av stegene i andre rekkefølger.} for å møte behovet mennesker har hatt for å bruke matematikk til å organisere verden. Det enkleste tallkonseptet er de \emph{naturlige tallene}. Dette er tallene vi bruker til å telle objekter med, altså $\mathbb{N} = \{1, 2, 3, \ldots\}$. Med disse tallene kan vi regne ut ting som
 \begin{align*}
 	&2 + 3 = 5 \\
 	&8 - 2 = 6 \\
 	&5\cdot 7 = 35
 \end{align*}
-men vi treffer raskt på begrensninger. Dersom vi ønsker å regne ut 
+men vi treffer raskt på begrensninger. Dersom vi ønsker å regne ut
 \begin{displaymath}
 	2-3 = ?
 \end{displaymath}
@@ -135,7 +135,7 @@ For å bøte på dette utvider vi systemet til de \emph{rasjonale\footnote{Ordet
 \begin{displaymath}
 	x^2 = 1^2 + 1^2 = 2
 \end{displaymath}
-Det kan bevises at svaret av denne ligningen, som vi skriver som $\sqrt{2}$, ikke selv er et rasjonalt tall. 
+Det kan bevises at svaret av denne ligningen, som vi skriver som $\sqrt{2}$, ikke selv er et rasjonalt tall.
 \begin{comment}
 \begin{tproof}
 For å bevise at løsningen av ligningen $x^2 = 2$ ikke er et rasjonalt tall starter vi å anta at det er det---altså at svaret kan skrives som $x=\frac{a}{b}$. Dersom løsningen kan skrives på denne formen følger det at
@@ -143,26 +143,26 @@ For å bevise at løsningen av ligningen $x^2 = 2$ ikke er et rasjonalt tall sta
 	2 = \left(\frac{a}{b}\right)^2 = \frac{a^2}{b^2} \\
 	2b^2 = a^2
 \end{align*}
-Siden $a^2 = 2b^2$ må $a^2$ nødvendigvis være et partall, men da er også $a$ selv et partall. Siden $a$ er et partall er også 
+Siden $a^2 = 2b^2$ må $a^2$ nødvendigvis være et partall, men da er også $a$ selv et partall. Siden $a$ er et partall er også
 \begin{displaymath}
 	\frac{a^2}{2} = b^2
 \end{displaymath}
-et partall. Dette viser at også $b$ er et partall. Alle partall kan faktoriseres til formen $c=2^n\cdot d$ der $n$ er et heltall $\geq 1$ og $d$ er et oddetall (ikke nødvendigvis primtall). Hvis vi forkorter bort alle felles faktorer 2 i brøken $\frac{a^2}{b^2}$ kan vi altså skrive 
+et partall. Dette viser at også $b$ er et partall. Alle partall kan faktoriseres til formen $c=2^n\cdot d$ der $n$ er et heltall $\geq 1$ og $d$ er et oddetall (ikke nødvendigvis primtall). Hvis vi forkorter bort alle felles faktorer 2 i brøken $\frac{a^2}{b^2}$ kan vi altså skrive
 \begin{displaymath}
 	2 = \frac{a^2}{b^2} = \frac{u^2}{v^2}
 \end{displaymath}
-der enten $u$, $v$ eller begge er oddetall. Siden ligningen viser at $u^2 = 2v^2$ kan $u$ ikke være et oddetall. Men da må $u$ inneholde minst en faktor 2, slik at $u^2/2$ er et partall. Men 
+der enten $u$, $v$ eller begge er oddetall. Siden ligningen viser at $u^2 = 2v^2$ kan $u$ ikke være et oddetall. Men da må $u$ inneholde minst en faktor 2, slik at $u^2/2$ er et partall. Men
 \begin{displaymath}
 	\frac{u^2}{2} = v^2
-\end{displaymath} 
-så da er også $v$ et partall. Siden vi har kommet frem til en selvmotsigelse må utgangspunktet ha vært feil, og vi kan konkludere med at ligningen $x^2=2$ ikke har en løsning som kan skrives på formen $x=\frac{a}{b}$. 
+\end{displaymath}
+så da er også $v$ et partall. Siden vi har kommet frem til en selvmotsigelse må utgangspunktet ha vært feil, og vi kan konkludere med at ligningen $x^2=2$ ikke har en løsning som kan skrives på formen $x=\frac{a}{b}$.
 \end{tproof}
 \end{comment}
 Oppdagelsen at det finnes tall som ikke er rasjonale krever en ny utvidelse av tallbegrepet, og vi innfører de \emph{reelle tallene} $\mathbb{R}$. Med de reelle tallene er hele tallinjen fylt opp --- uansett hvor mye eller lite vi ønsker å endre størrelsen på et tall finnes det et nytt tall som passer. Men likevel viser det seg at heller ikke de relle tallene utgjør et komplett system. Det ser vi dersom vi forsøker å løse ligningen
 \begin{displaymath}
 	x^2+1 = 0
 \end{displaymath}
-For å løse denne ligningen trenger vi et tall som har den egenskapen at det multiplisert med seg selv blir $-1$. Ethvert reellt tall (bortsett fra 0), også de negative, blir et positivt tall når man multipliserer det med seg selv. Vi trenger altså en ny utvidelse av tallsystemet. Den nye utvidelsen introduserer tallet $i$ som er definert til å ha egenskapen at 
+For å løse denne ligningen trenger vi et tall som har den egenskapen at det multiplisert med seg selv blir $-1$. Ethvert reellt tall (bortsett fra 0), også de negative, blir et positivt tall når man multipliserer det med seg selv. Vi trenger altså en ny utvidelse av tallsystemet. Den nye utvidelsen introduserer tallet $i$ som er definert til å ha egenskapen at
 \begin{displaymath}
 	i^2 = -1
 \end{displaymath}
@@ -192,14 +192,14 @@ Merk at $ib = i\cdot b$, altså det ``nye'' tallet $i$ multiplisert med et reell
 \begin{displaymath}
 	z = a + i\cdot(c+id) = a+ ic + i^2d = a + ic +(-1)d = (a-d)+ic,
 \end{displaymath}
-der vi har brukt den definerende egenskapen $i^2=-1$. Vi ser altså at ``koordinatene'' alltid kan velges reelle uten å miste generalitet. 
+der vi har brukt den definerende egenskapen $i^2=-1$. Vi ser altså at ``koordinatene'' alltid kan velges reelle uten å miste generalitet.
 \begin{tdef}
 	Gitt det komplekse tallet $z = a+ib$. Vi kaller da $a = \mathbf{Re}(z)$ for \emph{realdelen} til $z$, og $b=\mathbf{Im}(z)$ for \emph{imaginærdelen} til $z$.
 \end{tdef}
 \noindent
 Merk at denne definisjonen gjør at også imaginærdelen er et reelt tall; nemlig det reelle tallet som $i$ skal multipliseres med.
 
-Siden de komplekse tallene representeres av punkter i et plan kan vi også velge å beskrive de med polarkoordinater---altså å fortelle hvor et punkt er ved å spesifisere hvor langt det er fra origo, og hvor stor vinkel forbindelseslinjen mellom origo og punktet danner med den positive realaksen ($x$-aksen). Se figur \ref{kompleks:fig:polar} for en illustrasjon av dette. 
+Siden de komplekse tallene representeres av punkter i et plan kan vi også velge å beskrive de med polarkoordinater---altså å fortelle hvor et punkt er ved å spesifisere hvor langt det er fra origo, og hvor stor vinkel forbindelseslinjen mellom origo og punktet danner med den positive realaksen ($x$-aksen). Se figur \ref{kompleks:fig:polar} for en illustrasjon av dette.
 
 \begin{figure}[htp]
 	\begin{center}
@@ -210,11 +210,11 @@ Siden de komplekse tallene representeres av punkter i et plan kan vi også velge
 \end{figure}
 
 \begin{tdef}
-Et komplekst tall, $z$, skrives på polarform/eksponentialform som 
+Et komplekst tall, $z$, skrives på polarform/eksponentialform som
 \begin{displaymath}
 	z = re^{i\theta}
 \end{displaymath}
-der $r$ er avstanden fra origo, og $\theta$ er vinkelen relativt til positiv realakse. 
+der $r$ er avstanden fra origo, og $\theta$ er vinkelen relativt til positiv realakse.
 \end{tdef}
 \noindent
 Siden vinklene $\theta$ og $\theta+n\cdot 2\pi$ der $n$ er et heltall beskriver den samme retningen ønsker vi å begrense rekkevidden $\theta$ får variere i til et intervall av lengde $2\pi$. Vanlige valg er
@@ -227,7 +227,7 @@ Fra figuren ser vi at gitt polar-representasjonen av det komplekse tallet kan vi
 \begin{align*}
 	\mathbf{Re}(z) &= r\cos\theta \\
 	\mathbf{Im}(z) &= r\sin\theta \\
-	z &= r(\cos\theta + i\sin\theta) 
+	z &= r(\cos\theta + i\sin\theta)
 \end{align*}
 Vi kan også bruke figuren til å finne oppskriften for å regne ut polarform dersom vi starter med standardform. Avstanden, $r$, fra origo er enklest. Gitt $z=a + ib$, da er
 \begin{displaymath}
@@ -246,7 +246,7 @@ Eksponentialform/polarform: $z = re^{i\theta}$ \\[12pt]
 Omregning fra standardform til eksponentialform:
 \begin{align*}
 	r &= \sqrt{a^2+b^2} \\
-	\theta &= \begin{cases} 
+	\theta &= \begin{cases}
 		\tan^{-1}\left(\frac{b}{a}\right) \text{ dersom } a>0 \\
 		\tan^{-1}\left(\frac{b}{a}\right)+\pi \text{ dersom } a <0
 	\end{cases}
@@ -268,7 +268,7 @@ Vi kan forenkle denne sammenhengen ved å dividere med $r$ og finne
 	\label{kompleks:eq:eitheta}
 	e^{i\theta} = \cos\theta + i\sin\theta.
 \end{equation}
-Dette betyr at når vi tillater imaginær eksponent er ikke eksponentialfunksjonen lenger montont stigende/avtagende, men derimot en periodisk funksjon.\footnote{Dersom vi lar eksponenten ha både realdel og imaginærdel vil vi få svingninger med økende ($\mathbf{Re}(z)>0$) eller avtagende ($\mathbf{Re}(z)<0$) amplitude.} Dette burde egentlig være opplagt fra den grafiske representasjonen av det komplekse tallet: dersom vi endrer vinkelen med et multippel av $2\pi$ kommer vi tilbake til det samme punktet. 
+Dette betyr at når vi tillater imaginær eksponent er ikke eksponentialfunksjonen lenger montont stigende/avtagende, men derimot en periodisk funksjon.\footnote{Dersom vi lar eksponenten ha både realdel og imaginærdel vil vi få svingninger med økende ($\mathbf{Re}(z)>0$) eller avtagende ($\mathbf{Re}(z)<0$) amplitude.} Dette burde egentlig være opplagt fra den grafiske representasjonen av det komplekse tallet: dersom vi endrer vinkelen med et multippel av $2\pi$ kommer vi tilbake til det samme punktet.
 
 Dersom vi erstatter $\theta$ med $-\theta$ og bruker $\cos(-\theta) = \cos\theta$ og $\sin(-\theta) = -\sin\theta$ får vi
 \begin{equation}
@@ -284,7 +284,7 @@ Merk at selv om uttrykkene inkluderer $i$ vil svaret bli reellt så lenge vinkel
 
 \begin{comment}
 \begin{texample}
-Integralet 
+Integralet
 \begin{displaymath}
 	\int_0^\infty e^{-x}\cos x \dx
 \end{displaymath}
@@ -302,7 +302,7 @@ kan evalueres ved hjelp av delvis integrasjon, men det er en del jobb siden vi b
 Komplekse tall følger de samme regnereglene som reelle tall, men det er noen få ting man må være oppmerksom på. Blant annet vil vi få behov for å veksle frem og tilbake mellom de de to representasjonenen (standardform og eksponentialform) da ikke alle operasjoner er like enkel å utføre i begge former. I tillegg skal vi få bruk for å definere en ny operasjon: \emph{komplekskonjugering}.
 
 \subsection{Komplekskonjugering}
-Vi definerer komplekskonjugering som operasjonen der vi endrer fortegnet på den imaginære komponenten av det komplekse tallet. 
+Vi definerer komplekskonjugering som operasjonen der vi endrer fortegnet på den imaginære komponenten av det komplekse tallet.
 \begin{tdef}
 	La $z = a + ib = re^{i\theta}$. Komplekskonjugering gir da
 	\begin{displaymath}
@@ -321,24 +321,24 @@ Merk at vi har brukt en strek over symbolet ($\bar{z}$) for å indikere at vi n�
 		\bar{z}_3 &= -2i \\
 		\bar{z}_4 &= 2e^{i\frac{\pi}{3}}
 	\end{align*}
-	Merk at et reellt tall ikke endres av komplekskonjugering ($\bar{z}_2 = z_2$), mens for et rent imaginært tall har komplekskonjugering samme effekt som å multiplisere med $-1$ ($\bar{z}_3 = -z_3$). 
+	Merk at et reellt tall ikke endres av komplekskonjugering ($\bar{z}_2 = z_2$), mens for et rent imaginært tall har komplekskonjugering samme effekt som å multiplisere med $-1$ ($\bar{z}_3 = -z_3$).
 \end{texample}
 
 \subsection{Addisjon og subtraksjon}
 Addisjon og subtraksjon av komplekse tall gjøres enklest på standardform: gitt to tall $z_1 = a_1 + ib_1$ og $z_2 = a_2 + ib_2$. Vi finner da
 \begin{align*}
 	z_1 + z_2 &= (a_1+a_2) + i(b_1+b_2) \\
-	z_1 - z_2 &= (a_1-a_2) + i(b_1-b_2) 
+	z_1 - z_2 &= (a_1-a_2) + i(b_1-b_2)
 \end{align*}
 Vi ser altså at vi adderer/subtraherer realdel for seg og imaginærdel for seg.
 
 \begin{texample}
 	La $z_1 = 3+ 2i$, $z_2 = 5-i$ og $z_3 = -2i$. Vi regner da ut
 	\begin{align*}
-		z_1 + z_2 &= (3+5) + (2+(-1))i = \ans{8 - i} \\ 
+		z_1 + z_2 &= (3+5) + (2+(-1))i = \ans{8 + i} \\
 		z_1 + z_3 &= (3+0) + (2+(-2))i = \ans{3} \\
-		z_1 - z_2 &= (3-5) + (2-(-1))i = \ans{-2 + 3i} \\ 
-		z_1 - z_3 &= (3-0) + (2-(-2))i = \ans{3 + 4i} 
+		z_1 - z_2 &= (3-5) + (2-(-1))i = \ans{-2 + 3i} \\
+		z_1 - z_3 &= (3-0) + (2-(-2))i = \ans{3 + 4i}
 	\end{align*}
 \end{texample}
 Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å addere de to tallene og få svaret på en kompakt form, med mindre vinkelen er lik eller forskjellen på vinklene er $\pi$.
@@ -358,7 +358,7 @@ Hvis tallene er skrevet på eksponentialform er det ikke noen enkel måte å add
 	&= -\cos\left(\frac{\pi}{3}\right)-i\sin\left(\frac{\pi}{3}\right) \\
 	&= -e^{i\frac{\pi}{3}},
 	\end{align*}
-	som viser at 
+	som viser at
 	\begin{displaymath}
 		z_1 + z_3 = 2e^{i\frac{\pi}{3}} + 5e^{i\frac{4\pi}{3}} = 2e^{i\frac{\pi}{3}} - 5e^{i\frac{\pi}{3}} = \ans{-3e^{i\frac{\pi}{3}}}.
 	\end{displaymath}
@@ -403,7 +403,7 @@ Gitt $z_1 = 3 + 2i$, $z_2=1 + 4i$, $z_3 = -2 + i$ og $z_4 = \frac{1}{\sqrt{2}}(1
 	&= -6 + 3i -4i -2 = \ans{-8 -i} \\[12pt]
 	z_1\cdot z_4 &= (3+2i)\cdot\frac{1}{\sqrt{2}}(1-i) = \frac{1}{\sqrt{2}} \Big(3\cdot 1 + 3\cdot(-i) + 2i\cdot1 + 2i\cdot(-i) \Big)\\
 	&= \frac{1}{\sqrt{2}}\left(3-3i+2i+2\right) = \ans{\frac{1}{\sqrt{2}}(5-i)}
-\end{align*} 	
+\end{align*}
 \end{texample}
 
 \subsubsection{Kvadrering og høyere heltallige potenser}
@@ -411,7 +411,7 @@ Når vi kan multiplisere to tall vet vi også hvordan vi regner ut $z^n$ for et 
 \begin{displaymath}
 	z^2 = (a+ib)(a+ib) = (a^2-b^2) +2abi.
 \end{displaymath}
-I motsetning til det vi kjenner fra de relle tallene er det altså ikke slik at kvadratet av et komplekst tall er positivt. Det kan---dersom $a=0$---være et negativt tall, eller mer generelt vil det være et komplekst tall selv. Dette betyr at vi ikke kan definere absoluttverdien til et komplekst tall på nøyaktig samme måte som vi gjør for reelle tall, noe vi kommer tilbake til i neste avsnitt. 
+I motsetning til det vi kjenner fra de relle tallene er det altså ikke slik at kvadratet av et komplekst tall er positivt. Det kan---dersom $a=0$---være et negativt tall, eller mer generelt vil det være et komplekst tall selv. Dette betyr at vi ikke kan definere absoluttverdien til et komplekst tall på nøyaktig samme måte som vi gjør for reelle tall, noe vi kommer tilbake til i neste avsnitt.
 
 Dersom vi skal opphøye det komplekst tallet i en høyere potens enn 2 er det en stor fordel å skrive tallet på eksponentialform fordi det forenkler beregningen betydelig. Vanlige regneregler for eksponentialfunksjoner gir da en enkel beregning.
 \begin{displaymath}
@@ -421,7 +421,7 @@ Dersom vi skal opphøye det komplekst tallet i en høyere potens enn 2 er det en
 \subsubsection{De Moivres teorem}
 Nå som vi har sett hvordan vi regner ut potenser kan vi enkelt bevise et lite teorem som er nyttig for å finne formler for cosinus og sinus til multipler av vinkelen.
 \begin{ttheorem}
-De Moivres teorem: 
+De Moivres teorem:
 \begin{displaymath}
 	\left(\cos\theta + i\sin\theta\right)^n = \cos n\theta + i\sin n\theta
 \end{displaymath}
@@ -445,7 +445,7 @@ Som en enkel anvendelse kan vi finne uttrykkene for $\cos2\theta$ og $\sin2\thet
 	&=\cos^2\theta + 2i\cos\theta\sin\theta + i^2\sin^2\theta \\
 	&=\cos^2\theta-\sin^2\theta + 2i\cos\theta\sin\theta.
 \end{align*}
-Siden to komplekse tall er lik hvis og bare hvis både realdel er lik realdel og imaginærdel er lik imaginærdel finner vi ved å sammenligne første og siste uttrykk at 
+Siden to komplekse tall er lik hvis og bare hvis både realdel er lik realdel og imaginærdel er lik imaginærdel finner vi ved å sammenligne første og siste uttrykk at
 \begin{align*}
 	\cos2\theta &= \cos^2\theta - \sin^2\theta, \\
 	\sin2\theta &= 2\cos\theta\sin\theta.
@@ -469,7 +469,7 @@ Som beregningen, både på standardform og ekspoentialform, demonstrerer blir re
 der $\bar{z}$ er komplekskonjugert av $z$.
 \end{tdef}
 \noindent
-Merk at for reelle tall er $\bar{z}=z$, slik at denne definisjonen stemmer med definisjonen vi har fra før for reelle tall. 
+Merk at for reelle tall er $\bar{z}=z$, slik at denne definisjonen stemmer med definisjonen vi har fra før for reelle tall.
 Grafisk har absoluttverdien en enkel tolkning: absoluttverdien til et komplekst tall er lengden av forbindelseslinjen mellom origo og tallet når det er tegnet inn i det komplekse plan.
 
 \begin{texample}
@@ -510,13 +510,13 @@ Gitt $z_1 = 3+2i$, $z_2 = 5-i$ og $z_3 = -2i$. Vi regner da ut
 \end{texample}
 
 \section{Kvadratrot og $n$te-rot}
-For å finne $n$te-roten av et komplekst tall må man i praksis ha tallet på eksponentialform. Prosedyren for å finne kvadratrot og høyere grads røtter er grunnleggende den samme, men likevel behandler vi kvadratrot for seg selv først siden dette er den roten de fleste er mest fortrolig med. 
+For å finne $n$te-roten av et komplekst tall må man i praksis ha tallet på eksponentialform. Prosedyren for å finne kvadratrot og høyere grads røtter er grunnleggende den samme, men likevel behandler vi kvadratrot for seg selv først siden dette er den roten de fleste er mest fortrolig med.
 
 For å se hvordan man tar kvadratroten av et komplekst tall må vi huske på at å ta kvadratrot er det samme som å opphøye tallet i $\frac12$, altså $\sqrt{z} = z^\frac12$. Gitt $z = re^{i\theta}$, da kan vi altså regne ut
 \begin{displaymath}
 	\sqrt{z} = \sqrt{re^{i\theta}} = \left(re^{i\theta}\right)^\frac12 = \sqrt{r}e^{i\frac{\theta}{2}}
 \end{displaymath}
-Dette er imidlertid ikke hele historien: Akkurat som at ligningen $x^2=a$ der $a$ er et reelt, positivt tall slik at $x$ er et reelt tall har to løsninger\footnote{Merk at kvadratroten av $a$ er ikke lik $\pm\sqrt{a}$, men kun $\sqrt{a}$. Kvadratroten er definert til å være ikke-negativ, men likefullt har ligningen $x^2=a$ \'en positiv og \'en negativ løsning.}, nemlig $x=+\sqrt{a}$ og $x =-\sqrt{a}$, har også ligningen $z^2=re^{i\theta}$ to løsninger. Siden 
+Dette er imidlertid ikke hele historien: Akkurat som at ligningen $x^2=a$ der $a$ er et reelt, positivt tall slik at $x$ er et reelt tall har to løsninger\footnote{Merk at kvadratroten av $a$ er ikke lik $\pm\sqrt{a}$, men kun $\sqrt{a}$. Kvadratroten er definert til å være ikke-negativ, men likefullt har ligningen $x^2=a$ \'en positiv og \'en negativ løsning.}, nemlig $x=+\sqrt{a}$ og $x =-\sqrt{a}$, har også ligningen $z^2=re^{i\theta}$ to løsninger. Siden
 \begin{displaymath}
 	(e^{i\pi})^2 = e^{i2\pi} = 1
 \end{displaymath}
@@ -555,7 +555,7 @@ Siden svaret vi får fra $abc$-formelen inkluderer $\sqrt{-1}$ har vi ingen løs
 \begin{displaymath}
 	z= \ans{-1 \pm i}
 \end{displaymath}
-siden $\pm\sqrt{-1} = \pm i$. 
+siden $\pm\sqrt{-1} = \pm i$.
 \end{texample}
 
 \begin{texample}
@@ -578,7 +578,7 @@ Vi kan nå bruke standarduttrykket for tredjerot, og det må vi gjøre separat f
 		\sqrt[6]{8}e^{i\left(-\frac{\pi}{12} + \frac{\pi}{6}k\right)}, \quad k = 0, 1, 2
 	\end{cases}
 \end{displaymath}
-Merk at siden $-\frac{\pi}{12} + \frac{\pi}{6} = \frac{\pi}{12}$ svarer de to settene av løsninger til kun tre distinkte løsninger. Vi har altså delvis degenerte løsning, slik at det fulle settet av løsninger til ligningen er 
+Merk at siden $-\frac{\pi}{12} + \frac{\pi}{6} = \frac{\pi}{12}$ svarer de to settene av løsninger til kun tre distinkte løsninger. Vi har altså delvis degenerte løsning, slik at det fulle settet av løsninger til ligningen er
 \begin{displaymath}
 	z = \ans{\sqrt[6]{8}e^{i\left(\frac{\pi}{12} + \frac{\pi}{6}k\right)}}, \quad k=0, 1, 2.
 \end{displaymath}
@@ -708,7 +708,7 @@ $z_1\cdot z_3$
 $\frac{z_2}{z_3}$
 \end{enumerate}
 \item
-Finn uttrykk for $\cos3\theta$ og $\sin3\theta$ uttrykt ved $\cos\theta$ og $\sin\theta$. 
+Finn uttrykk for $\cos3\theta$ og $\sin3\theta$ uttrykt ved $\cos\theta$ og $\sin\theta$.
 \item
 Finn alle løsninger av ligningene. Tegn tallet på høyresiden av ligningen og alle løsningene inn i det komplekse plan.
 \begin{enumerate}[label=\alph*)]
@@ -836,7 +836,7 @@ $\sin3\theta = 3\cos^2\theta\sin\theta-\sin^3\theta$
 \item $1+i\sqrt{2}$, $1-i\sqrt{2}$
 \item $-1+i\sqrt{2}$, $-1-i\sqrt{2}$
 \item $\sqrt{\sqrt{2}-1}$,$-\sqrt{\sqrt{2}-1}$,\\ $i\sqrt{\sqrt{2}-1}$,$-i\sqrt{\sqrt{2}-1}$
-\item $1$, $e^{i\frac{\pi}{2}}$, $e^{i\pi}$, $e^{i\frac{3\pi}{2}}$, 
+\item $1$, $e^{i\frac{\pi}{2}}$, $e^{i\pi}$, $e^{i\frac{3\pi}{2}}$,
 	$\frac{1}{\sqrt[4]{2}}e^{i\frac{\pi}{4}}$,$\frac{1}{\sqrt[4]{2}}e^{i\frac{3\pi}{4}}$,$\frac{1}{\sqrt[4]{2}}e^{i\frac{5\pi}{4}}$,$\frac{1}{\sqrt[4]{2}}e^{i\frac{7\pi}{4}}$
 \item $2i$, $-2i$
 \item $\frac{\sqrt{3}-2}{2}+\frac{i}{2}$, $-\frac{\sqrt{3}+2}{2}+\frac{i}{2}$
